@@ -101,6 +101,8 @@ namespace DoAnCoSo.Areas.Identity.Pages.Account
             public string SoDienThoai { get; set; }
             public string ImageUrl { get; set; }
             public int TruongId { get; set; }
+            public string? CCCD { get; set; }
+
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -183,6 +185,7 @@ namespace DoAnCoSo.Areas.Identity.Pages.Account
                 user.SoDienThoai = Input.SoDienThoai;
                 user.ImageUrl = Input.ImageUrl;
                 user.TruongId = Input.TruongId;
+                user.CCCD = Input.CCCD;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
@@ -226,10 +229,6 @@ namespace DoAnCoSo.Areas.Identity.Pages.Account
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-            //var truongs = _context.tbTruong.ToList();
-            //ViewData["Truongs"] = new SelectList(truongs, "Id", "Name");
-
-            // If we got this far, something failed, redisplay form
             return Page();
         }
 

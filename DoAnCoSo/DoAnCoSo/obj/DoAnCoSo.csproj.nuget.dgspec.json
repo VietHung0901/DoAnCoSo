@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj": {}
+    "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj": {}
   },
   "projects": {
-    "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj": {
+    "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj",
+        "projectUniqueName": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj",
         "projectName": "DoAnCoSo",
-        "projectPath": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj",
+        "projectPath": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj",
         "packagesPath": "C:\\Users\\THIEN LY\\.nuget\\packages\\",
-        "outputPath": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\obj\\",
+        "outputPath": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\THIEN LY\\AppData\\Roaming\\NuGet\\NuGet.Config",

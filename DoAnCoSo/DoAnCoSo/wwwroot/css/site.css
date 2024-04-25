@@ -20,3 +20,47 @@ html {
 body {
   margin-bottom: 60px;
 }
+.menu > ul > li {
+    display: inline-block;
+    border-right: 3px solid #212529;
+    position: relative;
+}
+
+    .menu > ul > li > ul {
+        display: none;
+        position: absolute;
+        top: 15px;
+    }
+
+        .menu > ul > li > ul li {
+            padding: 5px 0;
+            border-bottom: 3px solid white;
+        }
+
+ul li:last-child {
+    border: none;
+}
+
+.menu ul li:hover ul {
+    display: block;
+}
+
+.menu .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: .25rem;
+    background-color: #e1dcc5
+}

@@ -13,13 +13,27 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
         .AddDefaultUI()
         .AddEntityFrameworkStores<ApplicationDbContext>();
 
+
+builder.Services.AddScoped<ITruongRepository, EFTruongRepository>();
+builder.Services.AddScoped<ILoaiTruongRepository, EFLoaiTruongRepository>();
+builder.Services.AddScoped<IUserRepository, EFUserRepository>();
+
+
+
 builder.Services.AddRazorPages();
 
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
-builder.Services.AddScoped<ITruongRepository, EFTruongRepository>();
 
 var app = builder.Build();
 
@@ -31,17 +45,27 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+      name: "Admin",
+      pattern: "{area:exists}/{controller=LoaiTruongs}/{action=Index}/{id?}"
+    );
+
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}"
+    );
+});
 app.Run();

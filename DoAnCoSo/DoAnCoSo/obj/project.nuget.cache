@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p2s+GMtt1d8O9feJfkeWupiOz9kuqVajNuXhxPh9e9hzA0b9Kj6rCldkQJv8E4AuIBrmbTwf32iOVms/4+ia7Q==",
+  "dgSpecHash": "JcjkDE0IFT+fw4uQUK8DgMHuY4nzvaS1HfcSiB58Zal/Ha+l4V8GulEk/0DyZSBqae07fckBcQdo9O6UTzdLUw==",
   "success": true,
-  "projectFilePath": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj",
+  "projectFilePath": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\THIEN LY\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\THIEN LY\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
