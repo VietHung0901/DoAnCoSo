@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DoAnCoSo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240412022540_UpdateUser")]
-    partial class UpdateUser
+    [Migration("20240425043318_QuocDev")]
+    partial class QuocDev
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,9 @@ namespace DoAnCoSo.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
+
+                    b.Property<string>("CCCD")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -260,9 +263,15 @@ namespace DoAnCoSo.Migrations
                     b.Property<DateTime>("NgayDangKy")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CuocThiId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("tbPhieuDangKy");
                 });
@@ -538,7 +547,15 @@ namespace DoAnCoSo.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("DoAnCoSo.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("CuocThi");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("DoAnCoSo.Models.tbPhieuKetQua", b =>

@@ -21,7 +21,6 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         private readonly ILoaiTruongRepository _loaitruongRepository;
         private readonly IUserRepository _userRepository;
 
-
         public TruongsController(ApplicationDbContext context, ITruongRepository truongRepository, ILoaiTruongRepository loaitruongRepository, IUserRepository userRepository)
         {
             _context = context;
@@ -65,18 +64,26 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         }
 
         // POST: Admin/Truongs/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,TenTruong,LoaiTruongId")] tbTruong tbTruong)
         {
+            if (string.IsNullOrEmpty(tbTruong.TenTruong))
+            {
+                TempData["ErrorMessage"] = "Vui lòng nhập đầy đủ";
+                return View(tbTruong);
+            }
+
             //Kiểm tra tên trường thuộc loại trường có tồn tại chưa
             if (!tontaiCungTruongCungLoaiTruong(tbTruong))
             {
                 _context.tbTruong.Add(tbTruong);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                TempData["SuccessMessage"] = "Đã thêm tên trường thành công.";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Đã tồn tại tên trường, vui lòng nhập tên khác";
             }
             //Chưa xử lý được việc xuất thông báo "Tên trường thuộc loại trường đã tồn tại"
             var tbLoaiTruong = await _loaitruongRepository.GetAllAsync();
@@ -109,17 +116,30 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,TenTruong,LoaiTruongId")] tbTruong tbTruong)
         {
+                
+
             if (id != tbTruong.Id)
             {
                 return NotFound();
+            }
+
+            if (string.IsNullOrEmpty(tbTruong.TenTruong))
+            {
+                TempData["ErrorMessage"] = "Vui lòng nhập đầy đủ thông tin.";
+
+                var tbLoaiTruongs = await _loaitruongRepository.GetAllAsync();
+                ViewBag.LoaiTruongName = new SelectList(tbLoaiTruongs, "Id", "TenLoaiTruong");
+
+                return View(tbTruong);
             }
 
             if (!tontaiCungTruongCungLoaiTruong(tbTruong))
             {
                 try
                 {
-                    _context.Update(tbTruong);
+                    _context.tbTruong.Update(tbTruong);
                     await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Dữ liệu đã được cập nhật thành công.";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -132,11 +152,13 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                
+                return View(tbTruong);
             }
             //Chưa xử lý được việc xuất thông báo "Tên trường thuộc loại trường đã tồn tại"
             var tbLoaiTruong = await _loaitruongRepository.GetAllAsync();
             ViewBag.LoaiTruongName = new SelectList(tbLoaiTruong, "Id", "TenLoaiTruong");
+            TempData["ErrorMessage"] = "Vui lòng nhập đầy đủ thông tin.";
             return View(tbTruong);
         }
 
@@ -162,7 +184,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         // POST: Admin/Truongs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(int id, tbTruong tbTruongs)
         {
             //Kiểm tra có User nào tồn tại trong Truong.Id == id
             if(!await UserExists(id))
@@ -171,13 +193,21 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 if (tbTruong != null)
                 {
                     _context.tbTruong.Remove(tbTruong);
+                    await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Loại trường đã được xóa thành công!";
                 }
-
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                else
+                {
+                    TempData["ErrorMessage"] = "Không thể xóa được trường này!";
+                }
             }
+            else
+            {
+                TempData["ErrorMessage"] = "Không thể xóa được trường này!";
+            }
+            //Cần trả về một bảng thông báo chứ không phải là môjt content(view)
+            return View(tbTruongs);
 
-            return Content("Tồn tại user đang học trường này");
         }
 
         private bool tbTruongExists(int id)

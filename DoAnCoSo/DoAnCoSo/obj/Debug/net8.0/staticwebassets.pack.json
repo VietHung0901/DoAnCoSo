@@ -1,247 +1,299 @@
 {
   "Files": [
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\DoAnCoSo.bundle.scp.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\DoAnCoSo.bundle.scp.css",
       "PackagePath": "staticwebassets\\DoAnCoSo.bundle.scp.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\site.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\menuAdmin.css",
+      "PackagePath": "staticwebassets\\css\\menuAdmin.css"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\quancao.css",
+      "PackagePath": "staticwebassets\\css\\quancao.css"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\reset.css",
+      "PackagePath": "staticwebassets\\css\\reset.css"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\section3.css",
+      "PackagePath": "staticwebassets\\css\\section3.css"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\favicon.ico",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\site.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\Logo.png",
+      "PackagePath": "staticwebassets\\images\\Logo.png"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\anh1.jpg",
+      "PackagePath": "staticwebassets\\images\\anh1.jpg"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\anh2.png",
+      "PackagePath": "staticwebassets\\images\\anh2.png"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\anh31.png",
+      "PackagePath": "staticwebassets\\images\\anh31.png"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\background.png",
+      "PackagePath": "staticwebassets\\images\\background.png"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\background1.png",
+      "PackagePath": "staticwebassets\\images\\background1.png"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\imagett.jpg",
+      "PackagePath": "staticwebassets\\images\\imagett.jpg"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\imagett1.jpg",
+      "PackagePath": "staticwebassets\\images\\imagett1.jpg"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\imagett2.png",
+      "PackagePath": "staticwebassets\\images\\imagett2.png"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
