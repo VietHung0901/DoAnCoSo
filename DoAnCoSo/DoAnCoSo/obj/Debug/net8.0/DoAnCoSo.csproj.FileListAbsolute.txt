@@ -1145,4 +1145,4 @@ E:\DoAnCoSo\DoAnCoSo\DoAnCoSo\obj\Debug\net8.0\refint\DoAnCoSo.dll
 E:\DoAnCoSo\DoAnCoSo\DoAnCoSo\obj\Debug\net8.0\DoAnCoSo.pdb
 E:\DoAnCoSo\DoAnCoSo\DoAnCoSo\obj\Debug\net8.0\DoAnCoSo.genruntimeconfig.cache
 E:\DoAnCoSo\DoAnCoSo\DoAnCoSo\obj\Debug\net8.0\ref\DoAnCoSo.dll
-E:\DoAnCoSo\DoAnCoSo\DoAnCoSo\bin\Debug\net8.0\Microsoft.JSInterop.dll
+E:\DoAnCoSo\DoAnCoSo\DoAnCoSo\bin\Debug\net8.0\SweetAlert2.dll

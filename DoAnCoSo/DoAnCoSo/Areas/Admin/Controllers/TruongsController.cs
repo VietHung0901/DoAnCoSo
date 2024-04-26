@@ -68,8 +68,14 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,TenTruong,LoaiTruongId")] tbTruong tbTruong)
         {
+            var tbLoaiTruong = await _loaitruongRepository.GetAllAsync();
+            ViewBag.LoaiTruongName = new SelectList(tbLoaiTruong, "Id", "TenLoaiTruong");
+
             if (string.IsNullOrEmpty(tbTruong.TenTruong))
             {
+                /*var tbLoaiTruong = await _loaitruongRepository.GetAllAsync();
+                ViewBag.LoaiTruongName = new SelectList(tbLoaiTruong, "Id", "TenLoaiTruong");*/
+
                 TempData["ErrorMessage"] = "Vui lòng nhập đầy đủ";
                 return View(tbTruong);
             }
@@ -86,8 +92,6 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 TempData["ErrorMessage"] = "Đã tồn tại tên trường, vui lòng nhập tên khác";
             }
             //Chưa xử lý được việc xuất thông báo "Tên trường thuộc loại trường đã tồn tại"
-            var tbLoaiTruong = await _loaitruongRepository.GetAllAsync();
-            ViewBag.LoaiTruongName = new SelectList(tbLoaiTruong, "Id", "TenLoaiTruong");
             return View(tbTruong);
         }
 
@@ -158,7 +162,8 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             //Chưa xử lý được việc xuất thông báo "Tên trường thuộc loại trường đã tồn tại"
             var tbLoaiTruong = await _loaitruongRepository.GetAllAsync();
             ViewBag.LoaiTruongName = new SelectList(tbLoaiTruong, "Id", "TenLoaiTruong");
-            TempData["ErrorMessage"] = "Vui lòng nhập đầy đủ thông tin.";
+
+            TempData["ErrorMessage"] = "Tên trùng vui lòng chọn tên khác.";
             return View(tbTruong);
         }
 
@@ -186,9 +191,11 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id, tbTruong tbTruongs)
         {
+
             //Kiểm tra có User nào tồn tại trong Truong.Id == id
-            if(!await UserExists(id))
+            if (!await UserExists(id))
             {
+
                 var tbTruong = await _context.tbTruong.FindAsync(id);
                 if (tbTruong != null)
                 {

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DoAnCoSo.Models;
 using Microsoft.AspNetCore.Authorization;
+using DoAnCoSo.Repositories;
 
 namespace DoAnCoSo.Areas.Admin.Controllers
 {
@@ -126,7 +127,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                     }
                 }
             }
-            //Chưa xử lý được việc xuất thông báo "Tên loại trường đã tồn tại"
+            TempData["ErrorMessage"] = "Tên trùng vui lòng chọn tên khác.";
             return View(LoaiTruong);
         }
 
@@ -154,13 +155,13 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(int id, tbLoaiTruong LoaiTruong)
         {
             //Kiểm tra id của loại trường này đã được gán cho trường nào chưa
-            if(!tbTruongExists(id))
+            if (!tbTruongExists(id))
             {
                 var tbLoaiTruong = await _context.tbLoaiTruong.FindAsync(id);
                 if (tbLoaiTruong != null)
                 {
                     _context.tbLoaiTruong.Remove(tbLoaiTruong);
-                     await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
                     TempData["SuccessMessage"] = "Loại trường đã được xóa thành công!";
                 }
                 else
