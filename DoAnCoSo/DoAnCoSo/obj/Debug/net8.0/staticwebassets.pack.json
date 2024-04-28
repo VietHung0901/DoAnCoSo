@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\images\\background1.png"
     },
     {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\huybaithi.png",
+      "PackagePath": "staticwebassets\\images\\huybaithi.png"
+    },
+    {
       "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\imagett.jpg",
       "PackagePath": "staticwebassets\\images\\imagett.jpg"
     },
@@ -63,6 +67,10 @@
     {
       "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\imagett2.png",
       "PackagePath": "staticwebassets\\images\\imagett2.png"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\quy-dinh-dang-ky.png",
+      "PackagePath": "staticwebassets\\images\\quy-dinh-dang-ky.png"
     },
     {
       "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\site.js",

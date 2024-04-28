@@ -1,0 +1,83 @@
+﻿@model DoAnCoSo.Models.tbCuocThi
+
+
+<h1>Create</h1>
+
+<h4>tbCuocThi</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NgayThi" class="control-label">Ngay Thi</label>
+                <input asp-for="NgayThi" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="SoLuongThiSinh" class="control-label">So Luong</label>
+                <input asp-for="SoLuongThiSinh" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DiaDiem" class="control-label">Dia Diem</label>
+                <input asp-for="DiaDiem" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="MonThiId" class="control-label">Ten Mon Thi</label>
+                <select asp-for="MonThiId" class="form-control" asp-items="ViewBag.LoaiMonThiName"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Trong phần head của view hoặc layout -->
+    <script>
+        // Hàm hiển thị thông báo với thời gian tự đóng
+        function showSuccessMessage() {
+            Swal.fire({
+                icon: 'success',
+                title: '@TempData["SuccessMessage"]',
+                showConfirmButton: false,
+                timer: 1500,
+                onClose: function () {
+                    // Sau khi thông báo tự đóng, chuyển hướng đến trang Index
+                    window.location.href = '@Url.Action("Index", "CuocThis")';
+                }
+            });
+        }
+
+        // Hàm hiển thị thông báo lỗi với thời gian tự đóng
+        function showErrorMessage() {
+            Swal.fire({
+                icon: 'error',
+                title: '@TempData["ErrorMessage"]',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
+        // Gọi hàm hiển thị thông báo khi SuccessMessage hoặc ErrorMessage có giá trị
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                showSuccessMessage();
+            </text>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <text>
+                showErrorMessage();
+            </text>
+        }
+    </script>
+}
+

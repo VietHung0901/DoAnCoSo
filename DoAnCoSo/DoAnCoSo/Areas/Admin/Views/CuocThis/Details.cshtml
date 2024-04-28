@@ -1,0 +1,37 @@
+﻿@model DoAnCoSo.Models.tbCuocThi
+
+<h1>Cuộc Thi</h1>
+
+<tr>
+    <dl class="row">
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NgayThi)
+        </th>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NgayThi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SoLuongThiSinh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SoLuongThiSinh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DiaDiem)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DiaDiem)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MonThi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MonThi.Id)
+        </dd>
+    </dl>
+</tr>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

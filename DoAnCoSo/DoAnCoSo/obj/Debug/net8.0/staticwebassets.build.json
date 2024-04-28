@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FQ4/YknURF/9srt3UEXV3AQTKJXWSpnWACFIuhpzHHI=",
+  "Hash": "ePG+qB8ZzKOQQG8QOpkPB4CVDdcVThnY/6Kabs5YeRk=",
   "Source": "DoAnCoSo",
   "BasePath": "_content/DoAnCoSo",
   "Mode": "Default",
@@ -2050,6 +2050,25 @@
       "OriginalItemSpec": "wwwroot\\images\\background1.png"
     },
     {
+      "Identity": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\huybaithi.png",
+      "SourceId": "DoAnCoSo",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "BasePath": "_content/DoAnCoSo",
+      "RelativePath": "images/huybaithi.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\huybaithi.png"
+    },
+    {
       "Identity": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\imagett.jpg",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
@@ -2124,6 +2143,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Logo.png"
+    },
+    {
+      "Identity": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\quy-dinh-dang-ky.png",
+      "SourceId": "DoAnCoSo",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "BasePath": "_content/DoAnCoSo",
+      "RelativePath": "images/quy-dinh-dang-ky.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\quy-dinh-dang-ky.png"
     },
     {
       "Identity": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\site.js",
