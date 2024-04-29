@@ -170,6 +170,17 @@ namespace DoAnCoSo.Areas.Identity.Pages.Account
         //    return "/images/" + image.FileName; // Trả về đường dẫn tương đối
         //}
 
+        private async Task<string> SaveImage(IFormFile image)
+        {
+            var savePath = Path.Combine("wwwroot/images", image.FileName); 
+
+            using (var fileStream = new FileStream(savePath, FileMode.Create))
+            {
+                await image.CopyToAsync(fileStream);
+            }
+            return "/images/" + image.FileName; // Trả về đường dẫn tương đối
+        }
+
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj": {}
+    "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj": {}
   },
   "projects": {
-    "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj": {
+    "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj",
+        "projectUniqueName": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj",
         "projectName": "DoAnCoSo",
-        "projectPath": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj",
+        "projectPath": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj",
         "packagesPath": "C:\\Users\\THIEN LY\\.nuget\\packages\\",
-        "outputPath": "D:\\LapTrinhWeb\\DoAn-CoSo\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\obj\\",
+        "outputPath": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\THIEN LY\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -74,6 +74,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "SweetAlert2": {
+              "target": "Package",
+              "version": "[1.0.1, )"
             }
           },
           "imports": [

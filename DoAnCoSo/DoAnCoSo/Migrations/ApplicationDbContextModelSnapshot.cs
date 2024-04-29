@@ -309,11 +309,12 @@ namespace DoAnCoSo.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("NoiDungQuyDinh")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TenQuyDinh")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("imageURL")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

@@ -17,127 +17,243 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DoAnCoSo
 build_property.RootNamespace = DoAnCoSo
-build_property.ProjectDir = D:\LapTrinhWeb\DoAn-CoSo\DoAn_CoSo\DoAnCoSo\DoAnCoSo\
+build_property.ProjectDir = D:\LapTrinhWeb\DoAnCoSo\DoAnCoSo\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\LapTrinhWeb\DoAn-CoSo\DoAn_CoSo\DoAnCoSo\DoAnCoSo
+build_property.MSBuildProjectDirectory = D:\LapTrinhWeb\DoAnCoSo\DoAnCoSo
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/LoaiTruongs/Create.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/ChiTietQuyDinhs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2hpVGlldFF1eURpbmhzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/ChiTietQuyDinhs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2hpVGlldFF1eURpbmhzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/ChiTietQuyDinhs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2hpVGlldFF1eURpbmhzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/ChiTietQuyDinhs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2hpVGlldFF1eURpbmhzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/ChiTietQuyDinhs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2hpVGlldFF1eURpbmhzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/CuocThis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VvY1RoaXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/CuocThis/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VvY1RoaXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/CuocThis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VvY1RoaXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/CuocThis/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VvY1RoaXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/CuocThis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VvY1RoaXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/LoaiTruongs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9haVRydW9uZ3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/LoaiTruongs/Delete.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/LoaiTruongs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9haVRydW9uZ3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/LoaiTruongs/Details.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/LoaiTruongs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9haVRydW9uZ3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/LoaiTruongs/Edit.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/LoaiTruongs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9haVRydW9uZ3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/LoaiTruongs/Index.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/LoaiTruongs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9haVRydW9uZ3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/LoaiTruongs/_ViewImports.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/LoaiTruongs/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9haVRydW9uZ3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/MonThis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW9uVGhpc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/MonThis/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW9uVGhpc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/MonThis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW9uVGhpc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/MonThis/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW9uVGhpc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/MonThis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW9uVGhpc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/PhieuDangKies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhpZXVEYW5nS2llc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/PhieuDangKies/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhpZXVEYW5nS2llc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/PhieuDangKies/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhpZXVEYW5nS2llc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/PhieuDangKies/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhpZXVEYW5nS2llc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/PhieuDangKies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhpZXVEYW5nS2llc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/QuyDinhs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUXV5RGluaHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/QuyDinhs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUXV5RGluaHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/QuyDinhs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUXV5RGluaHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/QuyDinhs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUXV5RGluaHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/QuyDinhs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUXV5RGluaHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/Truongs/Create.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/Truongs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1b25nc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/Truongs/Delete.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/Truongs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1b25nc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/Truongs/Details.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/Truongs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1b25nc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/Truongs/Edit.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/Truongs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1b25nc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/Truongs/Index.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/Truongs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1b25nc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/_ViewImports.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/_ViewStart.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/Login.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/Logout.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/Register.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/_ViewImports.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Views/Home/Index.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Views/CuocThis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VvY1RoaXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Views/Home/Privacy.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Views/Shared/Error.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Views/PhieuDangKies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVEYW5nS2llc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Views/PhieuDangKies/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVEYW5nS2llc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Views/PhieuDangKies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVEYW5nS2llc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Views/Shared/_LoginPartial.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Views/_ViewImports.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Views/_ViewStart.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LapTrinhWeb/DoAn-CoSo/DoAn_CoSo/DoAnCoSo/DoAnCoSo/Views/Shared/_Layout.cshtml]
+[D:/LapTrinhWeb/DoAnCoSo/DoAnCoSo/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-26bex91a7p

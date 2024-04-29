@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DoAnCoSo.Models.tbCuocThi>
+
+
+<h1 class="text-center">LỊCH THI CỦA QUẢ BÀI THI MOS</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<style>
+    .text-center{
+        text-align: center !important;
+    }
+    td {
+        height: 40px;
+    }
+    thead{
+        background-color: #cfe2ff;
+    }
+</style>
+
+<table border="1" cellspacing="0" cellpadding="10" style="width: 80%;
+                                                          margin: auto;
+                                                          max-width: 90%;">
+    <thead>
+        <tr class="text-center">
+            <th>
+                Ngày Thi/Gio Thi
+            </th>
+            <th>
+                Số Lượng
+            </th>
+            <th>
+                Địa Điểm
+            </th>
+            <th>
+                Môn Thi
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr class="text-center">
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayThi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuongThiSinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaDiem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MonThi.TenMonThi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+

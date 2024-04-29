@@ -11,7 +11,7 @@
             <div class="form-group">
                 <label asp-for="TenTruong" class="control-label">Tên trường</label>
                 <input asp-for="TenTruong" class="form-control" />
-                <span asp-validation-for="TenTruong" class="text-danger"></span>
+                
             </div>
             <div class="form-group">
                 <label asp-for="LoaiTruongId" class="control-label">Loại trường</label>
@@ -28,3 +28,51 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Trong phần head của view hoặc layout -->
+
+
+    <script>
+        // Hàm hiển thị thông báo với thời gian tự đóng
+        function showSuccessMessage() {
+            Swal.fire({
+                icon: 'success',
+                title: '@TempData["SuccessMessage"]',
+                showConfirmButton: false,
+                timer: 1500,
+                onClose: function () {
+                    // Sau khi thông báo tự đóng, chuyển hướng đến trang Index
+                    window.location.href = '@Url.Action("Index", "Truongs")';
+                }
+            });
+        }
+
+        // Hàm hiển thị thông báo lỗi với thời gian tự đóng
+        function showErrorMessage() {
+            Swal.fire({
+                icon: 'error',
+                title: '@TempData["ErrorMessage"]',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
+        // Gọi hàm hiển thị thông báo khi SuccessMessage hoặc ErrorMessage có giá trị
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                showSuccessMessage();
+            </text>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <text>
+                showErrorMessage();
+            </text>
+        }
+    </script>
+
+
+}

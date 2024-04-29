@@ -17,6 +17,9 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 builder.Services.AddScoped<ITruongRepository, EFTruongRepository>();
 builder.Services.AddScoped<ILoaiTruongRepository, EFLoaiTruongRepository>();
 builder.Services.AddScoped<IUserRepository, EFUserRepository>();
+builder.Services.AddScoped<IMonThiRepository, EFMonThiRepository>();
+builder.Services.AddScoped<ICuocThiRepository, EFCuocThiRepository>();
+builder.Services.AddScoped<IQuyDinhRepository, EFQuyDinhRepository>();
 
 
 

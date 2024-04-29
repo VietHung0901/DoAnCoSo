@@ -15,7 +15,7 @@ namespace DoAnCoSo.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=LAPTOP-BGSRQD70\\SQLEXPRESS;Initial Catalog=MOS;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                optionsBuilder.UseSqlServer("Data Source=LAPTOP-BGSRQD70\\SQLEXPRESS;Initial Catalog=MOS1;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
             }
         }
         public DbSet<tbLoaiTruong> tbLoaiTruong { get; set; }

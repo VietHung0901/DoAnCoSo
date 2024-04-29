@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DoAnCoSo.Models;
 using Microsoft.AspNetCore.Authorization;
+using DoAnCoSo.Repositories;
 
 namespace DoAnCoSo.Areas.Admin.Controllers
 {
@@ -54,12 +55,22 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(tbLoaiTruong LoaiTruong)
         {
+            if (string.IsNullOrEmpty(LoaiTruong.TenLoaiTruong))
+            {
+                TempData["ErrorMessage"] = "Vui lòng nhập đầy đủ";
+                return View(LoaiTruong);
+            }
+
             //Kiểm tra xem tên trường đã tồn tại hay chưa
             if (!NameLoaiTruongExists(LoaiTruong.TenLoaiTruong))
             {
                 _context.tbLoaiTruong.Add(LoaiTruong);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                TempData["SuccessMessage"] = "Đã thêm loại trường thành công."; 
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Đã tồn tại tên loại trường, vui lòng nhập tên khác";
             }
             //Chưa xử lý được việc xuất thông báo "Tên loại trường đã tồn tại"
             return View(LoaiTruong);
@@ -90,12 +101,19 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            if (string.IsNullOrEmpty(LoaiTruong.TenLoaiTruong))
+            {
+                TempData["ErrorMessage"] = "Vui lòng nhập đầy đủ thông tin.";
+                return View(LoaiTruong);
+            }
+
             if (!NameLoaiTruongExists(LoaiTruong.TenLoaiTruong))
             {
                 try
                 {
                     _context.tbLoaiTruong.Update(LoaiTruong);
                     await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Dữ liệu đã được cập nhật thành công.";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -108,11 +126,11 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
-            //Chưa xử lý được việc xuất thông báo "Tên loại trường đã tồn tại"
+            TempData["ErrorMessage"] = "Tên trùng vui lòng chọn tên khác.";
             return View(LoaiTruong);
         }
+
 
         // GET: Admin/LoaiTruongs/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -134,21 +152,29 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         // POST: Admin/LoaiTruongs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(int id, tbLoaiTruong LoaiTruong)
         {
             //Kiểm tra id của loại trường này đã được gán cho trường nào chưa
-            if(!tbTruongExists(id))
+            if (!tbTruongExists(id))
             {
                 var tbLoaiTruong = await _context.tbLoaiTruong.FindAsync(id);
                 if (tbLoaiTruong != null)
                 {
                     _context.tbLoaiTruong.Remove(tbLoaiTruong);
+                    await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Loại trường đã được xóa thành công!";
                 }
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                else
+                {
+                    TempData["ErrorMessage"] = "Không thể xóa được trường này!";
+                }
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Không thể xóa được trường này!";
             }
             //Cần trả về một bảng thông báo chứ không phải là môjt content(view)
-            return Content("Tồn tại trường đang sử dụng Loại trường này");
+            return View(LoaiTruong);
         }
 
         private bool tbLoaiTruongExists(int id)

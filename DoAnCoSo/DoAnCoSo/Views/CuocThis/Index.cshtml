@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DoAnCoSo.Models.tbCuocThi>
+@{
+    ApplicationDbContext _context = new ApplicationDbContext(); 
+}
+
+<h1 class="text-center">DANH SÁCH CÁC CUỘC THI</h1>
+
+<style>
+    .text-center{
+        text-align: center !important;
+    }
+    td {
+        height: 40px;
+    }
+    thead{
+        background-color: #cfe2ff;
+    }
+</style>
+
+<table border="1" cellspacing="0" cellpadding="10" style="width: 80%;
+                                                          margin: auto;
+                                                          max-width: 90%;">
+    <thead>
+        <tr class="text-center">
+            <th>
+                Ngày Thi/Gio Thi
+            </th>
+            <th>
+                Số Lượng
+            </th>
+            <th>
+                Địa Điểm
+            </th>
+            <th>
+                Môn Thi
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+            var result = from c in _context.tbPhieuDangKy
+                         where item.Id == c.CuocThiId
+                        select c;
+            <tr class="text-center">
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayThi)
+                </td>
+                <td>
+                    @result.Count().ToString()/@Html.DisplayFor(modelItem => item.SoLuongThiSinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaDiem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MonThi.TenMonThi)
+                </td>
+                <td>
+                    <a asp-controller="PhieuDangKies" asp-action="Create" asp-route-cuocThiId="@item.Id">Đăng ký thi</a>
+                </td>
+            </tr>
+    }
+    </tbody>
+</table>
+

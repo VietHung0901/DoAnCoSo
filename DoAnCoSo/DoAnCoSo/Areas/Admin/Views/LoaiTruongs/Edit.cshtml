@@ -1,4 +1,6 @@
-﻿@model DoAnCoSo.Models.tbLoaiTruong
+﻿    
+@model DoAnCoSo.Models.tbLoaiTruong
+
 
 <h4>Sửa thông tin loại trường</h4>
 <hr />
@@ -10,7 +12,6 @@
             <div class="form-group">
                 <label asp-for="TenLoaiTruong" class="control-label"></label>
                 <input asp-for="TenLoaiTruong" class="form-control" />
-                <span asp-validation-for="TenLoaiTruong" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
@@ -22,4 +23,49 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Trong phần head của view hoặc layout -->
+    <script>
+        // Hàm hiển thị thông báo với thời gian tự đóng
+        function showSuccessMessage() {
+            Swal.fire({
+                icon: 'success',
+                title: '@TempData["SuccessMessage"]',
+                showConfirmButton: false,
+                timer: 1500,
+                onClose: function () {
+                    // Sau khi thông báo tự đóng, chuyển hướng đến trang Index
+                    window.location.href = '@Url.Action("Index", "LoaiTruongs")';
+                }
+            });
+        }
+
+        // Hàm hiển thị thông báo lỗi với thời gian tự đóng
+        function showErrorMessage() {
+            Swal.fire({
+                icon: 'error',
+                title: '@TempData["ErrorMessage"]',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
+        // Gọi hàm hiển thị thông báo khi SuccessMessage hoặc ErrorMessage có giá trị
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                showSuccessMessage();
+            </text>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <text>
+                showErrorMessage();
+            </text>
+        }
+    </script>
+}
 
