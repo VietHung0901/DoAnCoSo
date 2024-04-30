@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "M9D0Uf2XUY2ZmbTU1M62Yl1d0oBmHamA4ICpipsIoBE=",
+  "Hash": "+0bnFhX2rZaG+MZMKROAU1UHfi945pWaGOGnNKmsv6g=",
   "Source": "DoAnCoSo",
   "BasePath": "_content/DoAnCoSo",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "DoAnCoSo\\wwwroot",
       "Source": "DoAnCoSo",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "Pattern": "**"
     }
@@ -1803,10 +1803,10 @@
       "OriginalItemSpec": "C:\\Users\\THIEN LY\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\wordpressAdminTheme.min.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\obj\\Debug\\net8.0\\scopedcss\\bundle\\DoAnCoSo.styles.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\obj\\Debug\\net8.0\\scopedcss\\bundle\\DoAnCoSo.styles.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "DoAnCoSo.styles.css",
       "AssetKind": "All",
@@ -1819,13 +1819,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\obj\\Debug\\net8.0\\scopedcss\\bundle\\DoAnCoSo.styles.css"
+      "OriginalItemSpec": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\obj\\Debug\\net8.0\\scopedcss\\bundle\\DoAnCoSo.styles.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\DoAnCoSo.bundle.scp.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\DoAnCoSo.bundle.scp.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "DoAnCoSo.bundle.scp.css",
       "AssetKind": "All",
@@ -1838,13 +1838,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\DoAnCoSo.bundle.scp.css"
+      "OriginalItemSpec": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\DoAnCoSo.bundle.scp.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\menuAdmin.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\menuAdmin.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "css/menuAdmin.css",
       "AssetKind": "All",
@@ -1860,10 +1860,10 @@
       "OriginalItemSpec": "wwwroot\\css\\menuAdmin.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\quancao.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\quancao.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "css/quancao.css",
       "AssetKind": "All",
@@ -1879,10 +1879,10 @@
       "OriginalItemSpec": "wwwroot\\css\\quancao.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\reset.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\reset.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "css/reset.css",
       "AssetKind": "All",
@@ -1898,10 +1898,10 @@
       "OriginalItemSpec": "wwwroot\\css\\reset.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\section3.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\section3.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "css/section3.css",
       "AssetKind": "All",
@@ -1917,10 +1917,10 @@
       "OriginalItemSpec": "wwwroot\\css\\section3.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\site.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\site.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1936,10 +1936,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\favicon.ico",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\favicon.ico",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\anh1.jpg",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\anh1.jpg",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "images/anh1.jpg",
       "AssetKind": "All",
@@ -1974,10 +1974,10 @@
       "OriginalItemSpec": "wwwroot\\images\\anh1.jpg"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\anh2.png",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\anh2.png",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "images/anh2.png",
       "AssetKind": "All",
@@ -1993,10 +1993,10 @@
       "OriginalItemSpec": "wwwroot\\images\\anh2.png"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\anh31.png",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\anh31.png",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "images/anh31.png",
       "AssetKind": "All",
@@ -2012,10 +2012,10 @@
       "OriginalItemSpec": "wwwroot\\images\\anh31.png"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\background.png",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\background.png",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "images/background.png",
       "AssetKind": "All",
@@ -2031,10 +2031,10 @@
       "OriginalItemSpec": "wwwroot\\images\\background.png"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\background1.png",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\background1.png",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "images/background1.png",
       "AssetKind": "All",
@@ -2050,10 +2050,10 @@
       "OriginalItemSpec": "wwwroot\\images\\background1.png"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\huybaithi.png",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\huybaithi.png",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "images/huybaithi.png",
       "AssetKind": "All",
@@ -2069,10 +2069,10 @@
       "OriginalItemSpec": "wwwroot\\images\\huybaithi.png"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\imagett.jpg",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\imagett.jpg",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "images/imagett.jpg",
       "AssetKind": "All",
@@ -2088,10 +2088,10 @@
       "OriginalItemSpec": "wwwroot\\images\\imagett.jpg"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\imagett1.jpg",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\imagett1.jpg",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "images/imagett1.jpg",
       "AssetKind": "All",
@@ -2107,10 +2107,10 @@
       "OriginalItemSpec": "wwwroot\\images\\imagett1.jpg"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\imagett2.png",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\imagett2.png",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "images/imagett2.png",
       "AssetKind": "All",
@@ -2126,10 +2126,10 @@
       "OriginalItemSpec": "wwwroot\\images\\imagett2.png"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\Logo.png",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\Logo.png",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "images/Logo.png",
       "AssetKind": "All",
@@ -2145,10 +2145,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Logo.png"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\quy-dinh-dang-ky.png",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\quy-dinh-dang-ky.png",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "images/quy-dinh-dang-ky.png",
       "AssetKind": "All",
@@ -2164,10 +2164,10 @@
       "OriginalItemSpec": "wwwroot\\images\\quy-dinh-dang-ky.png"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\vanhung.jpg",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\vanhung.jpg",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "images/vanhung.jpg",
       "AssetKind": "All",
@@ -2183,10 +2183,10 @@
       "OriginalItemSpec": "wwwroot\\images\\vanhung.jpg"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\vietquoc.jpg",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\vietquoc.jpg",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "images/vietquoc.jpg",
       "AssetKind": "All",
@@ -2202,10 +2202,10 @@
       "OriginalItemSpec": "wwwroot\\images\\vietquoc.jpg"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\site.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\site.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -2221,10 +2221,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -2240,10 +2240,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -2259,10 +2259,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -2278,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -2297,10 +2297,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -2316,10 +2316,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -2335,10 +2335,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -2354,10 +2354,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -2373,10 +2373,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -2392,10 +2392,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -2411,10 +2411,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -2430,10 +2430,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -2449,10 +2449,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -2468,10 +2468,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -2487,10 +2487,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -2506,10 +2506,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -2525,10 +2525,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -2544,10 +2544,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -2563,10 +2563,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -2582,10 +2582,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -2601,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -2620,10 +2620,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -2639,10 +2639,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -2658,10 +2658,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -2677,10 +2677,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -2696,10 +2696,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -2715,10 +2715,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -2734,10 +2734,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -2753,10 +2753,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -2772,10 +2772,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -2791,10 +2791,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -2810,10 +2810,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -2829,10 +2829,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -2848,10 +2848,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -2867,10 +2867,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -2886,10 +2886,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -2905,10 +2905,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -2924,10 +2924,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -2943,10 +2943,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -2962,10 +2962,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -2981,10 +2981,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -3000,10 +3000,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -3019,10 +3019,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -3038,10 +3038,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -3057,10 +3057,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -3076,10 +3076,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -3095,10 +3095,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -3114,10 +3114,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -3133,10 +3133,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -3152,10 +3152,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -3171,10 +3171,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -3190,10 +3190,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -3209,10 +3209,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -3228,10 +3228,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -3247,10 +3247,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -3266,10 +3266,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -3285,10 +3285,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "ContentRoot": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
       "BasePath": "_content/DoAnCoSo",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",

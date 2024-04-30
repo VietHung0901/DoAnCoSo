@@ -17,14 +17,24 @@
     .registration-form {
         max-width: 500px;
         margin: 0 auto;
+        text-align: center;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: flex-start;
     }
 
     .form-group {
         margin-bottom: 20px;
+        text-align: left;
     }
 
     .form-label {
         font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
     }
 
     .form-input {
@@ -32,79 +42,97 @@
         padding: 8px;
         border: 1px solid #ccc;
         border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .form-image {
+        flex-basis: 30%;
+        margin-right: 20px;
+    }
+
+    .form-info {
+        flex-basis: 70%;
     }
 
     .form-submit {
         text-align: center;
     }
 
-    .back-link {
-        display: block;
-        text-align: center;
-        margin-top: 20px;
+    .btn {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
     }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
 </style>
 
 <div class="registration-form">
-    <h2>Phiếu đăng ký cuộc thi</h2>
-    <hr />
-
-    <div class="form-group">
-        <label class="form-label" for="cccd">CCCD</label>
-        <input class="form-input" type="text" id="cccd" name="cccd" value="@cccd" readonly />
+    <div class="form-image">
+        <div class="form-group">
+            <label class="form-label" for="image">Ảnh</label>
+            <img src="@image" alt="không hiện ảnh" />
+        </div>
+        <div class="form-submit">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="CuocThiId" class="control-label" value="@ViewBag.CuocThiId" />
+                <input type="hidden" asp-for="UserId" class="control-label" value="@userId" />
+                <input type="submit" value="Xác nhận" class="btn btn-primary" />
+            </form>
+        </div>
     </div>
+    <div class="form-info">
+        <h2 style="margin: 10px auto;">Phiếu đăng ký cuộc thi</h2>
+        <hr />
 
-    <div class="form-group">
-        <label class="form-label" for="hoten">Họ và tên</label>
-        <input class="form-input" type="text" id="hoten" name="hoten" value="@Hoten" readonly />
-    </div>
+        <div>
+            <div class="form-group">
+                <label class="form-label" for="cccd">CCCD</label>
+                <input class="form-input" type="text" id="cccd" name="cccd" value="@cccd" readonly />
+            </div>
 
-    <div class="form-group">
-        <label class="form-label" for="image">Ảnh</label>
-        <img src="@image" alt="không hiện ảnh" />
-    </div>
+            <div class="form-group">
+                <label class="form-label" for="hoten">Họ và tên</label>
+                <input class="form-input" type="text" id="hoten" name="hoten" value="@Hoten" readonly />
+            </div>
 
-    <div class="form-group">
-        <label class="form-label" for="sdt">Số điện thoại</label>
-        <input class="form-input" type="text" id="sdt" name="sdt" value="@sdt" readonly />
-    </div>
+            <div class="form-group">
+                <label class="form-label" for="sdt">Số điện thoại</label>
+                <input class="form-input" type="text" id="sdt" name="sdt" value="@sdt" readonly />
+            </div>
 
-    <div class="form-group">
-        <label class="form-label" for="diachi">Địa chỉ</label>
-        <input class="form-input" type="text" id="diachi" name="diachi" value="@diachi" readonly />
-    </div>
+            <div class="form-group">
+                <label class="form-label" for="diachi">Địa chỉ</label>
+                <input class="form-input" type="text" id="diachi" name="diachi" value="@diachi" readonly />
+            </div>
 
-    <div class="form-group">
-        @{
-            string gt = "Nam"; if (gioitinh == 0) gt = "Nữ";
-        }
-        <label class="form-label" for="gioitinh">Giới tính</label>
-        <input class="form-input" type="text" id="gioitinh" name="gioitinh" value="@gt.ToString()" readonly />
-    </div>
+            <div class="form-group">
+                @{
+                    string gt = "Nam"; if (gioitinh == 0) gt = "Nữ";
+                }
+                <label class="form-label" for="gioitinh">Giới tính</label>
+                <input class="form-input" type="text" id="gioitinh" name="gioitinh" value="@gt.ToString()" readonly />
+            </div>
 
-    <div class="form-group">
-        <label class="form-label" for="truong">Trường</label>
-        <input class="form-input" type="text" id="truong" name="truong" value="@Truong.TenTruong.ToString()" readonly />
-    </div>
+            <div class="form-group">
+                <label class="form-label" for="truong">Trường</label>
+                <input class="form-input" type="text" id="truong" name="truong" value="@Truong.TenTruong.ToString()" readonly />
+            </div>
 
-    <div class="form-group">
-        <label class="form-label" for="email">Email</label>
-        <input class="form-input" type="email" id="email" name="email" value="@email" readonly />
-    </div>
-
-    <div class="form-submit">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="CuocThiId" class="control-label" value="@ViewBag.CuocThiId" />
-            <input type="hidden" asp-for="UserId" class="control-label" value="@userId" />
-            <input type="submit" value="Xác nhận" class="btn btn-primary" />
-        </form>
+            <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-input" type="email" id="email" name="email" value="@email" readonly />
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="back-link">
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

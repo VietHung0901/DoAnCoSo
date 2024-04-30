@@ -10,10 +10,10 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="~/css/quancao.css" />
     <link rel="stylesheet" href="~/css/section3.css">
+
 </head>
 <body>
     <div class="wrapper">
-
         <div>
             <div class="header">
                 <a id="logo" href="">
@@ -21,211 +21,25 @@
                 </a>
                 <nav class="container">
                     <ul class="main-menu">
-                        <li><a asp-controller="CuocThis" asp-action="Index">Cuộc thi</a></li>
-                        <li><a asp-controller="PhieuDangKies" asp-action="Index">Phiếu đăng ký</a></li>
+                        <li><a asp-area="" asp-controller="CuocThis" asp-action="Index">Cuộc thi</a></li>
+                        <li><a asp-area="" asp-controller="PhieuDangKies" asp-action="Index">Phiếu đăng ký</a></li>
                         <li><a href="">Phiếu kết quả</a></li>
                     </ul>
                 </nav>
                     <partial name="_LoginPartial" />
             </div>
         </div>
-
-        
-        @* <section class="section1">
-            <div class="container-qc">
-                <img class="advertisement-qc"
-                     src="~/images/anh1.jpg"
-                     alt="Advertisement 1" />
-                <img class="advertisement-qc"
-                     src="~/images/anh2.png"
-                     alt="Advertisement 2" />
-                <img class="advertisement-qc"
-                     src="~/images/imagett.jpg"
-                     alt="Advertisement 3" />
-                <img class="advertisement-qc"
-                     src="~/images/anh2.png"
-                     alt="Advertisement 4" />
-                <img class="advertisement-qc"
-                     src="~/images/imagett.jpg"
-                     alt="Advertisement 5" />
-                <!-- Thêm các hình ảnh quảng cáo khác cần hiển thị -->
-                <div class="page-selector-qc">
-                    <button onclick="showAdvertisement(0)"></button>
-                    <button onclick="showAdvertisement(1)"></button>
-                    <button onclick="showAdvertisement(2)"></button>
-                    <button onclick="showAdvertisement(3)"></button>
-                    <button onclick="showAdvertisement(4)"></button>
-                    <!-- Thêm các nút cho các trang khác nếu cần -->
-                </div>
-            </div>
-        </section> *@
-
         <section class="section2">
-
-            @* <div class="wrap">
-                <div class="_lable" id="show_frm">LỊCH THI &amp; TRẢ KẾT QUẢ</div>
-                <div class="_all_field">
-                    <div class="_frm_gr">
-                        <select name="test_type" class="item" id="test_type">
-                            <option value="" selected disabled hidden>Chọn bài thi</option>
-                            <option value="WORD">WORD</option>
-                            <option value="POWERPOINT">POWERPOINT</option>
-                            <option value="EXCEL">EXCEL</option>
-                        </select>
-                    </div>
-                    <div class="_frm_gr" id="h_daterangepicker">
-                        <input type="text"
-                               id="start_date"
-                               class="date_range"
-                               placeholder="Từ thời gian" />
-                        <label for="end_date" id="tg-den">Đến</label>
-                        <input type="text"
-                               id="end_date"
-                               class="date_range"
-                               placeholder="Đến thời gian" />
-                    </div>
-                    <div class="_frm_gr">
-                        <select name="location" class="item" id="location">
-                            <option value="" selected disabled hidden>Địa điểm thi</option>
-                            <option value="IIG_Vietnam_HQ">
-                                Trụ sở chính IIG Việt Nam
-                            </option>
-                            <option value="IIG_Vietnam_DN">
-                                IIG Việt Nam chi nhánh Đà Nẵng
-                            </option>
-                        </select>
-                    </div>
-                </div>
-                <button class="search_button">Tìm kiếm</button>
-            </div> *@
-
             @RenderBody()
-
-            <div style="width: 100%">
-                <div>
-                    <p class="p-tt">Tin tức & thời sự</p>
-                </div>
-                <div class="div-chung" style="display: flex">
-                    <div class="div-70" style="width: 65.8333333333%">
-                        <div class="div-trai" style="width: 380px; margin-right: 30px">
-                            <div class="img-sticker">
-                                <img src="~/images/imagett2.png" alt="" />
-                            </div>
-                            <p class="sticker">
-                                <span class="cat">TOEFL CHALLENGE</span>
-                                <span class="timer">21/03/2024</span>
-                            </p>
-                            <div style="text-align: left; padding: 10px 20px 20px 20px">
-                                <a href="">
-                                    <h3>
-                                        TOEFL Challenge 2022-2023 has officially launched in Hanoi
-                                    </h3>
-                                </a>
-                                <p>
-                                    TOEFL Challenge – A prestigious nationwide English language
-                                    competition for students from Grade in Hanoi...
-                                </p>
-                            </div>
-                        </div>
-                        <div class="div-trai" style="width: 380px; margin-right: 30px">
-                            <div class="img-sticker">
-                                <img src="~/images/imagett1.jpg" alt="" />
-                            </div>
-                            <p class="sticker">
-                                <span class="cat">TOEFL CHALLENGE</span>
-                                <span class="timer">21/03/2024</span>
-                            </p>
-                            <div style="text-align: left; padding: 20px">
-                                <a href="">
-                                    <h3>
-                                        TOEFL Challenge 2022-2023 has officially launched in Hanoi
-                                    </h3>
-                                </a>
-                                <p>
-                                    TOEFL Challenge – A prestigious nationwide English language
-                                    competition for students from Grade in Hanoi...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="div-30" style="width: 34.1666666667%">
-                        <div class="div-phai" style="width: 280px">
-                            <p class="sticker">
-                                <span class="cat">TOEFL CHALLENGE</span>
-                                <span class="timer">21/03/2024</span>
-                            </p>
-                            <h3>
-                                TOEFL Challenge 2022-2023 has officially launched in Hanoi
-                            </h3>
-                        </div>
-                        <div class="div-phai" style="width: 280px; margin-top: 25px">
-                            <p class="sticker">
-                                <span class="cat">TOEFL CHALLENGE</span>
-                                <span class="timer">21/03/2024</span>
-                            </p>
-                            <h3>
-                                Help your children develop English skills with the TOEFL
-                            </h3>
-                        </div>
-                        <div class="div-phai" style="width: 280px; margin-top: 25px">
-                            <p class="sticker">
-                                <span class="cat">TOEFL CHALLENGE</span>
-                                <span class="timer">21/03/2024</span>
-                            </p>
-                            <h3>
-                                Launching the TOEFL English Competition in Hai Phong for thei
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <button class="div-tt">See all</button>
-                </div>
-            </div>
         </section>
     </div>
     <div>
-    
-        @* <section class="section3">
-            <div style="width: 100%">
-                <div class="div-chung" style="display: flex; margin-top: 50px;">
-                    <div class="div-70" style="width: 35%">
-                        <div class="div-trai" style="width: 480px; margin-right: 30px">
-                            <div class="img-31">
-                                <img src="~/images/anh31.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="div-30" style="width: 40%">
-                        <div class="div-phai-sc3" style="width: 580px; ">
-                            <div>
-                                <p class="p-sc3">Lĩnh vực hoạt động</p>
-                            </div>
-                            <p class="sticker-sc3">
-                                <span class="cat">Tổ Chức Các Bài Thi Quốc Tế</span>
-                                <span class="timer">Tư Vấn Các Giải Pháp Giáo Dục</span>
-                            </p>
-                            <p class="sticker-sc3">
-                                <span class="cat">Tổ Chức Các Bài Thi Quốc Tế</span>
-                                <span class="timer">Tư Vấn Các Giải Pháp Giáo Dục</span>
-                            </p>
-                            <div class="div-sc3">
-                                Với vai trò là Đại diện quốc gia của các tổ chức hàng đầu thế giới như Viện Khảo thí Giáo dục Hoa Kỳ (ETS), Tổ chức Khảo thí Tin học CERTIPORT, IIG Việt Nam được ủy quyền tổ chức các kỳ thi quốc tế uy tín như TOEIC, TOEFL, MOS, IC3, MCE, ACPro, Apple Swift, SAT, SSAT, GRE, CFA... IIG Việt Nam đã khẳng định được uy tín và vị thế hàng đầu của mình bằng khả năng hỗ trợ toàn diện cho các doanh nghiệp, tổ chức giáo dục và cá nhân trong việc tư vấn và cung cấp các giải pháp đào tạo ngoại ngữ và Công nghệ thông tin theo tiêu chuẩn quốc tế. Với nhiều thành tựu quan trọng đối với sự hình thành, phát triển của lĩnh vực khảo thí và kiểm định chất lượng giáo dục tại Việt Nam, IIG Việt Nam được biết đến là tổ chức cung cấp dịch vụ kiểm định chất lượng giáo dục uy tín và hàng đầu tại Việt Nam.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="div-bt-sc3">See all</button>
-            </div>
-        </section> *@
-
         <footer>
             <p>&copy; 2024 My Website. All rights reserved.</p>
         </footer>
-
     </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script>
+     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    @*<script>
         $(document).ready(function () {
             $(".sub-menu").parent("li").addClass("has-child");
         });
@@ -256,8 +70,9 @@
         } else {
             console.log("Không có quảng cáo nào được tìm thấy.");
         }
-    </script>
-    @await RenderSectionAsync("Scripts", required: false)
+    </script>*@
+    @await RenderSectionAsync("Scripts", required: false) 
+    
 </body>
 </html>
-    
+

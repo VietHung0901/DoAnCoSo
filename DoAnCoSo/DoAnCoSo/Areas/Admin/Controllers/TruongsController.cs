@@ -36,25 +36,6 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Admin/Truongs/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var tbTruong = await _context.tbTruong
-                .Include(t => t.LoaiTruong)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (tbTruong == null)
-            {
-                return NotFound();
-            }
-
-            return View(tbTruong);
-        }
-
         // GET: Admin/Truongs/Create
         public async Task<IActionResult> Create()
         {

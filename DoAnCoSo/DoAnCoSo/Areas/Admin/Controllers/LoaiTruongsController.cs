@@ -28,23 +28,6 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             return View(await _context.tbLoaiTruong.ToListAsync());
         }
 
-        // GET: Admin/LoaiTruongs/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var tbLoaiTruong = await _context.tbLoaiTruong.FirstOrDefaultAsync(m => m.Id == id);
-            if (tbLoaiTruong == null)
-            {
-                return NotFound();
-            }
-
-            return View(tbLoaiTruong);
-        }
-
         // GET: Admin/LoaiTruongs/Create
         public IActionResult Create()
         {
@@ -127,7 +110,10 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                     }
                 }
             }
-            TempData["ErrorMessage"] = "Tên trùng vui lòng chọn tên khác.";
+            else
+            {
+                TempData["ErrorMessage"] = "Tên trùng vui lòng chọn tên khác.";
+            }
             return View(LoaiTruong);
         }
 
@@ -166,14 +152,13 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 }
                 else
                 {
-                    TempData["ErrorMessage"] = "Không thể xóa được trường này!";
+                    TempData["ErrorMessage"] = "Không thể xóa được loại trường này!";
                 }
             }
             else
             {
-                TempData["ErrorMessage"] = "Không thể xóa được trường này!";
+                TempData["ErrorMessage"] = "Không thể xóa được loại trường này!";
             }
-            //Cần trả về một bảng thông báo chứ không phải là môjt content(view)
             return View(LoaiTruong);
         }
 

@@ -3,25 +3,82 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
+<style>
+    .navbar-nav {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 10px;
+    }
+
+        .navbar-nav li {
+            font-size: 16px;
+        }
+
+            .navbar-nav li a {
+                color: #333;
+                text-decoration: none;
+                padding: 10px;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+                .navbar-nav li a:hover {
+                    background-color: #f7f7f7;
+                }
+
+    #manage {
+        font-weight: bold;
+    }
+
+    #logoutForm {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #logout {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    #register,
+    #login,
+    #logout {
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+        #register:hover,
+        #login:hover,
+        #logout:hover {
+            background-color: #f7f7f7;
+        }
+</style>
+
 <ul class="navbar-nav">
-@if (SignInManager.IsSignedIn(User))
-{
-    <li class="nav-item">
-        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
-    </li>
-    <li class="nav-item">
-        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">Logout</button>
-        </form>
-    </li>
-}
-else
-{
-    <li class="nav-item">
-        <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
-    </li>
-}
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+        </li>
+        <li class="nav-item">
+            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "CuocThis", new { area = "" })">
+                <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">Logout</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </li>
+    }
 </ul>

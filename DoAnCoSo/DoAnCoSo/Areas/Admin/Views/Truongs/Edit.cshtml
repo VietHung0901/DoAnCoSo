@@ -1,10 +1,77 @@
 ﻿@model DoAnCoSo.Models.tbTruong
 
+<style>
+    h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
 
-<h1>Edit</h1>
+    hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
 
-<h4>tbTruong</h4>
-<hr />
+    .row {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .col-md-4 {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+        border-radius: 4px;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+    .text-danger {
+        color: #dc3545;
+    }
+</style>
+<h4>Sửa thông tin trường</h4>
+<hr>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -25,9 +92,6 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 
 @section Scripts {

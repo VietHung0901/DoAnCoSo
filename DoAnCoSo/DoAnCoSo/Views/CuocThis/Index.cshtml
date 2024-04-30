@@ -56,7 +56,7 @@
                     @Html.DisplayFor(modelItem => item.MonThi.TenMonThi)
                 </td>
                 <td>
-                    <a asp-controller="PhieuDangKies" asp-action="Create" asp-route-cuocThiId="@item.Id">Đăng ký thi</a>
+                    <a asp-controller="CuocThis" asp-action="Details" asp-route-Id="@item.Id">Xem chi tiết</a>
                 </td>
             </tr>
     }

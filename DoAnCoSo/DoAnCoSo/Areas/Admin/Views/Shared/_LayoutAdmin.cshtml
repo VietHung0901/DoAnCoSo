@@ -1,15 +1,14 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - DoAnCoSo</title>
-    
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/app.css" />
     <link rel="stylesheet" href="~/css/reset.css" />
-    <link rel="stylesheet" href="~/css/menuAdmin.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/quancao.css" />
+    <link rel="stylesheet" href="~/css/section3.css">
 </head>
 <body>
     <div class="wrapper">
@@ -19,42 +18,36 @@
                     <img src="~/images/Logo.png" alt="#" />
                 </a>
                 <nav class="container">
-                    <ul class="nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                               style="color: white;">
-                                Quản lý
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li class="dropdown-item">
-                                    <a class="nav-link" asp-area="Admin" asp-controller="LoaiTruongs" asp-action="Index">Quản lý loại trường</a>
-                                </li>
-                                <li class="dropdown-item">
-                                    <a class="nav-link" asp-area="Admin" asp-controller="Truongs" asp-action="Index">Quản lý trường</a>
-                                </li>
-                                <li class="dropdown-item">
-                                    <a class="nav-link" asp-area="Admin" asp-controller="MonThis" asp-action="Index">Quản lý môn thi</a>
-                                </li>
-                                <li class="dropdown-item">
-                                    <a class="nav-link" asp-area="Admin" asp-controller="QuyDinhs" asp-action="Index">Quản lý quy định</a>
-                                </li>
+                    <ul class="main-menu">
+                        <li>
+                            <a href="">Quản lý </a>
+                            <ul class="sub-menu">
+                                <li><a asp-area="Admin" asp-controller="LoaiTruongs" asp-action="Index">Loại trường</a></li>
+                                <li><a asp-area="Admin" asp-controller="Truongs" asp-action="Index">Trường</a></li>
+                                <li><a asp-area="Admin" asp-controller="MonThis" asp-action="Index">Môn thi</a></li>
+                                <li><a asp-area="Admin" asp-controller="QuyDinhs" asp-action="Index">Quy định</a></li>
                             </ul>
-
-                            <li class="dropdown-item">
-                                <a class="nav-link" asp-area="Admin" asp-controller="CuocThis" asp-action="Index">Cuoc Thi </a>
-                            </li>
-
                         </li>
-                        
                     </ul>
-                </nav>
+                </nav>                
                 <partial name="_LoginPartial" />
             </div>
         </div>
-
-        @RenderBody()
-
-        @await RenderSectionAsync("Scripts", required: false)
+        <section class="section2">
+            @RenderBody()
+        </section>
     </div>
+    <div>
+        <footer>
+            <p>&copy; 2024 My Website. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        // $(document).ready(function () {
+        //     $(".sub-menu").parent("li").addClass("has-child");
+        // });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
