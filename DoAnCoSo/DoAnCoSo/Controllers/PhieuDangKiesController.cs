@@ -62,8 +62,11 @@ namespace DoAnCoSo.Controllers
 
         public async Task<IActionResult> Create(int cuocThiId)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("https://localhost:7107/Identity/Account/Login"); // Chuyển hướng đến trang đăng nhập
+            }
             ViewBag.CuocThiId = cuocThiId;
-
             var user = await _userManager.GetUserAsync(User);
             ViewBag.UserHoTen = user.HoTen;
             ViewBag.UserCCCD = user.CCCD;
@@ -84,18 +87,38 @@ namespace DoAnCoSo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,NgayDangKy,CuocThiId,UserId")] tbPhieuDangKy tbPhieuDangKy)
         {
-
-            //Kiểm tra xem cuộc thi đã đủ thí sinh chưa
+            //Kiểm tra xem cuộc thi đã đủ thí sinh vaf user đã đăng ký cuộc thi này chưa
             if (KiemTraSoLuong(tbPhieuDangKy.CuocThiId))
             {
-                var user = await _userManager.GetUserAsync(User);
-                tbPhieuDangKy.NgayDangKy = DateTime.Now;
-                _context.tbPhieuDangKy.Add(tbPhieuDangKy);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index), new { userId = user.Id });
+                if(KiemTraUser(tbPhieuDangKy.CuocThiId, tbPhieuDangKy.UserId))
+                {
+                    var user1 = await _userManager.GetUserAsync(User);
+                    tbPhieuDangKy.NgayDangKy = DateTime.Now;
+                    _context.tbPhieuDangKy.Add(tbPhieuDangKy);
+                    await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Đăng ký thành công.";
+                    return RedirectToAction(nameof(Index), new { userId = user1.Id });
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = "Bạn đã đăng ký cuộc thi này";
+                }
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Số lượng thí sinh cho cuộc thi đã đủ";
             }
             ViewBag.CuocThiId = tbPhieuDangKy.CuocThiId;
             ViewBag.UserId = tbPhieuDangKy.UserId;
+            var user = await _userManager.GetUserAsync(User);
+            ViewBag.UserHoTen = user.HoTen;
+            ViewBag.UserCCCD = user.CCCD;
+            ViewBag.UserImage = user.ImageUrl;
+            ViewBag.UserSDT = user.SoDienThoai;
+            ViewBag.UserDiaChi = user.DiaChi;
+            ViewBag.UserGioTinh = user.GioiTinh;
+            ViewBag.UserTruong = user.TruongId;
+            ViewBag.UserEmail = user.Email;
             return View(tbPhieuDangKy);
         }
 
@@ -111,7 +134,17 @@ namespace DoAnCoSo.Controllers
                          select c;
             int dem = result.Count();
             var cuocThi = _context.tbCuocThi.FirstOrDefault(e => e.Id == cuocThiId);
-            return (dem < cuocThi.SoLuongThiSinh) ? true : false ;
+            return dem < cuocThi.SoLuongThiSinh;
+        }
+
+        private bool KiemTraUser(int cuocThiId, string userId)
+        {
+            var result = from c in _context.tbPhieuDangKy
+                         where c.CuocThiId == cuocThiId && c.UserId == userId
+                         select c;
+            if (result.Count() == 0)
+                return true;
+            return false;
         }
     }
 }

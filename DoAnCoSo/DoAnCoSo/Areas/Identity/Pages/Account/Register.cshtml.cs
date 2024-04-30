@@ -25,6 +25,7 @@ using DoAnCoSo.Areas.Admin.Models;
 using SQLitePCL;
 using DoAnCoSo.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace DoAnCoSo.Areas.Identity.Pages.Account
 {
@@ -99,7 +100,7 @@ namespace DoAnCoSo.Areas.Identity.Pages.Account
             public string DiaChi { get; set; }
             public int GioiTinh { get; set; }
             public string SoDienThoai { get; set; }
-            public string ImageUrl { get; set; }
+            public IFormFile ImageUrl { get; set; }
             public int TruongId { get; set; }
             public string? CCCD { get; set; }
 
@@ -159,16 +160,6 @@ namespace DoAnCoSo.Areas.Identity.Pages.Account
         }
 
         //Lưu đường dẫn ảnh
-        //private async Task<string> SaveImage(IFormFile image)
-        //{
-        //    var savePath = Path.Combine("wwwroot/images", image.FileName); //Thay đổi đường dẫn theo cấu hình của bạn
-
-        //    using (var fileStream = new FileStream(savePath, FileMode.Create))
-        //    {
-        //        await image.CopyToAsync(fileStream);
-        //    }
-        //    return "/images/" + image.FileName; // Trả về đường dẫn tương đối
-        //}
 
         private async Task<string> SaveImage(IFormFile image)
         {
@@ -188,13 +179,17 @@ namespace DoAnCoSo.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
-
+                var imageUrl = await SaveImage(Input.ImageUrl);
+                if (!string.IsNullOrEmpty(imageUrl))
+                {
+                    user.ImageUrl = imageUrl;
+                }
                 user.HoTen = Input.HoTen;
                 user.NgaySinh = Input.NgaySinh;
                 user.DiaChi = Input.DiaChi;
                 user.GioiTinh = Input.GioiTinh;
                 user.SoDienThoai = Input.SoDienThoai;
-                user.ImageUrl = Input.ImageUrl;
+                //user.ImageUrl = Input.ImageUrl;
                 user.TruongId = Input.TruongId;
                 user.CCCD = Input.CCCD;
 

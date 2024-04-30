@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\LapTrinhWeb\\DoAnCoSo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|d:\\laptrinhweb\\doancoso\\doancoso\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|d:\\laptrinhweb\\doancoso\\doancoso\\controllers\\phieudangkiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\controllers\\phieudangkiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,44 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1217,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Register.cshtml.cs",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ToolTip": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeToolTip": "DoAnCoSo\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ViewState": "AQIAALYAAAAAAAAAAAAgwMQAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T05:51:03.666Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\Views\\PhieuDangKies\\Create.cshtml",
               "RelativeDocumentMoniker": "DoAnCoSo\\Views\\PhieuDangKies\\Create.cshtml",
               "ToolTip": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\Views\\PhieuDangKies\\Create.cshtml",
               "RelativeToolTip": "DoAnCoSo\\Views\\PhieuDangKies\\Create.cshtml",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAEEAAAAAAAAA",
+              "ViewState": "AQIAAH0AAAAAAAAAAAAIwI4AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-29T05:24:05.644Z"
+              "WhenOpened": "2024-04-29T10:02:55.33Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "PhieuDangKiesController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\Controllers\\PhieuDangKiesController.cs",
               "RelativeDocumentMoniker": "DoAnCoSo\\Controllers\\PhieuDangKiesController.cs",
               "ToolTip": "D:\\LapTrinhWeb\\DoAnCoSo\\DoAnCoSo\\Controllers\\PhieuDangKiesController.cs",
               "RelativeToolTip": "DoAnCoSo\\Controllers\\PhieuDangKiesController.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAQwAUAAAApAAAA",
+              "ViewState": "AQIAADsAAAAAAAAAAAAvwEIAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T05:24:22.938Z"
+              "WhenOpened": "2024-04-29T05:24:22.938Z",
+              "EditorCaption": ""
             }
           ]
         },
