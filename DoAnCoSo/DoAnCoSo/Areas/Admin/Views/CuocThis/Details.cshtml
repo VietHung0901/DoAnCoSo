@@ -5,28 +5,28 @@
 <tr>
     <dl class="row">
         <th class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NgayThi)
+            Ngày Thi/Giờ Thi: 
         </th>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NgayThi)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SoLuongThiSinh)
+            Số Lượng: 
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.SoLuongThiSinh)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DiaDiem)
+            Địa Điểm:
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.DiaDiem)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MonThi)
+           Môn Thi:
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MonThi.Id)
+            @Html.DisplayFor(model => model.MonThi.TenMonThi)
         </dd>
     </dl>
 </tr>
@@ -34,4 +34,22 @@
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
+    <button id="showQuyDinhBtn">Hiển thị Quy định</button>
 </div>
+
+<div id="quyDinhContainer" style="display: none;">
+    <h2>Danh sách Quy định</h2>
+    @foreach (var quyDinh in ViewBag.QuyDinhList)
+    {
+        <div>
+            <h3>@quyDinh.TenQuyDinh</h3>
+            <p>@quyDinh.NoiDungQuyDinh</p>
+        </div>
+    }
+</div>
+
+<script>
+    document.getElementById("showQuyDinhBtn").addEventListener("click", function () {
+        document.getElementById("quyDinhContainer").style.display = "block";
+    });
+</script>

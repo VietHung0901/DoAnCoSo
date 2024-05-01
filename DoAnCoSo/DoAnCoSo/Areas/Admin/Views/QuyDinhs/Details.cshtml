@@ -1,6 +1,5 @@
 ﻿@model DoAnCoSo.Models.tbQuyDinh
 
-<h1>Thông Tin Chi Tiết</h1>
 <style>
     .container {
         display: flex;
@@ -10,30 +9,83 @@
         text-align: center;
     }
 
-    h1 {
+    .text-center {
         text-align: center;
     }
 
     .row {
-        /* --bs-gutter-x: 1.5rem;
-            --bs-gutter-y: 0; */
         display: flex;
         flex-wrap: wrap;
-        /* margin-top: calc(var(--bs-gutter-y)* -1);
-            margin-right: calc(var(--bs-gutter-x)* -.5);
-            margin-left: calc(var(--bs-gutter-x)* -.5); */
-        border: 0.1vw solid #ffffff;
-/*         width: 80vw; */
+        border: 0.1vw solid #ffff;
+        padding: 100px;
+    }
+
+    .paragraph {
+        text-align: justify;
+        margin-bottom: 20px;
+    }
+
+    h2, h3 {
+        text-align: left;
+    }
+
+    .centered-text {
+        text-align: center;
     }
 </style>
 <div class="container">
-    <dl class="row">
-        <dd class = "col-sm-10" style="font-weight: bold;">
+    <dl class="row text-center">
+        <dd class = "col-sm-10 text-center" style="font-weight: bold;">
             @Html.DisplayFor(model => model.TenQuyDinh)
         </dd>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NoiDungQuyDinh)
-        </dd>
+
+        @foreach (var paragraph in Model.NoiDungQuyDinh.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries))
+        {
+            <div class="paragraph">
+                @foreach (var line in paragraph.Split('\n'))
+                {
+                    if (line.StartsWith("Nhằm giúp"))
+                    {
+                        <h3>@line</h3>
+                    }
+                    else if (line.StartsWith("Trân trọng thông báo!"))
+                    {
+                        <p class="centered-text">@line</p>
+                    }
+                    else if (line.StartsWith("Tổ chức Giáo dục IIG Việt Nam"))
+                    {
+                        <p class="centered-text">@line</p>
+                    }
+                    else if (line.StartsWith("Lưu ý:") || line.StartsWith("1.") 
+                                                       || line.StartsWith("2.")
+                                                       || line.StartsWith("3.")
+                                                       || line.StartsWith("4.")
+                                                       || line.StartsWith("5.")
+                                                       || line.StartsWith("6.")
+                                                       || line.StartsWith("7.")
+                                                       || line.StartsWith("8.")
+                                                       || line.StartsWith("9.")
+                                                       || line.StartsWith("10.")
+                                                       || line.StartsWith("11.")
+                                                        || line.StartsWith("12.")
+                                                        || line.StartsWith("13.")
+                                                        || line.StartsWith("14.")
+                                                        || line.StartsWith("15."))
+                    
+            
+                    {
+                        // Kiểm tra nếu line bắt đầu bằng số từ 1 đến 8
+                        // hoặc bắt đầu bằng "Lưu ý:", đều tạo tiêu đề h3
+                        <h3>@line</h3>
+                    }
+                    else
+                    {
+                        <ul>@line</ul>
+                    }
+                }
+            </div>
+        }
+
     </dl>
 </div>
       
@@ -41,3 +93,7 @@
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+    
+
+
+

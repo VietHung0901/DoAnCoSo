@@ -32,8 +32,10 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.tbCuocThi.Include(t => t.MonThi);
+
             return View(await applicationDbContext.ToListAsync());
         }
+
 
         // GET: Admin/CuocThis/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -51,6 +53,8 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            var quyDinhList = await _context.tbQuyDinh.ToListAsync();
+            ViewBag.QuyDinhList = quyDinhList;
             return View(tbCuocThi);
         }
 
@@ -69,35 +73,13 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             var tbMonThis = await _monThiRepository.GetAllAsync();
             ViewBag.LoaiMonThiName = new SelectList(tbMonThis, "Id", "TenMonThi");
 
-            // Lấy ngày giờ hiện tại
-
-
             // Kiểm tra nếu không nhập địa điểm thi hoặc không chọn ngày thi
             if (string.IsNullOrEmpty(tbCuocThi.DiaDiem))
             {
                 TempData["ErrorMessage"] = "Vui lòng nhập địa điểm thi.";
                 return View(tbCuocThi);
             }
-            /*else if (tbCuocThi.NgayThi == null)
-            {
-                TempData["ErrorMessage"] = "Vui lòng nhập ngày thi.";
-                return View(tbCuocThi);
-            }
-            else if (tbCuocThi.NgayThi.Date.Year > DateTime.Now.Year + 1)
-            {
-                TempData["ErrorMessage"] = "Ngày thi không được đặt quá năm sau so với năm hiện tại.";
-                return View(tbCuocThi);
-            }
-            else if (tbCuocThi.NgayThi.Date.Year < DateTime.Now.Year)
-            {
-                TempData["ErrorMessage"] = "Ngày thi không được đặt trong quá khứ.";
-                return View(tbCuocThi);
-            }
-            else if (tbCuocThi.NgayThi > DateTime.Now)
-            {
-                TempData["ErrorMessage"] = "Ngày thi không được đặt trong tương lai.";
-                return View(tbCuocThi);
-            }*/
+          
             else if (tbCuocThi.SoLuongThiSinh == null || tbCuocThi.SoLuongThiSinh <= 50)
             {
                 TempData["ErrorMessage"] = "Vui lòng nhập số lượng thí sinh hợp lệ.";
@@ -124,7 +106,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["MonThiId"] = new SelectList(_context.tbMonThi, "Id", "Id", tbCuocThi.MonThiId);
+            ViewData["TenMonThi"] = new SelectList(_context.tbMonThi, "Id", "TenMonThi", tbCuocThi.MonThiId);
             return View(tbCuocThi);
         }
 

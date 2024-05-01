@@ -133,9 +133,10 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                     }
                 }
             }
-            TempData["ErrorMessage"] = "Tên trùng vui lòng chọn tên khác.";
+            
             return View(monThi);
         }
+
 
         // GET: Admin/MonThis/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -158,26 +159,42 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         // POST: Admin/MonThis/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(int id, tbMonThi MonThi)
         {
-            var tbMonThi = await _context.tbMonThi.FindAsync(id);
-            if (tbMonThi != null)
+            if (!tbCuocThiExists(id))
             {
-                _context.tbMonThi.Remove(tbMonThi);
+                var tbMonThi = await _context.tbMonThi.FindAsync(id);
+                if (tbMonThi != null)
+                {
+                    _context.tbMonThi.Remove(tbMonThi);
+                    await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Môn thi đã được xóa thành công!";
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = "Không thể xóa được môn thi này!";
+                }
             }
+            else
+            {
+                TempData["ErrorMessage"] = "Không thể xóa được môn thi này!";
+            }
+            //Cần trả về một bảng thông báo chứ không phải là môjt content(view)
+            return View(MonThi);
+        }
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+        private bool tbMonThiExists(int id)
+        {
+            return _context.tbMonThi.Any(e => e.Id == id);
+        }
+        private bool tbCuocThiExists(int id)
+        {
+            return _context.tbCuocThi.Any(e => e.MonThiId== id);
         }
 
         private bool NameMonThiExists(string name)
         {
             return _context.tbMonThi.Any(e => e.TenMonThi == name);
         }
-        private bool tbMonThiExists(int id)
-        {
-            return _context.tbMonThi.Any(e => e.Id == id);
-        }
-
     }
 }

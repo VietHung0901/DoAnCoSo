@@ -17,47 +17,24 @@
 <style>
     .container {
         display: flex;
-        justify-content: center; /* Căn đỉnh đường viền bảng ra giữa theo chiều ngang */
-        align-items: center; /* Căn giữa đường viền bảng theo chiều dọc */
-         /* Đặt chiều cao của container bằng 100% chiều cao của viewport */
+        justify-content: center; 
     }
     h1{
         text-align: center;
     }
 
     .row{
-        /* --bs-gutter-x: 1.5rem;
-        --bs-gutter-y: 0; */
         display: flex;
         flex-wrap: wrap;
-        /* margin-top: calc(var(--bs-gutter-y)* -1);
-        margin-right: calc(var(--bs-gutter-x)* -.5);
-        margin-left: calc(var(--bs-gutter-x)* -.5); */
         border: 0.1vw solid #ffffff;
         width: 80vw;
     }
 </style>
 <div class="container">
     <table class="row">
-    @* <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TenQuyDinh)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NoiDungQuyDinh)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.imageURL)
-            </th>
-        </tr>
-    </thead> *@
     <tbody>
         @foreach (var item in Model) {
                 <tr>
-                    @* <td>
-                        @Html.DisplayFor(modelItem => item.TenQuyDinh)
-                    </td> *@
                     <td>
                         <img class="quydinh-img" src="@Html.DisplayFor(modelItem => item.imageURL)" style="width: 200px; height: 150px;"/>
                     </td>

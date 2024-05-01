@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ePG+qB8ZzKOQQG8QOpkPB4CVDdcVThnY/6Kabs5YeRk=",
+  "Hash": "z//r5NvNT+OOy+SiK+Whf8ApX0bShOejpwlwsKefioY=",
   "Source": "DoAnCoSo",
   "BasePath": "_content/DoAnCoSo",
   "Mode": "Default",
@@ -2162,6 +2162,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\quy-dinh-dang-ky.png"
+    },
+    {
+      "Identity": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\thisinhthamdubaithi.png",
+      "SourceId": "DoAnCoSo",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "BasePath": "_content/DoAnCoSo",
+      "RelativePath": "images/thisinhthamdubaithi.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\thisinhthamdubaithi.png"
     },
     {
       "Identity": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\site.js",

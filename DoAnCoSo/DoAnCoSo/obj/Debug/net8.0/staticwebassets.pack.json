@@ -73,6 +73,10 @@
       "PackagePath": "staticwebassets\\images\\quy-dinh-dang-ky.png"
     },
     {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\thisinhthamdubaithi.png",
+      "PackagePath": "staticwebassets\\images\\thisinhthamdubaithi.png"
+    },
+    {
       "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
