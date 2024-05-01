@@ -79,7 +79,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 TempData["ErrorMessage"] = "Vui lòng nhập địa điểm thi.";
                 return View(tbCuocThi);
             }
-          
+
             else if (tbCuocThi.SoLuongThiSinh == null || tbCuocThi.SoLuongThiSinh <= 50)
             {
                 TempData["ErrorMessage"] = "Vui lòng nhập số lượng thí sinh hợp lệ.";
@@ -122,12 +122,13 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(tbCuocThi.DiaDiem) && tbCuocThi.SoLuongThiSinh != null && tbCuocThi.SoLuongThiSinh > 50)
             {
                 try
                 {
                     _context.Update(tbCuocThi);
                     await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Cập nhật cuộc thi thành công.";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -140,9 +141,12 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
-            ViewData["MonThiId"] = new SelectList(_context.tbMonThi, "Id", "Id", tbCuocThi.MonThiId);
+            else
+            {
+                TempData["ErrorMessage"] = "Dữ liệu không hợp lệ.";
+                return RedirectToAction(nameof(Edit), new { id = tbCuocThi.Id });
+            }
             return View(tbCuocThi);
         }
 
@@ -168,16 +172,17 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         // POST: Admin/CuocThis/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(int id, tbCuocThi CuocThi)
         {
             var tbCuocThi = await _context.tbCuocThi.FindAsync(id);
             if (tbCuocThi != null)
             {
                 _context.tbCuocThi.Remove(tbCuocThi);
+                await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Cuộc thi đã được xóa thành công!";
             }
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return View(CuocThi);
         }
 
         private bool tbCuocThiExists(int id)
@@ -185,9 +190,9 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             return _context.tbCuocThi.Any(e => e.Id == id);
         }
 
-       /* private bool NameCuocThiExists(string name)
-        {
-            return _context.tbCuocThi.Any(e => e.t   == name);
-        }*/
+        /* private bool NameCuocThiExists(string name)
+         {
+             return _context.tbCuocThi.Any(e => e.t   == name);
+         }*/
     }
 }

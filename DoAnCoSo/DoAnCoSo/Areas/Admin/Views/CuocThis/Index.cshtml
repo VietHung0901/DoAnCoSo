@@ -62,25 +62,39 @@
     </thead>
     <tbody>
     @foreach (var item in Model) {
-            <tr class="text-center @((DateTime.Now > item.NgayThi) ? "past" : (DateTime.Now.AddDays(1) > item.NgayThi) ? "upcoming" : "all")">
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayThi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SoLuongThiSinh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DiaDiem)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MonThi.TenMonThi)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Read</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+
+            // Tạo biến để lưu trữ class của hàng
+            var rowClass = "";
+
+            // Kiểm tra xem item đó thuộc loại nào và thiết lập class cho hàng
+            if (DateTime.Now < item.NgayThi)
+            {
+                rowClass = "upcoming";
+            }
+            else
+            {
+                rowClass = "past";
+            }
+
+            <tr class="text-center @rowClass">
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayThi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoLuongThiSinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaDiem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MonThi.TenMonThi)
+                </td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Xem</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
 }
     </tbody>
 </table>
@@ -115,28 +129,9 @@
                                 row.style.display = "table-row";
                             }
                             break;
-                        // case "ascending":
-                        //     // Lấy tất cả các hàng và chuyển thành mảng để sắp xếp
-                        //     const rowsArray = Array.from(rows);
-                        //     rowsArray.sort((a, b) => {
-                        //         const dateA = new Date(a.cells[0].innerText);
-                        //         const dateB = new Date(b.cells[0].innerText);
-                        //         return dateA - dateB;
-                        //     });
-
-                        //     // Xóa tất cả các hàng hiện tại
-                        //     cuocThiTable.querySelector("tbody").innerHTML = "";
-
-                        //     // Thêm lại các hàng đã sắp xếp
-                        //     rowsArray.forEach(row => {
-                        //         cuocThiTable.querySelector("tbody").appendChild(row);
-                        //     });
-                        //     break;
                     }
                 });
             });
         });
-
-
     </script>
 }

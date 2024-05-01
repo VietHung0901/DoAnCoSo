@@ -120,8 +120,6 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,TenTruong,LoaiTruongId")] tbTruong tbTruong)
         {
-                
-
             if (id != tbTruong.Id)
             {
                 return NotFound();

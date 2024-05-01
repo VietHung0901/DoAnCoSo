@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<DoAnCoSo.Models.tbMonThi>
 
-<h1>Index</h1>
+<h1>Tên Môn Thi</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+@* <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.TenMonThi)
+                Tên Môn Thi
             </th>
             <th></th>
         </tr>
@@ -22,10 +22,53 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Xem</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
+    </tbody>
+</table>
+ *@
+
+ <style>
+    .text-center{
+        text-align: center !important;
+    }
+    td {
+        height: 40px;
+    }
+    thead{
+        background-color: #cfe2ff;
+    }
+</style>
+
+<table id="monThiTable" class="table"
+       border="1"
+       cellspacing="0"
+       cellpadding="10"
+       style="width: 80%;
+                                margin: auto;
+                                max-width: 90%;">
+    <thead>
+        <tr class="text-center">
+            <th>Tên Môn Thi</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.TenMonThi)
+                </td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Xem</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

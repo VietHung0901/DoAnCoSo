@@ -45,62 +45,62 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 return NotFound();
             }
 
-           
+
             return View(tbQuyDinh);
         }
 
         // GET: Admin/QuyDinhs/Create
-            public IActionResult Create()
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Admin/QuyDinhs/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(tbQuyDinh quyDinh, IFormFile imageURL)
+        {
+            if (string.IsNullOrEmpty(quyDinh.TenQuyDinh) && string.IsNullOrEmpty(quyDinh.NoiDungQuyDinh))
             {
-                return View();
-            }
-
-            // POST: Admin/QuyDinhs/Create
-            [HttpPost]
-            [ValidateAntiForgeryToken]
-            public async Task<IActionResult> Create(tbQuyDinh quyDinh, IFormFile imageURL)
-            {
-                if (string.IsNullOrEmpty(quyDinh.TenQuyDinh) && string.IsNullOrEmpty(quyDinh.NoiDungQuyDinh))
-                {
-                    TempData["ErrorMessage"] = "Vui lòng nhập thông tin đầy đủ";
-                    return View(quyDinh);
-                }
-
-                if (!NameQuyDinhExists(quyDinh.TenQuyDinh))
-                {
-
-                    if (imageURL != null)
-                    {
-                    // Lưu hình ảnh đại diện
-                    quyDinh.imageURL = await SaveImage(imageURL);
-                    }
-                }
-                else
-                {
-                    TempData["ErrorMessage"] = "Đã tồn tại quy định, vui lòng nhập tên khác";
-                }
-                _context.tbQuyDinh.Add(quyDinh);
-                await _context.SaveChangesAsync();
-                TempData["SuccessMessage"] = "Đã thêm quy định thành công.";
+                TempData["ErrorMessage"] = "Vui lòng nhập thông tin đầy đủ";
                 return View(quyDinh);
             }
 
-            private async Task<string> SaveImage(IFormFile image)
+            if (!NameQuyDinhExists(quyDinh.TenQuyDinh))
             {
-                var savePath = Path.Combine("wwwroot/images", image.FileName); //
 
-                using (var fileStream = new FileStream(savePath, FileMode.Create))
+                if (imageURL != null)
                 {
-                    await image.CopyToAsync(fileStream);
+                    // Lưu hình ảnh đại diện
+                    quyDinh.imageURL = await SaveImage(imageURL);
                 }
-
-                return "/images/" + image.FileName;
             }
-
-            private bool NameQuyDinhExists(string name)
+            else
             {
-                return _context.tbQuyDinh.Any(e => e.TenQuyDinh == name);
+                TempData["ErrorMessage"] = "Đã tồn tại quy định, vui lòng nhập tên khác";
             }
+            _context.tbQuyDinh.Add(quyDinh);
+            await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Đã thêm quy định thành công.";
+            return View(quyDinh);
+        }
+
+        private async Task<string> SaveImage(IFormFile image)
+        {
+            var savePath = Path.Combine("wwwroot/images", image.FileName); //
+
+            using (var fileStream = new FileStream(savePath, FileMode.Create))
+            {
+                await image.CopyToAsync(fileStream);
+            }
+
+            return "/images/" + image.FileName;
+        }
+
+        private bool NameQuyDinhExists(string name)
+        {
+            return _context.tbQuyDinh.Any(e => e.TenQuyDinh == name);
+        }
 
 
         // GET: Admin/QuyDinhs/Edit/5

@@ -3,52 +3,20 @@
   "WorkspaceRootPath": "E:\\DoAnCoSo\\DoAnCoSo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|e:\\doancoso\\doancoso\\doancoso\\areas\\admin\\controllers\\loaitruongscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\controllers\\loaitruongscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|e:\\doancoso\\doancoso\\doancoso\\areas\\admin\\views\\monthis\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\views\\monthis\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|e:\\doancoso\\doancoso\\doancoso\\areas\\admin\\controllers\\monthiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\controllers\\monthiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|e:\\doancoso\\doancoso\\doancoso\\areas\\admin\\views\\loaitruongs\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\views\\loaitruongs\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|e:\\doancoso\\doancoso\\doancoso\\areas\\admin\\controllers\\cuocthiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\controllers\\cuocthiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|e:\\doancoso\\doancoso\\doancoso\\areas\\admin\\views\\monthis\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\views\\monthis\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|e:\\doancoso\\doancoso\\doancoso\\models\\tbcuocthi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\models\\tbcuocthi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|e:\\doancoso\\doancoso\\doancoso\\areas\\admin\\controllers\\quydinhscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\controllers\\quydinhscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|e:\\doancoso\\doancoso\\doancoso\\areas\\admin\\views\\cuocthis\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\views\\cuocthis\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|e:\\doancoso\\doancoso\\doancoso\\areas\\admin\\views\\quydinhs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\views\\quydinhs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|e:\\doancoso\\doancoso\\doancoso\\areas\\admin\\views\\quydinhs\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\views\\quydinhs\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|e:\\doancoso\\doancoso\\doancoso\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|e:\\doancoso\\doancoso\\doancoso\\wwwroot\\css\\menuadmin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\wwwroot\\css\\menuadmin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|e:\\doancoso\\doancoso\\doancoso\\areas\\admin\\controllers\\cuocthiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\controllers\\cuocthiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,28 +42,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MonThisController.cs",
-              "DocumentMoniker": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Controllers\\MonThisController.cs",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Controllers\\MonThisController.cs",
-              "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Controllers\\MonThisController.cs",
-              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Controllers\\MonThisController.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAA1wKcAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T04:11:30.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoaiTruongsController.cs",
-              "DocumentMoniker": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Controllers\\LoaiTruongsController.cs",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Controllers\\LoaiTruongsController.cs",
-              "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Controllers\\LoaiTruongsController.cs",
-              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Controllers\\LoaiTruongsController.cs",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAswDwAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T04:03:31.736Z",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\CuocThis\\Index.cshtml",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\CuocThis\\Index.cshtml",
+              "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\CuocThis\\Index.cshtml",
+              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\CuocThis\\Index.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAADUAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-01T09:06:08.617Z",
               "EditorCaption": ""
             },
             {
@@ -106,117 +61,35 @@
               "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Controllers\\CuocThisController.cs",
               "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Controllers\\CuocThisController.cs",
               "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Controllers\\CuocThisController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAABRAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAwCEAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T15:34:08.457Z"
+              "WhenOpened": "2024-05-01T09:06:05.719Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\MonThis\\Delete.cshtml",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\MonThis\\Delete.cshtml",
-              "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\MonThis\\Delete.cshtml",
-              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\MonThis\\Delete.cshtml",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAAD0AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-30T04:12:35.482Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\LoaiTruongs\\Delete.cshtml",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\LoaiTruongs\\Delete.cshtml",
-              "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\LoaiTruongs\\Delete.cshtml",
-              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\LoaiTruongs\\Delete.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-30T04:09:41.761Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "tbCuocThi.cs",
-              "DocumentMoniker": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Models\\tbCuocThi.cs",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Models\\tbCuocThi.cs",
-              "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Models\\tbCuocThi.cs",
-              "RelativeToolTip": "DoAnCoSo\\Models\\tbCuocThi.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T04:32:18.848Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "QuyDinhsController.cs",
-              "DocumentMoniker": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Controllers\\QuyDinhsController.cs",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Controllers\\QuyDinhsController.cs",
-              "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Controllers\\QuyDinhsController.cs",
-              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Controllers\\QuyDinhsController.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAxwB0AAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T15:21:36.635Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\CuocThis\\Index.cshtml",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\CuocThis\\Index.cshtml",
-              "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\CuocThis\\Index.cshtml",
-              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\CuocThis\\Index.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAAcAAAA",
+              "DocumentMoniker": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\MonThis\\Index.cshtml",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\MonThis\\Index.cshtml",
+              "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\MonThis\\Index.cshtml",
+              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\MonThis\\Index.cshtml",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAwwEkAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-29T14:31:14.221Z"
+              "WhenOpened": "2024-05-01T08:53:29.706Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\QuyDinhs\\Details.cshtml",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\QuyDinhs\\Details.cshtml",
-              "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\QuyDinhs\\Details.cshtml",
-              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\QuyDinhs\\Details.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEgAAABCAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-29T15:41:31.849Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\QuyDinhs\\Index.cshtml",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\QuyDinhs\\Index.cshtml",
-              "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\QuyDinhs\\Index.cshtml",
-              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\QuyDinhs\\Index.cshtml",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAABMAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-29T15:21:40.211Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "_LayoutAdmin.cshtml",
-              "DocumentMoniker": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-29T14:29:48.47Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "menuAdmin.css",
-              "DocumentMoniker": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\menuAdmin.css",
-              "RelativeDocumentMoniker": "DoAnCoSo\\wwwroot\\css\\menuAdmin.css",
-              "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\menuAdmin.css",
-              "RelativeToolTip": "DoAnCoSo\\wwwroot\\css\\menuAdmin.css",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-04-29T08:38:12.927Z"
+              "DocumentIndex": 1,
+              "Title": "MonThisController.cs",
+              "DocumentMoniker": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Controllers\\MonThisController.cs",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Controllers\\MonThisController.cs",
+              "ToolTip": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Controllers\\MonThisController.cs",
+              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Controllers\\MonThisController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABoAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T08:51:56.273Z",
+              "EditorCaption": ""
             }
           ]
         }

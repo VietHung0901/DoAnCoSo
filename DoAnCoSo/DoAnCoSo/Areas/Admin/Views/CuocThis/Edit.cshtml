@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
@@ -38,3 +38,49 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Trong phần head của view hoặc layout -->
+
+    <script>
+        // Hàm hiển thị thông báo với thời gian tự đóng
+        function showSuccessMessage() {
+            Swal.fire({
+                icon: 'success',
+                title: '@TempData["SuccessMessage"]',
+                showConfirmButton: false,
+                timer: 1500,
+                onClose: function () {
+                    // Sau khi thông báo tự đóng, chuyển hướng đến trang Index
+                    window.location.href = '@Url.Action("Index", "CuocThis")';
+                }
+            });
+        }
+
+        // Hàm hiển thị thông báo lỗi với thời gian tự đóng
+        function showErrorMessage() {
+            Swal.fire({
+                icon: 'error',
+                title: '@TempData["ErrorMessage"]',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
+        // Gọi hàm hiển thị thông báo khi SuccessMessage hoặc ErrorMessage có giá trị
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                showSuccessMessage();
+            </text>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <text>
+                showErrorMessage();
+            </text>
+        }
+    </script>
+
+
+}

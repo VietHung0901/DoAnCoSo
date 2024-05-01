@@ -5,8 +5,8 @@ namespace DoAnCoSo.Models
     public class tbLoaiTruong
     {
         public int Id { get; set; }
-        public string TenLoaiTruong { get; set; }
+        public string? TenLoaiTruong { get; set; }
 
-        public List<tbTruong> Truongs { get; set; }
+        public List<tbTruong>? Truongs { get; set; }
     }
 }

@@ -161,9 +161,10 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id, tbMonThi MonThi)
         {
+            var tbMonThi = await _context.tbMonThi.FindAsync(id);
             if (!tbCuocThiExists(id))
             {
-                var tbMonThi = await _context.tbMonThi.FindAsync(id);
+                
                 if (tbMonThi != null)
                 {
                     _context.tbMonThi.Remove(tbMonThi);
@@ -178,8 +179,8 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             else
             {
                 TempData["ErrorMessage"] = "Không thể xóa được môn thi này!";
+                return RedirectToAction(nameof(Delete), new { id = tbMonThi.Id });
             }
-            //Cần trả về một bảng thông báo chứ không phải là môjt content(view)
             return View(MonThi);
         }
 

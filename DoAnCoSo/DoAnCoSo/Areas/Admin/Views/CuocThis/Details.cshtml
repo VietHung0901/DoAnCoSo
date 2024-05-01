@@ -1,55 +1,45 @@
 ﻿@model DoAnCoSo.Models.tbCuocThi
 
 <h1>Cuộc Thi</h1>
-
+<style>
+    .col-sm-2 {
+        line-height: 150%;
+        font-size: 12.0pt;
+        font-family: Arial, sans-serif;
+    }
+</style>
 <tr>
     <dl class="row">
-        <th class = "col-sm-2">
-            Ngày Thi/Giờ Thi: 
-        </th>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NgayThi)
-        </dd>
-        <dt class = "col-sm-2">
-            Số Lượng: 
+        <dt class="col-sm-2">
+            Ngày Thi/Giờ Thi:  @Html.DisplayFor(model => model.NgayThi)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SoLuongThiSinh)
-        </dd>
-        <dt class = "col-sm-2">
-            Địa Điểm:
+        <dt class="col-sm-2">
+            Số Lượng: @Html.DisplayFor(model => model.SoLuongThiSinh)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DiaDiem)
-        </dd>
-        <dt class = "col-sm-2">
-           Môn Thi:
+        <dt class="col-sm-2">
+            Địa Điểm: @Html.DisplayFor(model => model.DiaDiem)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MonThi.TenMonThi)
-        </dd>
+        <dt class="col-sm-2">
+            Môn Thi: @Html.DisplayFor(model => model.MonThi.TenMonThi)
+        </dt>
+        <span class="col-sm-2">
+            Nội dung quy định:
+            <strong onclick="redirectToDetails('@Model.Id')" style="cursor: pointer; text-decoration: underline; color: #007bff;">Tại đây!</strong>
+        </span>
+        @* <span class="col-sm-2">
+            Nội dung cuộc thi:
+            <strong onclick="redirectToDetails('@Model.Id')" style="cursor: pointer; text-decoration: underline; color: #007bff;">Tại đây!</strong>
+        </span> *@
     </dl>
 </tr>
 
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
-    <button id="showQuyDinhBtn">Hiển thị Quy định</button>
-</div>
-
-<div id="quyDinhContainer" style="display: none;">
-    <h2>Danh sách Quy định</h2>
-    @foreach (var quyDinh in ViewBag.QuyDinhList)
-    {
-        <div>
-            <h3>@quyDinh.TenQuyDinh</h3>
-            <p>@quyDinh.NoiDungQuyDinh</p>
-        </div>
-    }
 </div>
 
 <script>
-    document.getElementById("showQuyDinhBtn").addEventListener("click", function () {
-        document.getElementById("quyDinhContainer").style.display = "block";
-    });
+    function redirectToDetails(Id) {
+        window.location.href = "/Admin/QuyDinhs/Index/" + Id;
+    }
 </script>

@@ -16,17 +16,17 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="TenQuyDinh" class="control-label"></label>
-                <input asp-for="TenQuyDinh" class="form-control" />
+                <textarea asp-for="TenQuyDinh" class="form-control autosize"></textarea>
                 <span asp-validation-for="TenQuyDinh" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="NoiDungQuyDinh" class="control-label"></label>
-                <input asp-for="NoiDungQuyDinh" class="form-control" />
+                <textarea asp-for="NoiDungQuyDinh" class="form-control autosize"></textarea>
                 <span asp-validation-for="NoiDungQuyDinh" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="imageURL" class="control-label"></label>
-                <input asp-for="imageURL" class="form-control" />
+                <input type="file" asp-for="imageURL" class="form-control" />
                 <span asp-validation-for="imageURL" class="text-danger"></span>
             </div>
             <div class="form-group">
