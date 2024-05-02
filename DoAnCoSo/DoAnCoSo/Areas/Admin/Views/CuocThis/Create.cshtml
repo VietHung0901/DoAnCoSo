@@ -1,42 +1,109 @@
 ﻿@model DoAnCoSo.Models.tbCuocThi
 
+<style>
+    .add-school-type {
+        margin: 20px;
+    }
 
-<h1>Create</h1>
+    h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
 
-<h4>tbCuocThi</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="NgayThi" class="control-label">Ngay Thi</label>
-                <input asp-for="NgayThi" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="SoLuongThiSinh" class="control-label">So Luong</label>
-                <input asp-for="SoLuongThiSinh" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="DiaDiem" class="control-label">Dia Diem</label>
-                <input asp-for="DiaDiem" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="MonThiId" class="control-label">Ten Mon Thi</label>
-                <select asp-for="MonThiId" class="form-control" asp-items="ViewBag.LoaiMonThiName"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+    hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    .row {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .col-md-4 {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+        border-radius: 4px;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+    .text-danger {
+        color: #dc3545;
+    }
+</style>
+<div class="add-school-type">
+    <h4>THÊM CUỘC THI</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="NgayThi" class="control-label">Ngay Thi</label>
+                    <input asp-for="NgayThi" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="SoLuongThiSinh" class="control-label">So Luong</label>
+                    <input asp-for="SoLuongThiSinh" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="DiaDiem" class="control-label">Dia Diem</label>
+                    <input asp-for="DiaDiem" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="MonThiId" class="control-label">Ten Mon Thi</label>
+                    <select asp-for="MonThiId" class="form-control" asp-items="ViewBag.LoaiMonThiName"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- Trong phần head của view hoặc layout -->

@@ -1,47 +1,156 @@
 ﻿@model DoAnCoSo.Models.tbCuocThi
 
-@{
-    ViewData["Title"] = "Edit";
-    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
-}
+<style>
+    .edit-school-type {
+        margin: 20px;
+    }
 
-<h1>Edit</h1>
+    h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
 
-<h4>tbCuocThi</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="NgayThi" class="control-label"></label>
-                <input asp-for="NgayThi" class="form-control" />
-                <span asp-validation-for="NgayThi" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SoLuongThiSinh" class="control-label"></label>
-                <input asp-for="SoLuongThiSinh" class="form-control" />
-                <span asp-validation-for="SoLuongThiSinh" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DiaDiem" class="control-label"></label>
-                <input asp-for="DiaDiem" class="form-control" />
-                <span asp-validation-for="DiaDiem" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MonThiId" class="control-label"></label>
-                <select asp-for="MonThiId" class="form-control" asp-items="ViewBag.MonThiId"></select>
-                <span asp-validation-for="MonThiId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    .row {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .col-md-4 {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+        border-radius: 4px;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+    .text-danger {
+        color: #dc3545;
+    }
+</style>
+<div class="edit-school-type">
+    <h4>SỬA THÔNG TIN CUỘC THI</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="NgayThi" class="control-label"></label>
+                    <input asp-for="NgayThi" class="form-control" />
+                    <span asp-validation-for="NgayThi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SoLuongThiSinh" class="control-label"></label>
+                    <input asp-for="SoLuongThiSinh" class="form-control" />
+                    <span asp-validation-for="SoLuongThiSinh" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DiaDiem" class="control-label"></label>
+                    <input asp-for="DiaDiem" class="form-control" />
+                    <span asp-validation-for="DiaDiem" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MonThiId" class="control-label"></label>
+                    <select asp-for="MonThiId" class="form-control" asp-items="ViewBag.MonThiId"></select>
+                    <span asp-validation-for="MonThiId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Trong phần head của view hoặc layout -->
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <script>
+        // Hàm hiển thị thông báo với thời gian tự đóng
+        function showSuccessMessage() {
+            Swal.fire({
+                icon: 'success',
+                title: '@TempData["SuccessMessage"]',
+                showConfirmButton: false,
+                timer: 1500,
+                onClose: function () {
+                    // Sau khi thông báo tự đóng, chuyển hướng đến trang Index
+                    window.location.href = '@Url.Action("Index", "CuocThis")';
+                }
+            });
+        }
+
+        // Hàm hiển thị thông báo lỗi với thời gian tự đóng
+        function showErrorMessage() {
+            Swal.fire({
+                icon: 'error',
+                title: '@TempData["ErrorMessage"]',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
+        // Gọi hàm hiển thị thông báo khi SuccessMessage hoặc ErrorMessage có giá trị
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                    showSuccessMessage();
+            </text>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <text>
+                    showErrorMessage();
+            </text>
+        }
+    </script>
+}
 

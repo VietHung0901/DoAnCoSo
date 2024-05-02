@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="~/css/quancao.css" />
     <link rel="stylesheet" href="~/css/section3.css">
 </head>
-<body>
+<body style="background-image: url('../images/background.png');">
     <div class="wrapper">
         <div>
             <div class="header">
@@ -20,10 +20,16 @@
                 <nav class="container">
                     <ul class="main-menu">
                         <li>
-                            <a href="">Quản lý </a>
+                            <a href="">Trường</a>
                             <ul class="sub-menu">
                                 <li><a asp-area="Admin" asp-controller="LoaiTruongs" asp-action="Index">Loại trường</a></li>
                                 <li><a asp-area="Admin" asp-controller="Truongs" asp-action="Index">Trường</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">Cuộc thi</a>
+                            <ul class="sub-menu">
+                                <li><a asp-area="Admin" asp-controller="CuocThis" asp-action="Index">Cuộc thi</a></li>
                                 <li><a asp-area="Admin" asp-controller="MonThis" asp-action="Index">Môn thi</a></li>
                                 <li><a asp-area="Admin" asp-controller="QuyDinhs" asp-action="Index">Quy định</a></li>
                             </ul>
@@ -33,9 +39,7 @@
                 <partial name="_LoginPartial" />
             </div>
         </div>
-        <section class="section2">
-            @RenderBody()
-        </section>
+        @RenderBody()
     </div>
     <div>
         <footer>
@@ -43,11 +47,14 @@
         </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script>
-        // $(document).ready(function () {
-        //     $(".sub-menu").parent("li").addClass("has-child");
-        // });
-    </script>
+    @* <script>
+        $(document).ready(function () {
+            $(".sub-menu").parent("li").addClass("has-child");
+        });
+    </script> *@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+
+     

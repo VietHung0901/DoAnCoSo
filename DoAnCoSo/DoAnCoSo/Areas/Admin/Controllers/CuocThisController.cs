@@ -9,6 +9,7 @@ using DoAnCoSo.Models;
 using DoAnCoSo.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DoAnCoSo.Areas.Admin.Controllers
 {
@@ -51,6 +52,8 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            var quyDinhList = await _context.tbQuyDinh.ToListAsync();
+            ViewBag.QuyDinhList = quyDinhList;
             return View(tbCuocThi);
         }
 
@@ -69,44 +72,22 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             var tbMonThis = await _monThiRepository.GetAllAsync();
             ViewBag.LoaiMonThiName = new SelectList(tbMonThis, "Id", "TenMonThi");
 
-            // Lấy ngày giờ hiện tại
-
-
             // Kiểm tra nếu không nhập địa điểm thi hoặc không chọn ngày thi
-            if (string.IsNullOrEmpty(tbCuocThi.DiaDiem))
+            if (string.IsNullOrEmpty(tbCuocThi.DiaDiem) || tbCuocThi.NgayThi == DateTime.MinValue)
             {
-                TempData["ErrorMessage"] = "Vui lòng nhập địa điểm thi.";
+                TempData["ErrorMessage"] = "Thông tin không hợp lệ!";
                 return View(tbCuocThi);
             }
-            /*else if (tbCuocThi.NgayThi == null)
-            {
-                TempData["ErrorMessage"] = "Vui lòng nhập ngày thi.";
-                return View(tbCuocThi);
-            }
-            else if (tbCuocThi.NgayThi.Date.Year > DateTime.Now.Year + 1)
-            {
-                TempData["ErrorMessage"] = "Ngày thi không được đặt quá năm sau so với năm hiện tại.";
-                return View(tbCuocThi);
-            }
-            else if (tbCuocThi.NgayThi.Date.Year < DateTime.Now.Year)
-            {
-                TempData["ErrorMessage"] = "Ngày thi không được đặt trong quá khứ.";
-                return View(tbCuocThi);
-            }
-            else if (tbCuocThi.NgayThi > DateTime.Now)
-            {
-                TempData["ErrorMessage"] = "Ngày thi không được đặt trong tương lai.";
-                return View(tbCuocThi);
-            }*/
+
             else if (tbCuocThi.SoLuongThiSinh == null || tbCuocThi.SoLuongThiSinh <= 50)
             {
-                TempData["ErrorMessage"] = "Vui lòng nhập số lượng thí sinh hợp lệ.";
+                TempData["ErrorMessage"] = "Vui lòng nhập số lượng thí sinh hợp lệ!";
                 return View(tbCuocThi);
             }
 
             _context.tbCuocThi.Add(tbCuocThi);
             await _context.SaveChangesAsync();
-            TempData["SuccessMessage"] = "Đã thêm cuộc thi thành công.";
+            TempData["SuccessMessage"] = "Đã thêm cuộc thi thành công!";
 
             return View(tbCuocThi);
         }
@@ -124,7 +105,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["MonThiId"] = new SelectList(_context.tbMonThi, "Id", "Id", tbCuocThi.MonThiId);
+            ViewData["MonThiId"] = new SelectList(_context.tbMonThi, "Id", "TenMonThi", tbCuocThi.MonThiId);
             return View(tbCuocThi);
         }
 
@@ -140,12 +121,13 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(tbCuocThi.DiaDiem) && tbCuocThi.SoLuongThiSinh != null && tbCuocThi.SoLuongThiSinh > 50)
             {
                 try
                 {
                     _context.Update(tbCuocThi);
                     await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Cập nhật cuộc thi thành công.";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -158,9 +140,12 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
-            ViewData["MonThiId"] = new SelectList(_context.tbMonThi, "Id", "Id", tbCuocThi.MonThiId);
+            else
+            {
+                TempData["ErrorMessage"] = "Dữ liệu không hợp lệ.";
+                return RedirectToAction(nameof(Edit), new { id = tbCuocThi.Id });
+            }
             return View(tbCuocThi);
         }
 
@@ -203,9 +188,5 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             return _context.tbCuocThi.Any(e => e.Id == id);
         }
 
-       /* private bool NameCuocThiExists(string name)
-        {
-            return _context.tbCuocThi.Any(e => e.t   == name);
-        }*/
     }
 }

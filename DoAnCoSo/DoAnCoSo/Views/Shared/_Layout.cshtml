@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="~/css/section3.css">
 
 </head>
-<body>
+<body style="background-image: url('../images/background.png');">
     <div class="wrapper">
         <div>
             <div class="header">
@@ -29,9 +29,7 @@
                     <partial name="_LoginPartial" />
             </div>
         </div>
-        <section class="section2">
-            @RenderBody()
-        </section>
+        @RenderBody()
     </div>
     <div>
         <footer>
@@ -39,38 +37,6 @@
         </footer>
     </div>
      <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    @*<script>
-        $(document).ready(function () {
-            $(".sub-menu").parent("li").addClass("has-child");
-        });
-        //
-        var advertisements = document.querySelectorAll(".advertisement-qc");
-        var currentPage = 0;
-
-        function showAdvertisement(pageIndex) {
-            if (pageIndex !== currentPage) {
-                advertisements[currentPage].style.opacity = "0";
-                advertisements[pageIndex].style.opacity = "1";
-                currentPage = pageIndex;
-            }
-        }
-
-        function nextAdvertisement() {
-            var nextPage = (currentPage + 1) % advertisements.length;
-            showAdvertisement(nextPage);
-        }
-
-        // Kiểm tra nếu có quảng cáo trong trang
-        if (advertisements.length > 0) {
-            // Hiển thị quảng cáo đầu tiên
-            advertisements[currentPage].style.opacity = "1";
-
-            // Tự động chuyển qua trang sau sau mỗi 3 giây
-            setInterval(nextAdvertisement, 3000);
-        } else {
-            console.log("Không có quảng cáo nào được tìm thấy.");
-        }
-    </script>*@
     @await RenderSectionAsync("Scripts", required: false) 
     
 </body>

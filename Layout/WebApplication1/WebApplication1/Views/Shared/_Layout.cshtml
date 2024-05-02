@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/Layout.css"> 
+    <script src="~/js/Layout.js"></script>
+
+    @* link để sử dụng các icon *@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body>
+    <!-- Block__Element--Modifier-->
+    <header class="header">
+        <div class="header-icon" onclick="toggleMenu()">
+            <i class="fas fa-list"></i>
+        </div>
+        <div class="header-logo">
+            <a>
+                <img src="/images/logo.jpg" alt="Alternate Text"/>
+            </a>
+        </div>
+    </header>
+    <div class="container">
+
+        <div class="container-menu">
+            <div class="menu-icon">
+                <ul class="container-menu-list">
+                    <li class="container-menu-item"><i class="fas fa-home"></i></li>
+                    <li class="container-menu-item"><i class="fas fa-trophy"></i></li>
+                    <li class="container-menu-item"><i class="fas fa-file-alt"></i></li>
+                    <li class="container-menu-item"><i class="fas fa-poll"></i></li>
+                </ul>
+            </div>
+            
+            <div class="menu-content">
+                <ul class="container-menu-list">
+                    <li class="container-menu-item">Trang chủ</li>
+                    <li class="container-menu-item">Cuộc thi</li>
+                    <li class="container-menu-item">Phiếu đăng ký</li>
+                    <li class="container-menu-item">Phiếu kết quả</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container-content">
+            <div class="container-content-body">
+                @RenderBody()
+            </div>
+            <div class="container-content-footer">
+                <footer>
+                    design by Viet Hung
+                </footer>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
