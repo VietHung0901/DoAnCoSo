@@ -184,6 +184,10 @@ namespace DoAnCoSo.Migrations
                     b.Property<int>("SoLuongThiSinh")
                         .HasColumnType("int");
 
+                    b.Property<string>("TenCuocThi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("MonThiId");
@@ -200,7 +204,6 @@ namespace DoAnCoSo.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("TenLoaiTruong")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -239,6 +242,9 @@ namespace DoAnCoSo.Migrations
 
                     b.Property<string>("TenNoiDung")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("imageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -309,11 +315,9 @@ namespace DoAnCoSo.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("NoiDungQuyDinh")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TenQuyDinh")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("imageURL")

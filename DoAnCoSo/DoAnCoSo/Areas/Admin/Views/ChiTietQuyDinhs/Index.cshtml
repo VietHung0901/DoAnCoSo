@@ -1,10 +1,5 @@
 ﻿@model IEnumerable<DoAnCoSo.Models.tbChiTietQuyDinh>
 
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
-}
-
 <h1>Index</h1>
 
 <p>
@@ -14,10 +9,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CuocThi)
+                Tên Cuộc Thi: 
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.QuyDinh)
+                Tên Quy Định:
             </th>
             <th></th>
         </tr>
@@ -26,17 +21,24 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.CuocThi.Id)
+                @Html.DisplayFor(modelItem => item.CuocThi.TenCuocThi)
+            </td>
+                <td onclick="redirectToDetails('@item.QuyDinhId')" style="cursor: pointer;  text-decoration: underline; color: #007bff;">
+                @Html.DisplayFor(modelItem => item.QuyDinh.TenQuyDinh)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.QuyDinh.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                @* <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> | *@
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+
+<script>
+    function redirectToDetails(Id) {
+        window.location.href = "/Admin/QuyDinhs/Details/" + Id;
+    }
+</script>

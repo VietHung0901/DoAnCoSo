@@ -3,6 +3,8 @@
     public class tbCuocThi
     {
         public int Id { get; set; }
+
+        public string TenCuocThi { get; set; }
         public DateTime NgayThi { get; set; }
         public int SoLuongThiSinh { get; set; }
         public string DiaDiem { get; set; }

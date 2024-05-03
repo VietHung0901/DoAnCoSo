@@ -11,7 +11,10 @@
 <tr>
     <dl class="row">
         <dt class="col-sm-2">
-            Ngày Thi/Giờ Thi:  @Html.DisplayFor(model => model.NgayThi)
+            Tên Cuộc Thi: @Html.DisplayFor(model => model.TenCuocThi)
+        </dt>
+        <dt class="col-sm-2">
+            Ngày Thi/Giờ Thi: @Html.DisplayFor(model => model.NgayThi)
         </dt>
         <dt class="col-sm-2">
             Số Lượng: @Html.DisplayFor(model => model.SoLuongThiSinh)
@@ -23,13 +26,16 @@
             Môn Thi: @Html.DisplayFor(model => model.MonThi.TenMonThi)
         </dt>
         <span class="col-sm-2">
-            Nội dung quy định:
+            Nội dung quy định cuộc thi:
             <strong onclick="redirectToDetails('@Model.Id')" style="cursor: pointer; text-decoration: underline; color: #007bff;">Tại đây!</strong>
         </span>
-        @* <span class="col-sm-2">
-            Nội dung cuộc thi:
-            <strong onclick="redirectToDetails('@Model.Id')" style="cursor: pointer; text-decoration: underline; color: #007bff;">Tại đây!</strong>
-        </span> *@
+
+        <br />
+
+        <span class="col-sm-2">
+            Nội dung quy định môn thi:
+            <strong onclick="redirectToDetailsChiTietQuyDinh('@Model.Id')" style="cursor: pointer; text-decoration: underline; color: #007bff;">Tại đây!</strong>
+        </span>
     </dl>
 </tr>
 
@@ -41,5 +47,8 @@
 <script>
     function redirectToDetails(Id) {
         window.location.href = "/Admin/QuyDinhs/Index/" + Id;
+    }
+    function redirectToDetailsChiTietQuyDinh(Id) {
+        window.location.href = "/Admin/ChiTietQuyDinhs/Index/" + Id;
     }
 </script>

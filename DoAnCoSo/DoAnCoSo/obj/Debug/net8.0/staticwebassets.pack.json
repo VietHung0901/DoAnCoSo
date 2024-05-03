@@ -69,12 +69,20 @@
       "PackagePath": "staticwebassets\\images\\imagett2.png"
     },
     {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\pp.jpg",
+      "PackagePath": "staticwebassets\\images\\pp.jpg"
+    },
+    {
       "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\quy-dinh-dang-ky.png",
       "PackagePath": "staticwebassets\\images\\quy-dinh-dang-ky.png"
     },
     {
       "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\thisinhthamdubaithi.png",
       "PackagePath": "staticwebassets\\images\\thisinhthamdubaithi.png"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\word.png",
+      "PackagePath": "staticwebassets\\images\\word.png"
     },
     {
       "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\site.js",
@@ -307,6 +315,10 @@
     {
       "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\upload\\MOS.html",
+      "PackagePath": "staticwebassets\\upload\\MOS.html"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DoAnCoSo.Microsoft.AspNetCore.StaticWebAssets.props",

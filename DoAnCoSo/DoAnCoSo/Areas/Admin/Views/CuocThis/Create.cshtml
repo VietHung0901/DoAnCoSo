@@ -9,6 +9,10 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="TenCuocThi" class="control-label">Tên Cuộc Thi</label>
+                <input asp-for="TenCuocThi" class="form-control" />
+            </div>
+            <div class="form-group">
                 <label asp-for="NgayThi" class="control-label">Ngay Thi</label>
                 <input asp-for="NgayThi" class="form-control" />
             </div>

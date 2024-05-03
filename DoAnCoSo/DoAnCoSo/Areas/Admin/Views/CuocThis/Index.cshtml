@@ -53,6 +53,7 @@
                                 max-width: 90%;">
     <thead>
         <tr class="text-center">
+            <th>Tên Cuộc Thi</th>
             <th>Ngày Thi/Giờ Thi</th>
             <th>Số Lượng</th>
             <th>Địa Điểm</th>
@@ -77,6 +78,9 @@
             }
 
             <tr class="text-center @rowClass">
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenCuocThi)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.NgayThi)
                 </td>

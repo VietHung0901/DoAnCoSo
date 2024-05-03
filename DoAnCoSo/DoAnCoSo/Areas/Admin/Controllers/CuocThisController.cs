@@ -66,23 +66,32 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             return View();
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id, NgayThi, SoLuongThiSinh, DiaDiem, MonThiId")] tbCuocThi tbCuocThi)
+        public async Task<IActionResult> Create([Bind("Id, TenCuocThi, NgayThi, SoLuongThiSinh, DiaDiem, MonThiId")] tbCuocThi tbCuocThi)
         {
             var tbMonThis = await _monThiRepository.GetAllAsync();
             ViewBag.LoaiMonThiName = new SelectList(tbMonThis, "Id", "TenMonThi");
-
             // Kiểm tra nếu không nhập địa điểm thi hoặc không chọn ngày thi
             if (string.IsNullOrEmpty(tbCuocThi.DiaDiem))
             {
                 TempData["ErrorMessage"] = "Vui lòng nhập địa điểm thi.";
                 return View(tbCuocThi);
             }
-
             else if (tbCuocThi.SoLuongThiSinh == null || tbCuocThi.SoLuongThiSinh <= 50)
             {
                 TempData["ErrorMessage"] = "Vui lòng nhập số lượng thí sinh hợp lệ.";
+                return View(tbCuocThi);
+            }
+            else if (string.IsNullOrEmpty(tbCuocThi.TenCuocThi))
+            {
+                TempData["ErrorMessage"] = "Vui lòng tên cuộc thi.";
+                return View(tbCuocThi);
+            }
+            else if (NameTenQuySinhExists(tbCuocThi.TenCuocThi))
+            {
+                TempData["ErrorMessage"] = "Tên cuộc thi trùng, nhập tên khác.";
                 return View(tbCuocThi);
             }
 
@@ -91,6 +100,11 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             TempData["SuccessMessage"] = "Đã thêm cuộc thi thành công.";
 
             return View(tbCuocThi);
+        }
+
+        private bool NameTenQuySinhExists(string name)
+        {
+            return _context.tbCuocThi.Any(e => e.TenCuocThi == name);
         }
 
         // GET: Admin/CuocThis/Edit/5
@@ -115,7 +129,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,NgayThi,SoLuongThiSinh,DiaDiem,MonThiId")] tbCuocThi tbCuocThi)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TenCuocThi, NgayThi,SoLuongThiSinh,DiaDiem,MonThiId")] tbCuocThi tbCuocThi)
         {
             if (id != tbCuocThi.Id)
             {
@@ -189,10 +203,5 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         {
             return _context.tbCuocThi.Any(e => e.Id == id);
         }
-
-        /* private bool NameCuocThiExists(string name)
-         {
-             return _context.tbCuocThi.Any(e => e.t   == name);
-         }*/
     }
 }

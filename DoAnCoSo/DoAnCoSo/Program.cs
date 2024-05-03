@@ -20,6 +20,8 @@ builder.Services.AddScoped<IUserRepository, EFUserRepository>();
 builder.Services.AddScoped<IMonThiRepository, EFMonThiRepository>();
 builder.Services.AddScoped<ICuocThiRepository, EFCuocThiRepository>();
 builder.Services.AddScoped<IQuyDinhRepository, EFQuyDinhRepository>();
+builder.Services.AddScoped<IChiTietQuyDinhRepository, EFChiTietQuyDinhRepository>();
+builder.Services.AddScoped<INoiDungRepository, EFNoiDungRepository>();
 
 
 
