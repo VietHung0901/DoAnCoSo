@@ -53,7 +53,7 @@ body {
 }
 
 .container-menu {
-    background-color: #2196F3; /* Màu nền xanh */
+    background-color: #2196F3; /* Màu nền xanh*/ 
 }
 
 .container-menu-list {
@@ -64,26 +64,30 @@ body {
 }
 
 .container-menu-item {
-    display: flex;
-    align-items: center;
     transition: all 0.3s ease;
-    background-color: #2196F3; /* Màu nền xanh */
-    color: #ffffff; /* Màu trắng cho biểu tượng và nội dung */
+    background-color: #2196F3;  /*Màu nền xanh*/ 
+    color: #ffffff;  /*Màu trắng cho biểu tượng và nội dung*/ 
 }
 
+    .container-menu-item a {
+        display: flex;
+        align-items: center;
+    }
     .container-menu-item i {
         margin: 16px 5px;
-        color: #ffffff; /* Màu trắng cho biểu tượng */
+        color: #ffffff;  /*Màu trắng cho biểu tượng */
     }
 
     .container-menu-item p {
+        margin: 0px 5px;
         display: none;
         transition: all 0.3s ease;
-        color: #ffffff; /* Màu trắng cho nội dung */
+        color: #ffffff;  /*Màu trắng cho nội dung*/ 
     }
 
     .container-menu-item:hover {
-        background-color: #1565c0; /* Màu hover là #1565c0 */
+        background-color: #1565c0; /*Màu hover là #1565c0*/
+        cursor: pointer;
     }
 
     .container-menu-item.active p {
@@ -91,8 +95,10 @@ body {
     }
 
     .container-menu-item.active i {
-        color: #FF0000; /* Màu đỏ cho biểu tượng khi hiển thị */
+        color: #FF0000;  /*Màu đỏ cho biểu tượng khi hiển thị*/ 
     }
+
+
 .container-content-footer {
     position: fixed;
     bottom: 0;

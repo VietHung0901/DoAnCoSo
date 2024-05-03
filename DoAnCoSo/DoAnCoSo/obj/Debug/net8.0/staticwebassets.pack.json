@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\DoAnCoSo.bundle.scp.css"
     },
     {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\Layout.css",
+      "PackagePath": "staticwebassets\\css\\Layout.css"
+    },
+    {
       "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\menuAdmin.css",
       "PackagePath": "staticwebassets\\css\\menuAdmin.css"
     },
@@ -79,6 +83,10 @@
     {
       "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\vietquoc.jpg",
       "PackagePath": "staticwebassets\\images\\vietquoc.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\Layout.js",
+      "PackagePath": "staticwebassets\\js\\Layout.js"
     },
     {
       "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\site.js",
