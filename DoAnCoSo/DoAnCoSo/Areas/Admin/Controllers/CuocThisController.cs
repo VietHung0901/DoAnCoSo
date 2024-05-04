@@ -64,12 +64,22 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                             where c.TrangThai != 0
                             select c;
             ViewBag.MonThiName = new SelectList(tbMonThis, "Id", "TenMonThi");
+
+            //var tbquyDinhs = from a in _context.tbQuyDinh
+            //                 where a.TrangThai != 0
+            //                 select a;
+            //ViewBag.quyDinhName = new SelectList(tbquyDinhs, "Id", "TenQuyDinh");
+
+            //var tbnoiDungs = from b in _context.tbNoiDung
+            //                 where b.TrangThai != 0
+            //                 select b;
+            //ViewBag.noiDungName = new SelectList(tbnoiDungs, "Id", "TenNoiDung");
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id, TenCuocThi, NgayThi, SoLuongThiSinh, DiaDiem, MonThiId")] tbCuocThi tbCuocThi)
+        public async Task<IActionResult> Create([Bind("Id, TenCuocThi, NgayThi, SoLuongThiSinh, DiaDiem, MonThiId")] tbCuocThi tbCuocThi, List<int> selectedQuyDinhs, List<int> selectedNoiDungs)
         {
             var tbMonThis = from c in _context.tbMonThi
                                where c.TrangThai != 0
@@ -82,17 +92,53 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 TempData["ErrorMessage"] = "Thông tin không hợp lệ!";
                 return View(tbCuocThi);
             }
-
-            else if (tbCuocThi.SoLuongThiSinh == null || tbCuocThi.SoLuongThiSinh <= 50)
+    
+            if (tbCuocThi.SoLuongThiSinh == null || tbCuocThi.SoLuongThiSinh <= 50)
             {
                 TempData["ErrorMessage"] = "Vui lòng nhập số lượng thí sinh hợp lệ!";
                 return View(tbCuocThi);
             }
+
+            if(selectedQuyDinhs == null)
+            {
+                TempData["ErrorMessage"] = "Vui lòng chọn quy định thi!";
+                return View(tbCuocThi);
+            }
+
+            if (selectedNoiDungs == null)
+            {
+                TempData["ErrorMessage"] = "Vui lòng chọn nội dung thi!";
+                return View(tbCuocThi);
+            }
+
             tbCuocThi.TrangThai = 1;
             _context.tbCuocThi.Add(tbCuocThi);
             await _context.SaveChangesAsync();
-            TempData["SuccessMessage"] = "Đã thêm cuộc thi thành công!";
 
+            //Thêm quy định vào cuộc thi
+            foreach (var quyDinhId in selectedQuyDinhs)
+            {
+                tbChiTietQuyDinh ctqd = new tbChiTietQuyDinh
+                {
+                    CuocThiId = tbCuocThi.Id,
+                    QuyDinhId = quyDinhId,
+                };
+                _context.tbChiTietQuyDinh.Add(ctqd);
+                await _context.SaveChangesAsync();
+            }
+
+            foreach (var noiDungId in selectedNoiDungs)
+            {
+                tbChiTietNoiDung ctnd = new tbChiTietNoiDung
+                {
+                    CuocThiId = tbCuocThi.Id,
+                    NoiDungId = noiDungId,
+                };
+                _context.tbChiTietNoiDung.Add(ctnd);
+                await _context.SaveChangesAsync();
+            }
+            
+            TempData["SuccessMessage"] = "Đã thêm cuộc thi thành công!";
             return View(tbCuocThi);
         }
 

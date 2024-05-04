@@ -1,4 +1,18 @@
-﻿@model DoAnCoSo.Models.tbCuocThi
+﻿@using DoAnCoSo.Models
+@model DoAnCoSo.Models.tbCuocThi
+
+@{
+    ApplicationDbContext context = new ApplicationDbContext();
+    var tbquyDinhs = from a in context.tbQuyDinh
+                     where a.TrangThai != 0
+                     select a;
+    List<tbQuyDinh> listQuyDinh = tbquyDinhs.ToList();
+
+    var tbnoiDungs = from b in context.tbNoiDung
+                     where b.TrangThai != 0
+                     select b;
+    List<tbNoiDung> listNoiDung = tbnoiDungs.ToList();
+}
 
 <style>
     /* Định dạng màu chủ đạo xanh dương */
@@ -59,40 +73,140 @@
         color: #dc3545;
         margin-top: 5px;
     }
+
+    .step-container {
+        display: none;
+    }
+
+        .step-container.active {
+            display: block;
+        }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .checkbox-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .checkbox-item {
+        margin-bottom: 10px;
+    }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 5px;
+        }
 </style>
+
 <div class="add-school">
     <h4>Thêm cuộc thi</h4>
     <div class="row">
         <div class="col-md-4">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="TenCuocThi" class="control-label">Tên cuộc thi</label>
-                    <input asp-for="TenCuocThi" class="form-control" />
+                <!-- Giai đoạn 1: Nhập thông tin cuộc thi -->
+                <div id="step-1" class="step-container active">
+                    <div class="form-group">
+                        <label asp-for="TenCuocThi" class="control-label">Tên cuộc thi</label>
+                        <input asp-for="TenCuocThi" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NgayThi" class="control-label">Ngày thi</label>
+                        <input asp-for="NgayThi" class="form-control add-school-input" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SoLuongThiSinh" class="control-label">Số lượng</label>
+                        <input asp-for="SoLuongThiSinh" class="form-control add-school-input" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DiaDiem" class="control-label">Địa điểm</label>
+                        <input asp-for="DiaDiem" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MonThiId" class="control-label">Tên môn thi</label>
+                        <select asp-for="MonThiId" class="form-control" asp-items="ViewBag.MonThiName"></select>
+                    </div>
+                    <!-- Nút để chuyển sang giai đoạn chọn quy định -->
+                    <div class="form-group">
+                        <button type="button" onclick="nextStep(2)" class="btn btn-primary">Tiếp tục</button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label asp-for="NgayThi" class="control-label">Ngày thi</label>
-                    <input asp-for="NgayThi" class="form-control add-school-input" />
+
+                <!-- Giai đoạn 2: Chọn quy định cuộc thi -->
+                <div id="step-2" class="step-container">
+                    @* <div class="form-group">
+                        <label class="control-label">Chọn quy định</label>
+                        @foreach (var item in listQuyDinh)
+                        {
+                            <input type="checkbox" id="quyDinh" name="selectedQuyDinhs" value="@item.Id">
+                            <label for="quyDinh">@item.TenQuyDinh</label>
+                        }
+                    </div>  *@
+                    <div class="form-group">
+                        <label class="control-label">Chọn quy định</label>
+                        <div class="checkbox-list">
+                            @foreach (var item in listQuyDinh)
+                            {
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="quyDinh_@item.Id" name="selectedQuyDinhs" value="@item.Id">
+                                    <label for="quyDinh_@item.Id">@item.TenQuyDinh</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <!-- Nút để chuyển sang giai đoạn chọn nội dung -->
+                    <div class="form-group">
+                        <button type="button" onclick="nextStep(1)" class="btn btn-primary">Quay lại</button>
+                        <button type="button" onclick="nextStep(3)" class="btn btn-primary">Tiếp tục</button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label asp-for="SoLuongThiSinh" class="control-label">Số lượng</label>
-                    <input asp-for="SoLuongThiSinh" class="form-control add-school-input" />
-                </div>
-                <div class="form-group">
-                    <label asp-for="DiaDiem" class="control-label">Địa điểm</label>
-                    <input asp-for="DiaDiem" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <label asp-for="MonThiId" class="control-label">Tên môn thi</label>
-                    <select asp-for="MonThiId" class="form-control" asp-items="ViewBag.MonThiName"></select>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+
+                <!-- Giai đoạn 3: Chọn nội dung thi -->
+                <div id="step-3" class="step-container">
+                        @* <div class="form-group">
+                            <label class="control-label">Chọn nội dung</label>
+                            @foreach (var item in listNoiDung)
+                            {
+                                <input type="checkbox" id="noiDung" name="selectedNoiDungs" value="@item.Id">
+                                <label for="noiDung">@item.TenNoiDung</label>
+                            }
+                        </div> *@
+
+                    <div class="form-group">
+                        <label class="control-label">Chọn nội dung</label>
+                        <div class="checkbox-list">
+                            @foreach (var item in listNoiDung)
+                            {
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="noiDung_@item.Id" name="selectedNoiDungs" value="@item.Id">
+                                    <label for="noiDung_@item.Id">@item.TenNoiDung</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <!-- Nút hoàn tất quá trình tạo cuộc thi -->
+                    <div class="form-group">
+                        <button type="button" onclick="nextStep(2)" class="btn btn-primary">Quay lại</button>
+                        <input type="submit" value="Tạo cuộc thi" class="btn btn-primary" />
+                    </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<script>
+    var currentStep = 1;
+    var stepContainers = document.getElementsByClassName('step-container');
+
+    function nextStep(step) {
+        stepContainers[currentStep - 1].style.display = 'none';
+        currentStep = step;
+        stepContainers[currentStep - 1].style.display = 'block';
+    }
+</script>
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- Trong phần head của view hoặc layout -->
