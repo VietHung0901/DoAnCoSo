@@ -2,91 +2,70 @@
 
 <style>
     .school-type-list {
-        margin: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-    h1 {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-
-    p {
-        margin-bottom: 20px;
-    }
-
-    .btn {
-        display: inline-block;
-        font-weight: 400;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: middle;
-        user-select: none;
-        border: 1px solid transparent;
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        border-radius: 0.25rem;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        text-decoration: none; /* Bỏ gạch chân */
-    }
-
-    .btn-primary {
-        color: #fff;
-        background-color: #007bff;
-        border-color: #007bff;
-    }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
+        .school-type-list h1 {
+            color: black;
+            margin-bottom: 20px;
         }
 
-    .btn-danger {
-        color: #fff;
-        background-color: #dc3545;
-        border-color: #dc3545;
-    }
-
-        .btn-danger:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
+        .school-type-list a.add-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
         }
 
-    .table {
-        width: 100%;
-        margin-bottom: 1rem;
-        color: #212529;
-        border-collapse: collapse;
-    }
+            .school-type-list a.add-button:hover {
+                background-color: #0056b3;
+            }
 
-        .table th,
-        .table td {
-            padding: 0.75rem;
-            vertical-align: top;
-            border-top: 1px solid #dee2e6;
+        .school-type-list table {
+            width: 100%;
+            margin-top: 20px;
+            background-color: #fff;
+            border-collapse: collapse;
         }
 
-        .table th {
-            vertical-align: bottom;
-            border-bottom: 2px solid #dee2e6;
-        }
+            .school-type-list table th {
+                background-color: #007bff;
+                color: #fff;
+                padding: 10px;
+                text-align: left;
+            }
 
-        .table thead th {
-            vertical-align: bottom;
-            border-bottom: 2px solid #dee2e6;
-        }
+            .school-type-list table td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
 
-        .table tbody + tbody {
-            border-top: 2px solid #dee2e6;
-        }
+                .school-type-list table td a.edit-link {
+                    background-color: #007bff;
+                    color: #fff;
+                    padding: 5px 10px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                }
+
+                    .school-type-list table td a.edit-link.btn-danger {
+                        color: #fff;
+                        background-color: #dc3545;
+                    }
+
+                    .school-type-list table td a.edit-link:hover {
+                        background-color: #0056b3;
+                    }
 </style>
+
+
 <div class="school-type-list">
-    <h1>Danh sách loại trường</h1>
+    <h1>DANH SÁCH LOẠI TRƯỜNG</h1>
     <p>
         <a class="add-button btn btn-primary" asp-area="Admin" asp-controller="LoaiTruongs" asp-action="Create">Thêm loại trường</a>
     </p>
@@ -104,7 +83,18 @@
                     <td>@Html.DisplayFor(modelItem => item.TenLoaiTruong)</td>
                     <td>
                         <a class="edit-link btn btn-primary" asp-area="Admin" asp-controller="LoaiTruongs" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                        <a class="delete-link btn btn-danger" asp-area="Admin" asp-controller="LoaiTruongs" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirmDelete()">Delete</a>
+                        @if (item.TrangThai == 0)
+                        {
+                            <a class="edit-link btn btn-danger" asp-area="Admin" asp-controller="LoaiTruongs" asp-action="AnHien" asp-route-id="@item.Id">
+                                Ẩn
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="edit-link btn btn-primary" asp-area="Admin" asp-controller="LoaiTruongs" asp-action="AnHien" asp-route-id="@item.Id">
+                                Hiện
+                            </a>
+                        }
                     </td>
                 </tr>
             }

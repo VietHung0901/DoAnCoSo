@@ -60,20 +60,24 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         // GET: Admin/CuocThis/Create
         public async Task<IActionResult> Create()
         {
-            var tbMonThis = await _monThiRepository.GetAllAsync();
-            ViewBag.LoaiMonThiName = new SelectList(tbMonThis, "Id", "TenMonThi");
+            var tbMonThis = from c in _context.tbMonThi
+                            where c.TrangThai != 0
+                            select c;
+            ViewBag.MonThiName = new SelectList(tbMonThis, "Id", "TenMonThi");
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id, NgayThi, SoLuongThiSinh, DiaDiem, MonThiId")] tbCuocThi tbCuocThi)
+        public async Task<IActionResult> Create([Bind("Id, TenCuocThi, NgayThi, SoLuongThiSinh, DiaDiem, MonThiId")] tbCuocThi tbCuocThi)
         {
-            var tbMonThis = await _monThiRepository.GetAllAsync();
-            ViewBag.LoaiMonThiName = new SelectList(tbMonThis, "Id", "TenMonThi");
+            var tbMonThis = from c in _context.tbMonThi
+                               where c.TrangThai != 0
+                               select c;
+            ViewBag.MonThiName = new SelectList(tbMonThis, "Id", "TenMonThi");
 
             // Kiểm tra nếu không nhập địa điểm thi hoặc không chọn ngày thi
-            if (string.IsNullOrEmpty(tbCuocThi.DiaDiem) || tbCuocThi.NgayThi == DateTime.MinValue)
+            if (string.IsNullOrEmpty(tbCuocThi.TenCuocThi) || string.IsNullOrEmpty(tbCuocThi.DiaDiem) || tbCuocThi.NgayThi == DateTime.MinValue)
             {
                 TempData["ErrorMessage"] = "Thông tin không hợp lệ!";
                 return View(tbCuocThi);
@@ -84,7 +88,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 TempData["ErrorMessage"] = "Vui lòng nhập số lượng thí sinh hợp lệ!";
                 return View(tbCuocThi);
             }
-
+            tbCuocThi.TrangThai = 1;
             _context.tbCuocThi.Add(tbCuocThi);
             await _context.SaveChangesAsync();
             TempData["SuccessMessage"] = "Đã thêm cuộc thi thành công!";
@@ -95,6 +99,10 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         // GET: Admin/CuocThis/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            var tbMonThis = from c in _context.tbMonThi
+                            where c.TrangThai != 0
+                            select c;
+            ViewBag.MonThiName = new SelectList(tbMonThis, "Id", "TenMonThi");
             if (id == null)
             {
                 return NotFound();
@@ -105,7 +113,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["MonThiId"] = new SelectList(_context.tbMonThi, "Id", "TenMonThi", tbCuocThi.MonThiId);
+            
             return View(tbCuocThi);
         }
 
@@ -114,18 +122,22 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,NgayThi,SoLuongThiSinh,DiaDiem,MonThiId")] tbCuocThi tbCuocThi)
+        public async Task<IActionResult> Edit(int id, [Bind("Id, TenCuocThi, NgayThi,SoLuongThiSinh,DiaDiem,MonThiId")] tbCuocThi tbCuocThi)
         {
+            var tbMonThis = from c in _context.tbMonThi
+                            where c.TrangThai != 0
+                            select c;
+            ViewBag.MonThiName = new SelectList(tbMonThis, "Id", "TenMonThi");
             if (id != tbCuocThi.Id)
             {
                 return NotFound();
             }
 
-            if (!string.IsNullOrEmpty(tbCuocThi.DiaDiem) && tbCuocThi.SoLuongThiSinh != null && tbCuocThi.SoLuongThiSinh > 50)
+            if (!string.IsNullOrEmpty(tbCuocThi.TenCuocThi) && !string.IsNullOrEmpty(tbCuocThi.DiaDiem) && tbCuocThi.SoLuongThiSinh != null && tbCuocThi.SoLuongThiSinh > 50)
             {
                 try
                 {
-                    _context.Update(tbCuocThi);
+                    _context.tbCuocThi.Update(tbCuocThi);
                     await _context.SaveChangesAsync();
                     TempData["SuccessMessage"] = "Cập nhật cuộc thi thành công.";
                 }
@@ -144,7 +156,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             else
             {
                 TempData["ErrorMessage"] = "Dữ liệu không hợp lệ.";
-                return RedirectToAction(nameof(Edit), new { id = tbCuocThi.Id });
+                return View(tbCuocThi);
             }
             return View(tbCuocThi);
         }
@@ -181,6 +193,20 @@ namespace DoAnCoSo.Areas.Admin.Controllers
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> AnHien(int id)
+        {
+            var cuocThi = _context.tbCuocThi.FirstOrDefault(l => l.Id == id);
+            if (cuocThi == null)
+                return NotFound();
+            if (cuocThi.TrangThai != 0)
+                cuocThi.TrangThai = 0;
+            else
+                cuocThi.TrangThai = 1;
+            _context.tbCuocThi.Update(cuocThi);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "CuocThis");
         }
 
         private bool tbCuocThiExists(int id)

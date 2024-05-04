@@ -1,60 +1,92 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - DoAnCoSo</title>
-    <link rel="stylesheet" href="~/css/app.css" />
-    <link rel="stylesheet" href="~/css/reset.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="~/css/quancao.css" />
-    <link rel="stylesheet" href="~/css/section3.css">
+    <link rel="stylesheet" href="~/css/Layout.css">
+    <script src="~/js/Layout.js"></script>
+
+    @* link để sử dụng các icon *@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
-<body style="background-image: url('../images/background.png');">
-    <div class="wrapper">
-        <div>
-            <div class="header">
-                <a id="logo" href="">
-                    <img src="~/images/Logo.png" alt="#" />
-                </a>
-                <nav class="container">
-                    <ul class="main-menu">
-                        <li>
-                            <a href="">Trường</a>
-                            <ul class="sub-menu">
-                                <li><a asp-area="Admin" asp-controller="LoaiTruongs" asp-action="Index">Loại trường</a></li>
-                                <li><a asp-area="Admin" asp-controller="Truongs" asp-action="Index">Trường</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="">Cuộc thi</a>
-                            <ul class="sub-menu">
-                                <li><a asp-area="Admin" asp-controller="CuocThis" asp-action="Index">Cuộc thi</a></li>
-                                <li><a asp-area="Admin" asp-controller="MonThis" asp-action="Index">Môn thi</a></li>
-                                <li><a asp-area="Admin" asp-controller="QuyDinhs" asp-action="Index">Quy định</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>                
-                <partial name="_LoginPartial" />
+<body>
+    <!-- Block__Element--Modifier-->
+    <header class="header">
+        <div class="header-icon" onclick="toggleMenu()">
+            <i class="fas fa-list"></i>
+        </div>
+        <div class="header-logo">
+            <a asp-area="" asp-controller="CuocThis" asp-action="Index">
+                <img src="~/images/Logo.png" alt="Alternate Text" />
+            </a>
+        </div>
+        <div class="header-login">
+            <partial name="_LoginPartial" />
+        </div>
+    </header>
+    <div class="container">
+        <div class="container-menu">
+            <div class="menu-icon">
+                <ul class="container-menu-list">
+                    <li class="container-menu-item">
+                        <a>
+                            <i class="fas fa-home"></i>
+                            <p class="container-menu-item-content">Trang chủ</p>
+                        </a>
+                    </li>
+                    <li class="container-menu-item">
+                        <a asp-area="Admin" asp-controller="CuocThis" asp-action="Index">
+                            <i class="fas fa-trophy"></i>
+                            <p class="container-menu-item-content">Cuộc thi</p>
+                        </a>
+                    </li>
+                    <li class="container-menu-item">
+                        <a asp-area="Admin" asp-controller="LoaiTruongs" asp-action="Index">
+                            <i class="fas fa-school"></i>
+                            <p class="container-menu-item-content">Loại trường</p>
+                        </a>
+                    </li>
+                    <li class="container-menu-item">
+                        <a asp-area="Admin" asp-controller="Truongs" asp-action="Index">
+                            <i class="fas fa-university"></i>
+                            <p class="container-menu-item-content">Trường</p>
+                        </a>
+                    </li>
+                    <li class="container-menu-item">
+                        <a asp-area="Admin" asp-controller="QuyDinhs" asp-action="Index">
+                            <i class="fas fa-gavel"></i>
+                            <p class="container-menu-item-content">Quy định</p>
+                        </a>
+                    </li>
+                    <li class="container-menu-item">
+                        <a asp-area="Admin" asp-controller="NoiDungs" asp-action="Index">
+                            <i class="fas fa-file-alt"></i>
+                            <p class="container-menu-item-content">Nội Dung</p>
+                        </a>
+                    </li>  
+                    <li class="container-menu-item">
+                        <a asp-area="Admin" asp-controller="MonThis" asp-action="Index">
+                            <i class="fas fa-book"></i>
+                            <p class="container-menu-item-content">Môn thi</p>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-        @RenderBody()
+
+        <div class="container-content" style="width: 100%;">
+            <div class="container-content-body">
+                @RenderBody()
+            </div>
+        </div>
+
+        <div class="container-content-footer">
+            <footer>
+                Design by Viet Hung
+            </footer>
+        </div>
     </div>
-    <div>
-        <footer>
-            <p>&copy; 2024 My Website. All rights reserved.</p>
-        </footer>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    @* <script>
-        $(document).ready(function () {
-            $(".sub-menu").parent("li").addClass("has-child");
-        });
-    </script> *@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
 
-
-     

@@ -33,6 +33,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-NoiDung\\vanhung.jpg",
+      "PackagePath": "staticwebassets\\images-NoiDung\\vanhung.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-NoiDung\\vietquoc.jpg",
+      "PackagePath": "staticwebassets\\images-NoiDung\\vietquoc.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-QuyDinh\\vanhung.jpg",
+      "PackagePath": "staticwebassets\\images-QuyDinh\\vanhung.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-QuyDinh\\vietquoc.jpg",
+      "PackagePath": "staticwebassets\\images-QuyDinh\\vietquoc.jpg"
+    },
+    {
       "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\Logo.png",
       "PackagePath": "staticwebassets\\images\\Logo.png"
     },

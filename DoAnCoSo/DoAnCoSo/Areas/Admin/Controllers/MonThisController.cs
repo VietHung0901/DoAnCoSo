@@ -170,6 +170,20 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> AnHien(int id)
+        {
+            var monThi = _context.tbMonThi.FirstOrDefault(l => l.Id == id);
+            if (monThi == null)
+                return NotFound();
+            if (monThi.TrangThai != 0)
+                monThi.TrangThai = 0;
+            else
+                monThi.TrangThai = 1;
+            _context.tbMonThi.Update(monThi);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "Monthis");
+        }
+
         private bool NameMonThiExists(string name)
         {
             return _context.tbMonThi.Any(e => e.TenMonThi == name);

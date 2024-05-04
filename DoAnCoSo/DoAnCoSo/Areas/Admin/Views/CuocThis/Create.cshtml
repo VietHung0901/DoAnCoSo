@@ -1,101 +1,90 @@
 ﻿@model DoAnCoSo.Models.tbCuocThi
 
 <style>
-    .add-school-type {
-        margin: 20px;
+    /* Định dạng màu chủ đạo xanh dương */
+    .add-school {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-    h4 {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-
-    hr {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        border: 0;
-        border-top: 1px solid #ccc;
-    }
-
-    .row {
-        margin-right: -15px;
-        margin-left: -15px;
-    }
-
-    .col-md-4 {
-        flex: 0 0 33.3333%;
-        max-width: 33.3333%;
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    .control-label {
-        font-weight: bold;
-    }
-
-    .form-control {
-        display: block;
-        width: 100%;
-        height: calc(1.5em + 0.75rem + 2px);
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        color: #495057;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
-
-    .btn-primary {
-        color: #fff;
-        background-color: #007bff;
-        border-color: #007bff;
-        border-radius: 4px;
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        text-align: center;
-        vertical-align: middle;
-        cursor: pointer;
-    }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
+        .add-school h4 {
+            color: #black;
+            margin-bottom: 20px;
         }
+
+        .add-school label.control-label {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .add-school select {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+    .add-school-input {
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+        .add-school input[type="text"],
+        .add-school input[type="submit"] {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .add-school input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+        }
+
+            .add-school input[type="submit"]:hover {
+                background-color: #0056b3;
+            }
 
     .text-danger {
         color: #dc3545;
+        margin-top: 5px;
     }
 </style>
-<div class="add-school-type">
-    <h4>THÊM CUỘC THI</h4>
-    <hr />
+<div class="add-school">
+    <h4>Thêm cuộc thi</h4>
     <div class="row">
         <div class="col-md-4">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="NgayThi" class="control-label">Ngay Thi</label>
-                    <input asp-for="NgayThi" class="form-control" />
+                    <label asp-for="TenCuocThi" class="control-label">Tên cuộc thi</label>
+                    <input asp-for="TenCuocThi" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <label asp-for="SoLuongThiSinh" class="control-label">So Luong</label>
-                    <input asp-for="SoLuongThiSinh" class="form-control" />
+                    <label asp-for="NgayThi" class="control-label">Ngày thi</label>
+                    <input asp-for="NgayThi" class="form-control add-school-input" />
                 </div>
                 <div class="form-group">
-                    <label asp-for="DiaDiem" class="control-label">Dia Diem</label>
+                    <label asp-for="SoLuongThiSinh" class="control-label">Số lượng</label>
+                    <input asp-for="SoLuongThiSinh" class="form-control add-school-input" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="DiaDiem" class="control-label">Địa điểm</label>
                     <input asp-for="DiaDiem" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <label asp-for="MonThiId" class="control-label">Ten Mon Thi</label>
-                    <select asp-for="MonThiId" class="form-control" asp-items="ViewBag.LoaiMonThiName"></select>
+                    <label asp-for="MonThiId" class="control-label">Tên môn thi</label>
+                    <select asp-for="MonThiId" class="form-control" asp-items="ViewBag.MonThiName"></select>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Create" class="btn btn-primary" />

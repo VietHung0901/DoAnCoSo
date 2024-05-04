@@ -47,6 +47,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             //Kiểm tra xem tên trường đã tồn tại hay chưa
             if (!NameLoaiTruongExists(LoaiTruong.TenLoaiTruong))
             {
+                LoaiTruong.TrangThai = 1;
                 _context.tbLoaiTruong.Add(LoaiTruong);
                 await _context.SaveChangesAsync();
                 TempData["SuccessMessage"] = "Đã thêm loại trường thành công."; 
@@ -160,6 +161,21 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 TempData["ErrorMessage"] = "Không thể xóa được loại trường này!";
             }
             return View(LoaiTruong);
+        }
+
+        //Ẩn hiện Trạng thái
+        public async Task<IActionResult> AnHien(int id)
+        {
+            var loaiTruong = _context.tbLoaiTruong.FirstOrDefault(l => l.Id == id);
+            if (loaiTruong == null)
+                return NotFound();
+            if (loaiTruong.TrangThai != 0)
+                loaiTruong.TrangThai = 0;
+            else
+                loaiTruong.TrangThai = 1;
+            _context.tbLoaiTruong.Update(loaiTruong);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "LoaiTruongs");
         }
 
         private bool tbLoaiTruongExists(int id)

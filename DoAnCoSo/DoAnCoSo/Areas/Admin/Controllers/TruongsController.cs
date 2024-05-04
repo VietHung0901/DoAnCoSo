@@ -39,7 +39,10 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         // GET: Admin/Truongs/Create
         public async Task<IActionResult> Create()
         {
-            var tbLoaiTruong = await _loaitruongRepository.GetAllAsync();
+            //var tbLoaiTruong = await _loaitruongRepository.GetAllAsync();
+            var tbLoaiTruong = from c in _context.tbLoaiTruong
+                               where c.TrangThai != 0
+                               select c;
             ViewBag.LoaiTruongName = new SelectList(tbLoaiTruong, "Id", "TenLoaiTruong");
             return View();
         }
@@ -49,7 +52,9 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,TenTruong,LoaiTruongId")] tbTruong tbTruong)
         {
-            var tbLoaiTruong = await _loaitruongRepository.GetAllAsync();
+            var tbLoaiTruong = from c in _context.tbLoaiTruong
+                               where c.TrangThai != 0
+                               select c;
             ViewBag.LoaiTruongName = new SelectList(tbLoaiTruong, "Id", "TenLoaiTruong");
 
             if (string.IsNullOrEmpty(tbTruong.TenTruong))
@@ -64,6 +69,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             //Kiểm tra tên trường thuộc loại trường có tồn tại chưa
             if (!tontaiCungTruongCungLoaiTruong(tbTruong))
             {
+                tbTruong.TrangThai = 1;
                 _context.tbTruong.Add(tbTruong);
                 await _context.SaveChangesAsync();
                 TempData["SuccessMessage"] = "Đã thêm tên trường thành công.";
@@ -89,7 +95,9 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            var tbLoaiTruong = await _loaitruongRepository.GetAllAsync();
+            var tbLoaiTruong = from c in _context.tbLoaiTruong
+                               where c.TrangThai != 0
+                               select c;
             ViewBag.LoaiTruongName = new SelectList(tbLoaiTruong, "Id", "TenLoaiTruong");
             return View(tbTruong);
         }
@@ -196,6 +204,21 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             //Cần trả về một bảng thông báo chứ không phải là môjt content(view)
             return View(tbTruongs);
 
+        }
+
+        //Ẩn hiện Trạng thái
+        public async Task<IActionResult> AnHien(int id)
+        {
+            var Truong = _context.tbTruong.FirstOrDefault(l => l.Id == id);
+            if (Truong == null)
+                return NotFound();
+            if (Truong.TrangThai != 0)
+                Truong.TrangThai = 0;
+            else
+                Truong.TrangThai = 1;
+            _context.tbTruong.Update(Truong);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "Truongs");
         }
 
         private bool tbTruongExists(int id)

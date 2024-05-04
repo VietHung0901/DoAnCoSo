@@ -1,42 +1,86 @@
 ﻿@model DoAnCoSo.Models.tbQuyDinh
 
-@{
-    ViewData["Title"] = "Edit";
-    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
-}
+<style>
+    /* Định dạng màu chủ đạo xanh dương */
+    .add-quyDinh {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
 
-<h1>Edit</h1>
+        .add-quyDinh h4 {
+            color: #black;
+            margin-bottom: 20px;
+        }
 
-<h4>tbQuyDinh</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="TenQuyDinh" class="control-label"></label>
-                <input asp-for="TenQuyDinh" class="form-control" />
-                <span asp-validation-for="TenQuyDinh" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NoiDungQuyDinh" class="control-label"></label>
-                <input asp-for="NoiDungQuyDinh" class="form-control" />
-                <span asp-validation-for="NoiDungQuyDinh" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="imageURL" class="control-label"></label>
-                <input asp-for="imageURL" class="form-control" />
-                <span asp-validation-for="imageURL" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        .add-quyDinh label.control-label {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .add-quyDinh input[type="file"] {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .add-quyDinh input[type="text"],
+        .add-quyDinh input[type="submit"] {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .add-quyDinh input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+        }
+
+            .add-quyDinh input[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+
+    .text-danger {
+        color: #dc3545;
+        margin-top: 5px;
+    }
+</style>
+
+<div class="add-quyDinh">
+    <h4>Sửa thông tin quy định</h4>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="TenQuyDinh" class="control-label">Tên quy định</label>
+                    <input asp-for="TenQuyDinh" class="form-control" />
+                    <span asp-validation-for="TenQuyDinh" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NoiDungQuyDinh" class="control-label">Nội dung quy định</label>
+                    <input asp-for="NoiDungQuyDinh" class="form-control" />
+                    <span asp-validation-for="NoiDungQuyDinh" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="imageURL" class="control-label">Ảnh</label>
+                    <input type="file" asp-for="imageURL" class="form-control" />
+                    <span asp-validation-for="imageURL" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 

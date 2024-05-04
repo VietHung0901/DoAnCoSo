@@ -86,8 +86,8 @@ body {
     }
 
     .container-menu-item p {
-        margin: 0px 5px;
-        display: none;
+        margin: 0px 10px;
+        display: block;
         transition: all 0.3s ease;
         color: #ffffff;  /*Màu trắng cho nội dung*/ 
     }
@@ -98,13 +98,16 @@ body {
     }
 
     .container-menu-item.active p {
-        display: block;
+        display: none;
     }
 
     .container-menu-item.active i {
         color: #FF0000;  /*Màu đỏ cho biểu tượng khi hiển thị*/ 
     }
 
+.container-content {
+    width: 100%;
+}
 
 .container-content-footer {
     position: fixed;

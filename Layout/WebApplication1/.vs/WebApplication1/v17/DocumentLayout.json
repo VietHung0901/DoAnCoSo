@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\Layout\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1C24898-F7A9-4C1B-9F98-D9FA3F4D1182}|WebApplication1\\WebApplication1.csproj|d:\\laptrinhweb\\doan-coso-loading\\doan_coso\\layout\\webapplication1\\webapplication1\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E1C24898-F7A9-4C1B-9F98-D9FA3F4D1182}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E1C24898-F7A9-4C1B-9F98-D9FA3F4D1182}|WebApplication1\\WebApplication1.csproj|d:\\laptrinhweb\\doan-coso-loading\\doan_coso\\layout\\webapplication1\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E1C24898-F7A9-4C1B-9F98-D9FA3F4D1182}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -26,13 +22,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\Layout\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\Layout\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAACAAAAAAAAAAAAAAAEYAAAAAAAAA",
+              "ToolTip": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\Layout\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml*",
+              "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml*",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-02T09:29:40.412Z",
               "EditorCaption": ""
@@ -41,7 +37,7 @@
         },
         {
           "DockedWidth": 735,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,19 +46,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Layout.css",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\Layout\\WebApplication1\\WebApplication1\\wwwroot\\css\\Layout.css",
-              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\Layout.css",
-              "ToolTip": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\Layout\\WebApplication1\\WebApplication1\\wwwroot\\css\\Layout.css",
-              "RelativeToolTip": "WebApplication1\\wwwroot\\css\\Layout.css",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAIwFkAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-03T01:45:14.861Z",
-              "EditorCaption": ""
             }
           ]
         }

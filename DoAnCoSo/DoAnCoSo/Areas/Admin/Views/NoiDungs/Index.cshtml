@@ -1,0 +1,110 @@
+﻿@model IEnumerable<DoAnCoSo.Models.tbNoiDung>
+
+<style>
+    .QuyDinh-list {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+        .QuyDinh-list h1 {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .QuyDinh-list a.add-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+            .QuyDinh-list a.add-button:hover {
+                background-color: #0056b3;
+            }
+
+        .QuyDinh-list table {
+            width: 100%;
+            margin-top: 20px;
+            background-color: #fff;
+            border-collapse: collapse;
+        }
+
+            .QuyDinh-list table th {
+                background-color: #007bff;
+                color: #fff;
+                padding: 10px;
+                text-align: left;
+            }
+
+            .QuyDinh-list table td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+                .QuyDinh-list table td a.edit-link {
+                    background-color: #007bff;
+                    color: #fff;
+                    padding: 5px 10px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                }
+
+                    .QuyDinh-list table td a.edit-link.btn-danger {
+                        color: #fff;
+                        background-color: #dc3545;
+                    }
+
+                    .QuyDinh-list table td a.edit-link:hover {
+                        background-color: #0056b3;
+                    }
+</style>
+
+<div class="QuyDinh-list">
+    <h1>DANH SÁCH  NỘI DUNG</h1>
+    <p>
+        <a class="add-button btn btn-primary" asp-area="Admin" asp-controller="NoiDungs" asp-action="Create">Thêm nội dung</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ảnh</th>
+                <th>Tên nội dung</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <img class="quydinh-img" src="@Html.DisplayFor(modelItem => item.imageUrl)" style="width: 200px; height: 150px;" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenNoiDung)
+                    </td>
+                    <td>
+                        <a class="edit-link btn btn-primary" asp-area="Admin" asp-controller="NoiDungs" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        @if (item.TrangThai == 0)
+                        {
+                            <a class="edit-link btn btn-danger" asp-area="Admin" asp-controller="NoiDungs" asp-action="AnHien" asp-route-id="@item.Id">
+                                Ẩn
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="edit-link btn btn-primary" asp-area="Admin" asp-controller="NoiDungs" asp-action="AnHien" asp-route-id="@item.Id">
+                                Hiện
+                            </a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </table>
+</div> 

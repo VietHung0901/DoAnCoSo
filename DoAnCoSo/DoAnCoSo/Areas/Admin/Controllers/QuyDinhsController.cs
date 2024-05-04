@@ -59,47 +59,41 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             [ValidateAntiForgeryToken]
             public async Task<IActionResult> Create(tbQuyDinh quyDinh, IFormFile imageURL)
             {
-                if (string.IsNullOrEmpty(quyDinh.TenQuyDinh) && string.IsNullOrEmpty(quyDinh.NoiDungQuyDinh))
-                {
-                    TempData["ErrorMessage"] = "Vui lòng nhập thông tin đầy đủ";
-                    return View(quyDinh);
-                }
 
-                if (!NameQuyDinhExists(quyDinh.TenQuyDinh))
-                {
+            if (NameQuyDinhExists(quyDinh.TenQuyDinh))
+            {
+                TempData["ErrorMessage"] = "Đã tồn tại tên quy định";
+                return View(quyDinh);
+            }
 
-                    if (imageURL != null)
-                    {
-                    // Lưu hình ảnh đại diện
-                    quyDinh.imageURL = await SaveImage(imageURL);
-                    }
-                }
-                else
+            if (!String.IsNullOrEmpty(quyDinh.TenQuyDinh) && !String.IsNullOrEmpty(quyDinh.NoiDungQuyDinh) && imageURL != null)
                 {
-                    TempData["ErrorMessage"] = "Đã tồn tại quy định, vui lòng nhập tên khác";
-                }
+                quyDinh.imageURL = await SaveImage(imageURL);
                 _context.tbQuyDinh.Add(quyDinh);
                 await _context.SaveChangesAsync();
                 TempData["SuccessMessage"] = "Đã thêm quy định thành công.";
                 return View(quyDinh);
             }
+            else
+            {
+                TempData["ErrorMessage"] = "Vui lòng nhập thông tin đầy đủ";
+                return View(quyDinh);
+            }
+        }
 
             private async Task<string> SaveImage(IFormFile image)
             {
-                var savePath = Path.Combine("wwwroot/images", image.FileName); //
+                var savePath = Path.Combine("wwwroot/images-QuyDinh", image.FileName); //
 
                 using (var fileStream = new FileStream(savePath, FileMode.Create))
                 {
                     await image.CopyToAsync(fileStream);
                 }
 
-                return "/images/" + image.FileName;
+                return "/images-QuyDinh/" + image.FileName;
             }
 
-            private bool NameQuyDinhExists(string name)
-            {
-                return _context.tbQuyDinh.Any(e => e.TenQuyDinh == name);
-            }
+            
 
 
         // GET: Admin/QuyDinhs/Edit/5
@@ -123,34 +117,34 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TenQuyDinh,NoiDungQuyDinh,imageURL")] tbQuyDinh tbQuyDinh)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TenQuyDinh,NoiDungQuyDinh,imageURL")] tbQuyDinh tbQuyDinh, IFormFile imageUrl)
         {
             if (id != tbQuyDinh.Id)
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+            try
             {
-                try
+                if (imageUrl != null)
                 {
-                    _context.Update(tbQuyDinh);
-                    await _context.SaveChangesAsync();
+                    tbQuyDinh.imageURL = await SaveImage(imageUrl);
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!tbQuyDinhExists(tbQuyDinh.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.tbQuyDinh.Update(tbQuyDinh);
+                await _context.SaveChangesAsync();
             }
-            return View(tbQuyDinh);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!tbQuyDinhExists(tbQuyDinh.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            TempData["SuccessMessage"] = "sửa thông tin nội dung thành công.";
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Admin/QuyDinhs/Delete/5
@@ -186,9 +180,28 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> AnHien(int id)
+        {
+            var quyDinh = _context.tbQuyDinh.FirstOrDefault(l => l.Id == id);
+            if (quyDinh == null)
+                return NotFound();
+            if (quyDinh.TrangThai != 0)
+                quyDinh.TrangThai = 0;
+            else
+                quyDinh.TrangThai = 1;
+            _context.tbQuyDinh.Update(quyDinh);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "QuyDinhs");
+        }
+
         private bool tbQuyDinhExists(int id)
         {
             return _context.tbQuyDinh.Any(e => e.Id == id);
+        }
+
+        private bool NameQuyDinhExists(string name)
+        {
+            return _context.tbQuyDinh.Any(e => e.TenQuyDinh == name);
         }
     }
 }

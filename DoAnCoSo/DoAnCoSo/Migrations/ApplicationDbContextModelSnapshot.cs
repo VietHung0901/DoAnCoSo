@@ -184,6 +184,12 @@ namespace DoAnCoSo.Migrations
                     b.Property<int>("SoLuongThiSinh")
                         .HasColumnType("int");
 
+                    b.Property<string>("TenCuocThi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
+
                     b.HasKey("Id");
 
                     b.HasIndex("MonThiId");
@@ -203,6 +209,9 @@ namespace DoAnCoSo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
+
                     b.HasKey("Id");
 
                     b.ToTable("tbLoaiTruong");
@@ -219,6 +228,9 @@ namespace DoAnCoSo.Migrations
                     b.Property<string>("TenMonThi")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
 
                     b.HasKey("Id");
 
@@ -241,6 +253,12 @@ namespace DoAnCoSo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
+
+                    b.Property<string>("imageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("tbNoiDung");
@@ -259,6 +277,9 @@ namespace DoAnCoSo.Migrations
 
                     b.Property<DateTime>("NgayDangKy")
                         .HasColumnType("datetime2");
+
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -293,6 +314,9 @@ namespace DoAnCoSo.Migrations
                     b.Property<int>("Phut")
                         .HasColumnType("int");
 
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
+
                     b.HasKey("Id");
 
                     b.HasIndex("PhieuDangKyId");
@@ -313,6 +337,9 @@ namespace DoAnCoSo.Migrations
 
                     b.Property<string>("TenQuyDinh")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
 
                     b.Property<string>("imageURL")
                         .HasColumnType("nvarchar(max)");
@@ -336,6 +363,9 @@ namespace DoAnCoSo.Migrations
                     b.Property<string>("TenTruong")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
 
                     b.HasKey("Id");
 
