@@ -76,7 +76,7 @@
         <option value="past">Cuộc thi đã qua</option>
     </select>
 
-    <table class="table">
+    <table id="cuocThiTable" class="table">
         <thead>
             <tr>
                 <th>Tên cuộc thi</th>
@@ -90,7 +90,18 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
+                var rowClass = "";
+
+                // Kiểm tra xem item đó thuộc loại nào và thiết lập class cho hàng
+                if (DateTime.Now < item.NgayThi)
+                {
+                    rowClass = "upcoming";
+                }
+                else
+                {
+                    rowClass = "past";
+                }
+                <tr class="@rowClass">
                     <td>
                         @Html.DisplayFor(modelItem => item.TenCuocThi)
                     </td>
@@ -156,6 +167,7 @@
                                 row.style.display = "table-row";
                             }
                             break;
+                    }
                 });
             });
         });

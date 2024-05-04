@@ -77,14 +77,16 @@
         <div class="container-content" style="width: 100%;">
             <div class="container-content-body">
                 @RenderBody()
-            </div>
-        </div>
+            </div
 
-        <div class="container-content-footer">
+            <div class="container-content-footer">
             <footer>
                 Design by Viet Hung
             </footer>
         </div>
+        </div>
+
+        
     </div>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

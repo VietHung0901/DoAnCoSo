@@ -11,6 +11,11 @@ body {
     background-color: #1e88e5; /* Màu xanh dương */
     color: white; /* Màu chữ trắng */
     justify-content: space-between;
+    /*Ghim menu*/
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .header-icon {
@@ -59,7 +64,12 @@ body {
 }
 
 .container-menu {
-    background-color: #2196F3; /* Màu nền xanh*/ 
+    background-color: #2196F3; /* Màu nền xanh*/
+    /*Ghim menu*/
+    height: 100%;
+    position: fixed;
+    top: 70px;
+    left: 0;
 }
 
 .container-menu-list {
@@ -97,16 +107,10 @@ body {
         cursor: pointer;
     }
 
-    .container-menu-item.active p {
-        display: none;
-    }
-
-    .container-menu-item.active i {
-        color: #FF0000;  /*Màu đỏ cho biểu tượng khi hiển thị*/ 
-    }
-
 .container-content {
     width: 100%;
+    padding-left: 135px;
+    padding-top: 77px;
 }
 
 .container-content-footer {
