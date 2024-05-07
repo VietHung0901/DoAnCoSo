@@ -51,9 +51,6 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-
-            var quyDinhList = await _context.tbQuyDinh.ToListAsync();
-            ViewBag.QuyDinhList = quyDinhList;
             return View(tbCuocThi);
         }
 

@@ -23,6 +23,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             _context = context;
             _userManager = userManager;
         }
+
         //Xuất các phiếu đăng ký theo cuộc thi---------------------
         public async Task<IActionResult> Index(int cuocThiId)
         {

@@ -9,7 +9,5 @@
         public int Giay { get; set; }
         public int Diem { get; set; }
         public byte? TrangThai { get; set; }
-
-
     }
 }

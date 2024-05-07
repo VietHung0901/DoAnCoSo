@@ -1,148 +1,146 @@
-﻿@model IEnumerable<DoAnCoSo.Models.tbCuocThi>
+﻿ @model IEnumerable<DoAnCoSo.Models.tbCuocThi>
 @{
-    ApplicationDbContext _context = new ApplicationDbContext(); 
+    ApplicationDbContext context = new ApplicationDbContext(); 
 }
-@* <h1 class="text-center">DANH SÁCH CÁC CUỘC THI</h1>
 
-<style>
-    .text-center{
-        text-align: center !important;
-    }
-    td {
-        height: 40px;
-    }
-    thead{
-        background-color: #cfe2ff;
-    }
-</style>
-
-<table border="1" cellspacing="0" cellpadding="10" style="width: 80%;
-                                                          margin: auto;
-                                                          max-width: 90%;">
-    <thead>
-        <tr class="text-center">
-            <th>
-                Ngày Thi/Gio Thi
-            </th>
-            <th>
-                Số Lượng
-            </th>
-            <th>
-                Địa Điểm
-            </th>
-            <th>
-                Môn Thi
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var item in Model) {
-            var result = from c in _context.tbPhieuDangKy
-                         where item.Id == c.CuocThiId
-                        select c;
-            <tr class="text-center">
-                <td>
-                    @Html.DisplayFor(modelItem => item.NgayThi)
-                </td>
-                <td>
-                    @result.Count().ToString()/@Html.DisplayFor(modelItem => item.SoLuongThiSinh)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DiaDiem)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MonThi.TenMonThi)
-                </td>
-                <td>
-                    <a asp-area="" asp-controller="CuocThis" asp-action="Details" asp-route-Id="@item.Id">Xem chi tiết</a>
-                </td>
-            </tr>
-    }
-    </tbody>
-</table> *@
-
-<style>
-    .text-center {
-        text-align: center !important;
+ <style>
+    .school-list {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-    td {
-        height: 40px;
-    }
-
-    thead {
-        background-color: #cfe2ff;
-    }
-</style>
-
-<h1 class="text-center">DANH SÁCH CÁC CUỘC THI</h1>
-
-<h2>Tìm kiếm</h2>
-<form id="searchForm" asp-area="" asp-controller="CuocThis" asp-action="Index" method="get">
-    <p>
-        Ngày bắt đầu: <input style="background-color: #e1dcc5;" type="date" id="start_date" name="start_date" />
-        Ngày kết thúc: <input style="background-color: #e1dcc5;" type="date" id="end_date" name="end_date" />
-        Địa điểm: <input style="background-color: #e1dcc5;" type="text" id="diaDiem" name="diaDiem" placeholder="Nhập địa điểm thi" />
-        Môn:
-        <select style="background-color: #e1dcc5;" id="monthiId" name="monthiId">
-            <option value="">Chọn môn thi</option>
-            @foreach (var monThi in _context.tbMonThi)
-            {
-                <option value="@monThi.Id">@monThi.TenMonThi</option>
-            }
-        </select>
-
-        <input type="submit" value="Tìm kiếm" class="ip-timkiem" />
-    </p>
-</form>
-
-<table border="1" cellspacing="0" cellpadding="10" style="width: 80%;
-                                                          margin: auto;
-                                                          max-width: 90%;">
-    <thead>
-        <tr class="text-center">
-            <th>
-                Ngày Thi/Gio Thi
-            </th>
-            <th>
-                Số Lượng
-            </th>
-            <th>
-                Địa Điểm
-            </th>
-            <th>
-                Môn Thi
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            var result = from c in _context.tbPhieuDangKy
-                         where item.Id == c.CuocThiId
-                         select c;
-            <tr class="text-center">
-                <td>
-                    @Html.DisplayFor(modelItem => item.NgayThi)
-                </td>
-                <td>
-                    @result.Count().ToString()/@Html.DisplayFor(modelItem => item.SoLuongThiSinh)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DiaDiem)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MonThiId)
-                </td>
-                <td>
-                    <a asp-area="" asp-controller="CuocThis" asp-action="Details" asp-route-Id="@item.Id">Xem chi tiết</a>
-                </td>
-            </tr>
+        .school-list h1 {
+            color: black;
+            margin-bottom: 20px;
         }
-    </tbody>
-</table>
+
+    .add-sort {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 3px;
+    }
+        .school-list a.add-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+            .school-list a.add-button:hover {
+                background-color: #0056b3;
+            }
+
+        .school-list table {
+            width: 100%;
+            margin-top: 20px;
+            background-color: #fff;
+            border-collapse: collapse;
+        }
+
+            .school-list table th {
+                background-color: #007bff;
+                color: #fff;
+                padding: 10px;
+                text-align: left;
+            }
+
+            .school-list table td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+                .school-list table td a.edit-link {
+                    background-color: #007bff;
+                    color: #fff;
+                    padding: 5px 10px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                }
+
+                    .school-list table td a.edit-link.btn-danger {
+                        color: #fff;
+                        background-color: #dc3545;
+                    }
+
+                    .school-list table td a.edit-link:hover {
+                        background-color: #0056b3;
+                    }
+</style>
+
+<div class="school-list">
+    <h1><i class="fas fa-trophy"></i> CUỘC THI</h1>
+
+    <div class="timKiem">
+        <form id="searchForm" asp-area="" asp-controller="CuocThis" asp-action="Index" method="get">
+            <p>
+                Ngày bắt đầu: <input style="background-color: #e1dcc5;" type="date" id="start_date" name="start_date" />
+                Ngày kết thúc: <input style="background-color: #e1dcc5;" type="date" id="end_date" name="end_date" />
+                Địa điểm: <input style="background-color: #e1dcc5;" type="text" id="diaDiem" name="diaDiem" placeholder="Nhập địa điểm thi" />
+                Môn:
+                <select style="background-color: #e1dcc5;" id="monthiId" name="monthiId">
+                    <option value="">Chọn môn thi</option>
+                    @foreach (var monThi in context.tbMonThi)
+                    {
+                        <option value="@monThi.Id">@monThi.TenMonThi</option>
+                    }
+                </select>
+
+                <input type="submit" value="Tìm kiếm" class="ip-timkiem" />
+            </p>
+        </form>
+    </div>
+
+    <table id="cuocThiTable" class="table">
+        <thead>
+            <tr>
+                <th>Tên cuộc thi</th>
+                <th>Ngày Thi/Giờ Thi</th>
+                <th>Số Lượng</th>
+                <th>Địa Điểm</th>
+                <th>Môn Thi</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                var result = from c in context.tbPhieuDangKy
+                             where item.Id == c.CuocThiId
+                             select c;
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenCuocThi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NgayThi)
+                    </td>
+                    <td>
+                        @result.Count().ToString()/@Html.DisplayFor(modelItem => item.SoLuongThiSinh)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiaDiem)
+                    </td>
+                    <td>
+                        @{
+                            var tenMonThi = context.tbMonThi.FirstOrDefault(p => p.Id == item.MonThiId);
+                        }
+                        @tenMonThi.TenMonThi.ToString()
+                    </td>
+                    <td>
+                        <a asp-area="" asp-controller="CuocThis" asp-action="Details" asp-route-Id="@item.Id">Xem chi tiết</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -154,6 +152,8 @@
         });
     });
 </script>
+
+
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- Trong phần head của view hoặc layout -->

@@ -2,16 +2,6 @@
 
 
 function toggleMenu() {
-    //var menuItems = document.querySelectorAll('.container-menu-item-content');
-
-    //menuItems.forEach(function (item) {
-    //    if (item.style.display === 'none') {
-    //        item.style.display = 'block';
-    //    } else {
-    //        item.style.display = 'none';
-    //    }
-    //});
-
     var menuItems = document.querySelectorAll('.container-menu-item-content');
     var content = document.querySelector('.container-content');
     menuItems.forEach(function (item) {

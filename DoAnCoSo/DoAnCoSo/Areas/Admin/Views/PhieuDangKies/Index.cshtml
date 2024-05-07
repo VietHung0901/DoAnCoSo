@@ -1,41 +1,357 @@
 ﻿@model IEnumerable<DoAnCoSo.Models.tbPhieuDangKy>
+@using DoAnCoSo.Models
 
-<h1>Index</h1>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayDangKy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CuocThi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayDangKy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CuocThi.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.HoTen)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+@{
+    ApplicationDbContext context = new ApplicationDbContext();
 }
-    </tbody>
-</table>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>.
+<style>
+    .school-type-list {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+        .school-type-list h1 {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .school-type-list table {
+            width: 100%;
+            margin-top: 20px;
+            background-color: #fff;
+            border-collapse: collapse;
+        }
+
+            .school-type-list table th {
+                background-color: #007bff;
+                color: #fff;
+                padding: 10px;
+                text-align: left;
+            }
+
+            .school-type-list table td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+                .school-type-list table td a.edit-link {
+                    background-color: #007bff;
+                    color: #fff;
+                    padding: 5px 10px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                }
+
+                    .school-type-list table td a.edit-link:hover {
+                        background-color: #0056b3;
+                    }
+
+    .table {
+        text-align: center;
+    }
+
+        .table button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+            .table button:hover {
+                background-color: #0056b3;
+            }
+
+    .btn-dangky {
+        text-decoration: none;
+        color: #fff;
+    }
+    /* CSS cho form nhập điểm */
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+    }
+
+    #scoreFormContainer {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        z-index: 10000;
+        background-color: #f1f1f1;
+        width: 300px;
+        border-radius: 5px;
+    }
+
+        #scoreFormContainer h2 {
+            color: #007bff;
+            text-align: center;
+        }
+
+        #scoreFormContainer label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        #scoreFormContainer input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+        #scoreFormContainer button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+</style>
+
+<div class="school-type-list">
+    <h1><i class="fas fa-file-alt"></i> PHIẾU ĐĂNG KÝ CỦA CUỘC THI</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Cuộc thi
+                </th>
+                <th>
+                    Ngày đăng ký
+                </th>
+                <th>
+                    Người đăng ký
+                </th>
+                <th>
+                    Điểm
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CuocThi.TenCuocThi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NgayDangKy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.HoTen)
+                    </td>
+                    <td>
+                        @{
+                            var pkq = context.tbPhieuKetQua.FirstOrDefault(p => p.PhieuDangKyId == item.Id);
+                        }
+                        @if (pkq != null)
+                            @pkq.Diem.ToString()
+                    </td>
+                    <td>
+                        <button>
+                            <a class="btn-dangky" asp-area="Admin" asp-controller="PhieuDangKies" asp-action="Details" asp-route-id="@item.Id">
+                                Chi tiết
+                            </a>
+                        </button>
+                        @if(pkq == null )
+                        {
+                            <button class="openFormNhapButton" data-phieu-dang-ky-id="@item.Id">Nhập điểm</button>
+                        }
+                        else
+                        {
+                            <button class="openFormSuaButton" data-phieu-dang-ky-id="@item.Id">Sửa điểm</button>
+
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('.openFormNhapButton').click(function () {
+            var phieuDangKyId = $(this).data('phieu-dang-ky-id');
+
+            // Tạo overlay
+            var overlay = $('<div id="overlay"></div>');
+            overlay.css({
+                'position': 'fixed',
+                'top': '0',
+                'left': '0',
+                'width': '100%',
+                'height': '100%',
+                'background-color': 'rgba(0, 0, 0, 0.5)',
+                'z-index': '9999'
+            });
+
+            // Tạo form nhập điểm
+            var form = $('<div id="scoreFormContainer"></div>');
+            form.html(`
+                <h2>Nhập kết quả</h2>
+                    <form id="scoreForm" action="/Admin/PhieuKetQuas/SaveDiem" method="post">
+                    <input id="phieuDangKyIdInput" name="PhieuDangKyId" value="${phieuDangKyId}">
+                    <label for="phutInput">Phút:</label>
+                    <input type="number" id="phutInput" name="Phut">
+                    <br>
+                    <label for="giayInput">Giây:</label>
+                    <input type="number" id="giayInput" name="Giay">
+                    <br>
+                    <label for="diemInput">Điểm:</label>
+                    <input type="number" id="diemInput" name="Diem">
+                    <br>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </form>
+            `);
+
+            // Đưa overlay và form vào trang
+            $('body').append(overlay);
+            $('body').append(form);
+
+            // Lắng nghe sự kiện submit form
+            $('#scoreForm').submit(function (event) {
+                event.preventDefault();
+
+                // Lấy dữ liệu từ form
+                var formData = $(this).serialize();
+
+                // Gửi request AJAX để lưu dữ liệu điểm
+                $.ajax({
+                    url: '/Admin/PhieuKetQuas/SaveDiem',
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        // Xử lý thành công
+                        // Ẩn overlay và form
+                        overlay.remove();
+                        form.remove();
+                        location.reload();
+                    },
+                    error: function (xhr, status, error) {
+                        // Xử lý lỗi nếu cần
+                    }
+                });
+            });
+        });
+    });
+
+
+    $(document).ready(function () {
+        $('.openFormSuaButton').click(function () {
+            var phieuDangKyId = $(this).data('phieu-dang-ky-id');
+
+            // Tạo overlay
+            var overlay = $('<div id="overlay"></div>');
+            overlay.css({
+                'position': 'fixed',
+                'top': '0',
+                'left': '0',
+                'width': '100%',
+                'height': '100%',
+                'background-color': 'rgba(0, 0, 0, 0.5)',
+                'z-index': '9999'
+            });
+
+            // Tạo form sửa điểm
+            var form = $('<div id="scoreFormContainer"></div>');
+            form.html(`
+                <h2>Sửa kết quả</h2>
+                <form id="scoreForm" action="/Admin/PhieuKetQuas/UpdateDiem" method="post">
+                    <input id="phieuDangKyIdInput" name="PhieuDangKyId" value="${phieuDangKyId}">
+                    <label for="phutInput">Phút:</label>
+                    <input type="number" id="phutInput" name="Phut">
+                    <br>
+                    <label for="giayInput">Giây:</label>
+                    <input type="number" id="giayInput" name="Giay">
+                    <br>
+                    <label for="diemInput">Điểm:</label>
+                    <input type="number" id="diemInput" name="Diem">
+                    <br>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </form>
+            `);
+            $.ajax({
+                url: '/Admin/PhieuKetQuas/LayDiem?phieuDangKyId=' + phieuDangKyId,
+                type: 'GET',
+                success: function (response) {
+                    // Kiểm tra xem response có dữ liệu điểm không
+                    if (response.diem && response.phut && response.giay) {
+                        var diem = response.diem;
+                        var phut = response.phut;
+                        var giay = response.giay;
+
+                        // Đặt giá trị điểm vào input trong form sửa điểm
+                        $('#diemInput').val(diem);
+                        $('#phutInput').val(phut);
+                        $('#giayInput').val(giay);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    // Xử lý lỗi nếu cần
+                }
+            });
+            // Đưa overlay và form vào trang
+            $('body').append(overlay);
+            $('body').append(form);
+
+            // Lấy dữ liệu điểm cũ thông qua AJAX
+            
+
+            // Lắng nghe sự kiện submit form
+            $('#scoreForm').submit(function (event) {
+                event.preventDefault();
+
+                // Lấy dữ liệu từ form
+                var formData = $(this).serialize();
+
+                // Gửi request AJAX để cập nhật điểm
+                $.ajax({
+                    url: '/Admin/PhieuKetQuas/UpdateDiem',
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        // Xử lý thành công
+                        // Ẩn overlay và form
+                        overlay.remove();
+                        form.remove();
+                        location.reload();
+                    },
+                    error: function (xhr, status, error) {
+                        // Xử lý lỗi nếu cần
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+
 

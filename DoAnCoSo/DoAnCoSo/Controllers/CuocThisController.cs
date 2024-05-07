@@ -27,31 +27,93 @@ namespace DoAnCoSo.Controllers
             _monThiRepository = monThiRepository;
         }
 
-        //public async Task<IActionResult> Index()
-        //{
-        //    var applicationDbContext = _context.tbCuocThi.Include(t => t.MonThi);
-        //    return View(await applicationDbContext.ToListAsync());
-        //}
-
         //Action tìm kiếm cuộc thi theo ngày, địa điểm, môn thi
         public async Task<IActionResult> Index(DateTime? start_date, DateTime? end_date,string? diaDiem, int? monthiId )
         {
             var result = from c in _context.tbCuocThi
+                         where c.TrangThai != 0
                          select c;
 
-            if (start_date != null || end_date != null || !string.IsNullOrEmpty(diaDiem) || monthiId != null)
+            if (start_date != null && end_date != null && !string.IsNullOrEmpty(diaDiem) && monthiId != null)
             {
-                if (start_date != null && end_date != null && start_date > end_date)
+                if (start_date > end_date)
                 {
                     TempData["ErrorMessage"] = "Thời gian không hợp lệ!";
                     return RedirectToAction("Index", "CuocThis");
                 }
 
                 result = result.Where(c =>
-                    ((start_date != null && c.NgayThi >= start_date) &&
-                    (end_date != null && c.NgayThi <= end_date)) &&
-                    (!string.IsNullOrEmpty(diaDiem) && c.DiaDiem.Contains(diaDiem)) &&
-                    (monthiId != null && c.MonThiId == monthiId)
+                    c.NgayThi.Date >= start_date &&
+                    c.NgayThi.Date <= end_date &&
+                    c.DiaDiem.Contains(diaDiem) &&
+                    c.MonThiId == monthiId &&
+                    c.TrangThai != 0
+                );
+            }
+            else if (start_date != null && end_date != null && !string.IsNullOrEmpty(diaDiem))
+            {
+                if (start_date > end_date)
+                {
+                    TempData["ErrorMessage"] = "Thời gian không hợp lệ!";
+                    return RedirectToAction("Index", "CuocThis");
+                }
+
+                result = result.Where(c =>
+                    c.NgayThi.Date >= start_date &&
+                    c.NgayThi.Date <= end_date &&
+                    c.DiaDiem.Contains(diaDiem) &&
+                    c.TrangThai != 0
+                );
+            }
+            else if (start_date != null && end_date != null && monthiId != null)
+            {
+                if (start_date > end_date)
+                {
+                    TempData["ErrorMessage"] = "Thời gian không hợp lệ!";
+                    return RedirectToAction("Index", "CuocThis");
+                }
+
+                result = result.Where(c =>
+                    c.NgayThi.Date >= start_date &&
+                    c.NgayThi.Date <= end_date &&
+                    c.MonThiId == monthiId &&
+                    c.TrangThai != 0
+                );
+            }
+            else if (!string.IsNullOrEmpty(diaDiem) && monthiId != null)
+            {
+                result = result.Where(c =>
+                    c.DiaDiem.Contains(diaDiem) &&
+                    c.MonThiId == monthiId &&
+                    c.TrangThai != 0
+                );
+            }
+            else if (start_date != null && end_date != null)
+            {
+                if (start_date > end_date)
+                {
+                    TempData["ErrorMessage"] = "Thời gian không hợp lệ!";
+                    return RedirectToAction("Index", "CuocThis");
+                }
+
+                result = result.Where(c =>
+                    c.NgayThi.Date >= start_date &&
+                    c.NgayThi.Date <= end_date &&
+                    c.TrangThai != 0
+                );
+            }
+            else if (!string.IsNullOrEmpty(diaDiem))
+            {
+                result = result.Where(c =>
+                    c.DiaDiem.Contains(diaDiem) &&
+                    c.TrangThai != 0
+                );
+            }
+            else if (monthiId != null)
+            {
+                result = result.Where(c =>
+                    c.MonThiId == monthiId &&
+                    c.TrangThai != 0
                 );
             }
 
