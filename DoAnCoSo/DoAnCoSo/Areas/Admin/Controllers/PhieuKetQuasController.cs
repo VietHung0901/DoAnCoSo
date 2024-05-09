@@ -83,10 +83,17 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             return Json(new { diem = pkq.Diem, phut = pkq.Phut, giay = pkq.Giay });
             //return Content($"{pkq.Phut},{pkq.Giay}, {pkq.Diem}");
         }
-        // GET: Admin/PhieuKetQuas
-        public async Task<IActionResult> Index()
+
+        //Xuất danh sách các phiếu kết quả theo cuộc thi
+        public async Task<IActionResult> Index(int cuocThiId)
         {
-            var applicationDbContext = _context.tbPhieuKetQua.Include(t => t.PhieuDangKy);
+            var applicationDbContext = _context.tbPhieuKetQua
+                .Where(p => p.PhieuDangKy.CuocThiId == cuocThiId)
+                .Include(t => t.PhieuDangKy)
+                .OrderByDescending(p => p.Diem) // Sắp xếp giảm dần theo trường Diem
+                .ThenBy(p => p.Phut) // Sắp xếp tăng dần theo trường Phut (nếu điểm bằng nhau)
+                .ThenBy(p => p.Giay); // Sắp xếp tăng dần theo trường Giay (nếu điểm và phút bằng nhau)
+
             return View(await applicationDbContext.ToListAsync());
         }
 

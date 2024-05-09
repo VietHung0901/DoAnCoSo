@@ -1,60 +1,133 @@
-﻿@model IEnumerable<DoAnCoSo.Models.tbPhieuKetQua>
+﻿@using DoAnCoSo.Models
+@model IEnumerable<DoAnCoSo.Models.tbPhieuKetQua>
 
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
-}
+    ApplicationDbContext context = new ApplicationDbContext();
+    var top3Results = Model.Take(3).ToList();
+    var remainingResults = Model.Skip(3).ToList();
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PhieuDangKy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phut)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Giay)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Diem)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TrangThai)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhieuDangKy.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phut)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Giay)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Diem)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TrangThai)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+    string layTen (string userId)
+    {
+        var user = context.Users.FirstOrDefault(p => p.Id == userId);
+        if (user == null)
+            return "";
+        return @user.HoTen.ToString();
+    }
 }
-    </tbody>
-</table>
+<style>
+    .result-board {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .result {
+        text-align: center;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+    }
+
+        .result h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .result p {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+    .result1 {
+        background-color: gold;
+    }
+
+    .result2 {
+        background-color: silver;
+    }
+
+    .result3 {
+        background-color: #cd7f32;
+    }
+</style>
+<div class="list-Result">
+    <div class="result-board">
+        @{
+            var index = top3Results.Select((item, index) => index).ToList();
+        }
+        <div class="result result2">
+            <h3>Top 2</h3>
+            <p>@layTen(top3Results[index[1]].PhieuDangKy.UserId)</p>
+            <p>Diem: @Html.DisplayFor(modelItem => top3Results[index[1]].Diem)</p>
+            <p>Phut: @Html.DisplayFor(modelItem => top3Results[index[1]].Phut)</p>
+            <p>Giay: @Html.DisplayFor(modelItem => top3Results[index[1]].Giay)</p>
+        </div>
+
+        <div class="result result1">
+            <h3>Top 1</h3>
+            <p>@layTen(top3Results[index[0]].PhieuDangKy.UserId)</p>
+            <p>Diem: @Html.DisplayFor(modelItem => top3Results[index[0]].Diem)</p>
+            <p>Phut: @Html.DisplayFor(modelItem => top3Results[index[0]].Phut)</p>
+            <p>Giay: @Html.DisplayFor(modelItem => top3Results[index[0]].Giay)</p>
+        </div>
+
+        <div class="result result3">
+            <h3>Top 3</h3>
+            <p>@layTen(top3Results[index[2]].PhieuDangKy.UserId)</p>
+            <p>Diem: @Html.DisplayFor(modelItem => top3Results[index[2]].Diem)</p>
+            <p>Phut: @Html.DisplayFor(modelItem => top3Results[index[2]].Phut)</p>
+            <p>Giay: @Html.DisplayFor(modelItem => top3Results[index[2]].Giay)</p>
+        </div>
+    </div>
+
+    <div class="list">
+        @if (remainingResults.Any())
+        {
+            <h2>Kết quả còn lại</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PhieuDangKy)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Phut)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Giay)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Diem)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in remainingResults)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PhieuDangKy.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phut)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Giay)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Diem)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+
+
+
+

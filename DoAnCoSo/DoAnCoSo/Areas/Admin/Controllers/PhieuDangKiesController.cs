@@ -30,6 +30,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             var applicationDbContext = _context.tbPhieuDangKy.Where(p => p.CuocThiId == cuocThiId)
                                                             .Include(t => t.CuocThi)
                                                             .Include(t => t.User);
+            ViewBag.CuocThiId = cuocThiId;
             return View(await applicationDbContext.ToListAsync());
         }
 
