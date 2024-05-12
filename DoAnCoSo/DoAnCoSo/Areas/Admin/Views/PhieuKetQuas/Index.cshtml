@@ -161,152 +161,158 @@
         <p>Xin chúc mừng các thí sinh vượt qua cuộc thi!</p>
     </div>
     <div class="list-Result">
-
         <div class="result-board">
             @{
                 var index = top3Results.Select((item, index) => index).ToList();
             }
-            <div class="result">
-                <div class="result-content">
-                    <h3>Top 2</h3>
-                    <p>@layTen(top3Results[index[1]].PhieuDangKy.UserId)</p>
-                </div>
 
-                <div class="result-info">
-                    <table>
-                        <tr>
-                            <th>Điểm</th>
-                            <th>Phút</th>
-                            <th>Giây</th>
-                        </tr>
-                        <tr>
-                            <td>@Html.DisplayFor(modelItem => top3Results[index[1]].Diem)</td>
-                            <td>@Html.DisplayFor(modelItem => top3Results[index[1]].Phut)</td>
-                            <td>@Html.DisplayFor(modelItem => top3Results[index[1]].Giay)</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="resultTop">
-                    <div class="result2">
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="result">
-                <div class="result-content">
-                    <h3>Top 1</h3>
-                    <p>@layTen(top3Results[index[0]].PhieuDangKy.UserId)</p>
-                </div>
-
-                <div class="result-info">
-                     <table>
-                        <tr>
-                            <th>Điểm</th>
-                            <th>Phút</th>
-                            <th>Giây</th>
-                        </tr>
-                        <tr>
-                            <td>@Html.DisplayFor(modelItem => top3Results[index[0]].Diem)</td>
-                            <td>@Html.DisplayFor(modelItem => top3Results[index[0]].Phut)</td>
-                            <td>@Html.DisplayFor(modelItem => top3Results[index[0]].Giay)</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="resultTop">
-                    <div class="result1">
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="result">
-                <div class="result-content">
-                    <h3>Top 3</h3>
-                    <p>@layTen(top3Results[index[2]].PhieuDangKy.UserId)</p>
-                </div>
-
-                <div class="result-info">
-                     <table>
-                        <tr>
-                            <th>Điểm</th>
-                            <th>Phút</th>
-                            <th>Giây</th>
-                        </tr>
-                        <tr>
-                            <td>@Html.DisplayFor(modelItem => top3Results[index[2]].Diem)</td>
-                            <td>@Html.DisplayFor(modelItem => top3Results[index[2]].Phut)</td>
-                            <td>@Html.DisplayFor(modelItem => top3Results[index[2]].Giay)</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="resultTop">
-                    <div class="result3">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="list">
-            @if (remainingResults.Any())
+            @if (top3Results.Count >= 2)
             {
-                <table>
-                    <thead>
-                        <tr>
-                            <th>
-                                Top
-                            </th>
-                            <th>
-                                Mã
-                            </th>
-                            <th>
-                                Họ và tên
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Phut)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Giay)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Diem)
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in remainingResults)
-                        {
-                            //Tăng hạng
-                            top++;
-                            <tr class="result-row @(top == 1 ? "gold" : (top == 2 ? "silver" : (top == 3 ? "bronze" : "")))">
-                                <td>
-                                    @top
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.PhieuDangKyId)
-                                </td>
-                                <td>
-                                    @layTen(item.PhieuDangKy.UserId)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Phut)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Giay)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Diem)
-                                </td>
+                <div class="result">
+                    <div class="result-content">
+                        <h3>Top 2</h3>
+                        <p>@layTen(top3Results[index[1]].PhieuDangKy.UserId)</p>
+                    </div>
+
+                    <div class="result-info">
+                        <table>
+                            <tr>
+                                <th>Điểm</th>
+                                <th>Phút</th>
+                                <th>Giây</th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => top3Results[index[1]].Diem)</td>
+                                <td>@Html.DisplayFor(modelItem => top3Results[index[1]].Phut)</td>
+                                <td>@Html.DisplayFor(modelItem => top3Results[index[1]].Giay)</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="resultTop">
+                        <div class="result2">
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @if (top3Results.Count >= 1)
+            {
+                <div class="result">
+                    <div class="result-content">
+                        <h3>Top 1</h3>
+                        <p>@layTen(top3Results[index[0]].PhieuDangKy.UserId)</p>
+                    </div>
+
+                    <div class="result-info">
+                        <table>
+                            <tr>
+                                <th>Điểm</th>
+                                <th>Phút</th>
+                                <th>Giây</th>
+                            </tr>
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => top3Results[index[0]].Diem)</td>
+                                <td>@Html.DisplayFor(modelItem => top3Results[index[0]].Phut)</td>
+                                <td>@Html.DisplayFor(modelItem => top3Results[index[0]].Giay)</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="resultTop">
+                        <div class="result1">
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @if (top3Results.Count >= 3)
+            {
+                <div class="result">
+                    <div class="result-content">
+                        <h3>Top 3</h3>
+                        <p>@layTen(top3Results[index[2]].PhieuDangKy.UserId)</p>
+                    </div>
+
+                    <div class="result-info">
+                        <table>
+                            <tr>
+                                <th>Điểm</th>
+                                <th>Phút</th>
+                                <th>Giây</th>
+                            </tr>
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => top3Results[index[2]].Diem)</td>
+                                <td>@Html.DisplayFor(modelItem => top3Results[index[2]].Phut)</td>
+                                <td>@Html.DisplayFor(modelItem => top3Results[index[2]].Giay)</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="resultTop">
+                        <div class="result3">
+                        </div>
+                    </div>
+                </div>
             }
         </div>
+
+            <div class="list">
+                @if (remainingResults.Any())
+                {
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Top
+                                </th>
+                                <th>
+                                    Mã
+                                </th>
+                                <th>
+                                    Họ và tên
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Phut)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Giay)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Diem)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in remainingResults)
+                            {
+                                //Tăng hạng
+                                top++;
+                                <tr class="result-row @(top == 1 ? "gold" : (top == 2 ? "silver" : (top == 3 ? "bronze" : "")))">
+                                    <td>
+                                        @top
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PhieuDangKyId)
+                                    </td>
+                                    <td>
+                                        @layTen(item.PhieuDangKy.UserId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Phut)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Giay)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Diem)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
     </div>
 </body>
 

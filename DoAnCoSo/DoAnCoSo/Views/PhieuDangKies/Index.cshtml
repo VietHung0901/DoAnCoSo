@@ -1,48 +1,78 @@
 ﻿@model IEnumerable<DoAnCoSo.Models.tbPhieuDangKy>
 
 <style>
-    .registration-table {
-        margin: 20px;
+    .school-list {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-    h1 {
-        font-size: 24px;
-        margin-bottom: 20px;
+        .school-list h1 {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+    .add-sort {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 3px;
     }
 
-    .table {
+    .school-list a.add-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .school-list a.add-button:hover {
+            background-color: #0056b3;
+        }
+
+    .school-list table {
         width: 100%;
+        margin-top: 20px;
+        background-color: #fff;
         border-collapse: collapse;
-        border: 1px solid #ccc;
     }
 
-        .table th,
-        .table td {
+        .school-list table th {
+            background-color: #007bff;
+            color: #fff;
             padding: 10px;
             text-align: left;
         }
 
-        .table th {
-            background-color: #f2f2f2;
-            font-weight: bold;
+        .school-list table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
         }
 
-        .table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+            .school-list table td a.edit-link {
+                background-color: #007bff;
+                color: #fff;
+                padding: 5px 10px;
+                text-decoration: none;
+                border-radius: 5px;
+            }
 
-    .details-link {
-        color: #007bff;
-        text-decoration: none;
-    }
+                .school-list table td a.edit-link.btn-danger {
+                    color: #fff;
+                    background-color: #dc3545;
+                }
 
-        .details-link:hover {
-            text-decoration: underline;
-        }
+                .school-list table td a.edit-link:hover {
+                    background-color: #0056b3;
+                }
 </style>
-<div class="registration-table">
-    <h1>Phiếu đăng ký của bạn</h1>
-    <table class="table">
+
+<div class="school-list">
+    <h1><i class="fas fa-file-alt"></i> PHIẾU ĐĂNG KÝ</h1>
+    <table id="cuocThiTable" class="table">
         <thead>
             <tr>
                 <th>Ngày Đăng Ký</th>
@@ -59,11 +89,10 @@
                     <td>@Html.DisplayFor(modelItem => item.CuocThi.TenCuocThi)</td>
                     <td>@Html.DisplayFor(modelItem => item.User.HoTen)</td>
                     <td>
-                        <a asp-controller="CuocThis" asp-action="Details" asp-route-Id="@item.CuocThi.Id">Xem cuộc thi</a>
+                        <a class="edit-link btn btn-primary" asp-controller="CuocThis" asp-action="Details" asp-route-Id="@item.CuocThi.Id">Xem cuộc thi</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
-

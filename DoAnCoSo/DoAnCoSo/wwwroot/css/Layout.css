@@ -73,7 +73,7 @@ body {
 }
 
 .container-menu-list {
-    display: flex;
+    display: flex; 
     flex-direction: column;
     list-style-type: none;
     padding: 0;
