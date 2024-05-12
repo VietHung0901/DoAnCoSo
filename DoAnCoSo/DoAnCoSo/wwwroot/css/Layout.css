@@ -113,7 +113,7 @@ body {
     padding-top: 77px;
 }
 
-.container-content-footer {
+footer {
     position: fixed;
     bottom: 0;
     left: 0;
