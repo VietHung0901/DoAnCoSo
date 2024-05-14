@@ -178,13 +178,11 @@
                         <table>
                             <tr>
                                 <th>Điểm</th>
-                                <th>Phút</th>
-                                <th>Giây</th>
+                                <th>Thời gian</th>
                             </tr>
                             <tr>
                                 <td>@Html.DisplayFor(modelItem => top3Results[index[1]].Diem)</td>
-                                <td>@Html.DisplayFor(modelItem => top3Results[index[1]].Phut)</td>
-                                <td>@Html.DisplayFor(modelItem => top3Results[index[1]].Giay)</td>
+                                <td>@Html.DisplayFor(modelItem => top3Results[index[1]].Phut):@Html.DisplayFor(modelItem => top3Results[index[1]].Giay)</td>
                             </tr>
                         </table>
                     </div>
@@ -208,13 +206,11 @@
                         <table>
                             <tr>
                                 <th>Điểm</th>
-                                <th>Phút</th>
-                                <th>Giây</th>
+                                <th>Thời gian</th>
                             </tr>
                             <tr>
                                 <td>@Html.DisplayFor(modelItem => top3Results[index[0]].Diem)</td>
-                                <td>@Html.DisplayFor(modelItem => top3Results[index[0]].Phut)</td>
-                                <td>@Html.DisplayFor(modelItem => top3Results[index[0]].Giay)</td>
+                                <td>@Html.DisplayFor(modelItem => top3Results[index[0]].Phut):@Html.DisplayFor(modelItem => top3Results[index[0]].Giay)</td>
                             </tr>
                         </table>
                     </div>
@@ -238,13 +234,11 @@
                         <table>
                             <tr>
                                 <th>Điểm</th>
-                                <th>Phút</th>
-                                <th>Giây</th>
+                                <th>Thời gian</th>
                             </tr>
                             <tr>
                                 <td>@Html.DisplayFor(modelItem => top3Results[index[2]].Diem)</td>
-                                <td>@Html.DisplayFor(modelItem => top3Results[index[2]].Phut)</td>
-                                <td>@Html.DisplayFor(modelItem => top3Results[index[2]].Giay)</td>
+                                <td>@Html.DisplayFor(modelItem => top3Results[index[2]].Phut):@Html.DisplayFor(modelItem => top3Results[index[2]].Giay)</td>
                             </tr>
                         </table>
                     </div>
@@ -273,13 +267,10 @@
                                     Họ và tên
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Phut)
+                                    Điểm
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Giay)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Diem)
+                                    Thời gian
                                 </th>
                             </tr>
                         </thead>
@@ -299,13 +290,10 @@
                                         @layTen(item.PhieuDangKy.UserId)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Phut)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Giay)
-                                    </td>
-                                    <td>
                                         @Html.DisplayFor(modelItem => item.Diem)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Phut):@Html.DisplayFor(modelItem => item.Giay)
                                     </td>
                                 </tr>
                             }

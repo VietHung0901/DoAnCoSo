@@ -23,21 +23,19 @@ namespace DoAnCoSo.Controllers
             _userManager = userManager;
         }
         //Trả về tất cả các phiếu kết quả thuộc user
-        //public async Task<IActionResult> Index2()
-        //{
-        //    if (!User.Identity.IsAuthenticated)
-        //    {
-        //        return Redirect("https://localhost:7107/Identity/Account/Login"); // Chuyển hướng đến trang đăng nhập
-        //    }
-        //    else
-        //    {
-        //        var user = await _userManager.GetUserAsync(User);
-        //        var applicationDbContext = _context.tbPhieuKetQua.Where(p => p.tbPh.UserId == user.Id)
-        //                                                    .Include(t => t.CuocThi)
-        //                                                    .Include(t => t.User);
-        //        return View(await applicationDbContext.ToListAsync());
-        //    }
-        //}
+        public async Task<IActionResult> Index()
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("https://localhost:7107/Identity/Account/Login"); // Chuyển hướng đến trang đăng nhập
+            }
+            else
+            {
+                var user = await _userManager.GetUserAsync(User);
+                var applicationDbContext = _context.tbPhieuKetQua.Where(p => p.PhieuDangKy.UserId == user.Id);
+                return View(await applicationDbContext.ToListAsync());
+            }
+        }
 
         //Trả về kết quả theo cuộc thi
         public async Task<IActionResult> Ketqua(int cuocThiId)

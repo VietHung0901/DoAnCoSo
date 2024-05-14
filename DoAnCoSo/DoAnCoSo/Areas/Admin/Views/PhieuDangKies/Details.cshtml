@@ -1,37 +1,75 @@
-﻿@model DoAnCoSo.Models.tbPhieuDangKy
+﻿ @model DoAnCoSo.Models.tbPhieuDangKy
 
-@{
-    ViewData["Title"] = "Details";
-    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
-}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
 
-<h1>Details</h1>
+    .container-deatils {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-<div>
-    <h4>tbPhieuDangKy</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NgayDangKy)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NgayDangKy)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CuocThi)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CuocThi.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.User)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.User.Id)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    h1 {
+        color: #003399;
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    h2 {
+        color: #003399;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #666666;
+        line-height: 1.5;
+    }
+
+    .section {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .section-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .section-content {
+        margin-left: 20px;
+    }
+</style>
+<div class="container-deatils">
+    <h1>Thông tin chi tiết phiếu đăng ký</h1>
+    <div class="container-deatils-content">
+        <div class="section">
+            <h2 class="section-title">Thông tin cá nhân</h2>
+            <div class="section-content">
+                <p><strong>Họ và tên:</strong> @Html.DisplayFor(model => model.User.HoTen)</p>
+                <p><strong>Email:</strong> @Html.DisplayFor(model => model.User.Email)</p>
+                <p><strong>Số điện thoại:</strong> @Html.DisplayFor(model => model.User.SoDienThoai)</p>
+                <p><strong>Địa chỉ:</strong> @Html.DisplayFor(model => model.User.DiaChi)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Thông tin cuộc thi</h2>
+            <div class="section-content">
+                <p><strong>Mã cuộc thi:</strong> @Html.DisplayFor(model => model.CuocThi.Id)</p>
+                <p><strong>Tên cuộc thi:</strong> @Html.DisplayFor(model => model.CuocThi.TenCuocThi)</p>
+                <p><strong>Ngày thi:</strong> @Html.DisplayFor(model => model.CuocThi.NgayThi)</p>
+            </div>
+        </div>
+    </div>
 </div>
