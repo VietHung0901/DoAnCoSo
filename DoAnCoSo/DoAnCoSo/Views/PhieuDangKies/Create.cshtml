@@ -114,7 +114,9 @@
 
             <div class="form-group">
                 @{
-                    string gt = "Nam"; if (gioitinh == 0) gt = "Nữ";
+                    string gt = "Nam"; 
+                    if (gioitinh == 0) 
+                    gt = "Nữ";
                 }
                 <label class="form-label" for="gioitinh">Giới tính</label>
                 <input class="form-input" type="text" id="gioitinh" name="gioitinh" value="@gt.ToString()" readonly />

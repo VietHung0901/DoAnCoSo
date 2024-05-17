@@ -1,0 +1,186 @@
+﻿@{
+    ViewData["Title"] = "View Chart";
+}
+
+<style>
+    .school-list .chart-container {
+        width: 600px;
+        height: 600px;
+        margin: auto;
+    }
+
+    .add-sort {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 80px;
+    }
+
+    .school-list a.add-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .school-list a.add-button:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+<div class="school-list">
+    <div class="add-sort">
+        <a class="add-button" asp-action="DanhSachUser">View User</a>
+    </div>
+    <div class="chart-container">
+        <canvas id="userChart"></canvas>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '@Url.Action("ViewChart", "PhieuDangKies")',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var labels = [];
+                    var dataValues = [];
+                    $.each(data, function (index, item) {
+                        labels.push(item.city);
+                        dataValues.push(item.count);
+                    });
+
+                    // Tạo biểu đồ sau khi nhận dữ liệu thành công
+                    createChart(labels, dataValues);
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log('Error:', errorThrown);
+                }
+            });
+        });
+
+        // Hàm tạo biểu đồ
+        function createChart(labels, dataValues) {
+            var ctx = document.getElementById('userChart').getContext('2d');
+            var userChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'User Count',
+                        data: dataValues,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(54, 162, 235, 0.5)',
+                            'rgba(255, 206, 86, 0.5)',
+                            'rgba(75, 192, 192, 0.5)',
+                            'rgba(153, 102, 255, 0.5)',
+                            'rgba(255, 159, 64, 0.5)',
+                            'rgba(255, 99, 132, 0.5)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'User Count by City'
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+}
+
+@* @section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '@Url.Action("ViewChart", "PhieuDangKies")',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var labels = [];
+                    var dataValues = [];
+                    $.each(data, function (index, item) {
+                        labels.push(item.city);
+                        dataValues.push(item.count);
+                    });
+
+                    // Tạo biểu đồ sau khi nhận dữ liệu thành công
+                    createChart(labels, dataValues);
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log('Error:', errorThrown);
+                }
+            });
+        });
+
+        // Hàm tạo biểu đồ
+        function createChart(labels, dataValues) {
+            var ctx = document.getElementById('userChart').getContext('2d');
+            var userChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'User Count',
+                        data: dataValues,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(54, 162, 235, 0.5)',
+                            'rgba(255, 206, 86, 0.5)',
+                            'rgba(75, 192, 192, 0.5)',
+                            'rgba(153, 102, 255, 0.5)',
+                            'rgba(255, 159, 64, 0.5)',
+                            'rgba(255, 99, 132, 0.5)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'User Count by City'
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+}
+ *@

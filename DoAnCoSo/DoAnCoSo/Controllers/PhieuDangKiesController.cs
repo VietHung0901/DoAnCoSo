@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using DoAnCoSo.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using DoAnCoSo.Repositories;
 
 namespace DoAnCoSo.Controllers
 {
@@ -15,11 +16,13 @@ namespace DoAnCoSo.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IUserRepository _userRepository;
 
-        public PhieuDangKiesController(UserManager<ApplicationUser> userManager, ApplicationDbContext context)
+        public PhieuDangKiesController(UserManager<ApplicationUser> userManager, ApplicationDbContext context, IUserRepository userRepository)
         {
             _context = context;
             _userManager = userManager;
+            _userRepository = userRepository;
         }
 
         //Xuất các phiếu đăng ký theo UserId
@@ -146,5 +149,9 @@ namespace DoAnCoSo.Controllers
                 return true;
             return false;
         }
+
+       
+
+
     }
 }

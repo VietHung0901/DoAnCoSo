@@ -125,5 +125,40 @@ footer {
     color: #666666;
 }
 
+ span.notify-right {
+    background: url('~/images-Login/new-gif (1).gif') no-repeat;
+    position: relative;
+    display: inline-block;
+}
+
+span.notify-right img {
+    display: block;
+    max-width: 100%;
+    height: auto; 
+    position: absolute;
+    top: 50%; 
+    right: 5px; 
+    transform: translateY(-50%);
+    animation: pulse 1s infinite; 
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
 
 

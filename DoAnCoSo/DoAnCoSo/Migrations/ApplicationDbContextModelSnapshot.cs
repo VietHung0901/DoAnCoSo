@@ -37,6 +37,9 @@ namespace DoAnCoSo.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("DiaChi")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -50,6 +53,9 @@ namespace DoAnCoSo.Migrations
 
                     b.Property<int>("GioiTinh")
                         .HasColumnType("int");
+
+                    b.Property<bool>("HasBeenViewed")
+                        .HasColumnType("bit");
 
                     b.Property<string>("HoTen")
                         .IsRequired()
