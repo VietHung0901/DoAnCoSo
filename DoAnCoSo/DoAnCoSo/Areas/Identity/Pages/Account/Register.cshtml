@@ -1,102 +1,244 @@
 ﻿@page
 @model RegisterModel
 @using DoAnCoSo.Models
-@{
-    ViewData["Title"] = "Register";
-}
-<h1>@ViewData["Title"]</h1>
+
+<script src="~/js/showPass.js"></script>
+<script src="~/js/previewImage.js"></script>
+<style>
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+    }
+
+    form {
+        background-color: #f7f7f7;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .form-floating {
+        display: flex;
+        align-items: center;
+        border: 3px solid #e5c0c0;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        padding: 5px 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+        .form-floating input, .form-floating select, .form-floating label {
+            flex: 1;
+            border: none;
+            outline: none;
+            height: 40px;
+            margin: 0;
+        }
+
+        .form-floating i {
+            width: 30px;
+            vertical-align: middle;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 1.75rem;
+        }
+
+    .form-floating-pass {
+        display: flex;
+        align-items: center;
+    }
+
+        .form-floating-pass span {
+            font-size: 10px;
+            color: #8e44ad;
+            cursor: pointer;
+            padding-right: 1px;
+            padding-left: 35px;
+        }
+
+            .form-floating-pass span i.hide-btn::before {
+                content: "\f070";
+            }
+
+    .form-control {
+        font-size: 1rem;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #info-left, #info-right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .img-sticker img {
+        width: 100px;
+        display: block;
+        margin: 0 auto 20px;
+    }
+
+    @@media (min-width: 768px) {
+
+        #info-left, #info-right {
+            width: 49%;
+            float: left;
+        }
+
+        #info-right {
+            margin-left: 2%;
+        }
+    }
+
+    @@media (max-width: 767px) {
+        .row {
+            height: auto;
+            padding: 10px;
+        }
+
+        form {
+            padding: 20px;
+        }
+
+        .form-floating {
+            padding: 5px 10px;
+        }
+
+            .form-floating input, .form-floating select {
+                height: 30px;
+            }
+
+        .form-floating-pass span {
+            font-size: 8px;
+            padding-left: 20px;
+        }
+
+        .img-sticker img {
+            width: 80px;
+            padding-left: 0;
+        }
+    }
+
+</style>
 <div class="row">
     <div class="col-md-4">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" enctype="multipart/form-data">
-            <h2>Create a new account.</h2>
-            <hr />
+            <div class="img-sticker">
+                <img src="~/images-Login/registered.png" />
+            </div>
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-            @* CCCD *@
-            <div class="form-floating mb-3">
-                <input asp-for="Input.CCCD" class="form-control" autocomplete="CCCD" aria-required="true" />
-                <label asp-for="Input.CCCD">CCCD</label>
-                <span asp-validation-for="Input.CCCD" class="text-danger"></span>
+            <div id="info-left">
+                @* CCCD *@
+                <div class="form-floating mb-3">
+                    <i class="fas fa-address-card"></i>
+                    <input asp-for="Input.CCCD" class="form-control" autocomplete="CCCD" aria-required="true" placeholder="CCCD/CMT" />
+                    <span asp-validation-for="Input.CCCD" class="text-danger"></span>
+                </div>
+
+                @* HoTen *@
+                <div class="form-floating mb-3">
+                    <i class="fas fa-file-signature"></i>
+                    <input asp-for="Input.HoTen" class="form-control" autocomplete="HoTen" aria-required="true" placeholder="Họ và tên" />
+                    <span asp-validation-for="Input.HoTen" class="text-danger"></span>
+                </div>
+
+                @* NgaySinh *@
+                <div class="form-floating form-floating-birthday mb-3">
+                    <label asp-for="Input.NgaySinh">Ngày Sinh</label>
+                    <input asp-for="Input.NgaySinh" class="form-control" type="date" autocomplete="NgaySinh" aria-required="true" />
+                    <span asp-validation-for="Input.NgaySinh" class="text-danger"></span>
+                </div>
+
+                @* DiaChi *@
+                <div class="form-floating mb-3">
+                    <i class="fas fa-map-pin"></i>
+                    <input asp-for="Input.DiaChi" class="form-control" autocomplete="DiaChi" aria-required="true" placeholder="Địa chỉ" />
+                    <span asp-validation-for="Input.DiaChi" class="text-danger"></span>
+                </div>
+
+                @* GioiTinh *@
+                <div class="form-floating form-floating-gender mb-3">
+                    <label asp-for="Input.GioiTinh">Giới Tính</label>
+                    <select asp-for="Input.GioiTinh" class="form-control">
+                        <option value="1">Nam</option>
+                        <option value="0">Nữ</option>
+                    </select>
+                </div>
+
+                @* SoDienThoai *@
+                <div class="form-floating mb-3">
+                    <i class="fas fa-phone"></i>
+                    <input asp-for="Input.SoDienThoai" class="form-control" autocomplete="SoDienThoai" aria-required="true" placeholder="Số điện thoại" />
+                    <span asp-validation-for="Input.SoDienThoai" class="text-danger"></span>
+                </div>
             </div>
-            @* HoTen *@
-            <div class="form-floating mb-3">
-                <input asp-for="Input.HoTen" class="form-control" autocomplete="HoTen" aria-required="true" />
-                <label asp-for="Input.HoTen">Họ Tên</label>
-                <span asp-validation-for="Input.HoTen" class="text-danger"></span>
-            </div>
-            @* NgaySinh *@
-            <div class="form-floating mb-3">
-                <input asp-for="Input.NgaySinh" class="form-control" autocomplete="NgaySinh" aria-required="true" />
-                <label asp-for="Input.NgaySinh">Ngày Sinh</label>
-                <span asp-validation-for="Input.NgaySinh" class="text-danger"></span>
-            </div>
-            @* DiaChi *@
-            <div class="form-floating mb-3">
-                <input asp-for="Input.DiaChi" class="form-control" autocomplete="DiaChi" aria-required="true" />
-                <label asp-for="Input.DiaChi">Địa Chỉ</label>
-                <span asp-validation-for="Input.DiaChi" class="text-danger"></span>
-            </div>
-            @* GioiTinh *@
-            <div class="form-floating mb-3">
-                <select asp-for="Input.GioiTinh" class="form-control">
-                    <option value="1">Nam</option>
-                    <option value="0">Nữ</option>
-                </select>
-            </div>
-            @* SoDienThoai *@
-            <div class="form-floating mb-3">
-                <input asp-for="Input.SoDienThoai" class="form-control" autocomplete="SoDienThoai" aria-required="true" />
-                <label asp-for="Input.SoDienThoai">Số Điện Thoại</label>
-                <span asp-validation-for="Input.SoDienThoai" class="text-danger"></span>
-            </div>
-            @* ImageUrl *@
-            <div class="form-floating mb-3">
-                <label asp-for="Input.ImageUrl">ImageUrl</label>
-                <input type="file" asp-for="Input.ImageUrl" class="form-control" />
-            </div>
-            @* Truong *@
-            <div class="form-floating mb-3">
-                <select asp-for="Input.TruongId" class="form-control">
-                    @{
-                        ApplicationDbContext _context = new ApplicationDbContext();
-                        string GetNameSchool(int truongId)
-                        {
-                            return _context.tbTruong.FirstOrDefault(p => p.Id == truongId).TenTruong.ToString();
+            <div id="info-right">
+                @* Truong *@
+                <div class="form-floating form-floating-school mb-3">
+                    <label asp-for="Input.TruongId">Nơi Theo Học</label>
+                    <select asp-for="Input.TruongId" class="form-control">
+                        @{
+                            ApplicationDbContext _context = new ApplicationDbContext();
+                            string GetNameSchool(int truongId)
+                            {
+                                return _context.tbTruong.FirstOrDefault(p => p.Id == truongId).TenTruong.ToString();
+                            }
                         }
-                    }
-                    @foreach (var item in _context.tbTruong.Where(truong => truong.TrangThai == 1).ToList())
-                    {
-                        <option value="@item.Id">@GetNameSchool(@item.Id)</option>
-                    }
-                </select>
+                        @foreach (var item in _context.tbTruong.Where(truong => truong.TrangThai == 1).ToList())
+                        {
+                            <option value="@item.Id">@GetNameSchool(@item.Id)</option>
+                        }
+                    </select>
+                </div>
+
+                @* Email *@
+                <div class="form-floating mb-3">
+                    <i class="fas fa-envelope"></i>
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+
+                @* Password *@
+                <div class="form-floating form-floating-pass mb-3">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Mật khẩu" />
+                    @* <span asp-validation-for="Input.Password" class="text-danger"></span> *@
+                    <span class="show-btn"><i class="fas fa-eye" onclick="showPassword(event)"></i></span>
+                </div>
+
+                @* ConfirmPassword *@
+                <div class="form-floating form-floating-pass mb-3">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Nhập lại mật khẩu" />
+                    @* <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span> *@
+                    <span class="show-btn"><i class="fas fa-eye" onclick="showPassword(event)"></i></span>
+                </div>
+
+                @* Role *@
+                <div class="form-floating mb-3">
+                    <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="form-control">
+                        <option disabled selected>select Role</option>
+                    </select>
+                </div>
+
+                @* ImageUrl *@
+                <div class="form-floating form-floating-image mb-3">
+                    <label asp-for="Input.ImageUrl">Hình 3x4</label>
+                    <input type="file" asp-for="Input.ImageUrl" class="form-control" id="imageInput" onchange="previewImage(event)" />
+                    <div id="imagePreviewContainer"></div> <!-- Đây là div chứa hình ảnh đã chọn -->
+                </div>
+
             </div>
 
-            @* Default *@
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                <label asp-for="Input.Email">Email</label>
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.Password">Password</label>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            
-            @* Role *@
-            <div class="form-floating mb-3">
-                <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="form-control">
-                    <option disabled selected>select Role</option>
-                </select>
-            </div>
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </form>
     </div>
-    
 </div>
 
 @section Scripts {

@@ -9,28 +9,48 @@
       "PackagePath": "staticwebassets\\css\\Layout.css"
     },
     {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\menuAdmin.css",
-      "PackagePath": "staticwebassets\\css\\menuAdmin.css"
-    },
-    {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\quancao.css",
-      "PackagePath": "staticwebassets\\css\\quancao.css"
-    },
-    {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\reset.css",
-      "PackagePath": "staticwebassets\\css\\reset.css"
-    },
-    {
-      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\section3.css",
-      "PackagePath": "staticwebassets\\css\\section3.css"
-    },
-    {
       "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-Login\\cuocthi.png",
+      "PackagePath": "staticwebassets\\images-Login\\cuocthi.png"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-Login\\email.png",
+      "PackagePath": "staticwebassets\\images-Login\\email.png"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-Login\\ghidanh.png",
+      "PackagePath": "staticwebassets\\images-Login\\ghidanh.png"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-Login\\globe.png",
+      "PackagePath": "staticwebassets\\images-Login\\globe.png"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-Login\\login.png",
+      "PackagePath": "staticwebassets\\images-Login\\login.png"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-Login\\new-gif (1).gif",
+      "PackagePath": "staticwebassets\\images-Login\\new-gif (1).gif"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-Login\\new-gif (2).gif",
+      "PackagePath": "staticwebassets\\images-Login\\new-gif (2).gif"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-Login\\password.jpg",
+      "PackagePath": "staticwebassets\\images-Login\\password.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-Login\\registered.png",
+      "PackagePath": "staticwebassets\\images-Login\\registered.png"
     },
     {
       "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-NoiDung\\vanhung.jpg",
@@ -103,6 +123,14 @@
     {
       "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\Layout.js",
       "PackagePath": "staticwebassets\\js\\Layout.js"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\previewImage.js",
+      "PackagePath": "staticwebassets\\js\\previewImage.js"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\showPass.js",
+      "PackagePath": "staticwebassets\\js\\showPass.js"
     },
     {
       "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\js\\site.js",

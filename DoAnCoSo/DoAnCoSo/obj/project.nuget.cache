@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "d2CzIyy3cc+GTBAKfuPeIk3fVGOU4h3jq0vqapD9mwgaaOl462EsWP7VIG7EQBzXRLh2+C5DOszdgLvsBHgOMg==",
+  "dgSpecHash": "NyJUKzvrqC+6oqfKcDOv4g4N/1I9gGqj9d9MpIIX/GfV3xobYOhHSpIM6qCMa8jIF4TI2l64g+rP+/ntdZp4iw==",
   "success": true,
   "projectFilePath": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\THIEN LY\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\THIEN LY\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\THIEN LY\\.nuget\\packages\\chart.js\\3.7.1\\chart.js.3.7.1.nupkg.sha512",
     "C:\\Users\\THIEN LY\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\THIEN LY\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\THIEN LY\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

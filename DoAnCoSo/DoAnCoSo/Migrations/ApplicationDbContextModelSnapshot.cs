@@ -51,6 +51,9 @@ namespace DoAnCoSo.Migrations
                     b.Property<int>("GioiTinh")
                         .HasColumnType("int");
 
+                    b.Property<bool>("HasBeenViewed")
+                        .HasColumnType("bit");
+
                     b.Property<string>("HoTen")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

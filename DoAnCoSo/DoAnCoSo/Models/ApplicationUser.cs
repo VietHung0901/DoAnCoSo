@@ -13,5 +13,6 @@ namespace DoAnCoSo.Models
         public string ImageUrl { get; set; }
         public int TruongId { get; set; }
         public tbTruong Truong { get; set; }
+        public bool HasBeenViewed { get; set; }
     }
 }

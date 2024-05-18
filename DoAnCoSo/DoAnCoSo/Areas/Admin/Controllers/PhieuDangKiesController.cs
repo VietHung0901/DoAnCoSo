@@ -159,5 +159,18 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             var cuocThi = _context.tbCuocThi.FirstOrDefault(e => e.Id == cuocThiId);
             return (dem < cuocThi.SoLuongThiSinh) ? true : false;
         }
+
+        public async Task<IActionResult> ThongKe()
+        {
+            var thongKe = new tbThongKe
+            {
+                SoLuongUser = await _userManager.Users.CountAsync(),
+                SoLuongCuocThi = await _context.tbCuocThi.CountAsync(),
+
+                SoLuongUserDK = await _context.tbPhieuDangKy.Select(p => p.UserId).Distinct().CountAsync(),
+                SoLuongUserMoi = await _userManager.Users.CountAsync(u => !u.HasBeenViewed)
+            };
+            return View(thongKe);
+        }
     }
 }

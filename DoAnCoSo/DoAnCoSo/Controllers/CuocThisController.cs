@@ -18,13 +18,15 @@ namespace DoAnCoSo.Controllers
         private readonly ApplicationDbContext _context;
         private readonly ICuocThiRepository _cuocThiRepository;
         private readonly IMonThiRepository _monThiRepository;
+        private readonly UserManager<ApplicationUser> _userManager;
 
 
-        public CuocThisController(ApplicationDbContext context, ICuocThiRepository cuocThiRepository, IMonThiRepository monThiRepository)
+        public CuocThisController(ApplicationDbContext context, ICuocThiRepository cuocThiRepository, IMonThiRepository monThiRepository, UserManager<ApplicationUser> userManager)
         {
             _context = context;
             _cuocThiRepository = cuocThiRepository;
             _monThiRepository = monThiRepository;
+            _userManager = userManager;
         }
 
         //Action tìm kiếm cuộc thi theo ngày, địa điểm, môn thi
@@ -139,7 +141,34 @@ namespace DoAnCoSo.Controllers
             return View(tbCuocThi);
         }
 
-        private bool tbCuocThiExists(int id)
+
+        //chưa hoàn thành
+        [HttpPost]
+        public async Task<IActionResult> UpdateUser(string userId, string newEmail, string newPhoneNumber)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                user.Email = newEmail;
+                user.PhoneNumber = newPhoneNumber;
+
+                var result = await _userManager.UpdateAsync(user);
+                if (result.Succeeded)
+                {
+                    return Content("");
+                }
+                else
+                {
+                    return View(result);
+                }
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+    private bool tbCuocThiExists(int id)
         {
             return _context.tbCuocThi.Any(e => e.Id == id);
         }
