@@ -61,22 +61,12 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                             where c.TrangThai != 0
                             select c;
             ViewBag.MonThiName = new SelectList(tbMonThis, "Id", "TenMonThi");
-
-            //var tbquyDinhs = from a in _context.tbQuyDinh
-            //                 where a.TrangThai != 0
-            //                 select a;
-            //ViewBag.quyDinhName = new SelectList(tbquyDinhs, "Id", "TenQuyDinh");
-
-            //var tbnoiDungs = from b in _context.tbNoiDung
-            //                 where b.TrangThai != 0
-            //                 select b;
-            //ViewBag.noiDungName = new SelectList(tbnoiDungs, "Id", "TenNoiDung");
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id, TenCuocThi, NgayThi, SoLuongThiSinh, DiaDiem, MonThiId")] tbCuocThi tbCuocThi, List<int> selectedQuyDinhs, List<int> selectedNoiDungs)
+        public async Task<IActionResult> Create([Bind("Id, TenCuocThi, NgayThi, SoLuongThiSinh, DiaDiem, MonThiId, LoaiTruongId")] tbCuocThi tbCuocThi, List<int> selectedQuyDinhs, List<int> selectedNoiDungs)
         {
             var tbMonThis = from c in _context.tbMonThi
                                where c.TrangThai != 0
@@ -165,7 +155,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id, TenCuocThi, NgayThi,SoLuongThiSinh,DiaDiem,MonThiId")] tbCuocThi tbCuocThi)
+        public async Task<IActionResult> Edit(int id, [Bind("Id, TenCuocThi, NgayThi,SoLuongThiSinh,DiaDiem,MonThiId, LoaiTruongId")] tbCuocThi tbCuocThi)
         {
             var tbMonThis = from c in _context.tbMonThi
                             where c.TrangThai != 0

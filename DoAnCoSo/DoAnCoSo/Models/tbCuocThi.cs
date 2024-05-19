@@ -8,7 +8,7 @@
         public int SoLuongThiSinh { get; set; }
         public string DiaDiem { get; set; }
         public byte? TrangThai { get; set; }
-
+        public int? LoaiTruongId { get; set; }
         //Nối Khóa
         public int MonThiId { get; set; }
         public tbMonThi MonThi { get; set; }

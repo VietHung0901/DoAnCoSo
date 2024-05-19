@@ -1,5 +1,16 @@
 ﻿ @model DoAnCoSo.Models.tbPhieuDangKy
+  @using DoAnCoSo.Models
 
+ @{
+    ApplicationDbContext context = new ApplicationDbContext();
+    string LayTenLoaiTruong(int? loaiTruongId)
+    {
+        var tenLoaiTruong = context.tbLoaiTruong.FirstOrDefault(p => p.Id == loaiTruongId);
+        if (tenLoaiTruong == null)
+            return "";
+        return tenLoaiTruong.TenLoaiTruong;
+    }
+ }
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -69,6 +80,8 @@
                 <p><strong>Mã cuộc thi:</strong> @Html.DisplayFor(model => model.CuocThi.Id)</p>
                 <p><strong>Tên cuộc thi:</strong> @Html.DisplayFor(model => model.CuocThi.TenCuocThi)</p>
                 <p><strong>Ngày thi:</strong> @Html.DisplayFor(model => model.CuocThi.NgayThi)</p>
+                <p><strong>Cấp học:</strong> @LayTenLoaiTruong(Model.CuocThi.LoaiTruongId)</p>
+
             </div>
         </div>
     </div>

@@ -1,5 +1,14 @@
 ﻿@model DoAnCoSo.Models.tbCuocThi
+@using DoAnCoSo.Models
 
+@{
+    ApplicationDbContext context = new ApplicationDbContext();
+
+    var tbLoaiTruongs = from b in context.tbLoaiTruong
+                        where b.TrangThai != 0
+                        select b;
+    List<tbLoaiTruong> listLoaiTruong = tbLoaiTruongs.ToList();
+}
 
 <style>
     /* Định dạng màu chủ đạo xanh dương */
@@ -92,6 +101,10 @@
                     <label asp-for="MonThiId" class="control-label">Môn thi</label>
                     <select asp-for="MonThiId" class="form-control" asp-items="ViewBag.MonThiName"></select>
                     <span asp-validation-for="MonThiId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LoaiTruongId" class="control-label">Cấp học </label>
+                    <select asp-for="LoaiTruongId" class="form-control" asp-items="@(new SelectList(listLoaiTruong, "Id", "TenLoaiTruong"))"></select>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Save" class="btn btn-primary" />

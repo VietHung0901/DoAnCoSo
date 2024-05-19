@@ -1,5 +1,16 @@
 ﻿ @model IEnumerable<DoAnCoSo.Models.tbCuocThi>
+@using DoAnCoSo.Models
 
+@{
+    ApplicationDbContext context = new ApplicationDbContext();
+    string LayTenLoaiTruong (int? loaiTruongId)
+    {
+        var tenLoaiTruong = context.tbLoaiTruong.FirstOrDefault(p => p.Id == loaiTruongId);
+        if (tenLoaiTruong == null)
+            return "";
+        return tenLoaiTruong.TenLoaiTruong;
+    }
+}
 <style>
     .school-list {
         font-family: Arial, sans-serif;
@@ -92,6 +103,7 @@
                 <th>Số Lượng</th>
                 <th>Địa Điểm</th>
                 <th>Môn Thi</th>
+                <th>Cấp học</th>
                 <th></th>
             </tr>
         </thead>
@@ -124,6 +136,9 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.MonThi.TenMonThi)
+                    </td>
+                    <td>
+                        @LayTenLoaiTruong(item.LoaiTruongId)
                     </td>
                     <td>
                         <a class="edit-link btn btn-primary" asp-area="Admin" asp-action="Edit" asp-route-id="@item.Id">Edit</a>

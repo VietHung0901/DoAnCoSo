@@ -178,6 +178,9 @@ namespace DoAnCoSo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("LoaiTruongId")
+                        .HasColumnType("int");
+
                     b.Property<int>("MonThiId")
                         .HasColumnType("int");
 

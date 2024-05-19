@@ -12,6 +12,14 @@
                       where c.CuocThiId == Model.Id
                       select c;
     List<tbChiTietNoiDung> listNoiDung = ListNoiDung.ToList();
+
+    string LayTenLoaiTruong(int? loaiTruongId)
+    {
+        var tenLoaiTruong = context.tbLoaiTruong.FirstOrDefault(p => p.Id == loaiTruongId);
+        if (tenLoaiTruong == null)
+            return "";
+        return tenLoaiTruong.TenLoaiTruong;
+    }
 }
 
 <head>
@@ -132,6 +140,10 @@
                 <div class="col-sm-12">
                     <dt class="col-sm-2 dt">Môn Thi</dt>
                     <dd class="col-sm-10">@Html.DisplayFor(model => model.MonThi.TenMonThi)</dd>
+                </div>
+                <div class="col-sm-12">
+                    <dt class="col-sm-2 dt">Cấp học</dt>
+                    <dd class="col-sm-10">@LayTenLoaiTruong(Model.LoaiTruongId)</dd>
                 </div>
             </dl>
         </div>

@@ -1,6 +1,14 @@
 ﻿ @model IEnumerable<DoAnCoSo.Models.tbCuocThi>
+
 @{
-    ApplicationDbContext context = new ApplicationDbContext(); 
+    ApplicationDbContext context = new ApplicationDbContext();
+    string LayTenLoaiTruong(int? loaiTruongId)
+    {
+        var tenLoaiTruong = context.tbLoaiTruong.FirstOrDefault(p => p.Id == loaiTruongId);
+        if (tenLoaiTruong == null)
+            return "";
+        return tenLoaiTruong.TenLoaiTruong;
+    }
 }
 
  <style>
@@ -103,6 +111,7 @@
                 <th>Số Lượng</th>
                 <th>Địa Điểm</th>
                 <th>Môn Thi</th>
+                <th>Cấp học</th>
                 <th></th>
             </tr>
         </thead>
@@ -130,6 +139,9 @@
                             var tenMonThi = context.tbMonThi.FirstOrDefault(p => p.Id == item.MonThiId);
                         }
                         @tenMonThi.TenMonThi.ToString()
+                    </td>
+                    <td>
+                        @LayTenLoaiTruong(item.LoaiTruongId)
                     </td>
                     <td>
                         <a class="edit-link btn btn-primary" asp-area="" asp-controller="CuocThis" asp-action="Details" asp-route-Id="@item.Id">Xem chi tiết</a>
