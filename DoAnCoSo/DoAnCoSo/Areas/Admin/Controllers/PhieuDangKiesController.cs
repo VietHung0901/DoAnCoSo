@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using DoAnCoSo.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace DoAnCoSo.Areas.Admin.Controllers
 {
@@ -110,6 +111,38 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             return View(tbPhieuDangKy);
         }
 
+        string laytenUser(string userId)
+        {
+            var user = _context.Users.FirstOrDefault(p => p.Id == userId);
+            if (user == null)
+                return "";
+            return user.HoTen;
+
+        }
+
+        string laytenTruong(int? truongId)
+        {
+            var truong = _context.tbTruong.FirstOrDefault(p => p.Id == truongId);
+            if (truong == null)
+                return "";
+            return truong.TenTruong;
+
+        }
+        //Hàm kiểm tra số điện thoại
+        [HttpGet]
+        public IActionResult CheckPhone(string phoneNumber, int competitionId)
+        {
+            // Truy vấn cơ sở dữ liệu và xử lý logic...
+            var registration = _context.tbPhieuDangKy.FirstOrDefault(r => r.SoDienThoai == phoneNumber && r.CuocThiId == competitionId);
+            return Json(new
+            {
+                userName = laytenUser(registration.UserId),
+                soDienThoai = registration.SoDienThoai,
+                email = registration.Email,
+                truongName = laytenTruong(registration.TruongId),
+                mapdk = registration.Id
+            });
+        }
         // GET: Admin/PhieuDangKies/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

@@ -10,7 +10,8 @@
         public List<tbPhieuKetQua> PhieuKetQuas { get; set; }
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
-
-
+        public string? SoDienThoai { get; set; }
+        public int? TruongId { get; set; }
+        public string? Email { get; set; }
     }
 }

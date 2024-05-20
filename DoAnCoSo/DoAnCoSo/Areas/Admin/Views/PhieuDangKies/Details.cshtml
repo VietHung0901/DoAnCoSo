@@ -10,6 +10,13 @@
             return "";
         return tenLoaiTruong.TenLoaiTruong;
     }
+    string LayTenTruong(int? TruongId)
+    {
+        var tenTruong = context.tbTruong.FirstOrDefault(p => p.Id == TruongId);
+        if (tenTruong == null)
+            return "";
+        return tenTruong.TenTruong;
+    }
  }
 <style>
     body {
@@ -68,9 +75,10 @@
             <h2 class="section-title">Thông tin cá nhân</h2>
             <div class="section-content">
                 <p><strong>Họ và tên:</strong> @Html.DisplayFor(model => model.User.HoTen)</p>
-                <p><strong>Email:</strong> @Html.DisplayFor(model => model.User.Email)</p>
-                <p><strong>Số điện thoại:</strong> @Html.DisplayFor(model => model.User.SoDienThoai)</p>
+                <p><strong>Email:</strong> @Html.DisplayFor(model => model.Email)</p>
+                <p><strong>Số điện thoại:</strong> @Html.DisplayFor(model => model.SoDienThoai)</p>
                 <p><strong>Địa chỉ:</strong> @Html.DisplayFor(model => model.User.DiaChi)</p>
+                <p><strong>Trường:</strong> @LayTenTruong(Model.TruongId)</p>
             </div>
         </div>
 

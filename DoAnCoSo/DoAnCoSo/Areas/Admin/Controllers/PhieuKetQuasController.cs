@@ -80,8 +80,12 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             var pkq = _context.tbPhieuKetQua.FirstOrDefault(p => p.PhieuDangKyId == phieuDangKyId);
 
             // Trả về thông tin điểm dưới dạng JSON
-            return Json(new { diem = pkq.Diem, phut = pkq.Phut, giay = pkq.Giay });
-            //return Content($"{pkq.Phut},{pkq.Giay}, {pkq.Diem}");
+            return Json(new 
+            { 
+                diem = pkq.Diem, 
+                phut = pkq.Phut, 
+                giay = pkq.Giay 
+            });
         }
 
         //Xuất danh sách các phiếu kết quả theo cuộc thi

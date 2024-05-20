@@ -94,7 +94,7 @@
         padding: 20px;
         z-index: 10000;
         background-color: #f1f1f1;
-        width: 300px;
+        width: 700px;
         border-radius: 5px;
     }
 
@@ -128,6 +128,41 @@
         .head{
             display: inline-block;
         }
+        .Phieuketqua {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.ThongTinThiSinh,
+.KetQua {
+  flex-basis: 48%;
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ThongTinThiSinh h2,
+.KetQua h2 {
+  margin-top: 0;
+}
+
+.ThongTinThiSinh input,
+.KetQua input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn {
+  margin-right: 10px;
+}
+
+#confirmInfoButton,
+#closeFormNhapButton {
+  margin-top: 10px;
+}
 </style>
 
 @* Dùng để hiện form nhập và sửa điểm *@
@@ -206,7 +241,6 @@
     </table>
 </div>
 
-
 <script>
     $(document).ready(function () {
         $('.openFormNhapButton').click(function () {
@@ -227,22 +261,44 @@
             // Tạo form nhập điểm
             var form = $('<div id="scoreFormContainer"></div>');
             form.html(`
-                <h2>Nhập kết quả</h2>
-                    <form id="scoreForm" action="/Admin/PhieuKetQuas/SaveDiem" method="post">
-                    <label>Mã phiếu:</label>
-                    <input id="phieuDangKyIdInput" name="PhieuDangKyId" value="${phieuDangKyId}" readonly>
-                    <label for="phutInput">Phút:</label>
-                    <input type="number" id="phutInput" name="Phut">
-                    <br>
-                    <label for="giayInput">Giây:</label>
-                    <input type="number" id="giayInput" name="Giay">
-                    <br>
-                    <label for="diemInput">Điểm:</label>
-                    <input type="number" id="diemInput" name="Diem">
-                    <br>
-                    <button type="submit" class="btn btn-primary">Lưu</button>
-                    <button type="button" class="btn btn-secondary" id="closeFormNhapButton">Đóng</button>
-                </form>
+                <div class="Phieuketqua">
+                    <div class="ThongTinThiSinh">
+                        <h2>Xác nhận thông tin</h2>
+                        @* Nơi để form nhập sdt để xác nhận thông tin*@
+                        <label>Số điện thoại:</label>
+                        <input type="text" id="phoneNumberInput" class="form-control" placeholder="Nhập số điện thoại" required>
+                        <button type="button" class="btn btn-primary" id="confirmInfoButton">Xác nhận</button>
+                        @* thông tin user *@
+                        <h4>Thông tin thí sinh</h4>
+                        <label>Họ và tên:</label>
+                        <input id="userIdtext" readonly>
+                        <label>SDT:</label>
+                        <input id="sdttext" readonly>
+                        <label >Email:</label>
+                        <input id="emailtext" readonly>
+                        <label >Trường:</label>
+                        <input id="truongNametext" readonly>
+                        <br>
+                    </div>
+                    <div class="KetQua">
+                        <h2>Nhập kết quả</h2>
+                        <form id="scoreForm" action="/Admin/PhieuKetQuas/SaveDiem" method="post">
+                            <label>Mã phiếu đăng ký:</label>
+                            <input id="phieuDangKyIdInput" name="PhieuDangKyId" readonly>   
+                            <label for="phutInput">Phút:</label>
+                            <input type="number" id="phutInput" name="Phut">
+                            <br>
+                            <label for="giayInput">Giây:</label>
+                            <input type="number" id="giayInput" name="Giay">
+                            <br>
+                            <label for="diemInput">Điểm:</label>
+                            <input type="number" id="diemInput" name="Diem">
+                            <br>
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <button type="button" class="btn btn-secondary" id="closeFormNhapButton">Đóng</button>
+                        </form>
+                    </div>
+                </div>
             `);
 
             // Đưa overlay và form vào trang
@@ -282,6 +338,51 @@
                     }
                 });
             });
+
+            //khi nhấn nút xác thực
+            $('#confirmInfoButton').click(function () {
+                var phoneNumber = $('#phoneNumberInput').val();
+                var competitionId = @ViewBag.CuocThiId; // Thay đổi giá trị này nếu cần
+
+                $.ajax({
+                    url: '/Admin/PhieuDangKies/checkphone?phoneNumber=' + phoneNumber + '&competitionId=' + competitionId,
+                    type: 'GET',
+                    success: function (response) {
+                        // Kiểm tra xem response có dữ liệu không
+                        if (response.userName != null && response.soDienThoai != null && response.email != null && response.truongName != null && response.mapdk != null) {
+                            var userName = response.userName;
+                            var sdt = response.soDienThoai;
+                            var email = response.email;
+                            var truongName = response.truongName;
+                            var mapdk = response.mapdk;
+
+
+                            // Đặt giá trị điểm vào input
+                            $('#userIdtext').val(userName);
+                            $('#sdttext').val(sdt);
+                            $('#emailtext').val(email);
+                            $('#truongNametext').val(truongName);
+                            $('#phieuDangKyIdInput').val(mapdk);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        // Xử lý lỗi
+                        var errorMessage = 'Không tồn tại số điện thoại của thí sinh trong cuộc thi này!';
+
+                        // chuyển thành rỗng
+                        $('#userIdtext').val('');
+                            $('#sdttext').val('');
+                            $('#emailtext').val('');
+                            $('#truongNametext').val('');
+                            $('#phieuDangKyIdInput').val('');
+
+
+                        // Hiển thị thông báo lỗi cho người dùng
+                        alert(errorMessage);
+                    }
+                });
+            });
+
             $('#closeFormNhapButton').click(function () {
                 // Ẩn overlay và form
                 overlay.remove();
@@ -289,7 +390,6 @@
             });
         });
     });
-
 
     $(document).ready(function () {
         $('.openFormSuaButton').click(function () {
@@ -310,58 +410,160 @@
             // Tạo form sửa điểm
             var form = $('<div id="scoreFormContainer"></div>');
             form.html(`
-                <h2>Sửa kết quả</h2>
-                <form id="scoreForm" action="/Admin/PhieuKetQuas/UpdateDiem" method="post">
-                    <label>Mã phiếu:</label>
-                    <input id="phieuDangKyIdInput" name="PhieuDangKyId" value="${phieuDangKyId}" readonly>
-                    <label for="phutInput">Phút:</label>
-                    <input type="number" id="phutInput" name="Phut">
-                    <br>
-                    <label for="giayInput">Giây:</label>
-                    <input type="number" id="giayInput" name="Giay">
-                    <br>
-                    <label for="diemInput">Điểm:</label>
-                    <input type="number" id="diemInput" name="Diem">
-                    <br>
-                    <button type="submit" class="btn btn-primary">Lưu</button>
-                    <button type="button" class="btn btn-secondary" id="closeFormNhapButton">Đóng</button>
-                </form>
+            <div class="Phieuketqua">
+                    <div class="ThongTinThiSinh">
+                        <h2>Xác nhận thông tin</h2>
+                        @* Nơi để form nhập sdt để xác nhận thông tin*@
+                        <label>Số điện thoại:</label>
+                        <input type="text" id="phoneNumberInput" class="form-control" placeholder="Nhập số điện thoại" required>
+                        <button type="button" class="btn btn-primary" id="confirmInfoButton">Xác nhận</button>
+                        @* thông tin user *@
+                        <h4>Thông tin thí sinh</h4>
+                        <label>Họ và tên:</label>
+                        <input id="userIdtext" readonly>
+                        <label>SDT:</label>
+                        <input id="sdttext" readonly>
+                        <label >Email:</label>
+                        <input id="emailtext" readonly>
+                        <label >Trường:</label>
+                        <input id="truongNametext" readonly>
+                        <br>
+                    </div>
+                    <div class="KetQua">
+                        <h2>Sửa kết quả</h2>
+                        <form id="scoreForm" action="/Admin/PhieuKetQuas/UpdateDiem" method="post">
+                            <label>Mã phiếu:</label>
+                            <input id="phieuDangKyIdInput" name="PhieuDangKyId" readonly>
+                            <label for="phutInput">Phút:</label>
+                            <input type="number" id="phutInput" name="Phut">
+                            <br>
+                            <label for="giayInput">Giây:</label>
+                            <input type="number" id="giayInput" name="Giay">
+                            <br>
+                            <label for="diemInput">Điểm:</label>
+                            <input type="number" id="diemInput" name="Diem">
+                            <br>
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <button type="button" class="btn btn-secondary" id="closeFormNhapButton">Đóng</button>
+                        </form>
+                    </div>
+                </div>
             `);
-            $.ajax({
-                url: '/Admin/PhieuKetQuas/LayDiem?phieuDangKyId=' + phieuDangKyId,
-                type: 'GET',
-                success: function (response) {
-                    // Kiểm tra xem response có dữ liệu điểm không
-                    if (response.diem != null && response.phut != null && response.giay != null) {
-                        var diem = response.diem;
-                        var phut = response.phut;
-                        var giay = response.giay;
 
-                        // Đặt giá trị điểm vào input trong form sửa điểm
-                        $('#diemInput').val(diem);
-                        $('#phutInput').val(phut);
-                        $('#giayInput').val(giay);
+                $.ajax({
+                    url: '/Admin/PhieuKetQuas/LayDiem?phieuDangKyId=' + phieuDangKyId,
+                    type: 'GET',
+                    success: function (response) {
+                        // Kiểm tra xem response có dữ liệu điểm không
+                        if (response.diem != null && response.phut != null && response.giay != null) {
+                            var diem = response.diem;
+                            var phut = response.phut;
+                            var giay = response.giay;
+
+                            // Đặt giá trị điểm vào input trong form sửa điểm
+                            $('#diemInput').val('');
+                            $('#phutInput').val('');
+                            $('#giayInput').val('');
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        // Xử lý lỗi
+                        var errorMessage = 'Đã xảy ra lỗi. Vui lòng thử lại sau.';
+
+                        // Kiểm tra nếu có thông tin lỗi chi tiết từ phản hồi
+                        if (xhr.responseText) {
+                            errorMessage = xhr.responseText;
+                        }
+
+                        // Hiển thị thông báo lỗi cho người dùng
+                        alert(errorMessage);
                     }
-                },
-                error: function (xhr, status, error) {
-                    // Xử lý lỗi
-                    var errorMessage = 'Đã xảy ra lỗi. Vui lòng thử lại sau.';
-
-                    // Kiểm tra nếu có thông tin lỗi chi tiết từ phản hồi
-                    if (xhr.responseText) {
-                        errorMessage = xhr.responseText;
-                    }
-
-                    // Hiển thị thông báo lỗi cho người dùng
-                    alert(errorMessage);
-                }
-            });
-            // Đưa overlay và form vào trang
+                });
+                // Đưa overlay và form vào trang
             $('body').append(overlay);
             $('body').append(form);
-
+            
             // Lấy dữ liệu điểm cũ thông qua AJAX
             
+            //khi nhấn nút xác thực
+            $('#confirmInfoButton').click(function () {
+                var phoneNumber = $('#phoneNumberInput').val();
+                var competitionId = @ViewBag.CuocThiId; // Thay đổi giá trị này nếu cần
+
+                $.ajax({
+                    url: '/Admin/PhieuDangKies/checkphone?phoneNumber=' + phoneNumber + '&competitionId=' + competitionId,
+                    type: 'GET',
+                    success: function (response) {
+                        // Kiểm tra xem response có dữ liệu không
+                        if (response.userName != null && response.soDienThoai != null && response.email != null && response.truongName != null && response.mapdk != null) {
+                            var userName = response.userName;
+                            var sdt = response.soDienThoai;
+                            var email = response.email;
+                            var truongName = response.truongName;
+                            var mapdk = response.mapdk;
+
+
+                            // Đặt giá trị điểm vào input
+                            $('#userIdtext').val(userName);
+                            $('#sdttext').val(sdt);
+                            $('#emailtext').val(email);
+                            $('#truongNametext').val(truongName);
+                            $('#phieuDangKyIdInput').val(mapdk);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        // Xử lý lỗi
+                        var errorMessage = 'Không tồn tại số điện thoại của thí sinh trong cuộc thi này!';
+
+                        // chuyển thành rỗng
+                        $('#userIdtext').val('');
+                            $('#sdttext').val('');
+                            $('#emailtext').val('');
+                            $('#truongNametext').val('');
+                            $('#phieuDangKyIdInput').val('');
+                            $('#diemInput').val('');
+                            $('#phutInput').val('');
+                            $('#giayInput').val('');
+
+
+                        // Hiển thị thông báo lỗi cho người dùng
+                        alert(errorMessage);
+                    }
+                });
+
+
+                //CẦN SỬA PHIẾU ĐĂNG KÝ LẠI
+                $.ajax({
+                    url: '/Admin/PhieuKetQuas/LayDiem?phieuDangKyId=' + phieuDangKyId,
+                    type: 'GET',
+                    success: function (response) {
+                        // Kiểm tra xem response có dữ liệu điểm không
+                        if (response.diem != null && response.phut != null && response.giay != null) {
+                            var diem = response.diem;
+                            var phut = response.phut;
+                            var giay = response.giay;
+
+                            // Đặt giá trị điểm vào input trong form sửa điểm
+                            $('#diemInput').val(diem);
+                            $('#phutInput').val(phut);
+                            $('#giayInput').val(giay);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        // Xử lý lỗi
+                        var errorMessage = 'Đã xảy ra lỗi. Vui lòng thử lại sau.';
+
+                        // Kiểm tra nếu có thông tin lỗi chi tiết từ phản hồi
+                        if (xhr.responseText) {
+                            errorMessage = xhr.responseText;
+                        }
+
+                        // Hiển thị thông báo lỗi cho người dùng
+                        alert(errorMessage);
+                    }
+                });
+            });
+
 
             // Lắng nghe sự kiện submit form
             $('#scoreForm').submit(function (event) {

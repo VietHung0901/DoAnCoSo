@@ -83,6 +83,9 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="CuocThiId" class="control-label" value="@ViewBag.CuocThiId" />
                 <input type="hidden" asp-for="UserId" class="control-label" value="@userId" />
+                <input type="hidden" asp-for="SoDienThoai" class="control-label" value="@sdt" />
+                <input type="hidden" asp-for="TruongId" class="control-label" value="@truong" />
+                <input type="hidden" asp-for="Email" class="control-label" value="@email" />
                 <input type="submit" value="Xác nhận" class="btn btn-primary" />
             </form>
         </div>
@@ -140,8 +143,22 @@
 
 
     <script>
+        // Gọi hàm hiển thị thông báo khi SuccessMessage hoặc ErrorMessage có giá trị
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                showSuccessMessage();
+            </text>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <text>
+                showErrorMessage();
+            </text>
+        }
         // Hàm hiển thị thông báo với thời gian tự đóng
-        function showSuccessMessage() {
+        function showSuccessMessage() 
+        {
             Swal.fire({
                 icon: 'success',
                 title: '@TempData["SuccessMessage"]',
@@ -164,19 +181,7 @@
             });
         }
 
-        // Gọi hàm hiển thị thông báo khi SuccessMessage hoặc ErrorMessage có giá trị
-        @if (TempData["SuccessMessage"] != null)
-        {
-            <text>
-                showSuccessMessage();
-            </text>
-        }
-        @if (TempData["ErrorMessage"] != null)
-        {
-            <text>
-                showErrorMessage();
-            </text>
-        }
+        
     </script>
 }
 

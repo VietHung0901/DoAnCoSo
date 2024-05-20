@@ -58,8 +58,6 @@ namespace DoAnCoSo.Controllers
             return View(tbPhieuDangKy);
         }
 
-        // GET: Admin/PhieuDangKies/Create
-
         public async Task<IActionResult> Create(int cuocThiId)
         {
             if (!User.Identity.IsAuthenticated)
@@ -85,17 +83,18 @@ namespace DoAnCoSo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,NgayDangKy,CuocThiId,UserId")] tbPhieuDangKy tbPhieuDangKy)
+        public async Task<IActionResult> Create([Bind("Id,NgayDangKy,CuocThiId,UserId,SoDienThoai,TruongId,Email")] tbPhieuDangKy tbPhieuDangKy)
         {
             var user = await _userManager.GetUserAsync(User);
 
+            //kiểm tra user có đạt cấp học để tham gia cuộc thi
             if (LayMaLoaiTruongTheoCuocThi(tbPhieuDangKy.CuocThiId) != LayMaLoaiTruongTheoTruong(user.TruongId))
                 TempData["ErrorMessage"] = "Cuộc thi không dành cho cấp học của bạn";
             else
             {
-                //Kiểm tra xem cuộc thi đã đủ thí sinh vaf user đã đăng ký cuộc thi này chưa
                 if (KiemTraSoLuong(tbPhieuDangKy.CuocThiId))
                 {
+                    //Kiểm tra xem cuộc thi đã đủ thí sinh và user đã đăng ký cuộc thi này chưa
                     if (KiemTraUser(tbPhieuDangKy.CuocThiId, tbPhieuDangKy.UserId))
                     {
                         var user1 = await _userManager.GetUserAsync(User);
@@ -103,7 +102,7 @@ namespace DoAnCoSo.Controllers
                         _context.tbPhieuDangKy.Add(tbPhieuDangKy);
                         await _context.SaveChangesAsync();
                         TempData["SuccessMessage"] = "Đăng ký thành công.";
-                        return RedirectToAction(nameof(Index), new { userId = user1.Id });
+                        //return RedirectToAction(nameof(Index), new { userId = user1.Id });
                     }
                     else
                     {

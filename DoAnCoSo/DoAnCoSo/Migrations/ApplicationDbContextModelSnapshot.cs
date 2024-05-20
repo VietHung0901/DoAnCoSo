@@ -281,11 +281,20 @@ namespace DoAnCoSo.Migrations
                     b.Property<int>("CuocThiId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("NgayDangKy")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("SoDienThoai")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<byte?>("TrangThai")
                         .HasColumnType("tinyint");
+
+                    b.Property<int?>("TruongId")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .IsRequired()
