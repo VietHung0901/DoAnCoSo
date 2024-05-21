@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\Index.cshtml",
               "ToolTip": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\Index.cshtml",
               "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\Index.cshtml",
-              "ViewState": "AQIAAA8CAAAAAAAAAAAcwBYCAAArAAAA",
+              "ViewState": "AQIAABECAAAAAAAAAAAQwCECAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-20T17:21:20.907Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Controllers\\PhieuDangKiesController.cs",
               "ViewState": "AQIAAHcAAAAAAAAAAAAswI4AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T17:20:31.223Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-20T17:20:31.223Z"
             }
           ]
         },

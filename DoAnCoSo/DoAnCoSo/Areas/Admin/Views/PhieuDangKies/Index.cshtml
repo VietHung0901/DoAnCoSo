@@ -312,31 +312,35 @@
                 // Lấy dữ liệu từ form
                 var formData = $(this).serialize();
 
-                // Gửi request AJAX để lưu dữ liệu điểm
-                $.ajax({
-                    url: '/Admin/PhieuKetQuas/SaveDiem',
-                    type: 'POST',   
-                    data: formData,
-                    success: function (response) {
-                        // Xử lý thành công
-                        // Ẩn overlay và form
-                        overlay.remove();
-                        form.remove();
-                        location.reload();
-                    },
-                    error: function (xhr, status, error) {
-                        // Xử lý lỗi
-                        var errorMessage = 'Đã xảy ra lỗi. Vui lòng thử lại sau.';
+                // Lấy giá trị của input phieuDangKyIdInput
+                var phieuDangKyId = $('#phieuDangKyIdInput').val();
 
-                        // Kiểm tra nếu có thông tin lỗi chi tiết từ phản hồi
-                        if (xhr.responseText) {
-                            errorMessage = xhr.responseText;
+                // Kiểm tra phieuDangKyId
+                if (phieuDangKyId == null || phieuDangKyId === '') {
+                    // Hiển thị thông báo chưa xác thực
+                    alert('Vui lòng xác thực trước khi lưu điểm.');
+                } else {
+                    // Gửi request AJAX để lưu dữ liệu điểm
+                    $.ajax({
+                        url: '/Admin/PhieuKetQuas/SaveDiem',
+                        type: 'POST',
+                        data: formData,
+                        success: function (response) {
+                            // Xử lý thành công
+                            // Ẩn overlay và form
+                            overlay.remove();
+                            form.remove();
+                            location.reload();
+                        },
+                        error: function (xhr, status, error) {
+                            // Xử lý lỗi
+                            var errorMessage = 'Đã xảy ra lỗi. Vui lòng thử lại sau.';
+
+                            // Hiển thị thông báo lỗi cho người dùng
+                            alert(errorMessage);
                         }
-
-                        // Hiển thị thông báo lỗi cho người dùng
-                        alert(errorMessage);
-                    }
-                });
+                    });
+                }
             });
 
             //khi nhấn nút xác thực
@@ -344,43 +348,47 @@
                 var phoneNumber = $('#phoneNumberInput').val();
                 var competitionId = @ViewBag.CuocThiId; // Thay đổi giá trị này nếu cần
 
-                $.ajax({
-                    url: '/Admin/PhieuDangKies/checkphone?phoneNumber=' + phoneNumber + '&competitionId=' + competitionId,
-                    type: 'GET',
-                    success: function (response) {
-                        // Kiểm tra xem response có dữ liệu không
-                        if (response.userName != null && response.soDienThoai != null && response.email != null && response.truongName != null && response.mapdk != null) {
-                            var userName = response.userName;
-                            var sdt = response.soDienThoai;
-                            var email = response.email;
-                            var truongName = response.truongName;
-                            var mapdk = response.mapdk;
+                // Kiểm tra số điện thoại
+                if (phoneNumber == null || phoneNumber === '') {
+                    // Hiển thị thông báo chưa xác thực
+                    alert('Vui lòng nhập số điện thoại!');
+                } else {
+                    $.ajax({
+                        url: '/Admin/PhieuDangKies/checkphone?phoneNumber=' + phoneNumber + '&competitionId=' + competitionId,
+                        type: 'GET',
+                        success: function (response) {
+                            // Kiểm tra xem response có dữ liệu không
+                            if (response.userName != null && response.soDienThoai != null && response.email != null && response.truongName != null && response.mapdk != null) {
+                                var userName = response.userName;
+                                var sdt = response.soDienThoai;
+                                var email = response.email;
+                                var truongName = response.truongName;
+                                var mapdk = response.mapdk;
 
+                                // Đặt giá trị điểm vào input
+                                $('#userIdtext').val(userName);
+                                $('#sdttext').val(sdt);
+                                $('#emailtext').val(email);
+                                $('#truongNametext').val(truongName);
+                                $('#phieuDangKyIdInput').val(mapdk);
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            // Xử lý lỗi
+                            var errorMessage = 'Không tồn tại số điện thoại của thí sinh trong cuộc thi này!';
 
-                            // Đặt giá trị điểm vào input
-                            $('#userIdtext').val(userName);
-                            $('#sdttext').val(sdt);
-                            $('#emailtext').val(email);
-                            $('#truongNametext').val(truongName);
-                            $('#phieuDangKyIdInput').val(mapdk);
-                        }
-                    },
-                    error: function (xhr, status, error) {
-                        // Xử lý lỗi
-                        var errorMessage = 'Không tồn tại số điện thoại của thí sinh trong cuộc thi này!';
-
-                        // chuyển thành rỗng
-                        $('#userIdtext').val('');
+                            // chuyển thành rỗng
+                            $('#userIdtext').val('');
                             $('#sdttext').val('');
                             $('#emailtext').val('');
                             $('#truongNametext').val('');
                             $('#phieuDangKyIdInput').val('');
 
-
-                        // Hiển thị thông báo lỗi cho người dùng
-                        alert(errorMessage);
-                    }
-                });
+                            // Hiển thị thông báo lỗi cho người dùng
+                            alert(errorMessage);
+                        }
+                    });
+                }
             });
 
             $('#closeFormNhapButton').click(function () {
@@ -393,7 +401,6 @@
 
     $(document).ready(function () {
         $('.openFormSuaButton').click(function () {
-            var phieuDangKyId = $(this).data('phieu-dang-ky-id');
 
             // Tạo overlay
             var overlay = $('<div id="overlay"></div>');
@@ -432,7 +439,7 @@
                     <div class="KetQua">
                         <h2>Sửa kết quả</h2>
                         <form id="scoreForm" action="/Admin/PhieuKetQuas/UpdateDiem" method="post">
-                            <label>Mã phiếu:</label>
+                            <label>Mã phiếu đăng ký:</label>
                             <input id="phieuDangKyIdInput" name="PhieuDangKyId" readonly>
                             <label for="phutInput">Phút:</label>
                             <input type="number" id="phutInput" name="Phut">
@@ -450,73 +457,79 @@
                 </div>
             `);
 
-                $.ajax({
-                    url: '/Admin/PhieuKetQuas/LayDiem?phieuDangKyId=' + phieuDangKyId,
-                    type: 'GET',
-                    success: function (response) {
-                        // Kiểm tra xem response có dữ liệu điểm không
-                        if (response.diem != null && response.phut != null && response.giay != null) {
-                            var diem = response.diem;
-                            var phut = response.phut;
-                            var giay = response.giay;
-
-                            // Đặt giá trị điểm vào input trong form sửa điểm
-                            $('#diemInput').val('');
-                            $('#phutInput').val('');
-                            $('#giayInput').val('');
-                        }
-                    },
-                    error: function (xhr, status, error) {
-                        // Xử lý lỗi
-                        var errorMessage = 'Đã xảy ra lỗi. Vui lòng thử lại sau.';
-
-                        // Kiểm tra nếu có thông tin lỗi chi tiết từ phản hồi
-                        if (xhr.responseText) {
-                            errorMessage = xhr.responseText;
-                        }
-
-                        // Hiển thị thông báo lỗi cho người dùng
-                        alert(errorMessage);
-                    }
-                });
-                // Đưa overlay và form vào trang
+            // Đưa overlay và form vào trang
             $('body').append(overlay);
             $('body').append(form);
             
-            // Lấy dữ liệu điểm cũ thông qua AJAX
-            
             //khi nhấn nút xác thực
             $('#confirmInfoButton').click(function () {
+
+                //Lấy giá trị của input phoneNumberInput 
                 var phoneNumber = $('#phoneNumberInput').val();
                 var competitionId = @ViewBag.CuocThiId; // Thay đổi giá trị này nếu cần
 
-                $.ajax({
-                    url: '/Admin/PhieuDangKies/checkphone?phoneNumber=' + phoneNumber + '&competitionId=' + competitionId,
-                    type: 'GET',
-                    success: function (response) {
-                        // Kiểm tra xem response có dữ liệu không
-                        if (response.userName != null && response.soDienThoai != null && response.email != null && response.truongName != null && response.mapdk != null) {
-                            var userName = response.userName;
-                            var sdt = response.soDienThoai;
-                            var email = response.email;
-                            var truongName = response.truongName;
-                            var mapdk = response.mapdk;
+                // Kiểm tra số điện thoại
+                if (phoneNumber == null || phoneNumber === '') {
+                    // Hiển thị thông báo chưa xác thực
+                    alert('Vui lòng nhập số điện thoại!');
+                } else {
+                    //Kiểm tra nếu tồn tại thông tin thì chèn các thông tin vào các input
+                    $.ajax({
+                        url: '/Admin/PhieuDangKies/checkphone?phoneNumber=' + phoneNumber + '&competitionId=' + competitionId,
+                        type: 'GET',
+                        success: function (response) {
+                            // Kiểm tra xem response có dữ liệu không
+                            if (response.userName != null && response.soDienThoai != null && response.email != null && response.truongName != null && response.mapdk != null) {
+                                var userName = response.userName;
+                                var sdt = response.soDienThoai;
+                                var email = response.email;
+                                var truongName = response.truongName;
+                                var mapdk = response.mapdk;
 
 
-                            // Đặt giá trị điểm vào input
-                            $('#userIdtext').val(userName);
-                            $('#sdttext').val(sdt);
-                            $('#emailtext').val(email);
-                            $('#truongNametext').val(truongName);
-                            $('#phieuDangKyIdInput').val(mapdk);
-                        }
-                    },
-                    error: function (xhr, status, error) {
-                        // Xử lý lỗi
-                        var errorMessage = 'Không tồn tại số điện thoại của thí sinh trong cuộc thi này!';
+                                // Đặt giá trị điểm vào input
+                                $('#userIdtext').val(userName);
+                                $('#sdttext').val(sdt);
+                                $('#emailtext').val(email);
+                                $('#truongNametext').val(truongName);
+                                $('#phieuDangKyIdInput').val(mapdk);
 
-                        // chuyển thành rỗng
-                        $('#userIdtext').val('');
+                                // Lấy giá trị của input phieuDangKyIdInput
+                                var phieuDangKyId = $('#phieuDangKyIdInput').val();
+
+                                //Dùng để lấy kết quả cũ điền lên form lại
+                                $.ajax({
+                                    url: '/Admin/PhieuKetQuas/LayDiem?phieuDangKyId=' + phieuDangKyId,
+                                    type: 'GET',
+                                    success: function (response) {
+                                        // Kiểm tra xem response có dữ liệu điểm không
+                                        if (response.diem != null && response.phut != null && response.giay != null) {
+                                            var diem = response.diem;
+                                            var phut = response.phut;
+                                            var giay = response.giay;
+
+                                            // Đặt giá trị điểm vào input trong form sửa điểm
+                                            $('#diemInput').val(diem);
+                                            $('#phutInput').val(phut);
+                                            $('#giayInput').val(giay);
+                                        }
+                                    },
+                                    error: function (xhr, status, error) {
+                                        // Xử lý lỗi
+                                        var errorMessage = 'Đã xảy ra lỗi. Vui lòng thử lại sau.';
+
+                                        // Hiển thị thông báo lỗi cho người dùng
+                                        alert(errorMessage);
+                                    }
+                                });
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            // Xử lý lỗi
+                            var errorMessage = 'Không tồn tại số điện thoại của thí sinh trong cuộc thi này!';
+
+                            // chuyển thành rỗng
+                            $('#userIdtext').val('');
                             $('#sdttext').val('');
                             $('#emailtext').val('');
                             $('#truongNametext').val('');
@@ -525,45 +538,12 @@
                             $('#phutInput').val('');
                             $('#giayInput').val('');
 
-
-                        // Hiển thị thông báo lỗi cho người dùng
-                        alert(errorMessage);
-                    }
-                });
-
-
-                //CẦN SỬA PHIẾU ĐĂNG KÝ LẠI
-                $.ajax({
-                    url: '/Admin/PhieuKetQuas/LayDiem?phieuDangKyId=' + phieuDangKyId,
-                    type: 'GET',
-                    success: function (response) {
-                        // Kiểm tra xem response có dữ liệu điểm không
-                        if (response.diem != null && response.phut != null && response.giay != null) {
-                            var diem = response.diem;
-                            var phut = response.phut;
-                            var giay = response.giay;
-
-                            // Đặt giá trị điểm vào input trong form sửa điểm
-                            $('#diemInput').val(diem);
-                            $('#phutInput').val(phut);
-                            $('#giayInput').val(giay);
+                            // Hiển thị thông báo lỗi cho người dùng
+                            alert(errorMessage);
                         }
-                    },
-                    error: function (xhr, status, error) {
-                        // Xử lý lỗi
-                        var errorMessage = 'Đã xảy ra lỗi. Vui lòng thử lại sau.';
-
-                        // Kiểm tra nếu có thông tin lỗi chi tiết từ phản hồi
-                        if (xhr.responseText) {
-                            errorMessage = xhr.responseText;
-                        }
-
-                        // Hiển thị thông báo lỗi cho người dùng
-                        alert(errorMessage);
-                    }
-                });
+                    });
+                }
             });
-
 
             // Lắng nghe sự kiện submit form
             $('#scoreForm').submit(function (event) {
@@ -572,22 +552,31 @@
                 // Lấy dữ liệu từ form
                 var formData = $(this).serialize();
 
-                // Gửi request AJAX để cập nhật điểm
-                $.ajax({
-                    url: '/Admin/PhieuKetQuas/UpdateDiem',
-                    type: 'POST',
-                    data: formData,
-                    success: function (response) {
-                        // Xử lý thành công
-                        // Ẩn overlay và form
-                        overlay.remove();
-                        form.remove();
-                        location.reload();
-                    },
-                    error: function (xhr, status, error) {
-                        // Xử lý lỗi nếu cần
-                    }
-                });
+                // Lấy giá trị của input phieuDangKyIdInput
+                var phieuDangKyId = $('#phieuDangKyIdInput').val();
+
+                // Kiểm tra phieuDangKyId
+                if (phieuDangKyId == null || phieuDangKyId === '') {
+                    // Hiển thị thông báo chưa xác thực
+                    alert('Vui lòng xác thực trước khi lưu điểm.');
+                } else {
+                    // Gửi request AJAX để cập nhật điểm
+                    $.ajax({
+                        url: '/Admin/PhieuKetQuas/UpdateDiem',
+                        type: 'POST',
+                        data: formData,
+                        success: function (response) {
+                            // Xử lý thành công
+                            // Ẩn overlay và form
+                            overlay.remove();
+                            form.remove();
+                            location.reload();
+                        },
+                        error: function (xhr, status, error) {
+                            // Xử lý lỗi nếu cần
+                        }
+                    });
+                }
             });
 
             $('#closeFormNhapButton').click(function () {
