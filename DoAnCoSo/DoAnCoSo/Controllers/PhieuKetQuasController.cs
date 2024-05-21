@@ -47,6 +47,12 @@ namespace DoAnCoSo.Controllers
                 .ThenBy(p => p.Phut) // Sắp xếp tăng dần theo trường Phut (nếu điểm bằng nhau)
                 .ThenBy(p => p.Giay); // Sắp xếp tăng dần theo trường Giay (nếu điểm và phút bằng nhau)
 
+            var truongIds = _context.tbPhieuDangKy
+                            .Where(p => p.CuocThiId == cuocThiId)
+                            .Select(p => p.TruongId)
+                            .Distinct()
+                            .ToList();
+            ViewBag.TruongIds = truongIds;
             return View(await applicationDbContext.ToListAsync());
         }
     }

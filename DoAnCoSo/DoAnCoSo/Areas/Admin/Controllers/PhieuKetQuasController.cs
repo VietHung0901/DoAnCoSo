@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DoAnCoSo.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using DoAnCoSo.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace DoAnCoSo.Areas.Admin.Controllers
 {
@@ -98,6 +94,12 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 .ThenBy(p => p.Phut) // Sắp xếp tăng dần theo trường Phut (nếu điểm bằng nhau)
                 .ThenBy(p => p.Giay); // Sắp xếp tăng dần theo trường Giay (nếu điểm và phút bằng nhau)
 
+            var truongIds = _context.tbPhieuDangKy
+                            .Where(p => p.CuocThiId == cuocThiId)
+                            .Select(p => p.TruongId)
+                            .Distinct()
+                            .ToList();
+            ViewBag.TruongIds = truongIds;
             return View(await applicationDbContext.ToListAsync());
         }
 
