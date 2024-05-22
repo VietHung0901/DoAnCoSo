@@ -1,0 +1,239 @@
+﻿@model EditUserViewModel
+
+<div class="edit-Infomation">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="CCCD" class="control-label" ></label>
+                <input asp-for="CCCD" class="form-control" readonly />
+                <span asp-validation-for="CCCD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoTen" class="control-label"></label>
+                <input asp-for="HoTen" class="form-control" />
+                <span asp-validation-for="HoTen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NgaySinh" class="control-label"></label>
+                <input asp-for="NgaySinh" class="form-control" />
+                <span asp-validation-for="NgaySinh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiaChi" class="control-label"></label>
+                <input asp-for="DiaChi" class="form-control" />
+                <span asp-validation-for="DiaChi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GioiTinh" class="control-label"></label>
+                <select asp-for="GioiTinh" class="form-control">
+                    <option value="0">Nữ</option>
+                    <option value="1">Nam</option>
+                    <option value="2">Khác</option>
+                </select>
+                <span asp-validation-for="GioiTinh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoDienThoai" class="control-label"></label>
+                <input asp-for="SoDienThoai" class="form-control" />
+                <span asp-validation-for="SoDienThoai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl">Product Image</label>
+                <input type="file" asp-for="ImageUrl" class="form-control" id="imageInput" />
+                <img id="previewImage" src="@Model.ImageUrl" alt="Ảnh đại diện" style="max-width:200px;" />
+            </div>
+            <div class="form-group">
+                <label asp-for="TruongId" class="control-label"></label>
+                <select asp-for="TruongId" class="form-control">
+                    @{
+                        ApplicationDbContext _context = new ApplicationDbContext();
+                        string GetNameSchool(int truongId)
+                        {
+                            return _context.tbTruong.FirstOrDefault(p => p.Id == truongId).TenTruong.ToString();
+                        }
+                    }
+                    @foreach (var item in _context.tbTruong.Where(truong => truong.TrangThai == 1).ToList())
+                    {
+                        <option value="@item.Id">@GetNameSchool(@item.Id)</option>
+                    }
+                </select>
+                <span asp-validation-for="TruongId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <script>
+                document.getElementById('imageInput').addEventListener('change', function (event) {
+                    var output = document.getElementById('previewImage');
+
+                    if (this.files && this.files[0]) {
+                        var reader = new FileReader();
+
+                        reader.onload = function (e) {
+                            output.src = e.target.result;
+                            output.style.display = 'block'; // Hiển thị hình ảnh
+                        }
+
+                        reader.readAsDataURL(this.files[0]);
+                    }
+                });
+            </script>
+        </form>
+    </div>
+</div> 
+
+@* <!DOCTYPE html>
+<html>
+<head>
+  <title>Chỉnh Sửa Thông Tin Cá Nhân</title>
+  <style>
+    /* CSS styling for the page */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    
+    .edit-container {
+      max-width: 100%;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .avatar-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .avatar-container img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    input[type=text], input[type=file], input[type=date], input[type=tel], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="edit-container">
+    <h1>Chỉnh Sửa Thông Tin Cá Nhân</h1>
+    <form>
+      <div class="avatar-container">
+        <label for="avatar">Ảnh đại diện:</label>
+        <img id="avatar-preview" src="default-avatar.png" alt="Ảnh đại diện">
+        <input type="file" id="avatar" name="avatar" accept="image/*" onchange="previewAvatar(this)">
+      </div>
+      
+      <div class="information-container">
+          <label for="cccd">CCCD:</label>
+          <input type="text" id="cccd" name="cccd" placeholder="Nhập CCCD của bạn">
+      
+          <label for="name">Họ và tên:</label>
+          <input type="text" id="name" name="name" placeholder="Nhập họ và tên của bạn">
+      
+          <label for="dob">Ngày sinh:</label>
+          <input type="date" id="dob" name="dob">
+      
+          <label for="address">Địa chỉ:</label>
+          <input type="text" id="address" name="address" placeholder="Nhập địa chỉ của bạn">
+      
+          <label for="phone">Số điện thoại:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại của bạn">
+      
+          <label for="gender">Giới tính:</label>
+          <select id="gender" name="gender">
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+            <option value="other">Khác</option>
+          </select>
+      
+          <label for="school">Trường đang học:</label>
+          <input type="text" id="school" name="school" placeholder="Nhập trường đang học của bạn">
+      </div>
+      
+      
+      <button type="submit">Lưu Thay Đổi</button>
+    </form>
+  </div> 
+
+  <script>
+    function previewAvatar(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('avatar-preview').src = e.target.result;
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+</body>
+</html>
+ *@
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Trong phần head của view hoặc layout -->
+    <script>
+        // Hàm hiển thị thông báo với thời gian tự đóng
+        function showSuccessMessage() {
+            Swal.fire({
+                icon: 'success',
+                title: '@TempData["SuccessMessage"]',
+                showConfirmButton: false,
+                timer: 1500,
+                onClose: function () {
+                    // Sau khi thông báo tự đóng, chuyển hướng đến trang Index
+                    window.location.href = '@Url.Action("Edit", "Home")';
+                }
+            });
+        }
+
+        // Hàm hiển thị thông báo lỗi với thời gian tự đóng
+        function showErrorMessage() {
+            Swal.fire({
+                icon: 'error',
+                title: '@TempData["ErrorMessage"]',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
+        // Gọi hàm hiển thị thông báo khi SuccessMessage hoặc ErrorMessage có giá trị
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                showSuccessMessage();
+            </text>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <text>
+                showErrorMessage();
+            </text>
+        }
+    </script>
+}

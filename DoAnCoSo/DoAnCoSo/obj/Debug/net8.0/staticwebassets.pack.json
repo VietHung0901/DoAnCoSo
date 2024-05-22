@@ -77,6 +77,14 @@
       "PackagePath": "staticwebassets\\images\\Logo.png"
     },
     {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\TrangQuynh_page-0001.jpg",
+      "PackagePath": "staticwebassets\\images\\TrangQuynh_page-0001.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\TrangQuynh_page-0002.jpg",
+      "PackagePath": "staticwebassets\\images\\TrangQuynh_page-0002.jpg"
+    },
+    {
       "Id": "D:\\LapTrinhWeb\\DoAn-CoSo-Loading\\DoAn_CoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\anh1.jpg",
       "PackagePath": "staticwebassets\\images\\anh1.jpg"
     },
