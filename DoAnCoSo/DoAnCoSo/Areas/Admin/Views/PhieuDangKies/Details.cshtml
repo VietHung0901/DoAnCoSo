@@ -1,7 +1,7 @@
-﻿ @model DoAnCoSo.Models.tbPhieuDangKy
-  @using DoAnCoSo.Models
+﻿@model DoAnCoSo.Models.tbPhieuDangKy
+@using DoAnCoSo.Models
 
- @{
+@{
     ApplicationDbContext context = new ApplicationDbContext();
     string LayTenLoaiTruong(int? loaiTruongId)
     {
@@ -17,7 +17,7 @@
             return "";
         return tenTruong.TenTruong;
     }
- }
+}
 <style>
     body {
         font-family: Arial, sans-serif;

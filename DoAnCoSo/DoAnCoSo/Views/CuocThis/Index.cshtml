@@ -89,9 +89,9 @@
                 Ngày bắt đầu: <input style="background-color: #e1dcc5;" type="date" id="start_date" name="start_date" />
                 Ngày kết thúc: <input style="background-color: #e1dcc5;" type="date" id="end_date" name="end_date" />
                 Địa điểm: <input style="background-color: #e1dcc5;" type="text" id="diaDiem" name="diaDiem" placeholder="Nhập địa điểm thi" />
-                Môn:
+                Bài thi:
                 <select style="background-color: #e1dcc5;" id="monthiId" name="monthiId">
-                    <option value="">Chọn môn thi</option>
+                    <option value="">Chọn bài thi</option>
                     @foreach (var monThi in context.tbMonThi)
                     {
                         <option value="@monThi.Id">@monThi.TenMonThi</option>
@@ -107,10 +107,10 @@
         <thead>
             <tr>
                 <th>Tên cuộc thi</th>
-                <th>Ngày Thi/Giờ Thi</th>
-                <th>Số Lượng</th>
-                <th>Địa Điểm</th>
-                <th>Môn Thi</th>
+                <th>Thời gian thi</th>
+                <th>Số lượng</th>
+                <th>Địa điểm</th>
+                <th>Bài thi</th>
                 <th>Cấp học</th>
                 <th></th>
             </tr>

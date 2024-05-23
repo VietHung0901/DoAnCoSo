@@ -115,7 +115,7 @@ namespace DoAnCoSo.Controllers
                 if (result.Succeeded)
                 {
                     TempData["SuccessMessage"] = "Cập nhật thông tin thành công!";
-                    return View(model1);
+                    return View(model);
                 }
             }
             TempData["ErrorMessage"] = "Số điện thoại này đã được sử dụng cho tài khoản khác!";
