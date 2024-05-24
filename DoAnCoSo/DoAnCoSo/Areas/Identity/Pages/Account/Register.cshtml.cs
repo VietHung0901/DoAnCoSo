@@ -155,6 +155,16 @@ namespace DoAnCoSo.Areas.Identity.Pages.Account
                     Value = i
                 }),
             };
+
+            // Tìm xem trong danh sách RoleList có vai trò "Customer" hay không
+            var customerRole = Input.RoleList.FirstOrDefault(r => r.Value == "Customer");
+
+            // Nếu tìm thấy vai trò "Customer", gán giá trị cho Input.Role
+            if (customerRole != null)
+            {
+                Input.Role = customerRole.Value;
+            }
+
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
@@ -172,71 +182,126 @@ namespace DoAnCoSo.Areas.Identity.Pages.Account
             return "/images/" + image.FileName; // Trả về đường dẫn tương đối
         }
 
+        //ham kiem tra la so
+        private bool IsNumeric(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return false;
+
+            foreach (char c in input)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
+        }
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-            if (ModelState.IsValid)
+
+            if (!ModelState.IsValid)
             {
-                var user = CreateUser();
-                var imageUrl = await SaveImage(Input.ImageUrl);
-                if (!string.IsNullOrEmpty(imageUrl))
+                TempData["ErrorMessage"] = "Vui lòng nhập đủ thông tin đăng ký!";
+                return Page();
+            }
+
+            //Kiểm tra sdt và cccd nhập vào đã tồn tại trong csdl chưa
+            var modelUserCCCD = _context.Users.FirstOrDefault(u => u.CCCD == Input.CCCD);
+            if (Input.ImageUrl == null)
+            {
+                TempData["ErrorMessage"] = "Vui lòng chọn ảnh!";
+                return Page();
+            }
+            if (modelUserCCCD != null)
+            {
+                TempData["ErrorMessage"] = "CCCD đã được sử dụng cho tài khoản khác!";
+                return Page();
+            }
+
+            var modelUserSDT = _context.Users.FirstOrDefault(u => u.SoDienThoai == Input.SoDienThoai);
+            if (modelUserSDT != null)
+            {
+                TempData["ErrorMessage"] = "Số điện thoại đã được sử dụng cho tài khoản khác!";
+                return Page();
+            }
+
+            if (!IsNumeric(Input.CCCD))
+            {
+                TempData["ErrorMessage"] = "CCCD chỉ được phép nhập số!";
+                return Page();
+            }
+
+            if (!IsNumeric(Input.SoDienThoai))
+            {
+                TempData["ErrorMessage"] = "Số điện thoại chỉ được phép nhập số!";
+                return Page();
+            }
+
+            var user = CreateUser();
+            var imageUrl = await SaveImage(Input.ImageUrl);
+            if (!string.IsNullOrEmpty(imageUrl))
+            {
+                user.ImageUrl = imageUrl;
+            }
+            user.HoTen = Input.HoTen;
+            user.NgaySinh = Input.NgaySinh;
+            user.DiaChi = Input.DiaChi;
+            user.GioiTinh = Input.GioiTinh;
+            user.SoDienThoai = Input.SoDienThoai;
+            //user.ImageUrl = Input.ImageUrl;
+            user.TruongId = Input.TruongId;
+            user.CCCD = Input.CCCD;
+
+            await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
+            await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+            var result = await _userManager.CreateAsync(user, Input.Password);
+
+            if (result.Succeeded)
+            {
+                TempData["SuccessMessage"] = "Tạo tài khoản thành công!!!";
+
+                _logger.LogInformation("User created a new account with password.");
+                if (!String.IsNullOrEmpty(Input.Role))
                 {
-                    user.ImageUrl = imageUrl;
+                    await _userManager.AddToRoleAsync(user, Input.Role);
                 }
-                user.HoTen = Input.HoTen;
-                user.NgaySinh = Input.NgaySinh;
-                user.DiaChi = Input.DiaChi;
-                user.GioiTinh = Input.GioiTinh;
-                user.SoDienThoai = Input.SoDienThoai;
-                //user.ImageUrl = Input.ImageUrl;
-                user.TruongId = Input.TruongId;
-                user.CCCD = Input.CCCD;
-
-                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
-                await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
-                var result = await _userManager.CreateAsync(user, Input.Password);
-
-                if (result.Succeeded)
+                else
                 {
-                    _logger.LogInformation("User created a new account with password.");
-                    if (!String.IsNullOrEmpty(Input.Role))
-                    {
-                        await _userManager.AddToRoleAsync(user, Input.Role);
-                    }
-                    else
-                    {
-                        await _userManager.AddToRoleAsync(user, SD.Role_Customer);
-                    }
-                    var userId = await _userManager.GetUserIdAsync(user);
-                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-                    var callbackUrl = Url.Page(
-                        "/Account/ConfirmEmail",
-                        pageHandler: null,
-                        values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
-                        protocol: Request.Scheme);
-
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
-
-                    if (_userManager.Options.SignIn.RequireConfirmedAccount)
-                    {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
-                    }
-                    else
-                    {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
-                    }
+                    await _userManager.AddToRoleAsync(user, SD.Role_Customer);
                 }
-                foreach (var error in result.Errors)
+                var userId = await _userManager.GetUserIdAsync(user);
+                var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+                var callbackUrl = Url.Page(
+                    "/Account/ConfirmEmail",
+                    pageHandler: null,
+                    values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                    protocol: Request.Scheme);
+
+                await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
+                if (_userManager.Options.SignIn.RequireConfirmedAccount)
                 {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                }
+                else
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    return LocalRedirect(returnUrl);
                 }
             }
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+
             return Page();
         }
+
+        
 
         private ApplicationUser CreateUser()
         {

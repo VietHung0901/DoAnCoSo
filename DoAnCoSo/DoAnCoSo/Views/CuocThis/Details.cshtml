@@ -164,7 +164,9 @@
                     var qd1 = context.tbQuyDinh.FirstOrDefault(p => p.Id == qd.QuyDinhId);
                     <div class="listQuyDinh">
                         <h3>@qd1.TenQuyDinh</h3>
-                        <p>@qd1.NoiDungQuyDinh</p>
+                        <div>
+                            @Html.Raw(qd1.NoiDungQuyDinh)
+                        </div>
                     </div>
                 }
             </div>
@@ -176,7 +178,9 @@
                     var nd1 = context.tbNoiDung.FirstOrDefault(p => p.Id == nd.NoiDungId);
                     <div class="listNoiDung">
                         <h3>@nd1.TenNoiDung</h3>
-                        <p>@nd1.NoiDungThi</p>
+                        <div>
+                            @Html.Raw(nd.NoiDung)
+                        </div>
                     </div>
                 }
             </div>

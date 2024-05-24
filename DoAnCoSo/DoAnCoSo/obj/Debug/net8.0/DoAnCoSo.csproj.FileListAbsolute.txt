@@ -1721,3 +1721,5 @@ D:\LapTrinhWeb\DoAn-CoSo-Loading\DoAn_CoSo\DoAnCoSo\DoAnCoSo\obj\Debug\net8.0\re
 D:\LapTrinhWeb\DoAn-CoSo-Loading\DoAn_CoSo\DoAnCoSo\DoAnCoSo\obj\Debug\net8.0\DoAnCoSo.pdb
 D:\LapTrinhWeb\DoAn-CoSo-Loading\DoAn_CoSo\DoAnCoSo\DoAnCoSo\obj\Debug\net8.0\DoAnCoSo.genruntimeconfig.cache
 D:\LapTrinhWeb\DoAn-CoSo-Loading\DoAn_CoSo\DoAnCoSo\DoAnCoSo\obj\Debug\net8.0\ref\DoAnCoSo.dll
+E:\DoAnCoSo\DoAnCoSo\DoAnCoSo\bin\Debug\net8.0\CKFinder.dll
+E:\DoAnCoSo\DoAnCoSo\DoAnCoSo\bin\Debug\net8.0\CKFinder.pdb

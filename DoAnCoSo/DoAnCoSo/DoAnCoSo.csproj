@@ -27,4 +27,10 @@
     <Folder Include="wwwroot\images-QuyDinh\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="CKFinder">
+      <HintPath>C:\Users\Admin\Downloads\CKFinder.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
