@@ -14,66 +14,100 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-        .school-type-list h1 {
-            color: black;
-            margin-bottom: 20px;
-        }
+    .school-type-list h1 {
+        color: black;
+        margin-bottom: 20px;
+    }
 
-        .school-type-list table {
-            width: 100%;
-            margin-top: 20px;
-            background-color: #fff;
-            border-collapse: collapse;
-        }
+    .school-type-list table {
+        width: 100%;
+        margin-top: 20px;
+        background-color: #fff;
+        border-collapse: collapse;
+    }
 
-            .school-type-list table th {
-                background-color: #007bff;
-                color: #fff;
-                padding: 10px;
-                text-align: left;
-            }
+    .school-type-list table th {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        text-align: left;
+    }
 
-            .school-type-list table td {
-                padding: 10px;
-                border-bottom: 1px solid #ddd;
-            }
+    .school-type-list table td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
 
-                .school-type-list table td a.edit-link {
-                    background-color: #007bff;
-                    color: #fff;
-                    padding: 5px 10px;
-                    text-decoration: none;
-                    border-radius: 5px;
-                }
+    .school-type-list table td a.edit-link {
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
 
-                    .school-type-list table td a.edit-link:hover {
-                        background-color: #0056b3;
-                    }
+    .school-type-list table td a.edit-link:hover {
+        background-color: #0056b3;
+    }
 
     .table {
         text-align: center;
     }
 
-        button {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-right: 10px;
-            cursor: pointer;
-            border: none;
-            transition: background-color 0.3s ease;
-        }
+    button {
+        background-color: #0056b3;
+        color: #fff;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-right: 5px; /* Giảm khoảng cách giữa các button */
+        margin-left: 0;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
 
-            button:hover {
-                background-color: #0056b3;
-            }
+    button:hover {
+        background-color: #0056b3;
+    }
 
-    .btn-dangky {
+    .btn-dangky,
+    .btn-xembieudo {
         text-decoration: none;
         color: #fff;
     }
+
+    /* Đảm bảo các nút không có khoảng cách do thẻ a */
+    a.btn-dangky,
+    a.btn-xembieudo {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+    }
+
+    /* Đảm bảo rằng các button hiển thị sát nhau */
+    .button-container {
+        display: flex;
+        gap: 5px; /* Điều chỉnh khoảng cách giữa các nút */
+    }
+
+    table {
+        width: 100%;
+        /* border-collapse: collapse; */
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #007bff;
+        color: white;
+    }
+
     /* CSS cho form nhập điểm */
     #overlay {
         position: fixed;
@@ -98,71 +132,73 @@
         border-radius: 5px;
     }
 
-        #scoreFormContainer h2 {
-            color: #007bff;
-            text-align: center;
-        }
+    #scoreFormContainer h2 {
+        color: #007bff;
+        text-align: center;
+    }
 
-        #scoreFormContainer label {
-            display: block;
-            margin-top: 10px;
-        }
+    #scoreFormContainer label {
+        display: block;
+        margin-top: 10px;
+    }
 
-        #scoreFormContainer input[type="number"] {
-            width: 100%;
-            padding: 5px;
-            border-radius: 3px;
-            border: 1px solid #ccc;
-        }
+    #scoreFormContainer input[type="number"] {
+        width: 100%;
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+    }
 
-        #scoreFormContainer button {
-            margin-top: 10px;
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        .head{
-            display: inline-block;
-        }
-        .Phieuketqua {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px;
-}
+    #scoreFormContainer button {
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
 
-.ThongTinThiSinh,
-.KetQua {
-  flex-basis: 48%;
-  background-color: #f5f5f5;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    .head {
+        display: inline-block;
+    }
 
-.ThongTinThiSinh h2,
-.KetQua h2 {
-  margin-top: 0;
-}
+    .Phieuketqua {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+    }
 
-.ThongTinThiSinh input,
-.KetQua input {
-  width: 100%;
-  margin-bottom: 10px;
-}
+    .ThongTinThiSinh,
+    .KetQua {
+        flex-basis: 48%;
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-.btn {
-  margin-right: 10px;
-}
+    .ThongTinThiSinh h2,
+    .KetQua h2 {
+        margin-top: 0;
+    }
 
-#confirmInfoButton,
-#closeFormNhapButton {
-  margin-top: 10px;
-}
+    .ThongTinThiSinh input,
+    .KetQua input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        margin-right: 10px;
+    }
+
+    #confirmInfoButton,
+    #closeFormNhapButton {
+        margin-top: 10px;
+    }
 </style>
 
 @* Dùng để hiện form nhập và sửa điểm *@
@@ -170,17 +206,25 @@
 <div class="school-type-list">
     <div style="display: flex; align-items: center; justify-content: space-between;">
         <h1><i class="fas fa-file-alt"></i> PHIẾU ĐĂNG KÝ CỦA CUỘC THI</h1>
-        <button>
-            <a class="btn-dangky" asp-area="Admin" asp-controller="PhieuKetQuas" asp-action="Index" asp-route-cuocThiId="@ViewBag.CuocThiId">
-                Kết quả chi tiết
-            </a>
-        </button>
+        <div class="button-container">
+            <button>
+                <a class="btn-dangky" asp-area="Admin" asp-controller="PhieuKetQuas" asp-action="Index" asp-route-cuocThiId="@ViewBag.CuocThiId">
+                    Kết quả chi tiết
+                </a>
+            </button>
+
+            <button>
+                <a href="@Url.Action("ShowScoreChart", "PhieuKetQuas", new { cuocThiId = ViewBag.CuocThiId })" class="btn-xembieudo">
+                    Xem Biểu Đồ
+                </a>
+            </button>
+        </div>
     </div>
     <table class="table">
         <thead>
             <tr>
                 <th>
-                    Id
+                    STT
                 </th>
                 <th>
                     Cuộc thi
@@ -219,6 +263,7 @@
                         }
                         @if (pkq != null)
                             @pkq.Diem.ToString()
+
                     </td>
                     <td>
                         <button>
@@ -226,7 +271,7 @@
                                 Chi tiết
                             </a>
                         </button>
-                        @if(pkq == null )
+                        @if (pkq == null)
                         {
                             <button class="openFormNhapButton" data-phieu-dang-ky-id="@item.Id">Nhập điểm</button>
                         }
@@ -261,45 +306,45 @@
             // Tạo form nhập điểm
             var form = $('<div id="scoreFormContainer"></div>');
             form.html(`
-                <div class="Phieuketqua">
-                    <div class="ThongTinThiSinh">
-                        <h2>Xác nhận thông tin</h2>
-                        @* Nơi để form nhập sdt để xác nhận thông tin*@
-                        <label>Số điện thoại:</label>
-                        <input type="text" id="phoneNumberInput" class="form-control" placeholder="Nhập số điện thoại" required>
-                        <button type="button" class="btn btn-primary" id="confirmInfoButton">Xác nhận</button>
-                        @* thông tin user *@
-                        <h4>Thông tin thí sinh</h4>
-                        <label>Họ và tên:</label>
-                        <input id="userIdtext" readonly>
-                        <label>SDT:</label>
-                        <input id="sdttext" readonly>
-                        <label >Email:</label>
-                        <input id="emailtext" readonly>
-                        <label >Trường:</label>
-                        <input id="truongNametext" readonly>
-                        <br>
+                    <div class="Phieuketqua">
+                        <div class="ThongTinThiSinh">
+                            <h2>Xác nhận thông tin</h2>
+    @* Nơi để form nhập sdt để xác nhận thông tin*@
+                            <label>Số điện thoại:</label>
+                            <input type="text" id="phoneNumberInput" class="form-control" placeholder="Nhập số điện thoại" required>
+                            <button type="button" class="btn btn-primary" id="confirmInfoButton">Xác nhận</button>
+    @* thông tin user *@
+                            <h4>Thông tin thí sinh</h4>
+                            <label>Họ và tên:</label>
+                            <input id="userIdtext" readonly>
+                            <label>SDT:</label>
+                            <input id="sdttext" readonly>
+                            <label >Email:</label>
+                            <input id="emailtext" readonly>
+                            <label >Trường:</label>
+                            <input id="truongNametext" readonly>
+                            <br>
+                        </div>
+                        <div class="KetQua">
+                            <h2>Nhập kết quả</h2>
+                            <form id="scoreForm" action="/Admin/PhieuKetQuas/SaveDiem" method="post">
+                                <label>Mã phiếu đăng ký:</label>
+                                <input id="phieuDangKyIdInput" name="PhieuDangKyId" readonly>
+                                <label for="phutInput">Phút:</label>
+                                <input type="number" id="phutInput" name="Phut">
+                                <br>
+                                <label for="giayInput">Giây:</label>
+                                <input type="number" id="giayInput" name="Giay">
+                                <br>
+                                <label for="diemInput">Điểm:</label>
+                                <input type="number" id="diemInput" name="Diem">
+                                <br>
+                                <button type="submit" class="btn btn-primary">Lưu</button>
+                                <button type="button" class="btn btn-secondary" id="closeFormNhapButton">Đóng</button>
+                            </form>
+                        </div>
                     </div>
-                    <div class="KetQua">
-                        <h2>Nhập kết quả</h2>
-                        <form id="scoreForm" action="/Admin/PhieuKetQuas/SaveDiem" method="post">
-                            <label>Mã phiếu đăng ký:</label>
-                            <input id="phieuDangKyIdInput" name="PhieuDangKyId" readonly>   
-                            <label for="phutInput">Phút:</label>
-                            <input type="number" id="phutInput" name="Phut">
-                            <br>
-                            <label for="giayInput">Giây:</label>
-                            <input type="number" id="giayInput" name="Giay">
-                            <br>
-                            <label for="diemInput">Điểm:</label>
-                            <input type="number" id="diemInput" name="Diem">
-                            <br>
-                            <button type="submit" class="btn btn-primary">Lưu</button>
-                            <button type="button" class="btn btn-secondary" id="closeFormNhapButton">Đóng</button>
-                        </form>
-                    </div>
-                </div>
-            `);
+                `);
 
             // Đưa overlay và form vào trang
             $('body').append(overlay);
@@ -417,54 +462,54 @@
             // Tạo form sửa điểm
             var form = $('<div id="scoreFormContainer"></div>');
             form.html(`
-            <div class="Phieuketqua">
-                    <div class="ThongTinThiSinh">
-                        <h2>Xác nhận thông tin</h2>
-                        @* Nơi để form nhập sdt để xác nhận thông tin*@
-                        <label>Số điện thoại:</label>
-                        <input type="text" id="phoneNumberInput" class="form-control" placeholder="Nhập số điện thoại" required>
-                        <button type="button" class="btn btn-primary" id="confirmInfoButton">Xác nhận</button>
-                        @* thông tin user *@
-                        <h4>Thông tin thí sinh</h4>
-                        <label>Họ và tên:</label>
-                        <input id="userIdtext" readonly>
-                        <label>SDT:</label>
-                        <input id="sdttext" readonly>
-                        <label >Email:</label>
-                        <input id="emailtext" readonly>
-                        <label >Trường:</label>
-                        <input id="truongNametext" readonly>
-                        <br>
+                <div class="Phieuketqua">
+                        <div class="ThongTinThiSinh">
+                            <h2>Xác nhận thông tin</h2>
+    @* Nơi để form nhập sdt để xác nhận thông tin*@
+                            <label>Số điện thoại:</label>
+                            <input type="text" id="phoneNumberInput" class="form-control" placeholder="Nhập số điện thoại" required>
+                            <button type="button" class="btn btn-primary" id="confirmInfoButton">Xác nhận</button>
+    @* thông tin user *@
+                            <h4>Thông tin thí sinh</h4>
+                            <label>Họ và tên:</label>
+                            <input id="userIdtext" readonly>
+                            <label>SDT:</label>
+                            <input id="sdttext" readonly>
+                            <label >Email:</label>
+                            <input id="emailtext" readonly>
+                            <label >Trường:</label>
+                            <input id="truongNametext" readonly>
+                            <br>
+                        </div>
+                        <div class="KetQua">
+                            <h2>Sửa kết quả</h2>
+                            <form id="scoreForm" action="/Admin/PhieuKetQuas/UpdateDiem" method="post">
+                                <label>Mã phiếu đăng ký:</label>
+                                <input id="phieuDangKyIdInput" name="PhieuDangKyId" readonly>
+                                <label for="phutInput">Phút:</label>
+                                <input type="number" id="phutInput" name="Phut">
+                                <br>
+                                <label for="giayInput">Giây:</label>
+                                <input type="number" id="giayInput" name="Giay">
+                                <br>
+                                <label for="diemInput">Điểm:</label>
+                                <input type="number" id="diemInput" name="Diem">
+                                <br>
+                                <button type="submit" class="btn btn-primary">Lưu</button>
+                                <button type="button" class="btn btn-secondary" id="closeFormNhapButton">Đóng</button>
+                            </form>
+                        </div>
                     </div>
-                    <div class="KetQua">
-                        <h2>Sửa kết quả</h2>
-                        <form id="scoreForm" action="/Admin/PhieuKetQuas/UpdateDiem" method="post">
-                            <label>Mã phiếu đăng ký:</label>
-                            <input id="phieuDangKyIdInput" name="PhieuDangKyId" readonly>
-                            <label for="phutInput">Phút:</label>
-                            <input type="number" id="phutInput" name="Phut">
-                            <br>
-                            <label for="giayInput">Giây:</label>
-                            <input type="number" id="giayInput" name="Giay">
-                            <br>
-                            <label for="diemInput">Điểm:</label>
-                            <input type="number" id="diemInput" name="Diem">
-                            <br>
-                            <button type="submit" class="btn btn-primary">Lưu</button>
-                            <button type="button" class="btn btn-secondary" id="closeFormNhapButton">Đóng</button>
-                        </form>
-                    </div>
-                </div>
-            `);
+                `);
 
             // Đưa overlay và form vào trang
             $('body').append(overlay);
             $('body').append(form);
-            
+
             //khi nhấn nút xác thực
             $('#confirmInfoButton').click(function () {
 
-                //Lấy giá trị của input phoneNumberInput 
+                //Lấy giá trị của input phoneNumberInput
                 var phoneNumber = $('#phoneNumberInput').val();
                 var competitionId = @ViewBag.CuocThiId; // Thay đổi giá trị này nếu cần
 

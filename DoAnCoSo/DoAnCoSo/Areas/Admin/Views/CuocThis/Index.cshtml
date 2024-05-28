@@ -3,7 +3,7 @@
 
 @{
     ApplicationDbContext context = new ApplicationDbContext();
-    string LayTenLoaiTruong (int? loaiTruongId)
+    string LayTenLoaiTruong(int? loaiTruongId)
     {
         var tenLoaiTruong = context.tbLoaiTruong.FirstOrDefault(p => p.Id == loaiTruongId);
         if (tenLoaiTruong == null)
@@ -31,53 +31,89 @@
         align-items: center;
         padding: 0px 3px;
     }
-        .school-list a.add-button {
+
+    .school-list a.add-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .school-list a.add-button:hover {
+            background-color: #0056b3;
+        }
+
+    .school-list table {
+        width: 100%;
+        margin-top: 20px;
+        background-color: #fff;
+        border-collapse: collapse;
+    }
+
+        .school-list table th {
             background-color: #007bff;
             color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
+            padding: 10px;
+            text-align: left;
         }
 
-            .school-list a.add-button:hover {
-                background-color: #0056b3;
-            }
-
-        .school-list table {
-            width: 100%;
-            margin-top: 20px;
-            background-color: #fff;
-            border-collapse: collapse;
+        .school-list table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
         }
 
-            .school-list table th {
+            .school-list table td a.edit-link {
                 background-color: #007bff;
                 color: #fff;
-                padding: 10px;
-                text-align: left;
+                padding: 5px 10px;
+                text-decoration: none;
+                border-radius: 5px;
             }
 
-            .school-list table td {
-                padding: 10px;
-                border-bottom: 1px solid #ddd;
-            }
-
-                .school-list table td a.edit-link {
-                    background-color: #007bff;
+                .school-list table td a.edit-link.btn-danger {
                     color: #fff;
-                    padding: 5px 10px;
-                    text-decoration: none;
-                    border-radius: 5px;
+                    background-color: #dc3545;
                 }
 
-                    .school-list table td a.edit-link.btn-danger {
-                        color: #fff;
-                        background-color: #dc3545;
-                    }
+                .school-list table td a.edit-link:hover {
+                    background-color: #0056b3;
+                }
 
-                    .school-list table td a.edit-link:hover {
-                        background-color: #0056b3;
-                    }
+    @@media (max-width: 768px) {
+        .school-list {
+            padding: 10px;
+        }
+
+            .school-list h1 {
+                font-size: 1.5em;
+            }
+
+        .add-sort {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .school-list a.add-button {
+            margin-top: 10px;
+        }
+
+        .school-list table th,
+        .school-list table td {
+            font-size: 0.9em;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .school-list h1 {
+            font-size: 1.2em;
+        }
+
+        .school-list table th,
+        .school-list table td {
+            font-size: 0.8em;
+        }
+    }
 </style>
 
 <div class="school-list">

@@ -8,11 +8,11 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
     // config.uiColor = '#AADC6E';
     config.filebrowserBrowseUrl = "/CKEditor5/ckfinder/ckfinder.html";
-    config.filebrowserImageUrl = "/CKEditor5/ckfinder/ckfinder.html?type=Images";
-    config.filebrowserFlashUrl = "/CKEditor5/ckfinder/ckfinder.html?type=Flash";
+    config.filebrowserImageUrl = "CKEditor5/ckfinder/ckfinder.html?type=Images";
+    config.filebrowserFlashUrl = "CKEditor5/ckfinder/ckfinder.html?type=Flash";
     config.filebrowserUploadUrl = "/CKEditor5/Content/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files";
     config.filebrowserImageUploadUrl = "/CKEditor5/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images";
-    config.filebrowserFlashUploadUrl = "/CKEditor5/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash";
+    config.filebrowserFlashUploadUrl = "~/CKEditor5/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash";
 
     config.extraPlugins = 'youtube';
     config.youtube_responsive = true;

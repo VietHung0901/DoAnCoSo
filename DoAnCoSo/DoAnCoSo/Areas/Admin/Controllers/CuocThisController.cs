@@ -246,6 +246,5 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         {
             return _context.tbCuocThi.Any(e => e.Id == id);
         }
-
     }
 }

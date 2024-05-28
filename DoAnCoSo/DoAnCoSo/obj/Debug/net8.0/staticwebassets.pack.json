@@ -4001,6 +4001,10 @@
       "PackagePath": "staticwebassets\\images-NoiDung\\vietquoc.jpg"
     },
     {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-QuyDinh\\anhdaidien.jpg",
+      "PackagePath": "staticwebassets\\images-QuyDinh\\anhdaidien.jpg"
+    },
+    {
       "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-QuyDinh\\cropped.jpg",
       "PackagePath": "staticwebassets\\images-QuyDinh\\cropped.jpg"
     },
@@ -4019,6 +4023,10 @@
     {
       "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\Logo.png",
       "PackagePath": "staticwebassets\\images\\Logo.png"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\Screenshot 2024-05-20 222045.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2024-05-20 222045.png"
     },
     {
       "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\Screenshot 2024-05-22 121135.png",
@@ -4043,6 +4051,10 @@
     {
       "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\anh31.png",
       "PackagePath": "staticwebassets\\images\\anh31.png"
+    },
+    {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\anhdaidien.jpg",
+      "PackagePath": "staticwebassets\\images\\anhdaidien.jpg"
     },
     {
       "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\background.png",

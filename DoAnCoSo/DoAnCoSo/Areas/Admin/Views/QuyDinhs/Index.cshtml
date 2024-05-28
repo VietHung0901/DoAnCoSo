@@ -84,7 +84,7 @@
                     <td>
                         <img class="quydinh-img" src="@Html.DisplayFor(modelItem => item.imageURL)" style="width: 200px; height: 150px;" />
                     </td>
-                    <td>
+                    <td onclick="redirectToDetails('@item.Id')" style="cursor: pointer;">
                         @Html.DisplayFor(modelItem => item.TenQuyDinh)
                     </td>
                     <td>
@@ -108,3 +108,10 @@
     </table>
 </table>
 </div>
+
+<script>
+    function redirectToDetails(Id) {
+        window.location.href = "/Admin/QuyDinhs/Details/" + Id;
+    }
+</script>
+

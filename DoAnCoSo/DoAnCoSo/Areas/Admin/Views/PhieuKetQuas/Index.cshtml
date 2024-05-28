@@ -226,6 +226,13 @@
     .bronze {
         background-color: #CD7F32; /* brown color */
     }
+
+    .chart-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
 </style>
 
 <body>
@@ -250,13 +257,13 @@
                     <div class="score-time-container">
                         <div class="score-time-item">
                             <div class="label">Điểm</div>
-                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[1]].Diem)</div>                                    
+                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[1]].Diem)</div>
                         </div>
                         <div class="score-time-item">
                             <div class="label">Thời gian</div>
                             <div class="value">@Html.DisplayFor(modelItem => top3Results[index[1]].Phut):@Html.DisplayFor(modelItem => top3Results[index[1]].Giay)</div>
                         </div>
-                    </div>           
+                    </div>
 
                     <div class="resultTop">
                         <div class="result2">
@@ -268,6 +275,7 @@
             @if (top3Results.Count >= 1)
             {
                 <div class="result">
+                    <img width="50" height="50" src="https://img.icons8.com/emoji/48/crown-emoji.png" alt="crown-emoji"/>
                     <div class="result-content">
                         <h3>Top 1</h3>
                         <p>@layTen(top3Results[index[0]].PhieuDangKy.UserId)</p>
@@ -276,7 +284,7 @@
                     <div class="score-time-container">
                         <div class="score-time-item">
                             <div class="label">Điểm</div>
-                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[0]].Diem)</div>                                    
+                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[0]].Diem)</div>
                         </div>
                         <div class="score-time-item">
                             <div class="label">Thời gian</div>
@@ -361,9 +369,9 @@
                 }
             </div>
         </div>
-        @**@
     </div>
 </body>
+
 <script>
     document.getElementById('schoolFilter').addEventListener('change', filterTableBySchool);
 
@@ -391,6 +399,8 @@
       }
     }
 </script>
+
+
 
 
 

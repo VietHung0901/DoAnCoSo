@@ -51,7 +51,7 @@
         border-radius: 5px;
         border: 1px solid #ccc;
         padding: 10px;
-        width: 100%;
+        width: 98%;
         margin-bottom: 10px;
     }
 
@@ -60,7 +60,7 @@
         border-radius: 5px;
         border: 1px solid #ccc;
         padding: 10px;
-        width: 100%;
+        width: 98%;
         margin-bottom: 10px;
     }
 
@@ -112,6 +112,53 @@
     .checkbox-item input[type="checkbox"] {
         margin-right: 5px;
     }
+
+    .custom-btn {
+        background-color: #007bff; /* Primary blue color */
+        border: none; /* Remove default border */
+        color: white; /* Text color */
+        padding: 0.75em 1.5em; /* Padding using em units */
+        font-size: 1em; /* Font size using em units */
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.3s ease, padding 0.3s ease, font-size 0.3s ease; /* Smooth transition for background color, padding, and font size */
+        width: 100%; /* Full width of the parent container */
+        max-width: 1350px; /* Maximum width */
+        display: block; /* Make it a block element */
+        margin: 0 auto; /* Center the button horizontally */
+    }
+
+        .custom-btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .custom-btn:focus {
+            outline: none; /* Remove default focus outline */
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Custom focus outline */
+        }
+
+        .custom-btn:active {
+            background-color: #004085; /* Even darker blue on active */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow effect on active */
+        }
+
+    .custom-btn-right {
+        margin-top: 5px; /* Expand to fill remaining space */
+    }
+
+    /* Media Queries for Responsive Design */
+    @@media (max-width: 768px) {
+        .custom-btn {
+            padding: 0.6em 1.2em; /* Smaller padding for small screens */
+            font-size: 0.9em; /* Smaller font size for small screens */
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .custom-btn {
+            padding: 0.5em 1em; /* Even smaller padding for very small screens */
+            font-size: 0.8em; /* Even smaller font size for very small screens */
+        }
+    }
 </style>
 
 <div class="add-school">
@@ -148,7 +195,7 @@
                     </div>
                     <!-- Nút để chuyển sang giai đoạn chọn quy định -->
                     <div class="form-group">
-                        <button type="button" onclick="nextStep(2)" class="btn btn-primary">Tiếp tục</button>
+                        <button type="button" onclick="nextStep(2)" class="btn btn-primary custom-btn">Tiếp tục</button>
                     </div>
                 </div>
 
@@ -168,8 +215,8 @@
                     </div>
                     <!-- Nút để chuyển sang giai đoạn chọn nội dung -->
                     <div class="form-group">
-                        <button type="button" onclick="nextStep(1)" class="btn btn-primary">Quay lại</button>
-                        <button type="button" onclick="nextStep(3)" class="btn btn-primary">Tiếp tục</button>
+                            <button type="button" onclick="nextStep(1)" class="btn btn-primary custom-btn custom-btn-left">Quay lại</button>
+                            <button type="button" onclick="nextStep(3)" class="btn btn-primary custom-btn custom-btn-right">Tiếp tục</button>
                     </div>
                 </div>
 
@@ -189,8 +236,8 @@
                     </div>
                     <!-- Nút hoàn tất quá trình tạo cuộc thi -->
                     <div class="form-group">
-                        <button type="button" onclick="nextStep(2)" class="btn btn-primary">Quay lại</button>
-                        <input type="submit" value="Tạo cuộc thi" class="btn btn-primary" />
+                        <button type="button" onclick="nextStep(2)" class="btn btn-primary custom-btn">Quay lại</button>
+                        <input type="submit" value="Tạo cuộc thi" class="btn btn-primary " />
                     </div>
                 </div>
             </form>

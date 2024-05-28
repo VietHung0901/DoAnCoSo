@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
@@ -1248,11 +1248,20 @@ header .balloon-a {
 }
 .toolbar button.button-a.cke_button {
   cursor: pointer;
-  display: inline-block;
+  display: none;
   padding: 4px 6px;
   outline: 0;
   border: 1px solid #a6a6a6;
 }
+/* Đảm bảo các biểu tượng CKEditor không tràn ra ngoài layout */
+.cke_button {
+    display: none; /* Ẩn các biểu tượng nút mặc định */
+}
+
+    .cke_button:hover {
+        display: inline-block; /* Hiển thị các biểu tượng khi di chuột */
+    }
+
 .toolbar button.button-a.hidden {
   display: none;
 }

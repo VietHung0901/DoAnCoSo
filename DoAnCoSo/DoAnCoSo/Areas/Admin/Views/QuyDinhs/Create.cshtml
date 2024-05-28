@@ -53,6 +53,15 @@
         color: #dc3545;
         margin-top: 5px;
     }
+
+    .add-quyDinh .custom-editor{
+        overflow: hidden; /* Ẩn phần nội dung tràn */
+        resize: none;
+    }
+
+    .add-quyDinh .custom-editor:focus {
+        outline: none;
+    }
 </style>
 
 <div class="add-quyDinh">
@@ -67,14 +76,14 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="NoiDungQuyDinh" class="control-label">Nội dung quy định</label>
-                    <textarea asp-for="NoiDungQuyDinh" id="NoiDungQuyDinh" name="NoiDungQuyDinh" class="form-control"></textarea>
+                    <textarea asp-for="NoiDungQuyDinh" id="NoiDungQuyDinh" name="NoiDungQuyDinh" class="form-control custom-editor"></textarea>
                 </div>
                 <div class="form-group">
                     <label asp-for="imageURL" class="control-label">Ảnh</label>
                     <input type="file" asp-for="imageURL" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <input type="submit" value="Thêm" class="btn btn-primary" />
                 </div>
             </form>
         </div>
@@ -125,7 +134,8 @@
     </script>
 
     <script>
-        CKEDITOR.replace("NoiDungQuyDinh");
+        CKEDITOR.replace("NoiDungQuyDinh"
+        );
     </script>
 }
 

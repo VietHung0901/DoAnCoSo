@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FpB2uHl1rwx1ARV+9j5exQMNHDIvjKxy1DlH6vWi/Ng=",
+  "Hash": "pxErZjr6oEurCCSr96nghSUg2i2tFl5Y3VPyA59d1zg=",
   "Source": "DoAnCoSo",
   "BasePath": "_content/DoAnCoSo",
   "Mode": "Default",
@@ -20651,6 +20651,25 @@
       "OriginalItemSpec": "wwwroot\\images\\anh31.png"
     },
     {
+      "Identity": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\anhdaidien.jpg",
+      "SourceId": "DoAnCoSo",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "BasePath": "_content/DoAnCoSo",
+      "RelativePath": "images/anhdaidien.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\anhdaidien.jpg"
+    },
+    {
       "Identity": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\background.png",
       "SourceId": "DoAnCoSo",
       "SourceType": "Discovered",
@@ -20839,6 +20858,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\quy-dinh-dang-ky.png"
+    },
+    {
+      "Identity": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\Screenshot 2024-05-20 222045.png",
+      "SourceId": "DoAnCoSo",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "BasePath": "_content/DoAnCoSo",
+      "RelativePath": "images/Screenshot 2024-05-20 222045.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Screenshot 2024-05-20 222045.png"
     },
     {
       "Identity": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images\\Screenshot 2024-05-22 121135.png",
@@ -21162,6 +21200,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images-NoiDung\\vietquoc.jpg"
+    },
+    {
+      "Identity": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-QuyDinh\\anhdaidien.jpg",
+      "SourceId": "DoAnCoSo",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\",
+      "BasePath": "_content/DoAnCoSo",
+      "RelativePath": "images-QuyDinh/anhdaidien.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images-QuyDinh\\anhdaidien.jpg"
     },
     {
       "Identity": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\images-QuyDinh\\cropped.jpg",
