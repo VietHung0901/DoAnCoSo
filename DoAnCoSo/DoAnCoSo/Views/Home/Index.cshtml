@@ -1,8 +1,695 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
+    <style>
+        .advertisement-qc {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            left: 0;
+            z-index: -1;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+        .page-selector-qc {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+            .page-selector-qc button {
+                background-color: #7c8b9b;
+                border: none;
+                color: white;
+                width: 24px;
+                height: 8px;
+                cursor: pointer;
+            }
+
+                .page-selector-qc button:hover {
+                    background-color: #537191;
+                }
+        /*  */
+        .div-chung {
+            padding-top: 94px;
+            padding-bottom: 50px;
+            text-align: center;
+            max-width: 1319px;
+            margin: 0 auto;
+            padding: 10px 120px 0px 120px;
+        }
+
+        .div-70 {
+            display: flex;
+        }
+
+        .div-30 {
+            padding-left: 4.1666666667%;
+        }
+
+        .div-trai {
+            height: auto;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 0 0 0 20px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .div-phai {
+            position: relative;
+            overflow: hidden;
+            padding: 25px 36px 5px 32px;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(96, 110, 143, 0.15);
+            border-radius: 0 20px 0 0;
+        }
+
+        .p-tt {
+            text-align: center;
+            font-size: 30px;
+            padding: 10px;
+            margin-top: 70px;
+            font-size: 35px;
+            font-weight: 600;
+        }
+
+        .div-tt {
+            position: relative;
+            display: inline-bock;
+            padding: 0 32px;
+            height: 48px;
+            background: #11579f;
+            border-radius: 0 10px;
+            font-family: Gotham-Medium\.otf;
+            font-size: 14px;
+            line-height: 48px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            text-align: center; /* Canh giữa nội dung */
+            vertical-align: middle; /* Canh giữa theo chiều dọc */
+            margin-left: 43%;
+        }
+
+        .sticker {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            font-size: 12px;
+            line-height: 18px;
+            color: #6e798c;
+            margin: 10px 25px;
+        }
+
+        .sticker {
+            position: relative;
+            text-align: center;
+        }
+
+        .img-sticker {
+            display: inline-block; /* Đảm bảo hình ảnh nằm trên cùng và có thể canh lề trái */
+        }
+
+            .img-sticker img {
+                width: auto; /* Chiều rộng của hình ảnh là 100% của phần tử cha (img-sticker) */
+                height: 220px; /* Chiều cao tự động dựa trên tỷ lệ hình ảnh */
+            }
+
+        h3 {
+            font-family: BeVietnam-SemiBold\.ttf;
+            font-size: 18px;
+            line-height: 24px;
+            color: #393939;
+            -webkit-line-clamp: 2;
+            height: 52px;
+            height: auto;
+            max-height: 52px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        body {
+            /* background-image: url("../images/background.png"); */
+            background-size: cover;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 15px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0px auto;
+        }
+
+        .header {
+            background-color: #164b9b;
+            display: flex;
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        #logo {
+            width: 180px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 0 0 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .main-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #main-menu li {
+            position: relative;
+        }
+
+        .main-menu li a {
+            color: white;
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        .main-menu ul.sub-menu {
+            position: absolute;
+            background-color: #164b9b;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 180px;
+            display: none;
+        }
+
+        .main-menu li:hover > ul.sub-menu {
+            display: block;
+        }
+
+        .main-menu ul.sub-menu a {
+            padding: 15px;
+        }
+
+        .main-menu ul.sub-menu li:hover {
+            background-color: #2360bb;
+        }
+
+        .main-menu > li > a {
+            position: relative;
+        }
+
+            .main-menu > li > a::before {
+                content: "";
+                height: 2px;
+                width: 0px;
+                background: #fff;
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+
+        .main-menu > li:hover > a::before {
+            width: 100%;
+        }
+
+        .main-menu > li.has-child::after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f107";
+            color: #fff;
+            position: absolute;
+            top: 0px;
+            padding-left: 0px;
+            padding: 23px 73px;
+        }
+
+        /*  */
+        ._all_field {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .wrap {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            z-index: 3;
+            height: 88px;
+            width: 1000px;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 0 10px 0 0;
+            margin-top: -44px;
+            display: flex;
+            align-items: center;
+        }
+
+        .wrap,
+        select#test_type,
+        input#start_date,
+        input#end_date,
+        select#location {
+            border: none;
+            border-bottom: 1px solid #d6d6d6;
+        }
+
+        input#start_date,
+        input#end_date {
+            width: 80px;
+        }
+
+        select#location {
+            margin-left: 50px;
+        }
+
+        ._frm_gr {
+            display: inline-block;
+            flex: 1;
+            margin-right: 10px;
+            width: 200px;
+        }
+
+        label#tg-den {
+            margin: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .item {
+            width: 80%;
+            padding: 8px;
+        }
+
+        .date_range {
+            width: calc(70% - 5px);
+            padding: 0px 8px;
+            height: 33px;
+        }
+
+        #h_daterangepicker {
+            display: flex;
+        }
+
+            #h_daterangepicker p {
+                margin: 0 5px;
+            }
+
+        div#show_frm,
+        div#tg-den {
+            padding: 10px;
+        }
+
+        div#show_frm {
+            width: 210px;
+            padding: 0px 44px;
+            color: #11579f;
+            font-weight: 600;
+        }
+
+        .search_button {
+            width: 100px;
+            height: 100%;
+            background: #11579f;
+            border-radius: 0 10px;
+            font-family: BeVietnam-Bold\.ttf;
+            font-size: 20px;
+            line-height: 26px;
+            margin-left: auto;
+            text-align: center;
+            text-transform: uppercase;
+            color: #fff;
+            border: 0;
+            box-shadow: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        section {
+
+            height: 100vh;
+            position: relative;
+            margin-left: -195px !important;
+            width: 1300px;
+            margin-top: -27px;
+        }
+
+        .section2 {
+            background-image: url("../images/background.png");
+            height: 600px;
+        }
+
+        .section3 {
+            background-image: url("../images/background1.png");
+            position: absolute;
+            width: 91.6666666667%;
+            height: 900px;
+            border-radius: 0px 150px 0px 0px;
+        }
+        .section4{
+            background-image: url("../images/background.png");
+            height: 600px;
+        }
+        }
+        .img-31 {
+            width: 100%; /* Đảm bảo hình ảnh lấp đầy không gian của phần tử cha */
+            height: auto; /* Chiều cao tự động dựa trên tỷ lệ khung hình ban đầu */
+        }
+
+        .img-30 img {
+            width: 100%; /* Đảm bảo hình ảnh lấp đầy không gian của phần tử cha */
+            height: auto; /* Chiều cao tự động dựa trên tỷ lệ khung hình ban đầu */
+        }
+
+        .p-sc3 {
+            text-align: left;
+            font-size: 30px;
+            padding: 10px;
+            font-weight: 700;
+            color: white;
+            font-size: 35px;
+        }
+
+        .div-phai-sc3 {
+            position: relative;
+            overflow: hidden;
+            padding: 25px 36px 5px 32px;
+            box-shadow: 0 5px 20px rgba(96, 110, 143, 0.15);
+            border-radius: 0 20px 0 0;
+        }
+
+        .sticker-sc3 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            font-size: 17px;
+            line-height: 15px;
+            color: white;
+        }
+
+        .sticker-sc3 {
+            position: relative;
+            text-align: center;
+        }
+
+        .div-sc3 {
+            font-size: 15px;
+            margin: 50px 0px;
+            text-align: left;
+            color: white;
+            line-height: 1.5;
+        }
+
+        .div-bt-sc3 {
+            position: relative;
+            padding: 0 32px;
+            height: 48px;
+            background: #11579f;
+            border-radius: 0 10px;
+            font-size: 14px;
+            line-height: 48px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            margin-left: 43%;
+            width: 150px;
+            border: none;
+        }
+
+        .advertisement-qc {
+            opacity: 0;
+            transition: opacity 0.5s;
+            display: none;
+        }
+
+            .advertisement-qc.show {
+                display: block;
+                opacity: 1;
+            }
+
+
+
+
+             .container_common {
+            width: 80%;
+            margin: auto;
+        }
+        .swiper-container {
+            position: relative;
+            width: 100%;
+            height: 200px; /* Adjust height as needed */
+            display: flex;
+            align-items: center;
+        }
+        .swiper-wrapper {
+            display: flex;
+        }
+        .swiper-slide {
+            flex: 1 0 auto; /* Flex-grow, flex-shrink, flex-basis */
+            width: 25%; /* 4 slides visible */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+        }
+        .swiper-button {
+            width: 44px;
+            height: 44px;
+            z-index: 10;
+        }
+        .swiper-button-next {
+            right: 10px;
+        }
+        .swiper-button-prev {
+            left: 10px;
+        }
+    </style>
+
+    <section class="section1">
+        <div class="container-qc">
+            <img class="advertisement-qc" src="~/img-trangchu/a11920x907-2.jpgt="Advertisement 2" />
+            <img class="advertisement-qc" src="~/img-trangchu/a12561x1210-b.jpg" alt="Advertisement 2" />
+            <img class="advertisement-qc" src="~/img-trangchu/a12561x1210.jpg" alt="Advertisement 3" />
+            <img class="advertisement-qc" src="~/img-trangchu/a1as.jpg" alt="Advertisement 4" />
+            <img class="advertisement-qc" src="~/img-trangchu/a1MOSWC2024.jpg" alt="Advertisement 5" />
+            <!-- Additional advertisement images -->
+            <div class="page-selector-qc">
+                <button onclick="showAdvertisement(0)"></button>
+                <button onclick="showAdvertisement(1)"></button>
+                <button onclick="showAdvertisement(2)"></button>
+                <button onclick="showAdvertisement(3)"></button>
+                <button onclick="showAdvertisement(4)"></button>
+                <!-- Additional buttons for more pages if needed -->
+            </div>
+        </div>
+    </section>
+    <section class="section2">
+        <div style="width: 100%">
+            <div>
+                <p class="p-tt">Tin tức & thời sự</p>
+            </div>
+            <div class="div-chung" style="display: flex">
+                <div class="div-trai" style="width: 380px; margin-right: 30px">
+                    <div class="img-sticker">
+                        <img src="~/img-trangchu/b1anh.jpg" alt="" />
+                    </div>
+                    <p class="sticker">
+                        <span class="cat">Các cuộc thi</span>
+                        <span class="timer">21/03/2024</span>
+                    </p>
+                    <div style="text-align: left; padding: 10px 20px 20px 20px">
+                        <p>
+                            Cuộc thi Tin học văn phòng MOS tỉnh Thừa Thiên Huế 2024 thu hút gần 100 thí sinh tham dự...
+                        </p>
+                    </div>
+                </div>
+                <div class="div-trai" style="width: 380px; margin-right: 30px">
+                    <div class="img-sticker">
+                        <img src="~/img-trangchu/b2anh.png" alt="" />
+                    </div>
+                    <p class="sticker">
+                        <span class="cat">Các cuộc thi</span>
+                        <span class="timer">21/03/2024</span>
+                    </p>
+                    <div style="text-align: left; padding: 20px">
+                        <p>
+                            MOS World Championship – Viettel 2024 chính thức phát động trên toàn quốc
+                        </p>
+                    </div>
+                </div>
+                <div class="div-trai" style="width: 380px; margin-right: 30px">
+                    <div class="img-sticker">
+                        <img src="~/img-trangchu/b3anh.png" alt="" />
+                    </div>
+                    <p class="sticker">
+                        <span class="cat">Các cuộc thi</span>
+                        <span class="timer">6/06/2024</span>
+                    </p>
+                    <div style="text-align: left; padding: 20px">
+
+                        <p>
+                            Cuộc thi Vô địch Thiết kế đồ họa thế giới ACP 2024: Cơ hội tỏa sáng tài năng và giành “vé” tham dự ..
+                        </p>
+                    </div>
+                </div>
+                <div class="div-trai" style="width: 380px; margin-right: 30px">
+                    <div class="img-sticker">
+                        <img src="~/img-trangchu/b4anh.jpg" alt="" />
+                    </div>
+                    <p class="sticker">
+                        <span class="cat">Hội thảo</span>
+                        <span class="timer">11/06/2024</span>
+                    </p>
+                    <div style="text-align: left; padding: 10px 20px 20px 20px">
+                        <p>
+                            ETS phối hợp cùng Bộ GDĐT triển khai chương trình tập huấn quy mô lớn nhằm...
+                        </p>
+                    </div>
+                </div>
+                <div class="div-trai" style="width: 380px; margin-right: 30px">
+                    <div class="img-sticker">
+                        <img src="~/img-trangchu/b5anh.png" alt="" />
+                    </div>
+                    <p class="sticker">
+                        <span class="cat">Các cuộc thi</span>
+                        <span class="timer">18/07/2024</span>
+                    </p>
+                    <div style="text-align: left; padding: 20px">
+                        <p>
+                            Lễ phát động cuộc thi MOSWC và ACPWC 2024
+                        </p>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="section3" style="margin-top: 1238px;    margin-left: -33px !important;">
+        <div style="width: 100%">
+            <div class="div-chung" style="display: flex; margin-top: 50px;">
+                <div class="div-70" style="width: 35%">
+                    <div style="width: 350px; margin-right: 30px">
+                        <div class="img-30">
+                            <img src="images/anh31.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="div-30" style="width: 40%">
+                    <div class="div-phai-sc3" style="width: 580px; ">
+                        <div>
+                            <p class="p-sc3">Lĩnh vực hoạt động</p>
+                        </div>
+                        <p class="sticker-sc3">
+                            <span class="cat">Tổ Chức Các Bài Thi Quốc Tế</span>
+                            <span class="timer">Tư Vấn Các Giải Pháp Giáo Dục</span>
+                        </p>
+                        <p class="sticker-sc3">
+                            <span class="cat"> Kiểm Định Chất Lượng Giáo Dục</span>
+                            <span class="timer"> Đào Tạo Toàn Diện</span>
+                        </p>
+                        <div class="div-sc3">
+                            Với vai trò là Đại diện quốc gia của các tổ chức hàng đầu thế giới như Viện Khảo thí Giáo dục Hoa Kỳ (ETS), Tổ chức Khảo thí Tin học CERTIPORT, IIG Việt Nam được ủy quyền tổ chức các kỳ thi quốc tế uy tín như TOEIC, TOEFL, MOS, IC3, MCE, ACPro, Apple Swift, SAT, SSAT, GRE, CFA... IIG Việt Nam đã khẳng định được uy tín và vị thế hàng đầu của mình bằng khả năng hỗ trợ toàn diện cho các doanh nghiệp, tổ chức giáo dục và cá nhân trong việc tư vấn và cung cấp các giải pháp đào tạo ngoại ngữ và Công nghệ thông tin theo tiêu chuẩn quốc tế.
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </div>
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".sub-menu").parent("li").addClass("has-child");
+
+            var advertisements = document.querySelectorAll(".advertisement-qc");
+            var currentPage = 0;
+
+            function showAdvertisement(pageIndex) {
+                if (pageIndex !== currentPage) {
+                    advertisements[currentPage].classList.remove("show");
+                    advertisements[pageIndex].classList.add("show");
+                    currentPage = pageIndex;
+                }
+            }
+
+            function nextAdvertisement() {
+                var nextPage = (currentPage + 1) % advertisements.length;
+                showAdvertisement(nextPage);
+            }
+
+            if (advertisements.length > 0) {
+                advertisements[currentPage].classList.add("show");
+                setInterval(nextAdvertisement, 2000);
+            } else {
+                console.log("No advertisements found.");
+            }
+
+            // Ensure buttons work after DOM is ready
+            document.querySelectorAll('.page-selector-qc button').forEach((button, index) => {
+                button.addEventListener('click', function () {
+                    showAdvertisement(index);
+                });
+            });
+        });
+    </script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            const divs = document.querySelectorAll('.div-trai');
+            const interval = 2000; // 3 seconds
+            let index = 0;
+
+            function rotateDivs() {
+                divs.forEach(div => {
+                    div.style.display = 'none'; // Ẩn tất cả các div
+                });
+
+                // Hiển thị chỉ 3 div mỗi lần
+                for (let i = index; i < index + 3; i++) {
+                    if (i < divs.length) {
+                        divs[i].style.display = 'block';
+                    } else {
+                        divs[i - divs.length].style.display = 'block';
+                    }
+                }
+
+                index = (index + 1) % divs.length;
+            }
+
+            rotateDivs();
+            setInterval(rotateDivs, interval);
+        });
+    </script>
+
+

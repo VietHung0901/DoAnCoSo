@@ -111,6 +111,7 @@
                 <th>SDT</th>
                 <th>Nơi Theo Học</th>
                 <th>Email</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -120,9 +121,6 @@
                 var truong = context.tbTruong.FirstOrDefault(p => p.Id == user.TruongId);
 
                 var gioitinh = user.GioiTinh == 0 ? "Nam" : "Nữ";
-
-                @* var isNew = (DateTime.Now - user.).Days < 7; // Kiểm tra xem tài khoản có mới không (đăng ký trong vòng 7 ngày)
-            var CCCDLabel = isNew ? "new" : ""; *@ // Nếu tài khoản mới, hiển thị nhãn "new"
 
                 <tr>
                     <td>
@@ -145,6 +143,9 @@
                     </td>
                     <td>
                         <span>@user.Email</span>
+                    </td>
+                    <td>
+                        <a asp-area="Admin" asp-controller="Home" asp-action="Edit" asp-route-userId="@user.Id">Sửa thông tin</a>
                     </td>
                 </tr>
             }
