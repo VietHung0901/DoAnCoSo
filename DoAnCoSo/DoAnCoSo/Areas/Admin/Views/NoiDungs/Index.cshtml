@@ -88,7 +88,8 @@
                         @Html.DisplayFor(modelItem => item.TenNoiDung)
                     </td>
                     <td>
-                        <a class="edit-link btn btn-primary" asp-area="Admin" asp-controller="NoiDungs" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a class="edit-link btn btn-primary" asp-area="Admin" asp-controller="NoiDungs" asp-action="Edit" asp-route-id="@item.Id">Sửa</a>
+                        <a class="edit-link btn btn-primary" asp-area="Admin" asp-controller="NoiDungs" asp-action="Details" asp-route-id="@item.Id">Xem</a>
                         @if (item.TrangThai == 0)
                         {
                             <a class="edit-link btn btn-danger" asp-area="Admin" asp-controller="NoiDungs" asp-action="AnHien" asp-route-id="@item.Id">

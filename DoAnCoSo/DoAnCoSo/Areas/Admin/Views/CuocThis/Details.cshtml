@@ -24,11 +24,12 @@
         }
 
         main {
-            max-width: 800px;
+            max-width: 800px; /* Sử dụng % cho độ rộng tối đa để phản ứng với kích thước màn hình */
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
 
         .competition-info {
@@ -40,7 +41,7 @@
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 2rem; /* Sử dụng rem thay vì px cho kích thước font */
             margin-bottom: 20px;
         }
 
@@ -53,15 +54,15 @@
         }
 
         .col-sm-2 {
-            flex: 0 0 16.6667%;
-            margin-right: 15px;
-            margin-left: 15px;
+            flex: 0 0 20%; /* Sử dụng % cho độ rộng cố định của cột */
+            margin-right: 1rem; /* Sử dụng rem thay vì px cho khoảng cách */
+            margin-left: 1rem; /* Sử dụng rem thay vì px cho khoảng cách */
         }
 
         .col-sm-10 {
-            flex: 0 0 83.3333%;
-            margin-right: 15px;
-            margin-left: 15px;
+            flex: 0 0 70%; /* Sử dụng % cho độ rộng cố định của cột */
+            margin-right: 1rem; /* Sử dụng rem thay vì px cho khoảng cách */
+            margin-left: 1rem; /* Sử dụng rem thay vì px cho khoảng cách */
         }
 
         .dt {
@@ -70,7 +71,7 @@
 
         p {
             margin: 0;
-            margin-bottom: 10px;
+            margin-bottom: 1rem; /* Sử dụng rem thay vì px cho khoảng cách */
         }
 
         .details {
@@ -83,7 +84,7 @@
 
             .details dd {
                 margin-left: 0;
-                margin-bottom: 10px;
+                margin-bottom: 1rem; /* Sử dụng rem thay vì px cho khoảng cách */
             }
 
         .button-container {
@@ -93,10 +94,10 @@
             .button-container button {
                 background-color: #007bff;
                 color: #fff;
-                padding: 10px 20px;
+                padding: 1rem 2rem; /* Sử dụng rem thay vì px cho khoảng cách */
                 text-decoration: none;
                 border-radius: 5px;
-                margin-right: 10px;
+                margin-right: 1rem; /* Sử dụng rem thay vì px cho khoảng cách */
                 cursor: pointer;
                 border: none;
                 transition: background-color 0.3s ease;
@@ -110,7 +111,38 @@
             text-decoration: none;
             color: #fff;
         }
+
+        .listQuyDinh, .listNoiDung {
+            width: 100%;
+            max-width: 95%; /* Giới hạn chiều rộng tối đa */
+            padding: 20px;
+            border: 0.1vw solid #000; /* Màu sắc đường viền */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
+            background-color: #fff; /* Màu nền */
+            margin-bottom: 20px; /* Khoảng cách phía dưới */
+            border-radius: 5px;
+        }
+        
+        .navigationBtn {
+            display: flex;
+            justify-content: space-between; /* Căn giữa các nút */
+            margin-top: 20px; /* Khoảng cách với phần trước đó */
+        }
+
+            .navigationBtn i {
+                font-size: 30px;
+                color: #007bff; /* Màu của các nút */
+                cursor: pointer;
+                transition: color 0.3s ease; /* Hiệu ứng chuyển đổi màu khi di chuột qua */
+
+            }
+
+                .navigationBtn i:hover {
+                    color: #0056b3; /* Màu của các nút khi di chuột qua */
+                }
+
     </style>
+
 </head>
 <body>
     <main>
@@ -137,36 +169,61 @@
         </div>
 
         <div class="button-container">
+
             <button id="showQuyDinhBtn">Quy định</button>
             <button id="showNoiDungBtn">Nội dung</button>
+
             <button>
                 <a class="btn-dangky" asp-area="Admin" asp-controller="PhieuDangKies" asp-action="Index" asp-route-cuocThiId="@Model.Id">Phiếu đăng ký</a>
             </button>
         </div>
 
+        
+
         <div class="container-qdnd">
             <div id="quyDinhContainer" style="display: none;">
                 <h2>Danh sách Quy định</h2>
-                @foreach (var qd in listQuyDinh)
-                {
-                    var qd1 = context.tbQuyDinh.FirstOrDefault(p => p.Id == qd.QuyDinhId);
-                    <div class="listQuyDinh">
-                        <h3>@qd1.TenQuyDinh</h3>
-                        <p>@qd1.NoiDungQuyDinh</p>
+
+                <div class="quyDinhPages">
+                    <div class="navigationBtn">
+                        @* button chuyen doi trang  *@
+                        <i class='fas fa-arrow-circle-left' id="prevBtnQuyDinh"></i>
+                        <i class='fas fa-arrow-circle-right' id="nextBtnQuyDinh"></i>
+                    
                     </div>
-                }
+                    @foreach (var qd in listQuyDinh)
+                    {
+                        var qd1 = context.tbQuyDinh.FirstOrDefault(p => p.Id == qd.QuyDinhId);
+                        <div class="listQuyDinh" style="display: none;">
+                            <h3>@qd1.TenQuyDinh</h3>
+                            <div>
+                                @Html.Raw(qd1.NoiDungQuyDinh)
+                            </div>
+                        </div>
+                    }
+                </div>
             </div>
 
             <div id="noiDungContainer" style="display: none;">
                 <h2>Danh sách nội dung</h2>
-                @foreach (var nd in listNoiDung)
-                {
-                    var nd1 = context.tbNoiDung.FirstOrDefault(p => p.Id == nd.NoiDungId);
-                    <div class="listNoiDung">
-                        <h3>@nd1.TenNoiDung</h3>
-                        <p>@nd1.NoiDungThi</p>
+
+                <div class="noiDungPages">
+                    <div class="navigationBtn">
+                        @* button chuyen doi trang  *@
+                        <i class='fas fa-arrow-circle-left' id="prevBtnNoiDung"></i>
+                        <i class='fas fa-arrow-circle-right' id="nextBtnNoiDung"></i>
                     </div>
-                }
+                    @foreach (var nd in listNoiDung)
+                    {
+                        var nd1 = context.tbNoiDung.FirstOrDefault(p => p.Id == nd.NoiDungId);
+                        <div class="listNoiDung" style="display: none;">
+                            <h3>@nd1.TenNoiDung</h3>
+                            <div>
+                                @Html.Raw(nd1.NoiDungThi)
+                            </div>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
     </main>
@@ -175,17 +232,47 @@
 <script>
     document.getElementById("showQuyDinhBtn").addEventListener("click", function () {
         var quyDinh = document.getElementById("quyDinhContainer");
-        if (quyDinh.style.display === "none")
+        var noiDung = document.getElementById("noiDungContainer");
+
+        if (quyDinh.style.display === "none") {
             quyDinh.style.display = "block";
-        else
+            noiDung.style.display = "none";
+        } else {
             quyDinh.style.display = "none";
+        }
     });
 
     document.getElementById("showNoiDungBtn").addEventListener("click", function () {
+        var quyDinh = document.getElementById("quyDinhContainer");
         var noiDung = document.getElementById("noiDungContainer");
-        if (noiDung.style.display === "none")
+
+        if (noiDung.style.display === "none") {
             noiDung.style.display = "block";
-        else
+            quyDinh.style.display = "none";
+        } else {
             noiDung.style.display = "none";
+        }
     });
+
+
+    // JS chuyen trang 
+    var currentPageIndexQuyDinh = 0;
+    var currentPageIndexNoiDung = 0;
+    var quyDinhPages = document.querySelectorAll("#quyDinhContainer .listQuyDinh");
+    var noiDungPages = document.querySelectorAll("#noiDungContainer .listNoiDung");
+    var totalPagesQuyDinh = quyDinhPages.length;
+    var totalPagesNoiDung = noiDungPages.length;
+
+    document.getElementById("nextBtnQuyDinh").addEventListener("click", function () {
+        quyDinhPages[currentPageIndexQuyDinh].style.display = "none";
+        currentPageIndexQuyDinh = (currentPageIndexQuyDinh + 1) % totalPagesQuyDinh;
+        quyDinhPages[currentPageIndexQuyDinh].style.display = "block";
+    });
+
+    document.getElementById("prevBtnQuyDinh").addEventListener("click", function () {
+        quyDinhPages[currentPageIndexQuyDinh].style.display = "none";
+        currentPageIndexQuyDinh = (currentPageIndexQuyDinh - 1 + totalPagesQuyDinh) % totalPagesQuyDinh;
+        quyDinhPages[currentPageIndexQuyDinh].style.display = "block";
+    });
+
 </script>

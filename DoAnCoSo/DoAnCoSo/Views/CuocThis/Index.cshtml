@@ -78,28 +78,94 @@
                     .school-list table td a.edit-link:hover {
                         background-color: #0056b3;
                     }
+
+    .search-container {
+        background-color: #f8f8f8;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+    .search-fields {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .field {
+        flex-basis: calc(20% - 20px);
+        display: flex;
+        flex-direction: column;
+    }
+
+        .field label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .field input,
+        .field select {
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: 16px;
+        }
+
+    .search-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        height: 60px;
+        width: 90px;
+    }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
 </style>
 
 <div class="school-list">
     <h1><i class="fas fa-trophy"></i> CUỘC THI</h1>
 
-    <div class="timKiem">
+    <div class="search-container">
         <form id="searchForm" asp-area="" asp-controller="CuocThis" asp-action="Index" method="get">
-            <p>
-                Ngày bắt đầu: <input style="background-color: #e1dcc5;" type="date" id="start_date" name="start_date" />
-                Ngày kết thúc: <input style="background-color: #e1dcc5;" type="date" id="end_date" name="end_date" />
-                Địa điểm: <input style="background-color: #e1dcc5;" type="text" id="diaDiem" name="diaDiem" placeholder="Nhập địa điểm thi" />
-                Bài thi:
-                <select style="background-color: #e1dcc5;" id="monthiId" name="monthiId">
-                    <option value="">Chọn bài thi</option>
-                    @foreach (var monThi in context.tbMonThi)
-                    {
-                        <option value="@monThi.Id">@monThi.TenMonThi</option>
-                    }
-                </select>
-
-                <input type="submit" value="Tìm kiếm" class="ip-timkiem" />
-            </p>
+            <div class="search-fields">
+                <div class="field">
+                    <label for="start_date">Từ ngày:</label>
+                    <input type="date" id="start_date" name="start_date" />
+                </div>
+                <div class="field">
+                    <label for="end_date">Đến ngày:</label>
+                    <input type="date" id="end_date" name="end_date" />
+                </div>
+                <div class="field">
+                    <label for="diaDiem">Địa điểm:</label>
+                    <input type="text" id="diaDiem" name="diaDiem" placeholder="Nhập địa điểm thi" />
+                </div>
+                <div class="field">
+                    <label for="monthiId">Bài thi:</label>
+                    <select id="monthiId" name="monthiId">
+                        <option value="">Chọn bài thi</option>
+                        @foreach (var monThi in context.tbMonThi)
+                        {
+                            <option value="@monThi.Id">@monThi.TenMonThi</option>
+                        }
+                    </select>
+                </div>
+                <div class="field-btn">
+                    <button type="submit" class="search-button">Tìm kiếm</button>
+                </div>
+            </div>
         </form>
     </div>
 

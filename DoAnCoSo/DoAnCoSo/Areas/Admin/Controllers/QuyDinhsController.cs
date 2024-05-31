@@ -119,6 +119,12 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,TenQuyDinh,NoiDungQuyDinh,imageURL")] tbQuyDinh tbQuyDinh, IFormFile imageUrl)
         {
+            if (string.IsNullOrEmpty(tbQuyDinh.TenQuyDinh) || string.IsNullOrEmpty(tbQuyDinh.NoiDungQuyDinh))
+            {
+                TempData["ErrorMessage"] = "Vui lòng nhập đầy đủ";
+                return View(tbQuyDinh);
+            }
+
             if (id != tbQuyDinh.Id)
             {
                 return NotFound();
@@ -143,8 +149,8 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                     throw;
                 }
             }
-            TempData["SuccessMessage"] = "sửa thông tin nội dung thành công.";
-            return RedirectToAction(nameof(Index));
+            TempData["SuccessMessage"] = "Sửa thông tin quy định thành công.";
+            return View(tbQuyDinh);
         }
 
         // GET: Admin/QuyDinhs/Delete/5

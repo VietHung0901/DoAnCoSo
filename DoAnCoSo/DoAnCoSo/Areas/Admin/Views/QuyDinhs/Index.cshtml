@@ -84,11 +84,12 @@
                     <td>
                         <img class="quydinh-img" src="@Html.DisplayFor(modelItem => item.imageURL)" style="width: 200px; height: 150px;" />
                     </td>
-                    <td>
+                    <td onclick="redirectToDetails('@item.Id')" style="cursor: pointer;">
                         @Html.DisplayFor(modelItem => item.TenQuyDinh)
                     </td>
                     <td>
-                        <a class="edit-link btn btn-primary" asp-area="Admin" asp-controller="QuyDinhs" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a class="edit-link btn btn-primary" asp-area="Admin" asp-controller="QuyDinhs" asp-action="Edit" asp-route-id="@item.Id">Sửa</a>
+                        <a class="edit-link btn btn-primary" asp-area="Admin" asp-controller="QuyDinhs" asp-action="Details" asp-route-id="@item.Id">Xem</a>
                         @if (item.TrangThai == 0)
                         {
                             <a class="edit-link btn btn-danger" asp-area="Admin" asp-controller="QuyDinhs" asp-action="AnHien" asp-route-id="@item.Id">
@@ -108,3 +109,10 @@
     </table>
 </table>
 </div>
+
+<script>
+    function redirectToDetails(Id) {
+        window.location.href = "/Admin/QuyDinhs/Details/" + Id;
+    }
+</script>
+

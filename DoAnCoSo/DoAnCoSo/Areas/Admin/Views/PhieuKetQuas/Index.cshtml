@@ -3,32 +3,59 @@
 
 @{
     ApplicationDbContext context = new ApplicationDbContext();
-    var top3Results = Model.Take(3).ToList();
     var remainingResults = Model.ToList();
+    var previousRank = -1;
+    var currentRank = 1;
 
-    string layTen (string userId)
+    var previousRank1 = -1;
+    var currentRank1 = 1;
+
+    string layTen(string userId)
     {
         var user = context.Users.FirstOrDefault(p => p.Id == userId);
         if (user == null)
             return "";
         return @user.HoTen.ToString();
     }
-    string layTenTruong (int? TruongId)
+    string layTenTruong(int? TruongId)
     {
         var truong = context.tbTruong.FirstOrDefault(p => p.Id == TruongId);
         if (truong == null)
             return "";
         return @truong.TenTruong.ToString();
     }
-    int top = 0;
+    bool CheckForDuplicates(List<tbPhieuKetQua> results)
+    {
+        int top = 1;
+        for (int i = 0; i < results.Count - 1; i++)
+        {
+            var currentItem = results[i];
+            var nextItem = results[i + 1];
+            if (top <= 3)
+            {
+                if (currentItem.Diem == nextItem.Diem && currentItem.Phut == nextItem.Phut && currentItem.Giay == nextItem.Giay)
+                {
+                    return true;
+                }
+                top++;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return false;
+    }
 }
 <style>
-    body{
+    body {
         background-image: linear-gradient(to bottom, #2196F3, #4CAF50);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
+        overflow-y: hidden;
     }
+
     .list-Result {
         display: flex;
         flex-wrap: wrap;
@@ -109,13 +136,23 @@
         border-radius: 8px;
     }
 
+    .table-container-updated {
+        text-align: center;
+        max-height: 400px;
+        width: 1200px;
+        overflow-y: auto; 
+        border-radius: 8px;
+        scrollbar-width: thin;
+        scrollbar-color: #888 #f1f1f1;
+    }
+
     .table-container {
-    text-align: center;
-    max-height: 400px;
-    overflow-y: auto; 
-    border-radius: 8px;
-    scrollbar-width: thin;
-    scrollbar-color: #888 #f1f1f1;
+        text-align: center;
+        max-height: 400px;
+        overflow-y: auto; 
+        border-radius: 8px;
+        scrollbar-width: thin;
+        scrollbar-color: #888 #f1f1f1;
     }
 
     .table-container::-webkit-scrollbar {
@@ -226,141 +263,374 @@
     .bronze {
         background-color: #CD7F32; /* brown color */
     }
+
+    /* ban phao hoa */
+    @@keyframes firework {
+            0% {
+                transform: translate(var(--x), var(--initialY));
+                width: var(--initialSize);
+                opacity: 1;
+            }
+
+            50% {
+                width: 0.5vmin;
+                opacity: 1;
+            }
+
+            100% {
+                width: var(--finalSize);
+                opacity: 0;
+            }
+        }
+
+        .firework,
+        .firework::before,
+        .firework::after {
+            --initialSize: 0.5vmin;
+            --finalSize: 45vmin;
+            --particleSize: 0.2vmin;
+            --color1: yellow;
+            --color2: khaki;
+            --color3: white;
+            --color4: lime;
+            --color5: gold;
+            --color6: mediumseagreen;
+            --y: -30vmin;
+            --x: -50%;
+            --initialY: 60vmin;
+            overflow: hidden;
+            content: "";
+            animation: firework 2s infinite;
+            position: absolute;
+            z-index: 9999999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, var(--y));
+            width: var(--initialSize);
+            aspect-ratio: 1;
+            background:
+
+                radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,
+                radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,
+                radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,
+                radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,
+
+                
+                radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80% 90%,
+                radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,
+                radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,
+                radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,
+                radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,
+                radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,
+
+                
+                radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22% 90%,
+                radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,
+                radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,
+                radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,
+                radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,
+                radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,
+                radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,
+
+                
+                radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80% 10%,
+                radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,
+                radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,
+                radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,
+                radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,
+                radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,
+                radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%,
+
+                /* top right */
+                radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22% 14%,
+                radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45% 20%,
+                radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 34%,
+                radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10% 29%,
+                radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31% 37%,
+                radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28% 7%,
+                radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%;
+            background-size: var(--initialSize) var(--initialSize);
+            background-repeat: no-repeat;
+        }
+
+        .firework::before {
+            --x: -50%;
+            --y: -50%;
+            --initialY: -50%;
+            transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);
+        }
+
+        .firework::after {
+            --x: -50%;
+            --y: -50%;
+            --initialY: -50%;
+            transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);
+        }
+
+        .firework:nth-child(2) {
+            --x: 30vmin;
+        }
+
+        .firework:nth-child(2),
+        .firework:nth-child(2)::before,
+        .firework:nth-child(2)::after {
+            --color1: pink;
+            --color2: violet;
+            --color3: fuchsia;
+            --color4: orchid;
+            --color5: plum;
+            --color6: lavender;
+            --finalSize: 40vmin;
+            left: 30%;
+            top: 60%;
+            animation-delay: -0.25s;
+        }
+
+        .firework:nth-child(3) {
+            --x: -30vmin;
+            --y: -50vmin;
+        }
+
+        .firework:nth-child(3),
+        .firework:nth-child(3)::before,
+        .firework:nth-child(3)::after {
+            --color1: cyan;
+            --color2: lightcyan;
+            --color3: lightblue;
+            --color4: PaleTurquoise;
+            --color5: SkyBlue;
+            --color6: lavender;
+            --finalSize: 35vmin;
+            left: 70%;
+            top: 60%;
+            animation-delay: -0.4s;
+        }
+
+        .firework:nth-child(4),
+        .firework:nth-child(4)::before,
+        .firework:nth-child(4)::after {
+            --color1: #770000;
+            --color2: #33CCFF;
+            --color3: #33CC33;
+            --color4: #33CC66;
+            --color5: SkyBlue;
+            --color6: lavender;
+            --finalSize: 35vmin;
+            left: 70%;
+            top: 60%;
+            animation-delay: -0.4s;
+        }
+        @@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+        /* ban phao hoa */
 </style>
 
 <body>
+
+     @* ban phao hoa *@
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    @* ban phao hoa *@
+
     <div class="announcement">
         <h2>Kết quả công bố</h2>
         <p>Xin chúc mừng các thí sinh vượt qua cuộc thi!</p>
     </div>
     <div class="list-Result">
-        <div class="result-board">
-            @{
-                var index = top3Results.Select((item, index) => index).ToList();
-            }
+        @if(!CheckForDuplicates(remainingResults))
+        {
+            <div class="result-board">
+                @{
+                    var top3Results = Model.Take(3).ToList();
+                    var index = top3Results.Select((item, index) => index).ToList();
+                }
 
-            @if (top3Results.Count >= 2)
-            {
-                <div class="result">
-                    <div class="result-content">
-                        <h3>Top 2</h3>
-                        <p>@layTen(top3Results[index[1]].PhieuDangKy.UserId)</p>
-                    </div>
-
-                    <div class="score-time-container">
-                        <div class="score-time-item">
-                            <div class="label">Điểm</div>
-                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[1]].Diem)</div>                                    
-                        </div>
-                        <div class="score-time-item">
-                            <div class="label">Thời gian</div>
-                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[1]].Phut):@Html.DisplayFor(modelItem => top3Results[index[1]].Giay)</div>
-                        </div>
-                    </div>           
-
-                    <div class="resultTop">
-                        <div class="result2">
-                        </div>
-                    </div>
-                </div>
-            }
-
-            @if (top3Results.Count >= 1)
-            {
-                <div class="result">
-                    <div class="result-content">
-                        <h3>Top 1</h3>
-                        <p>@layTen(top3Results[index[0]].PhieuDangKy.UserId)</p>
-                    </div>
-
-                    <div class="score-time-container">
-                        <div class="score-time-item">
-                            <div class="label">Điểm</div>
-                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[0]].Diem)</div>                                    
-                        </div>
-                        <div class="score-time-item">
-                            <div class="label">Thời gian</div>
-                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[0]].Phut):@Html.DisplayFor(modelItem => top3Results[index[0]].Giay)</div>
-                        </div>
-                    </div> 
-                    
-                    <div class="resultTop">
-                        <div class="result1">
-                        </div>
-                    </div>
-                </div>
-            }
-
-            @if (top3Results.Count >= 3)
-            {
-                <div class="result">
-                    <div class="result-content">
-                        <h3>Top 3</h3>
-                        <p>@layTen(top3Results[index[2]].PhieuDangKy.UserId)</p>
-                    </div>
-
-                    <div class="score-time-container">
-                        <div class="score-time-item">
-                            <div class="label">Điểm</div>
-                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[2]].Diem)</div>                                    
-                        </div>
-                        <div class="score-time-item">
-                            <div class="label">Thời gian</div>
-                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[2]].Phut):@Html.DisplayFor(modelItem => top3Results[index[2]].Giay)</div>
-                        </div>
-                    </div> 
-
-                    <div class="resultTop">
-                        <div class="result3">
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-
-        <div class="list-container">
-            <div class="filter-bar">
-                <select id="schoolFilter">
-                    <option value="">Tất cả trường</option>
-                    @foreach (var school in ViewBag.TruongIds)
-                    {
-                        <option value="@school">@layTenTruong(school)</option>
-                    }
-                </select>
-            </div>
-
-            <div class="table-container">
-                @if (remainingResults.Any())
+                @if (top3Results.Count >= 2)
                 {
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Top</th>
-                                <th>Mã</th>
-                                <th>Họ và tên</th>
-                                <th>Trường</th>
-                                <th>Điểm</th>
-                                <th>Thời gian</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in remainingResults)
-                            {
-                                top++;
-                                <tr class="result-row @(top == 1 ? "gold" : (top == 2 ? "silver" : (top == 3 ? "bronze" : ""))) " data-truong-id="@item.PhieuDangKy.TruongId">
-                                    <td>@top</td>
-                                    <td>@Html.DisplayFor(modelItem => item.PhieuDangKyId)</td>
-                                    <td>@layTen(item.PhieuDangKy.UserId)</td>
-                                    <td>@layTenTruong(item.PhieuDangKy.TruongId)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Diem)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Phut):@Html.DisplayFor(modelItem => item.Giay)</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
+                    <div class="result">
+                        <div class="result-content">
+                            <h3>Top 2</h3>
+                            <p>@layTen(top3Results[index[1]].PhieuDangKy.UserId)</p>
+                        </div>
+
+                        <div class="score-time-container">
+                            <div class="score-time-item">
+                                <div class="label">Điểm</div>
+                                <div class="value">@Html.DisplayFor(modelItem => top3Results[index[1]].Diem)</div>                                    
+                            </div>
+                            <div class="score-time-item">
+                                <div class="label">Thời gian</div>
+                                <div class="value">@Html.DisplayFor(modelItem => top3Results[index[1]].Phut):@Html.DisplayFor(modelItem => top3Results[index[1]].Giay)</div>
+                            </div>
+                        </div>           
+
+                        <div class="resultTop">
+                            <div class="result2">
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            
+                @if (top3Results.Count >= 1)
+                {
+                    <div class="result">
+                        <div class="result-content">
+                            <h3>Top 1</h3>
+                            <p>@layTen(top3Results[index[0]].PhieuDangKy.UserId)</p>
+                        </div>
+
+                        <div class="score-time-container">
+                            <div class="score-time-item">
+                                <div class="label">Điểm</div>
+                                <div class="value">@Html.DisplayFor(modelItem => top3Results[index[0]].Diem)</div>
+                            </div>
+                            <div class="score-time-item">
+                                <div class="label">Thời gian</div>
+                                <div class="value">@Html.DisplayFor(modelItem => top3Results[index[0]].Phut):@Html.DisplayFor(modelItem => top3Results[index[0]].Giay)</div>
+                            </div>
+                        </div> 
+                    
+                        <div class="resultTop">
+                            <div class="result1">
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            
+                @if (top3Results.Count >= 3)
+                {
+                    <div class="result">
+                        <div class="result-content">
+                            <h3>Top 3</h3>
+                            <p>@layTen(top3Results[index[2]].PhieuDangKy.UserId)</p>
+                        </div>
+
+                        <div class="score-time-container">
+                            <div class="score-time-item">
+                                <div class="label">Điểm</div>
+                                <div class="value">@Html.DisplayFor(modelItem => top3Results[index[2]].Diem)</div>                                    
+                            </div>
+                            <div class="score-time-item">
+                                <div class="label">Thời gian</div>
+                                <div class="value">@Html.DisplayFor(modelItem => top3Results[index[2]].Phut):@Html.DisplayFor(modelItem => top3Results[index[2]].Giay)</div>
+                            </div>
+                        </div> 
+
+                        <div class="resultTop">
+                            <div class="result3">
+                            </div>
+                        </div>
+                    </div>
                 }
             </div>
-        </div>
+
+            <div class="list-container">
+                <div class="filter-bar">
+                    <select id="schoolFilter">
+                        <option value="">Tất cả trường</option>
+                        @foreach (var school in ViewBag.TruongIds)
+                        {
+                            <option value="@school">@layTenTruong(school)</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Xếp hạng</th>
+                                    <th>Mã</th>
+                                    <th>Họ và tên</th>
+                                    <th>Trường</th>
+                                    <th>Điểm</th>
+                                    <th>Thời gian</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.OrderByDescending(x => x.Diem).ThenBy(x => x.Phut).ThenBy(x => x.Giay))
+                                {
+                                    if (previousRank != -1 && (item.Diem != Model.OrderByDescending(x => x.Diem).ThenBy(x => x.Phut).ThenBy(x => x.Giay).Skip(previousRank).First().Diem ||
+                                    item.Phut != Model.OrderByDescending(x => x.Diem).ThenBy(x => x.Phut).ThenBy(x => x.Giay).Skip(previousRank).First().Phut ||
+                                    item.Giay != Model.OrderByDescending(x => x.Diem).ThenBy(x => x.Phut).ThenBy(x => x.Giay).Skip(previousRank).First().Giay))
+                                    {
+                                        currentRank++;
+                                    }
+                                    <tr class="result-row @(currentRank == 1 ? "gold" : (currentRank == 2 ? "silver" : (currentRank == 3 ? "bronze" : ""))) " data-truong-id="@item.PhieuDangKy.TruongId">
+
+                                        <td>@currentRank</td>
+                                        <td>@Html.DisplayFor(modelItem => item.PhieuDangKyId)</td>
+                                        <td>@layTen(item.PhieuDangKy.UserId)</td>
+                                        <td>@layTenTruong(item.PhieuDangKy.TruongId)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Diem)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Phut):@Html.DisplayFor(modelItem => item.Giay)</td>
+                                    </tr>
+
+                                    previousRank++;
+                                }
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="list-container">
+                <div class="filter-bar">
+                    <select id="schoolFilter">
+                        <option value="">Tất cả trường</option>
+                        @foreach (var school in ViewBag.TruongIds)
+                        {
+                            <option value="@school">@layTenTruong(school)</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="table-container table-container-updated">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Xếp hạng</th>
+                                    <th>Mã</th>
+                                    <th>Họ và tên</th>
+                                    <th>Trường</th>
+                                    <th>Điểm</th>
+                                    <th>Thời gian</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.OrderByDescending(x => x.Diem).ThenBy(x => x.Phut).ThenBy(x => x.Giay))
+                                {
+                                    if (previousRank != -1 && (item.Diem != Model.OrderByDescending(x => x.Diem).ThenBy(x => x.Phut).ThenBy(x => x.Giay).Skip(previousRank).First().Diem ||
+                                    item.Phut != Model.OrderByDescending(x => x.Diem).ThenBy(x => x.Phut).ThenBy(x => x.Giay).Skip(previousRank).First().Phut ||
+                                    item.Giay != Model.OrderByDescending(x => x.Diem).ThenBy(x => x.Phut).ThenBy(x => x.Giay).Skip(previousRank).First().Giay))
+                                    {
+                                        currentRank++;
+                                    }
+                                    <tr class="result-row @(currentRank == 1 ? "gold" : (currentRank == 2 ? "silver" : (currentRank == 3 ? "bronze" : ""))) " data-truong-id="@item.PhieuDangKy.TruongId">
+
+                                        <td>@currentRank</td>
+                                        <td>@Html.DisplayFor(modelItem => item.PhieuDangKyId)</td>
+                                        <td>@layTen(item.PhieuDangKy.UserId)</td>
+                                        <td>@layTenTruong(item.PhieuDangKy.TruongId)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Diem)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Phut):@Html.DisplayFor(modelItem => item.Giay)</td>
+                                    </tr>
+
+                                    previousRank++;
+                                }
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        }
+
+        
         @**@
     </div>
 </body>
@@ -391,6 +661,3 @@
       }
     }
 </script>
-
-
-

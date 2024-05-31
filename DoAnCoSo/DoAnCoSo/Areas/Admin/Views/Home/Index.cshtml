@@ -1,0 +1,117 @@
+﻿@model DoAnCoSo.Models.tbThongKe
+
+<style>
+    .management-board {
+        background-color: #f5f5f5;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .management-board h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        max-width: 1000px;
+    }
+
+    .card {
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        flex-basis: calc(33.33% - 1rem);
+        margin-bottom: 1rem;
+        text-decoration: none;
+        color: inherit;
+        max-width: 330px;
+    }
+
+    .card-content {
+        display: flex;
+        align-items: center;
+        padding: 1.2rem;
+        max-width: 330px;
+    }
+
+    .card-item {
+        flex-grow: 1;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-value {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .new-members-notification {
+        color: #4CAF50;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .card-image {
+    }
+
+        .card-image img {
+            max-width: 90px;
+        }
+</style>
+
+<div class="management-board">
+    <h1>Bảng quản lý</h1>
+    <div class="card-container">
+        <a href="@Url.Action("DanhSachUser", "Home", new { area = "Admin" })" class="card">
+            <div class="card-content">
+                <div class="card-item">
+                    <p class="card-title">Tổng thí sinh</p>
+                    <p class="card-value">@Model.SoLuongUser</p>
+                    @if (Model.SoLuongUserMoi > 0)
+                    {
+                        <p class="new-members-notification">New: @Model.SoLuongUserMoi</p>
+                    }
+                </div>
+                <div class="card-image">
+                    <img src="~/images-Login/globe.png" alt="Globe">
+                </div>
+            </div>
+        </a>
+        <div class="card">
+            <div class="card-content">
+                <div class="card-item">
+                    <p class="card-title">Tổng cuộc thi</p>
+                    <p class="card-value">@Model.SoLuongCuocThi</p>
+                </div>
+                <div class="card-image">
+                    <img src="~/images-Login/cuocthi.png" alt="Competition">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="card-item">
+                    <p class="card-title">Tổng lượt đăng ký</p>
+                    <p class="card-value">@Model.SoLuongUserDK</p>
+                </div>
+                <div class="card-image">
+                    <img src="~/images-Login/ghidanh.png" alt="Enrollment">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

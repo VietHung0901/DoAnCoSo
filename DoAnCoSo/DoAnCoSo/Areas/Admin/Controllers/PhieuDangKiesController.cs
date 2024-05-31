@@ -193,17 +193,32 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             return (dem < cuocThi.SoLuongThiSinh) ? true : false;
         }
 
-        public async Task<IActionResult> ThongKe()
+        public IActionResult ViewChart()
         {
-            var thongKe = new tbThongKe
-            {
-                SoLuongUser = await _userManager.Users.CountAsync(),
-                SoLuongCuocThi = await _context.tbCuocThi.CountAsync(),
+            var usersWithCity = _context.Users
+                .Where(u => !string.IsNullOrEmpty(u.DiaChi))
+                .AsEnumerable() // Chuyển sang kiểu IEnumerable để thực hiện thao tác trong bộ nhớ
+                .GroupBy(u => GetLastCityName(u.DiaChi))
+                .Select(g => new { City = g.Key, Count = g.Count() })
+                .ToList();
 
-                SoLuongUserDK = await _context.tbPhieuDangKy.Select(p => p.UserId).Distinct().CountAsync(),
-                SoLuongUserMoi = await _userManager.Users.CountAsync(u => !u.HasBeenViewed)
-            };
-            return View(thongKe);
+            ViewBag.Labels = usersWithCity.Select(u => u.City).ToList();
+            ViewBag.Data = usersWithCity.Select(u => u.Count).ToList();
+
+            return View();
+        }
+
+        // Phương thức để lấy tên thành phố cuối cùng từ địa chỉ
+        private string GetLastCityName(string address)
+        {
+            // Tách địa chỉ thành các phần bằng dấu phẩy
+            var parts = address.Split(',', StringSplitOptions.RemoveEmptyEntries);
+
+            // Lấy thành phố từ phần cuối cùng của địa chỉ
+            var lastPart = parts.LastOrDefault()?.Trim();
+
+            // Trả về tên thành phố cuối cùng
+            return lastPart;
         }
     }
 }

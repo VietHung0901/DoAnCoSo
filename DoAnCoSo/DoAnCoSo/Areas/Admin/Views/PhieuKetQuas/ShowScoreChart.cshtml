@@ -1,0 +1,79 @@
+﻿@model List<int>
+
+<!-- Hiển thị biểu đồ tròn thống kê điểm -->
+
+<style>
+    body {
+        background-image: linear-gradient(to bottom, #2196F3, #4CAF50);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
+
+
+<body>
+    <canvas id="scoreChart" width="500" height="500"></canvas>
+</body>
+
+@section scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script>
+        // Lấy dữ liệu điểm từ Model
+        var scores = @Html.Raw(Json.Serialize(Model));
+
+        // Tính toán số lượng thí sinh trong từng khoảng điểm
+        var scoreCounts = [];
+        for (var i = 1; i <= 1000; i += 100) {
+            var count = scores.filter(score => score >= i && score < i + 100).length;
+            scoreCounts.push(count);
+        }
+
+        // Vẽ biểu đồ tròn
+        var ctx = document.getElementById('scoreChart').getContext('2d');
+        var scoreChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['0-100', '101-200', '201-300', '301-400', '401-500', '501-600', '601-700', '701-800', '801-900', '901-1000'],
+                datasets: [{
+                    label: 'Số lượng thí sinh',
+                    data: scoreCounts,
+                    backgroundColor: [
+                        'red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown', 'grey', 'cyan'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Thống kê điểm thi',
+                        font: {
+                            size: 24, // Increase size for better visibility
+                            weight: 'bold' // Make the text bold
+                        }
+                    },
+                    datalabels: {
+                        color: '#000', // Dark color for better visibility
+                        anchor: 'center',
+                        align: 'center',
+                        offset: 0,
+                        font: {
+                            weight: 'bold',
+                            size: 20 // Increase size for better visibility
+                        },
+                        formatter: (value, context) => {
+                            return value === 0 ? '' : value; // Only show values that are not zero
+                        }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+
+    </script>
+}

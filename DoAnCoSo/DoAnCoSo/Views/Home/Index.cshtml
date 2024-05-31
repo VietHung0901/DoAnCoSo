@@ -1,8 +1,218 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using DoAnCoSo.Models
+@{
+    ApplicationDbContext context = new ApplicationDbContext();
+    var ListQuyDinh = from c in context.tbQuyDinh
+                      select c;
+    List<tbQuyDinh> listQuyDinh = ListQuyDinh.ToList();
+
+    var ListNoiDung = from c in context.tbNoiDung
+                      select c;
+    List<tbNoiDung> listNoiDung = ListNoiDung.ToList();
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<link rel="stylesheet" href="~/css/Layout - Index.css">
+
+<div class="TrangChu">
+    <section class="section1">
+        <div class="container-qc">
+            <img class="advertisement-qc" src="~/img-trangchu/a11920x907-2.jpgt=" alt="Advertisement 2" />
+            <img class="advertisement-qc" src="~/img-trangchu/a12561x1210-b.jpg" alt="Advertisement 2" />
+            <img class="advertisement-qc" src="~/img-trangchu/a12561x1210.jpg" alt="Advertisement 3" />
+            <img class="advertisement-qc" src="~/img-trangchu/a1as.jpg" alt="Advertisement 4" />
+            <img class="advertisement-qc" src="~/img-trangchu/a1MOSWC2024.jpg" alt="Advertisement 5" />
+            <!-- Additional advertisement images -->
+            <div class="page-selector-qc">
+                <button onclick="showAdvertisement(0)"></button>
+                <button onclick="showAdvertisement(1)"></button>
+                <button onclick="showAdvertisement(2)"></button>
+                <button onclick="showAdvertisement(3)"></button>
+                <button onclick="showAdvertisement(4)"></button>
+                <!-- Additional buttons for more pages if needed -->
+            </div>
+        </div>
+    </section>
+    <div class="search-container">
+        <p class="p-tt">Tìm kiếm cuộc thi</p>
+        <form id="searchForm" asp-area="" asp-controller="CuocThis" asp-action="Index" method="get">
+            <div class="search-fields">
+                <div class="field">
+                    <label for="start_date">Từ ngày:</label>
+                    <input type="date" id="start_date" name="start_date" />
+                </div>
+                <div class="field">
+                    <label for="end_date">Đến ngày:</label>
+                    <input type="date" id="end_date" name="end_date" />
+                </div>
+                <div class="field">
+                    <label for="diaDiem">Địa điểm:</label>
+                    <input type="text" id="diaDiem" name="diaDiem" placeholder="Nhập địa điểm thi" />
+                </div>
+                <div class="field">
+                    <label for="monthiId">Bài thi:</label>
+                    <select id="monthiId" name="monthiId">
+                        <option value="">Chọn bài thi</option>
+                        @foreach (var monThi in context.tbMonThi)
+                        {
+                            <option value="@monThi.Id">@monThi.TenMonThi</option>
+                        }
+                    </select>
+                </div>
+                <div class="field-btn">
+                    <button type="submit" class="search-button">Tìm kiếm</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <section class="section2">
+        <div style="width: 100%">
+            <div>
+                <p class="p-tt">Quy định thi</p>
+            </div>
+            <div class="div-chung" style="display: flex">
+                @foreach (var qd in listQuyDinh)
+                {
+                    <a asp-area="" asp-controller="QuyDinhs" asp-action="Details" asp-route-id="@qd.Id">
+                        <div class="div-trai qd" style="width: 380px; margin-right: 30px">
+                            <div class="img-sticker">
+                                <img src="@qd.imageURL" alt="" />
+                            </div>
+                            <p class="sticker">
+                                <span class="cat">@qd.TenQuyDinh</span>
+                                @* <span class="timer">21/03/2024</span> *@
+                            </p>
+                            <div class="content" style="text-align: left; padding: 10px 20px 20px 20px">
+                                @qd.NoiDungQuyDinh.ToString()
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+
+
+        @* ĐỪNG XÓA------------------ *@
+        @* <div style="width: 100%">
+            <div>
+                <p class="p-tt">Nội dung</p>
+            </div>
+            <div class="div-chung" style="display: flex">
+                @foreach (var nd in listNoiDung)
+                {
+                    <a asp-area="" asp-controller="NoiDungs" asp-action="Details" asp-route-id="@nd.Id">
+                        <div class="div-trai nd" style="width: 380px; margin-right: 30px">
+                            <div class="img-sticker">
+                                <img src="@nd.imageUrl" alt="" />
+                            </div>
+                            <p class="sticker">
+                                <span class="cat">@nd.TenNoiDung</span>
+                            </p>
+                            <div class="content" style="text-align: left; padding: 10px 20px 20px 20px">
+                                @nd.NoiDungThi.ToString()
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div> *@
+
+    </section>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".sub-menu").parent("li").addClass("has-child");
+
+        var advertisements = document.querySelectorAll(".advertisement-qc");
+        var currentPage = 0;
+
+        function showAdvertisement(pageIndex) {
+            if (pageIndex !== currentPage) {
+                advertisements[currentPage].classList.remove("show");
+                advertisements[pageIndex].classList.add("show");
+                currentPage = pageIndex;
+            }
+        }
+
+        function nextAdvertisement() {
+            var nextPage = (currentPage + 1) % advertisements.length;
+            showAdvertisement(nextPage);
+        }
+
+        if (advertisements.length > 0) {
+            advertisements[currentPage].classList.add("show");
+            setInterval(nextAdvertisement, 2000);
+        } else {
+            console.log("No advertisements found.");
+        }
+
+        // Ensure buttons work after DOM is ready
+        document.querySelectorAll('.page-selector-qc button').forEach((button, index) => {
+            button.addEventListener('click', function () {
+                showAdvertisement(index);
+            });
+        });
+    });
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        const divs = document.querySelectorAll('.qd');
+        const interval = 2000; // 3 seconds
+        let index = 0;
+
+        function rotateDivs() {
+            divs.forEach(div => {
+                div.style.display = 'none'; // Ẩn tất cả các div
+            });
+
+            // Hiển thị chỉ 3 div mỗi lần
+            for (let i = index; i < index + 3; i++) {
+                if (i < divs.length) {
+                    divs[i].style.display = 'block';
+                } else {
+                    divs[i - divs.length].style.display = 'block';
+                }
+            }
+
+            index = (index + 1) % divs.length;
+        }
+
+        rotateDivs();
+        setInterval(rotateDivs, interval);
+    });
+    window.addEventListener('DOMContentLoaded', function () {
+        const divs = document.querySelectorAll('.nd');
+        const interval = 2000; // 3 seconds
+        let index = 0;
+
+        function rotateDivs() {
+            divs.forEach(div => {
+                div.style.display = 'none'; // Ẩn tất cả các div
+            });
+
+            // Hiển thị chỉ 3 div mỗi lần
+            for (let i = index; i < index + 3; i++) {
+                if (i < divs.length) {
+                    divs[i].style.display = 'block';
+                } else {
+                    divs[i - divs.length].style.display = 'block';
+                }
+            }
+
+            index = (index + 1) % divs.length;
+        }
+
+        rotateDivs();
+        setInterval(rotateDivs, interval);
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var startDateInput = document.getElementById('start_date');
+        var endDateInput = document.getElementById('end_date');
+
+        startDateInput.addEventListener('change', function () {
+            endDateInput.value = startDateInput.value;
+        });
+    });
+</script>

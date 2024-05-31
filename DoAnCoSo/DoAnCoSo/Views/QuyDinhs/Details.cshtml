@@ -1,0 +1,35 @@
+﻿@model DoAnCoSo.Models.tbQuyDinh
+
+<h1>Thông Tin Chi Tiết</h1>
+<style>
+    .row {
+        width: 100%;
+        max-width: 800px; /* Giới hạn chiều rộng tối đa */
+        padding: 20px;
+        border: 0.1vw solid #000; /* Màu sắc đường viền */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
+        background-color: #fff; /* Màu nền */
+        margin-bottom: 20px; /* Khoảng cách phía dưới */
+    }
+
+    h2, h3 {
+        text-align: left;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>
+
+<div class="container">
+    <dl class="row text-center">
+        <dd class="col-sm-10 text-center">
+            @Html.DisplayFor(model => model.TenQuyDinh)
+        </dd>
+        <dd class="col-sm-10 text-center">
+            <div>
+                @Html.Raw(Model.NoiDungQuyDinh)
+            </div>
+        </dd>
+    </dl>
+</div>

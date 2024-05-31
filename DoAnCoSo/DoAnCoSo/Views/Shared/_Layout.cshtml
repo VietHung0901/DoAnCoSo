@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="~/css/Layout.css">
+    <link rel="stylesheet" href="~/css/theme.css">
     <script src="~/js/Layout.js"></script>
 
     @* link để sử dụng các icon *@
@@ -15,7 +16,7 @@
             <i class="fas fa-list"></i>
         </div>
         <div class="header-logo">
-            <a asp-area="" asp-controller="CuocThis" asp-action="Index">
+            <a asp-area="" asp-controller="Home" asp-action="Index">
                 <img src="~/images/Logo.png" alt="Alternate Text" />
             </a>
         </div>
@@ -28,7 +29,7 @@
             <div class="menu-icon">
                 <ul class="container-menu-list">
                     <li class="container-menu-item">
-                        <a>
+                        <a asp-area="" asp-controller="Home" asp-action="Index">
                             <i class="fas fa-home"></i>
                             <p class="container-menu-item-content">Trang chủ</p>
                         </a>
@@ -61,17 +62,99 @@
             </div>
         </div>
 
-        <div class="container-content" style="width: 100%;">
-            <div class="container-content-body" style="padding-bottom: 60px;">
+        <div class="container-content" >
+            <div class="container-content-body">
                 @RenderBody()
             </div>
-        </div>
 
-        <footer>
-            Design by Viet Hung
-        </footer>
+            <footer class="footer" id="footer">
+                <div class="footer-row">
+                    <div class="footer-column">
+                        <h4>Giới thiệu</h4>
+                        <p>Mô tả về trang web hoặc công ty.</p>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Thông tin liên hệ</h4>
+                        <div class="footer-column">
+                            <i class="fas fa-envelope">     info@iigteamvn.edu.vn </i>
+                        </div>
+                        <div class="footer-column">
+                            <i class="fas fa-phone">    +123 456 789</i>
+                        </div>
+                        <div class="footer-column">
+                            <div class="footer-social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Đồng hồ</h4>
+                        <div class="codepro-time">
+                            <span id="codepro-hour"></span>
+                            <div class="footer-column">
+                                <span id="codepro-date"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="footer-column">
+                        <h4>Địa chỉ văn phòng</h4>
+                        <p><i class="fas fa-school"></i>    Khu Công nghệ cao Xa Lộ Hà Nội, Hiệp Phú, Thủ Đức, Thành phố Hồ Chí Minh</p>
+                    </div>
+                </div>
+            </footer>
+        </div>  
+
+        
+
     </div>
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        var footer = document.getElementById("footer");
+        var scrollPosition = window.scrollY || window.pageYOffset;
+        var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        footer.classList.add("hidden");
+        if (scrollPosition < scrollHeight) {
+            // chưa đến cuối trang ẩn footer
+            footer.classList.remove("hidden");
+        }
+
+        window.addEventListener("scroll", function () {
+            var scrollPosition = window.scrollY || window.pageYOffset;
+            var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            if (scrollPosition >= scrollHeight) {
+                // Đã cuộn đến cuối trang, hiện footer
+                footer.classList.add("hidden");
+            } else {
+                // Đang cuộn, ẩn footer
+                footer.classList.remove("hidden");
+            }
+
+        });
+
+        var myVar = setInterval(function () {
+            myTimer()
+        }, 1000);
+        function myTimer() {
+            var d = new Date();
+            var t = d.toLocaleTimeString();
+            document.getElementById("codepro-hour").innerHTML = t;
+        }
+        n = new Date();
+        if (n.getTimezoneOffset() == 0) t = n.getTime() + (7 * 60 * 60 * 1000);
+        else t = n.getTime();
+        n.setTime(t);
+        var dn = new Array("Chủ nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7");
+        d = n.getDay();
+        m = n.getMonth() + 1;
+        y = n.getFullYear()
+        var date = dn[d] + ", " + (n.getDate() < 10 ? "0" : "") + n.getDate() + "/" + (m < 10 ? "0" : "") + m + "/" + y;
+        document.getElementById("codepro-date").innerHTML = date;
+    </script>
 </body>
 </html>
 

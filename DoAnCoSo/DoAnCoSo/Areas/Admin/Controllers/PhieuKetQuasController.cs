@@ -237,5 +237,17 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         {
             return _context.tbPhieuKetQua.Any(e => e.Id == id);
         }
+
+        public IActionResult ShowScoreChart(int cuocThiId)
+        {
+            // Lấy danh sách điểm của tất cả thí sinh trong cuộc thi
+            var diemCuaThiSinh = _context.tbPhieuKetQua
+                .Where(p => p.PhieuDangKy.CuocThiId == cuocThiId)
+                .Select(p => p.Diem)
+                .ToList();
+
+            return View(diemCuaThiSinh);
+        }
+
     }
 }

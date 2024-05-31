@@ -1,43 +1,54 @@
 ﻿@model DoAnCoSo.Models.tbNoiDung
 
-@{
-    ViewData["Title"] = "Details";
-    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
-}
+<h1>Thông Tin Chi Tiết</h1>
+<style>
+    .row {
+        width: 100%;
+        max-width: 800px; /* Giới hạn chiều rộng tối đa */
+        padding: 20px;
+        border: 0.1vw solid #000; /* Màu sắc đường viền */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
+        background-color: #fff; /* Màu nền */
+        margin-bottom: 20px; /* Khoảng cách phía dưới */
+    }
 
-<h1>Details</h1>
+    h2, h3 {
+        text-align: left;
+    }
 
-<div>
-    <h4>tbNoiDung</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NoiDungThi)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NoiDungThi)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TenNoiDung)
-        </dt>
-        <dd class = "col-sm-10">
+    .text-center {
+        text-align: center;
+    }
+
+    .edit-link {
+        display: inline-block;
+        background-color: #007bff; /* Màu nền của button */
+        color: #fff; /* Màu chữ của button */
+        text-decoration: none; /* Bỏ gạch chân của link */
+        padding: 8px 16px; /* Khoảng cách nội dung và viền */
+        border-radius: 4px; /* Bo góc button */
+        font-size: 14px; /* Kích thước chữ */
+        transition: background-color 0.3s ease; /* Hiệu ứng khi hover */
+    }
+
+        .edit-link:hover {
+            background-color: #0056b3; /* Màu nền khi hover */
+        }
+</style>
+
+<div class="container">
+    <dl class="row text-center">
+        <dd class="col-sm-10 text-center">
             @Html.DisplayFor(model => model.TenNoiDung)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.imageUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.imageUrl)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TrangThai)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TrangThai)
+        <dd class="col-sm-10 text-center">
+            <div>
+                @Html.Raw(Model.NoiDungThi)
+            </div>
         </dd>
     </dl>
 </div>
+
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="edit-link btn btn-primary" asp-area="Admin" asp-controller="NoiDungs" asp-action="Edit" asp-route-id="@Model?.Id">Sửa</a>
 </div>

@@ -2,7 +2,6 @@ using DoAnCoSo.Models;
 using DoAnCoSo.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -63,12 +62,12 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
       name: "Admin",
-      pattern: "{area:exists}/{controller=CuocThis}/{action=Index}/{id?}"
+      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
     );
 
     endpoints.MapControllerRoute(
         name: "default",
-        pattern: "{controller=CuocThis}/{action=Index}/{id?}"
+        pattern: "{controller=Home}/{action=Index}/{id?}"
     );
 });
 app.Run();

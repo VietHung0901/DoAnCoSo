@@ -16,6 +16,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 999;
 }
 
 .header-icon {
@@ -85,6 +86,7 @@ body {
     color: #ffffff;  /*Màu trắng cho biểu tượng và nội dung*/ 
 }
 
+
     .container-menu-item a {
         display: flex;
         align-items: center;
@@ -97,7 +99,7 @@ body {
 
     .container-menu-item p {
         margin: 0px 10px;
-        display: block;
+        display: none;
         transition: all 0.3s ease;
         color: #ffffff;  /*Màu trắng cho nội dung*/ 
     }
@@ -109,21 +111,10 @@ body {
 
 .container-content {
     width: 100%;
-    padding-left: 135px;
+    padding-left: 36px;
     padding-top: 77px;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f2f2f2;
-    padding: 10px;
-    text-align: center;
-    font-size: 14px;
-    color: #666666;
+.container-content-body {
+    margin-bottom: auto;
 }
-
-
-

@@ -1,0 +1,85 @@
+﻿.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2196F3 !important;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #000000; /* Màu chữ trắng */
+    transition: transform 0.3s ease-in-out;
+    /* z-index: 1000;*/ /* Ensure the footer is above other content */
+    transform: translateY(100%);
+    min-height: 80px;
+    text-align: left;
+    margin-top: auto;
+}
+    .footer.hidden {
+        transform: translateY(0%);
+    }
+
+    .footer .footer-social-icons a {
+        color: #ffffff; /* Màu trắng cho icon */
+        font-size: 20px;
+    }
+
+        .footer .footer-social-icons a:hover {
+            color: #1565c0;
+        }
+
+    .footer .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 10px;
+    }
+
+        .footer .footer-links a {
+            color: #ffffff; /* Màu trắng cho link */
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+            .footer .footer-links a:hover {
+                text-decoration: underline;
+            }
+
+    .footer .footer-social-icons {
+        display: flex;
+        justify-content: flex-start; /* Căn chỉnh các biểu tượng về phía trái */
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+        .footer .footer-social-icons a {
+            color: #ffffff; /* Màu trắng cho icon */
+            font-size: 20px;
+        }
+
+            .footer .footer-social-icons a:hover {
+                color: #1565c0;
+            }
+
+    .footer .footer-contact {
+        color: #ffffff; /* Màu trắng cho text */
+        font-size: 14px;
+    }
+
+    .footer .footer-contact {
+        color: #ffffff; /* Màu trắng cho text */
+        font-size: 14px;
+    }
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-column, .footer-links {
+    flex: 2;    
+    margin-right: 30px; /* Khoảng cách giữa các cột */
+}
+
+
+

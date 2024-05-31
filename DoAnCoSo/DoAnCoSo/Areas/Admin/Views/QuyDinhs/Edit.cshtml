@@ -63,17 +63,14 @@
                 <div class="form-group">
                     <label asp-for="TenQuyDinh" class="control-label">Tên quy định</label>
                     <input asp-for="TenQuyDinh" class="form-control" />
-                    <span asp-validation-for="TenQuyDinh" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="NoiDungQuyDinh" class="control-label">Nội dung quy định</label>
-                    <input asp-for="NoiDungQuyDinh" class="form-control" />
-                    <span asp-validation-for="NoiDungQuyDinh" class="text-danger"></span>
+                    <textarea asp-for="NoiDungQuyDinh" id="NoiDungQuyDinh" name="NoiDungQuyDinh" class="form-control"></textarea>
                 </div>
                 <div class="form-group">
                     <label asp-for="imageURL" class="control-label">Ảnh</label>
                     <input type="file" asp-for="imageURL" class="form-control" />
-                    <span asp-validation-for="imageURL" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Save" class="btn btn-primary" />
@@ -83,4 +80,50 @@
     </div>
 </div>
 
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Trong phần head của view hoặc layout -->
+    <script>
+        // Hàm hiển thị thông báo với thời gian tự đóng
+        function showSuccessMessage() {
+            Swal.fire({
+                icon: 'success',
+                title: '@TempData["SuccessMessage"]',
+                showConfirmButton: false,
+                timer: 1500,
+                onClose: function () {
+                    // Sau khi thông báo tự đóng, chuyển hướng đến trang Index
+                    window.location.href = '@Url.Action("Index", "QuyDinhs")';
+                }
+            });
+        }
 
+        // Hàm hiển thị thông báo lỗi với thời gian tự đóng
+        function showErrorMessage() {
+            Swal.fire({
+                icon: 'error',
+                title: '@TempData["ErrorMessage"]',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
+        // Gọi hàm hiển thị thông báo khi SuccessMessage hoặc ErrorMessage có giá trị
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                showSuccessMessage();
+            </text>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <text>
+                showErrorMessage();
+            </text>
+        }
+    </script>
+
+    <script>
+        CKEDITOR.replace("NoiDungQuyDinh");
+    </script>
+}

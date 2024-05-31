@@ -1,0 +1,116 @@
+﻿@using DoAnCoSo.Models
+@model DoAnCoSo.Models.tbCuocThi
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .competition-info {
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .button-container {
+        margin-bottom: 20px;
+    }
+
+        .button-container button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+            .button-container button:hover {
+                background-color: #0056b3;
+            }
+
+    .container-qdnd {
+        display: flex;
+        justify-content: space-around;
+    }
+
+        .container-qdnd > div {
+            flex: 1;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .container-qdnd h2 {
+            margin-bottom: 15px;
+        }
+</style>
+
+<body>
+    <main>
+        <div class="competition-info">
+            <h1>Cuộc Thi @Html.DisplayFor(model => model.TenCuocThi)</h1>
+            <div class="button-container">
+                <button id="showQuyDinhBtn">Quy định</button>
+                <button id="showNoiDungBtn">Nội dung</button>
+            </div>
+        </div>
+
+        <div class="container-qdnd">
+            <div id="quyDinhContainer" style="display: none;">
+                <h2>Danh sách Quy định</h2>
+                <!-- Quy định content -->
+            </div>
+
+            <div id="noiDungContainer" style="display: none;">
+                <h2>Danh sách Nội dung</h2>
+                <!-- Nội dung content -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("showQuyDinhBtn").addEventListener("click", function () {
+            var quyDinh = document.getElementById("quyDinhContainer");
+            var noiDung = document.getElementById("noiDungContainer");
+            if (quyDinh.style.display === "none") {
+                quyDinh.style.display = "block";
+                noiDung.style.display = "none";
+            } else {
+                quyDinh.style.display = "none";
+            }
+        });
+
+        document.getElementById("showNoiDungBtn").addEventListener("click", function () {
+            var quyDinh = document.getElementById("quyDinhContainer");
+            var noiDung = document.getElementById("noiDungContainer");
+            if (noiDung.style.display === "none") {
+                noiDung.style.display = "block";
+                quyDinh.style.display = "none";
+            } else {
+                noiDung.style.display = "none";
+            }
+        });
+    </script>
+</body>

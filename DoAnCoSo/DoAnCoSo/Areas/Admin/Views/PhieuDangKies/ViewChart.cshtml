@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "View Chart";
+}
+
+<style>
+    .school-list .chart-container {
+        width: 600px;
+        height: 600px;
+        margin: auto;
+    }
+
+    .add-sort {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 80px;
+    }
+
+    .school-list a.add-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .school-list a.add-button:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+<div class="school-list">
+    <div class="add-sort">
+        <a class="add-button" asp-action="DanhSachUser">Trở Về</a>
+    </div>
+    <div class="chart-container">
+        <canvas id="userChart"></canvas>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script>
+        var ctx = document.getElementById('userChart').getContext('2d');
+        var userChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: @Html.Raw(Json.Serialize(ViewBag.Labels)),
+                datasets: [{
+                    label: 'User Count',
+                    data: @Html.Raw(Json.Serialize(ViewBag.Data)),
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 206, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)',
+                        'rgba(255, 159, 64, 0.5)',
+                        'rgba(255, 99, 132, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 99, 132, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Số Thí Sinh Thuộc Thành Phố(Tỉnh)'
+                    },
+                    datalabels: {
+                        color: '#000', // Dark color for better visibility
+                        anchor: 'center',
+                        align: 'center',
+                        offset: 0,
+                        font: {
+                            weight: 'bold',
+                            size: 20 // Increase size for better visibility
+                        },
+                        formatter: (value, context) => {
+                            return value;
+                        }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    </script>
+}
+
+
+

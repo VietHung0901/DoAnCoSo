@@ -27,6 +27,7 @@
             padding: 10px;
             width: 100%;
             margin-bottom: 10px;
+            cursor: pointer;
         }
 
         .add-quyDinh input[type="text"],
@@ -42,6 +43,7 @@
             background-color: #007bff;
             color: #fff;
             font-weight: bold;
+            cursor: pointer;
         }
 
             .add-quyDinh input[type="submit"]:hover {
@@ -63,17 +65,14 @@
                 <div class="form-group">
                     <label asp-for="TenNoiDung" class="control-label">Tên nội dung</label>
                     <input asp-for="TenNoiDung" class="form-control" />
-                    <span asp-validation-for="TenNoiDung" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="NoiDungThi" class="control-label">Nội dung thi</label>
-                    <input asp-for="NoiDungThi" class="form-control" />
-                    <span asp-validation-for="NoiDungThi" class="text-danger"></span>
+                    <textarea asp-for="NoiDungThi" id="NoiDungThi" name="NoiDungThi" class="form-control"></textarea>
                 </div>
                 <div class="form-group">
                     <label asp-for="imageUrl" class="control-label">Ảnh</label>
                     <input type="file" asp-for="imageUrl" class="form-control" />
-                    <span asp-validation-for="imageUrl" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Thêm" class="btn btn-primary" />
@@ -126,5 +125,9 @@
                 showErrorMessage();
             </text>
         }
+    </script>
+
+    <script>
+        CKEDITOR.replace("NoiDungThi");
     </script>
 }
