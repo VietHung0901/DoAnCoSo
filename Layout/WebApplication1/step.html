@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tạo cuộc thi</title>
+  <style>
+    .step-container {
+      display: none;
+    }
+    .step-container.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tạo cuộc thi</h1>
+
+  <!-- Giai đoạn 1: Nhập thông tin cuộc thi -->
+  <div id="step-1" class="step-container active">
+    <h2>Giai đoạn 1: Nhập thông tin cuộc thi</h2>
+    <label for="competition-name">Tên cuộc thi:</label>
+    <input type="text" id="competition-name"><br>
+
+    <!-- Nút để chuyển sang giai đoạn tiếp theo -->
+    <button onclick="nextStep()">Tiếp tục</button>
+  </div>
+
+  <!-- Giai đoạn 2: Chọn quy định cuộc thi -->
+  <div id="step-2" class="step-container">
+    <h2>Giai đoạn 2: Chọn quy định cuộc thi</h2>
+    <p>Danh sách quy định:</p>
+    <ul>
+      <li>Quy định 1</li>
+      <li>Quy định 2</li>
+      <li>Quy định 3</li>
+    </ul>
+
+    <!-- Nút để chuyển sang giai đoạn tiếp theo -->
+    <button onclick="nextStep()">Tiếp tục</button>
+  </div>
+
+  <!-- Giai đoạn 3: Chọn nội dung thi -->
+  <div id="step-3" class="step-container">
+    <h2>Giai đoạn 3: Chọn nội dung thi</h2>
+    <p>Danh sách nội dung thi:</p>
+    <ul>
+      <li>Nội dung 1</li>
+      <li>Nội dung 2</li>
+      <li>Nội dung 3</li>
+    </ul>
+
+    <!-- Nút để hoàn tất quá trình tạo cuộc thi -->
+    <button onclick="finish()">Hoàn tất</button>
+  </div>
+
+  <script>
+    var currentStep = 1;
+    var stepContainers = document.getElementsByClassName('step-container');
+
+    function nextStep() {
+      stepContainers[currentStep - 1].classList.remove('active');
+      currentStep++;
+      stepContainers[currentStep - 1].classList.add('active');
+    }
+
+    function finish() {
+      alert('Quá trình tạo cuộc thi đã hoàn tất!');
+    }
+  </script>
+</body>
+</html>

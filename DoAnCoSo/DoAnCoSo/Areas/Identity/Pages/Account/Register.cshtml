@@ -1,127 +1,328 @@
 ﻿@page
 @model RegisterModel
 @using DoAnCoSo.Models
-@{
-    ViewData["Title"] = "Register";
-}
-<h1>@ViewData["Title"]</h1>
-<div class="row">
-    <div class="col-md-4">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Create a new account.</h2>
-            <hr />
-            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-            @* HoTen *@
-            <div class="form-floating mb-3">
-                <input asp-for="Input.HoTen" class="form-control" autocomplete="HoTen" aria-required="true" />
-                <label asp-for="Input.HoTen">Họ Tên</label>
-                <span asp-validation-for="Input.HoTen" class="text-danger"></span>
-            </div>
-            @* NgaySinh *@
-            <div class="form-floating mb-3">
-                <input asp-for="Input.NgaySinh" class="form-control" autocomplete="NgaySinh" aria-required="true" />
-                <label asp-for="Input.NgaySinh">Ngày Sinh</label>
-                <span asp-validation-for="Input.NgaySinh" class="text-danger"></span>
-            </div>
-            @* DiaChi *@
-            <div class="form-floating mb-3">
-                <input asp-for="Input.DiaChi" class="form-control" autocomplete="DiaChi" aria-required="true" />
-                <label asp-for="Input.DiaChi">Địa Chỉ</label>
-                <span asp-validation-for="Input.DiaChi" class="text-danger"></span>
-            </div>
-            @* GioiTinh *@
-            <div class="form-floating mb-3">
-                <select asp-for="Input.GioiTinh" class="form-control">
-                    <option value="1">Nam</option>
-                    <option value="0">Nữ</option>
-                </select>
-            </div>
-            @* SoDienThoai *@
-            <div class="form-floating mb-3">
-                <input asp-for="Input.SoDienThoai" class="form-control" autocomplete="SoDienThoai" aria-required="true" />
-                <label asp-for="Input.SoDienThoai">Số Điện Thoại</label>
-                <span asp-validation-for="Input.SoDienThoai" class="text-danger"></span>
-            </div>
-            @* ImageUrl *@
-            <div class="form-floating mb-3">
-                <label asp-for="Input.ImageUrl">ImageUrl</label>
-                <input type="file" asp-for="Input.ImageUrl" class="form-control" />
-            </div>
-            @* Truong *@
-            <div class="form-floating mb-3">
-                <select asp-for="Input.TruongId" class="form-control">
-                    @{
-                        ApplicationDbContext _context = new ApplicationDbContext();
-                        string GetNameSchool(int truongId)
-                        {
-                            return _context.tbTruong.FirstOrDefault(p => p.Id == truongId).TenTruong.ToString();
-                        }
-                    }
-                    @foreach (var item in _context.tbTruong.ToList())
-                    {
-                        <option value="@item.Id">@GetNameSchool(@item.Id)</option>
-                    }
-                </select>
-            </div>
 
-            @* Default *@
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                <label asp-for="Input.Email">Email</label>
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.Password">Password</label>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            
-            @* Role *@
-            <div class="form-floating mb-3">
-                <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="form-control">
-                    <option disabled selected>select Role</option>
-                </select>
-            </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
-        </form>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Use another service to register.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins!)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
+<script src="~/js/previewImage.js"></script>
+
+<style>
+    .edit-Infomation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        max-width: 900px;
+        width: 100%;
+    }
+
+    .card-header {
+        background-color: #f5f5f5;
+        padding: 16px;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+        .card-header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+    .card-info {
+        display: flex;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .image-container {
+        flex-basis: 35%;
+        background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+        .image-container img {
+            max-width: 100%;
+            height: 50%;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+
+        .image-container label {
+            cursor: pointer;
+            color: #007bff;
+            font-size: 0.9em;
+        }
+
+            .image-container label:hover {
+                color: #0056b3;
             }
-        </section>
+
+    .form-container {
+        flex-basis: 65%;
+        padding: 15px;
+        display: flex;
+    }
+
+    .form-info {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .form-account {
+        flex: 1;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+        .form-group label, .form-group H2 {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 3px;
+            font-size: 0.9em;
+        }
+
+        .form-group input, .form-group select {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .form-group .error {
+            color: red;
+            font-size: 0.8em;
+        }
+
+    .password-container {
+        position: relative;
+    }
+
+    .password-input-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+        .password-input-wrapper input {
+            flex-grow: 1;
+        }
+
+    .show-btn {
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    .submit-btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9em;
+    }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+
+<form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" enctype="multipart/form-data">
+    <div class="edit-Infomation">
+        <div class="card">
+            <div class="card-header">
+                <h1>ĐĂNG KÝ</h1>
+            </div>
+            <div class="card-info">
+                <div class="image-container">
+                    <img id="profile-image" src="/images/anhnone.png" alt="Profile Image">
+                    <label for="image-upload">Chọn ảnh</label>
+                    <input type="file" asp-for="Input.ImageUrl" id="image-upload" style="display: none;">
+                </div>
+
+                <div class="form-container">
+                    <div class="form-info">
+                        <h4>THÔNG TIN CÁ NHÂN</h4>
+                        <div class="form-group">
+                            <label asp-for="Input.CCCD" class="control-label">CCCD</label>
+                            <input asp-for="Input.CCCD" class="form-control" autocomplete="CCCD" aria-required="true" placeholder="CCCD/CMT" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.HoTen" class="control-label">Họ và tên</label>
+                            <input asp-for="Input.HoTen" class="form-control" autocomplete="HoTen" aria-required="true" placeholder="Họ và tên" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.NgaySinh" class="control-label">Ngày sinh</label>
+                            <input asp-for="Input.NgaySinh" class="form-control" type="date" autocomplete="NgaySinh" aria-required="true" type="date" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.DiaChi" class="control-label">Địa chỉ</label>
+                            <input asp-for="Input.DiaChi" class="form-control" autocomplete="DiaChi" aria-required="true" placeholder="Địa chỉ" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.TruongId" class="control-label">Trường học</label>
+                            <select asp-for="Input.TruongId" class="form-control">
+                                @{
+                                    ApplicationDbContext _context = new ApplicationDbContext();
+                                    string GetNameSchool(int truongId)
+                                    {
+                                        return _context.tbTruong.FirstOrDefault(p => p.Id == truongId).TenTruong.ToString();
+                                    }
+                                }
+                                @foreach (var item in _context.tbTruong.Where(truong => truong.TrangThai == 1).ToList())
+                                {
+                                    <option value="@item.Id">@GetNameSchool(@item.Id)</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.GioiTinh" class="control-label">Giới tính</label>
+                            <select asp-for="Input.GioiTinh" class="form-control">
+                                <option value="0">Nữ</option>
+                                <option value="1">Nam</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.SoDienThoai" class="control-label">Số điện thoại</label>
+                            <input asp-for="Input.SoDienThoai" class="form-control" autocomplete="SoDienThoai" aria-required="true" placeholder="Số điện thoại" />
+                        </div>
+                    </div>
+                    <div class="form-account">
+                        <h4>THÔNG TIN TÀI KHOẢN</h4>
+                        <div class="form-group">
+                            <label asp-for="Input.Email" class="control-label">Email</label>
+                            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                        </div>
+
+                        <div class="form-group password-container">
+                            <label asp-for="Input.Password" class="control-label">Mật khẩu</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Mật khẩu" />
+                                <span class="show-btn"><i class="fas fa-eye" onclick="showPassWord(event)"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group password-container">
+                            <label asp-for="Input.ConfirmPassword" class="control-label">Mật khẩu</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Nhập lại mật khẩu" />
+                                <span class="show-btn"><i class="fas fa-eye" onclick="showConfirmPassword(event)"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Đăng ký" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</form>
+
+<script>
+    const profileImage = document.getElementById('profile-image');
+    const imageUpload = document.getElementById('image-upload');
+
+    imageUpload.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = () => {
+                profileImage.src = reader.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    function showPassWord(event) {
+        togglePasswordVisibility(event.target.closest(".password-container"));
+    }
+
+    function showConfirmPassword(event) {
+        togglePasswordVisibility(event.target.closest(".password-container"));
+    }
+
+    function togglePasswordVisibility(passwordContainer) {
+        const passwordField = passwordContainer.querySelector("input[type='password']");
+        const showBtn = passwordContainer.querySelector(".show-btn i");
+
+        showBtn.onclick = (() => {
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                showBtn.classList.add("hide-btn");
+            } else {
+                passwordField.type = "password";
+                showBtn.classList.remove("hide-btn");
+            }
+        });
+    }
+
+</script>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+
+    @* Hiện thông báo *@
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Trong phần head của view hoặc layout -->
+    <script>
+        // Hàm hiển thị thông báo với thời gian tự đóng
+        function showSuccessMessage() {
+            Swal.fire({
+                icon: 'success',
+                title: '@TempData["SuccessMessage"]',
+                showConfirmButton: false,
+                timer: 1500,
+                onClose: function () {
+                }
+            });
+        }
+
+        // Hàm hiển thị thông báo lỗi với thời gian tự đóng
+        function showErrorMessage() {
+            Swal.fire({
+                icon: 'error',
+                title: '@TempData["ErrorMessage"]',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
+        // Gọi hàm hiển thị thông báo khi SuccessMessage hoặc ErrorMessage có giá trị
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                showSuccessMessage();
+            </text>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <text>
+                showErrorMessage();
+            </text>
+        }
+    </script>
 }

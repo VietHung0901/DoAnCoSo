@@ -1,0 +1,153 @@
+﻿@using DoAnCoSo.Models
+@using Microsoft.EntityFrameworkCore
+@model IEnumerable<DoAnCoSo.Models.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Registered Users";
+    string currentSort = ViewData["NameSortParm"] as string;
+}
+
+<style>
+    .school-list {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+        .school-list h1 {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+    .add-sort {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 3px;
+    }
+
+    .school-list a.add-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .school-list a.add-button:hover {
+            background-color: #0056b3;
+        }
+
+    .school-list table {
+        width: 100%;
+        margin-top: 20px;
+        background-color: #fff;
+        border-collapse: collapse;
+    }
+
+        .school-list table th {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .school-list table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .school-list table td a.edit-link {
+                background-color: #007bff;
+                color: #fff;
+                padding: 5px 10px;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+
+                .school-list table td a.edit-link.btn-danger {
+                    color: #fff;
+                    background-color: #dc3545;
+                }
+
+                .school-list table td a.edit-link:hover {
+                    background-color: #0056b3;
+                }
+
+    .school-list th a {
+        text-decoration: none;
+        color: white;
+    }
+</style>
+
+
+<div class="school-list">
+    <div class="add-sort">
+        <h1>Quản Lý Người Dùng</h1>
+        <a class="add-button" asp-action="ViewChart">Xem Biểu Đồ</a>
+    </div>
+
+    <table id="cuocThiTable" class="table">
+        <thead>
+            <tr>
+                <th>CCCD/CMT</th>
+                @* <th>Họ Tên</th> *@
+                <th>
+                    <a asp-action="DanhSachUser" asp-route-sortOrder="@ViewData["NameSortParm"]">Họ Tên</a>
+                    @if (currentSort == "")
+                    {
+                        <i class="fas fa-sort-down"></i>
+                    }
+                    else
+                    {
+                        <i class="fas fa-sort-up"></i>
+
+                    }
+                </th>
+                <th>Ngày Sinh</th>
+                <th>Giới Tính</th>
+                <th>SDT</th>
+                <th>Nơi Theo Học</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                ApplicationDbContext context = new ApplicationDbContext();
+                var truong = context.tbTruong.FirstOrDefault(p => p.Id == user.TruongId);
+
+                var gioitinh = user.GioiTinh == 0 ? "Nam" : "Nữ";
+
+                @* var isNew = (DateTime.Now - user.).Days < 7; // Kiểm tra xem tài khoản có mới không (đăng ký trong vòng 7 ngày)
+            var CCCDLabel = isNew ? "new" : ""; *@ // Nếu tài khoản mới, hiển thị nhãn "new"
+
+                <tr>
+                    <td>
+                        <span>@user.CCCD</span>
+                    </td>
+                    <td>
+                        <span>@user.HoTen</span>
+                    </td>
+                    <td>
+                        <span>@user.NgaySinh.ToString("dd/MM/yyyy")</span>
+                    </td>
+                    <td>
+                        <span>@gioitinh.ToString()</span>
+                    </td>
+                    <td>
+                        <span>@user.SoDienThoai</span>
+                    </td>
+                    <td>
+                        <span>@truong.TenTruong.ToString()</span>
+                    </td>
+                    <td>
+                        <span>@user.Email</span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

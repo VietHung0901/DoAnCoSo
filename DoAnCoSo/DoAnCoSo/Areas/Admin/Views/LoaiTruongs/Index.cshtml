@@ -1,0 +1,103 @@
+﻿@model IEnumerable<DoAnCoSo.Models.tbLoaiTruong>
+
+<style>
+    .school-type-list {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+        .school-type-list h1 {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .school-type-list a.add-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+            .school-type-list a.add-button:hover {
+                background-color: #0056b3;
+            }
+
+        .school-type-list table {
+            width: 100%;
+            margin-top: 20px;
+            background-color: #fff;
+            border-collapse: collapse;
+        }
+
+            .school-type-list table th {
+                background-color: #007bff;
+                color: #fff;
+                padding: 10px;
+                text-align: left;
+            }
+
+            .school-type-list table td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+                .school-type-list table td a.edit-link {
+                    background-color: #007bff;
+                    color: #fff;
+                    padding: 5px 10px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                }
+
+                    .school-type-list table td a.edit-link.btn-danger {
+                        color: #fff;
+                        background-color: #dc3545;
+                    }
+
+                    .school-type-list table td a.edit-link:hover {
+                        background-color: #0056b3;
+                    }
+</style>
+
+
+<div class="school-type-list">
+    <h1><i class="fas fa-school"></i> LOẠI TRƯỜNG</h1>
+    <p>
+        <a class="add-button btn btn-primary" asp-area="Admin" asp-controller="LoaiTruongs" asp-action="Create">Thêm loại trường</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tên loại trường</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.TenLoaiTruong)</td>
+                    <td>
+                        <a class="edit-link btn btn-primary" asp-area="Admin" asp-controller="LoaiTruongs" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        @if (item.TrangThai == 0)
+                        {
+                            <a class="edit-link btn btn-danger" asp-area="Admin" asp-controller="LoaiTruongs" asp-action="AnHien" asp-route-id="@item.Id">
+                                Ẩn
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="edit-link btn btn-primary" asp-area="Admin" asp-controller="LoaiTruongs" asp-action="AnHien" asp-route-id="@item.Id">
+                                Hiện
+                            </a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

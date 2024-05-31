@@ -1,0 +1,99 @@
+﻿@model DoAnCoSo.Models.tbPhieuDangKy
+@using DoAnCoSo.Models
+
+@{
+    ApplicationDbContext context = new ApplicationDbContext();
+    string LayTenLoaiTruong(int? loaiTruongId)
+    {
+        var tenLoaiTruong = context.tbLoaiTruong.FirstOrDefault(p => p.Id == loaiTruongId);
+        if (tenLoaiTruong == null)
+            return "";
+        return tenLoaiTruong.TenLoaiTruong;
+    }
+    string LayTenTruong(int? TruongId)
+    {
+        var tenTruong = context.tbTruong.FirstOrDefault(p => p.Id == TruongId);
+        if (tenTruong == null)
+            return "";
+        return tenTruong.TenTruong;
+    }
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+
+    .container-deatils {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        color: #003399;
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    h2 {
+        color: #003399;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #666666;
+        line-height: 1.5;
+    }
+
+    .section {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .section-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .section-content {
+        margin-left: 20px;
+    }
+</style>
+<div class="container-deatils">
+    <h1>Thông tin chi tiết phiếu đăng ký</h1>
+    <div class="container-deatils-content">
+        <div class="section">
+            <div class="section-title">
+                <a asp-area="Admin" asp-controller="PhieuDangKies" asp-action="Index" asp-route-cuocThiId="@Model.CuocThiId">Tro Ve</a>
+                <h2>Thông tin cá nhân</h2>
+            </div>
+            <div class="section-content">
+                <p><strong>Họ và tên:</strong> @Html.DisplayFor(model => model.User.HoTen)</p>
+                <p><strong>Email:</strong> @Html.DisplayFor(model => model.Email)</p>
+                <p><strong>Số điện thoại:</strong> @Html.DisplayFor(model => model.SoDienThoai)</p>
+                <p><strong>Địa chỉ:</strong> @Html.DisplayFor(model => model.User.DiaChi)</p>
+                <p><strong>Trường:</strong> @LayTenTruong(Model.TruongId)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Thông tin cuộc thi</h2>
+            <div class="section-content">
+                <p><strong>Mã cuộc thi:</strong> @Html.DisplayFor(model => model.CuocThi.Id)</p>
+                <p><strong>Tên cuộc thi:</strong> @Html.DisplayFor(model => model.CuocThi.TenCuocThi)</p>
+                <p><strong>Ngày thi:</strong> @Html.DisplayFor(model => model.CuocThi.NgayThi)</p>
+                <p><strong>Cấp học:</strong> @LayTenLoaiTruong(Model.CuocThi.LoaiTruongId)</p>
+
+            </div>
+        </div>
+    </div>
+</div>

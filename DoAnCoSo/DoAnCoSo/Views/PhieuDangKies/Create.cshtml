@@ -1,0 +1,233 @@
+﻿@model DoAnCoSo.Models.tbPhieuDangKy
+@using DoAnCoSo.Models
+
+@{
+    var userId = ViewBag.userId;
+    var cccd = ViewBag.UserCCCD;
+    var Hoten = ViewBag.UserHoTen;
+    var sdt = ViewBag.UserSDT;
+    var diachi = ViewBag.UserDiaChi;
+    var gioitinh = ViewBag.UserGioTinh;
+    var truong = (int)ViewBag.UserTruong;
+    var email = ViewBag.UserEmail;
+    var image = ViewBag.UserImage;
+
+    ApplicationDbContext context = new ApplicationDbContext();
+    var Truong = context.tbTruong.FirstOrDefault(p => p.Id == truong);
+    int cuocThiId = (int)ViewBag.CuocThiId;
+    var cuocThi = context.tbCuocThi.FirstOrDefault(c => c.Id == cuocThiId);
+    string LayTenLoaiTruong(int? loaiTruongId)
+    {
+        var tenLoaiTruong = context.tbLoaiTruong.FirstOrDefault(p => p.Id == loaiTruongId);
+        if (tenLoaiTruong == null)
+            return "";
+        return tenLoaiTruong.TenLoaiTruong;
+    }
+}
+<style>
+    .registration-form {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .registration-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+    .Information-User,
+    .Information-Cuocthi {
+        margin-bottom: 30px;
+    }
+
+        .Information-User h3,
+        .Information-Cuocthi h3 {
+            margin-bottom: 15px;
+        }
+
+    .Information-image-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .form-image {
+        flex-basis: 30%;
+        text-align: center;
+    }
+
+        .form-image img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+
+    .form-info {
+        flex-basis: 70%;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .form-submit {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+<div class="registration-form">
+    <h2>Phiếu đăng ký cuộc thi</h2>
+    <div class="Information-User">
+        <h3>THÔNG TIN CÁ NHÂN</h3>
+        <div class="Information-image-info">
+            <div class="form-image">
+                <div class="form-group">
+                    <label class="form-label" for="image">Ảnh</label>
+                    <img src="@image" alt="Ảnh đại diện" />
+                </div>
+                <div class="form-submit">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="CuocThiId" class="control-label" value="@ViewBag.CuocThiId" />
+                        <input type="hidden" asp-for="UserId" class="control-label" value="@userId" />
+                        <input type="hidden" asp-for="SoDienThoai" class="control-label" value="@sdt" />
+                        <input type="hidden" asp-for="TruongId" class="control-label" value="@truong" />
+                        <input type="hidden" asp-for="Email" class="control-label" value="@email" />
+                        <input type="submit" value="Xác nhận" class="btn btn-primary" />
+                    </form>
+                </div>
+            </div>
+            <div class="form-info">
+                <div>
+                    <div class="form-group">
+                        <label class="form-label" for="cccd">CCCD</label>
+                        <input class="form-input" type="text" id="cccd" name="cccd" value="@cccd" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="hoten">Họ và tên</label>
+                        <input class="form-input" type="text" id="hoten" name="hoten" value="@Hoten" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="sdt">Số điện thoại</label>
+                        <input class="form-input" type="text" id="sdt" name="sdt" value="@sdt" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="diachi">Địa chỉ</label>
+                        <input class="form-input" type="text" id="diachi" name="diachi" value="@diachi" readonly />
+                    </div>
+                    <div class="form-group">
+                        @{
+                            string gt = "Nam"; if (gioitinh == 0) gt = "Nữ";
+                        }
+                        <label class="form-label" for="gioitinh">Giới tính</label>
+                        <input class="form-input" type="text" id="gioitinh" name="gioitinh" value="@gt.ToString()" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="truong">Trường</label>
+                        <input class="form-input" type="text" id="truong" name="truong" value="@Truong.TenTruong.ToString()" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-input" type="email" id="email" name="email" value="@email" readonly />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="Information-Cuocthi">
+        <h3 >Thông tin cuộc thi</h3>
+        <div class="Information">
+            <p><strong>Mã cuộc thi:</strong> @cuocThi.Id</p>
+            <p><strong>Tên cuộc thi:</strong> @cuocThi.TenCuocThi</p>
+            <p><strong>Ngày thi:</strong> @cuocThi.NgayThi</p>
+            <p><strong>Cấp học:</strong> @LayTenLoaiTruong(cuocThi.LoaiTruongId)</p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Trong phần head của view hoặc layout -->
+
+
+    <script>
+        // Gọi hàm hiển thị thông báo khi SuccessMessage hoặc ErrorMessage có giá trị
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                showSuccessMessage();
+            </text>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <text>
+                showErrorMessage();
+            </text>
+        }
+        // Hàm hiển thị thông báo với thời gian tự đóng
+        function showSuccessMessage() 
+        {
+            Swal.fire({
+                icon: 'success',
+                title: '@TempData["SuccessMessage"]',
+                showConfirmButton: false,
+                timer: 1500,
+                onClose: function () {
+                    // Sau khi thông báo tự đóng, chuyển hướng đến trang Index
+                    window.location.href = '@Url.Action("Index", "PhieuDangkies")';
+                }
+            });
+        }
+
+        // Hàm hiển thị thông báo lỗi với thời gian tự đóng
+        function showErrorMessage() {
+            Swal.fire({
+                icon: 'error',
+                title: '@TempData["ErrorMessage"]',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
+        
+    </script>
+}
+

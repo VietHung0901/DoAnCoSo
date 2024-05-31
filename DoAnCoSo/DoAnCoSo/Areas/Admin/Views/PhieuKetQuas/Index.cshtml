@@ -1,0 +1,396 @@
+﻿@using DoAnCoSo.Models
+@model IEnumerable<DoAnCoSo.Models.tbPhieuKetQua>
+
+@{
+    ApplicationDbContext context = new ApplicationDbContext();
+    var top3Results = Model.Take(3).ToList();
+    var remainingResults = Model.ToList();
+
+    string layTen (string userId)
+    {
+        var user = context.Users.FirstOrDefault(p => p.Id == userId);
+        if (user == null)
+            return "";
+        return @user.HoTen.ToString();
+    }
+    string layTenTruong (int? TruongId)
+    {
+        var truong = context.tbTruong.FirstOrDefault(p => p.Id == TruongId);
+        if (truong == null)
+            return "";
+        return @truong.TenTruong.ToString();
+    }
+    int top = 0;
+}
+<style>
+    body{
+        background-image: linear-gradient(to bottom, #2196F3, #4CAF50);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .list-Result {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .result-board {
+        display: flex;
+        justify-content: space-around;
+        align-items: end;
+        margin: 20px;
+    }
+
+    .result {
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+        width: 120px;
+        margin: 10px;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+        .result h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .result p {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+    .resultTop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .result1 {
+        background-color: #FFD700;
+        height: 200px;
+        width: 60px;
+    }
+
+    .result2 {
+        background-color: #C0C0C0;
+        height: 160px;
+        width: 60px;
+    }
+
+    .result3 {
+        background-color: #CD7F32;
+        height: 120px;
+        width: 60px;
+    }
+
+    /* Hiển thị table kết quả */
+    .list-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-bar {
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .filter-bar select {
+        padding: 8px 16px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    .table-container {
+    text-align: center;
+    max-height: 400px;
+    overflow-y: auto; 
+    border-radius: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+    }
+
+    .table-container::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    .table-container::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+        border-radius: 8px;
+    }
+
+    .table-container::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 8px;
+    }
+
+    .table-container::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+    .table-container table thead {
+        position: sticky;
+        top: 0;
+        background-color: #f5f5f5;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f0f0f0;
+        font-weight: bold;
+    }
+
+    /*Thông báo*/
+    .announcement {
+            text-align: center;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.8); /* Màu nền trong suốt */
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+            .announcement h2 {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            .announcement p {
+                font-size: 18px;
+            }
+
+    @*Css để ẩn điểm của top 3*@
+
+    .score-time-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: none;
+      position: absolute;
+     
+    }
+
+    .score-time-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 20px;
+    }
+
+    .score-time-item .label {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 5px;
+    }
+
+    .score-time-item .value {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .result:hover .score-time-container {
+        display: block;
+    }
+
+   /*  Tạo màu cho top 3 */
+    .gold {
+    background-color: #FFD700;
+    }
+
+    .silver {
+        background-color: #C0C0C0;
+    }
+
+    .bronze {
+        background-color: #CD7F32; /* brown color */
+    }
+</style>
+
+<body>
+    <div class="announcement">
+        <h2>Kết quả công bố</h2>
+        <p>Xin chúc mừng các thí sinh vượt qua cuộc thi!</p>
+    </div>
+    <div class="list-Result">
+        <div class="result-board">
+            @{
+                var index = top3Results.Select((item, index) => index).ToList();
+            }
+
+            @if (top3Results.Count >= 2)
+            {
+                <div class="result">
+                    <div class="result-content">
+                        <h3>Top 2</h3>
+                        <p>@layTen(top3Results[index[1]].PhieuDangKy.UserId)</p>
+                    </div>
+
+                    <div class="score-time-container">
+                        <div class="score-time-item">
+                            <div class="label">Điểm</div>
+                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[1]].Diem)</div>                                    
+                        </div>
+                        <div class="score-time-item">
+                            <div class="label">Thời gian</div>
+                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[1]].Phut):@Html.DisplayFor(modelItem => top3Results[index[1]].Giay)</div>
+                        </div>
+                    </div>           
+
+                    <div class="resultTop">
+                        <div class="result2">
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @if (top3Results.Count >= 1)
+            {
+                <div class="result">
+                    <div class="result-content">
+                        <h3>Top 1</h3>
+                        <p>@layTen(top3Results[index[0]].PhieuDangKy.UserId)</p>
+                    </div>
+
+                    <div class="score-time-container">
+                        <div class="score-time-item">
+                            <div class="label">Điểm</div>
+                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[0]].Diem)</div>                                    
+                        </div>
+                        <div class="score-time-item">
+                            <div class="label">Thời gian</div>
+                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[0]].Phut):@Html.DisplayFor(modelItem => top3Results[index[0]].Giay)</div>
+                        </div>
+                    </div> 
+                    
+                    <div class="resultTop">
+                        <div class="result1">
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @if (top3Results.Count >= 3)
+            {
+                <div class="result">
+                    <div class="result-content">
+                        <h3>Top 3</h3>
+                        <p>@layTen(top3Results[index[2]].PhieuDangKy.UserId)</p>
+                    </div>
+
+                    <div class="score-time-container">
+                        <div class="score-time-item">
+                            <div class="label">Điểm</div>
+                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[2]].Diem)</div>                                    
+                        </div>
+                        <div class="score-time-item">
+                            <div class="label">Thời gian</div>
+                            <div class="value">@Html.DisplayFor(modelItem => top3Results[index[2]].Phut):@Html.DisplayFor(modelItem => top3Results[index[2]].Giay)</div>
+                        </div>
+                    </div> 
+
+                    <div class="resultTop">
+                        <div class="result3">
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="list-container">
+            <div class="filter-bar">
+                <select id="schoolFilter">
+                    <option value="">Tất cả trường</option>
+                    @foreach (var school in ViewBag.TruongIds)
+                    {
+                        <option value="@school">@layTenTruong(school)</option>
+                    }
+                </select>
+            </div>
+
+            <div class="table-container">
+                @if (remainingResults.Any())
+                {
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Top</th>
+                                <th>Mã</th>
+                                <th>Họ và tên</th>
+                                <th>Trường</th>
+                                <th>Điểm</th>
+                                <th>Thời gian</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in remainingResults)
+                            {
+                                top++;
+                                <tr class="result-row @(top == 1 ? "gold" : (top == 2 ? "silver" : (top == 3 ? "bronze" : ""))) " data-truong-id="@item.PhieuDangKy.TruongId">
+                                    <td>@top</td>
+                                    <td>@Html.DisplayFor(modelItem => item.PhieuDangKyId)</td>
+                                    <td>@layTen(item.PhieuDangKy.UserId)</td>
+                                    <td>@layTenTruong(item.PhieuDangKy.TruongId)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Diem)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Phut):@Html.DisplayFor(modelItem => item.Giay)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+        @**@
+    </div>
+</body>
+<script>
+    document.getElementById('schoolFilter').addEventListener('change', filterTableBySchool);
+
+    function filterTableBySchool() {
+      var selectedSchoolId = document.getElementById('schoolFilter').value;
+      var tableRows = document.querySelectorAll('.table-container table tbody tr');
+
+      // Ẩn tất cả các hàng trong table
+      tableRows.forEach(function(row) {
+        row.style.display = "none";
+      });
+
+      // Chỉ hiển thị các hàng có TruongId khớp với giá trị đã chọn
+      if (selectedSchoolId) {
+        tableRows.forEach(function(row) {
+          if (row.getAttribute('data-truong-id') === selectedSchoolId) {
+            row.style.display = "table-row";
+          }
+        });
+      } else {
+        // Nếu chọn "Tất cả trường", hiển thị lại tất cả các hàng
+        tableRows.forEach(function(row) {
+          row.style.display = "table-row";
+        });
+      }
+    }
+</script>
+
+
+

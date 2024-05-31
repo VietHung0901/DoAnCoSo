@@ -1,0 +1,99 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/Layout.css">
+    <script src="~/js/Layout.js"></script>
+
+    @* link để sử dụng các icon *@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="~/CKEditor5/ckfinder/ckfinder.js"></script>
+    <script src="~/CKEditor5/ckeditor/ckeditor.js"></script>
+
+</head>
+<body>
+    <!-- Block__Element--Modifier-->
+    <header class="header">
+        <div class="header-icon" onclick="toggleMenu()">
+            <i class="fas fa-list"></i>
+        </div>
+        <div class="header-logo">
+            <a asp-area="" asp-controller="CuocThis" asp-action="Index">
+                <img src="~/images/Logo.png" alt="Alternate Text" />
+            </a>
+        </div>
+        <div class="header-login">
+            <partial name="_LoginPartial" />
+        </div>
+    </header>
+    <div class="container">
+        <div class="container-menu">
+            <div class="menu-icon">
+                <ul class="container-menu-list">
+                    <li class="container-menu-item">
+                        <a>
+                            <i class="fas fa-home"></i>
+                            <p class="container-menu-item-content">Trang chủ</p>
+                        </a>
+                    </li>
+                    <li class="container-menu-item">
+                        <a asp-area="Admin" asp-controller="CuocThis" asp-action="Index">
+                            <i class="fas fa-trophy"></i>
+                            <p class="container-menu-item-content">Cuộc thi</p>
+                        </a>
+                    </li>
+                    <li class="container-menu-item">
+                        <a asp-area="Admin" asp-controller="LoaiTruongs" asp-action="Index">
+                            <i class="fas fa-school"></i>
+                            <p class="container-menu-item-content">Loại trường</p>
+                        </a>
+                    </li>
+                    <li class="container-menu-item">
+                        <a asp-area="Admin" asp-controller="Truongs" asp-action="Index">
+                            <i class="fas fa-university"></i>
+                            <p class="container-menu-item-content">Trường</p>
+                        </a>
+                    </li>
+                    <li class="container-menu-item">
+                        <a asp-area="Admin" asp-controller="QuyDinhs" asp-action="Index">
+                            <i class="fas fa-gavel"></i>
+                            <p class="container-menu-item-content">Quy định</p>
+                        </a>
+                    </li>
+                    <li class="container-menu-item">
+                        <a asp-area="Admin" asp-controller="NoiDungs" asp-action="Index">
+                            <i class="fas fa-file-alt"></i>
+                            <p class="container-menu-item-content">Nội Dung</p>
+                        </a>
+                    </li>  
+                    <li class="container-menu-item">
+                        <a asp-area="Admin" asp-controller="MonThis" asp-action="Index">
+                            <i class="fas fa-book"></i>
+                            <p class="container-menu-item-content">Bài thi</p>
+                        </a>
+                    </li>
+                    <li class="container-menu-item">
+                        <a asp-area="Admin" asp-controller="PhieuDangKies" asp-action="ThongKe">
+                            <i class="fas fa-book"></i>
+                            <p class="container-menu-item-content">Thống kê</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container-content" style="width: 100%;">
+            <div class="container-content-body" style="padding-bottom: 60px;">
+                @RenderBody()
+            </div>
+        </div>
+
+        <footer>
+            Design by Viet Hung
+        </footer>
+
+    </div>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

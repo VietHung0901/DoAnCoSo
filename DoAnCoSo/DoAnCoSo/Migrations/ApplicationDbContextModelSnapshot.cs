@@ -30,6 +30,9 @@ namespace DoAnCoSo.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("CCCD")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -47,6 +50,9 @@ namespace DoAnCoSo.Migrations
 
                     b.Property<int>("GioiTinh")
                         .HasColumnType("int");
+
+                    b.Property<bool>("HasBeenViewed")
+                        .HasColumnType("bit");
 
                     b.Property<string>("HoTen")
                         .IsRequired()
@@ -172,6 +178,9 @@ namespace DoAnCoSo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("LoaiTruongId")
+                        .HasColumnType("int");
+
                     b.Property<int>("MonThiId")
                         .HasColumnType("int");
 
@@ -180,6 +189,12 @@ namespace DoAnCoSo.Migrations
 
                     b.Property<int>("SoLuongThiSinh")
                         .HasColumnType("int");
+
+                    b.Property<string>("TenCuocThi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
 
                     b.HasKey("Id");
 
@@ -200,6 +215,9 @@ namespace DoAnCoSo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
+
                     b.HasKey("Id");
 
                     b.ToTable("tbLoaiTruong");
@@ -216,6 +234,9 @@ namespace DoAnCoSo.Migrations
                     b.Property<string>("TenMonThi")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
 
                     b.HasKey("Id");
 
@@ -238,6 +259,12 @@ namespace DoAnCoSo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
+
+                    b.Property<string>("imageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("tbNoiDung");
@@ -254,8 +281,20 @@ namespace DoAnCoSo.Migrations
                     b.Property<int>("CuocThiId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("NgayDangKy")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("SoDienThoai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
+
+                    b.Property<int?>("TruongId")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -290,6 +329,9 @@ namespace DoAnCoSo.Migrations
                     b.Property<int>("Phut")
                         .HasColumnType("int");
 
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
+
                     b.HasKey("Id");
 
                     b.HasIndex("PhieuDangKyId");
@@ -306,11 +348,15 @@ namespace DoAnCoSo.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("NoiDungQuyDinh")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TenQuyDinh")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
+
+                    b.Property<string>("imageURL")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -332,6 +378,9 @@ namespace DoAnCoSo.Migrations
                     b.Property<string>("TenTruong")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte?>("TrangThai")
+                        .HasColumnType("tinyint");
 
                     b.HasKey("Id");
 

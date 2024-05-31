@@ -13,7 +13,7 @@ namespace DoAnCoSo.Repositories
         public async Task<IEnumerable<tbTruong>> GetAllAsync() 
         {
             // return await _context.Products.ToListAsync();
-            return await _context.tbTruong.Include(p => p.TenTruong) // Include thông tin về category
+            return await _context.tbTruong.Include(p => p.LoaiTruong) // Include thông tin về category
             .ToListAsync();
         }
     }

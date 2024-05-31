@@ -1,27 +1,105 @@
 ﻿@page
 @model LoginModel
 
-@{
-    ViewData["Title"] = "Log in";
-}
+<script src="~/js/showPass.js"></script>
+<style>
 
-<h1>@ViewData["Title"]</h1>
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+
+    form {
+        background-color: #f7f7f7;
+        padding: 50px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    .form-floating {
+        height: auto;
+        border: 3px solid #e5c0c0;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+        .form-floating img {
+            width: 30px;
+            vertical-align: middle;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .form-floating input {
+            border: none;
+            outline: none;
+            height: 20px;
+        }
+
+        .form-floating span {
+            font-size: 20px;
+            color: #8e44ad;
+            cursor: pointer;
+            padding-right: 5px;
+        }
+
+            .form-floating span i.hide-btn::before {
+                content: "\f070";
+            }
+
+    #login-submit {
+        margin-top: 10px;
+        width: 200px;
+        height: 30px;
+        border: 3px solid #e5c0c0;
+        border-radius: 3px;
+    }
+
+    .img-sticker img {
+        width: 150px;
+        padding-left: 65px;
+    }
+
+    .checkbox {
+        margin-bottom: 15px;
+    }
+
+    p {
+        margin-bottom: 5px;
+    }
+
+    .form-control { /* Thêm lớp CSS tùy chỉnh */
+        font-size: 1rem; /* Điều chỉnh kích thước của ô input */
+        padding: 15px; /* Điều chỉnh khoảng cách bên trong của ô input */
+    }
+</style>
 <div class="row">
     <div class="col-md-4">
         <section>
             <form id="account" method="post">
-                <h2>Use a local account to log in.</h2>
-                <hr />
+                <div class="img-sticker">
+                    <img src="~/images-Login/login.png" />
+                </div>
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                 <div class="form-floating mb-3">
+                    <img src="~/images-Login/email.png" />
                     <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                    <label asp-for="Input.Email" class="form-label">Email</label>
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
                 <div class="form-floating mb-3">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-                    <label asp-for="Input.Password" class="form-label">Password</label>
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    <img src="~/images-Login/password.jpg" />
+                    <input type="password" asp-for="Input.Password" class="form-control " autocomplete="password" aria-required="true" placeholder="password" />
+                    @* <span asp-validation-for="Input.Password" class="text-danger"></span> *@
+                    <span class="show-btn"><i class="fas fa-eye" onclick="showPassword(event)"></i></span>
                 </div>
                 <div class="checkbox mb-3">
                     <label asp-for="Input.RememberMe" class="form-label">
@@ -34,48 +112,13 @@
                 </div>
                 <div>
                     <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                    </p>
-                    <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                        <a id="forgot-password" asp-page="/Account/ForgotPassword">Forgot your password?</a>
                     </p>
                 </div>
             </form>
         </section>
     </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Use another service to log in.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins!)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>
+
 </div>
 
 @section Scripts {

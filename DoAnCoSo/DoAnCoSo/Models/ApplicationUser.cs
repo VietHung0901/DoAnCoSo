@@ -4,6 +4,7 @@ namespace DoAnCoSo.Models
 {
     public class ApplicationUser : IdentityUser
     {
+        public string? CCCD { get; set; }
         public string HoTen { get; set; }
         public DateTime NgaySinh { get; set; }
         public string DiaChi { get; set; }
@@ -12,5 +13,6 @@ namespace DoAnCoSo.Models
         public string ImageUrl { get; set; }
         public int TruongId { get; set; }
         public tbTruong Truong { get; set; }
+        public bool HasBeenViewed { get; set; }
     }
 }

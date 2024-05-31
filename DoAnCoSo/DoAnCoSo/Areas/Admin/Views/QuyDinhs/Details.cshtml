@@ -1,0 +1,45 @@
+﻿@model DoAnCoSo.Models.tbQuyDinh
+
+<h1>Thông Tin Chi Tiết</h1>
+<style>
+    .container {
+        display: flex;
+        justify-content: center; /* Căn đỉnh đường viền bảng ra giữa theo chiều ngang */
+        align-items: center; /* Căn giữa đường viền bảng theo chiều dọc */
+        /* Đặt chiều cao của container bằng 100% chiều cao của viewport */
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .row {
+        /* --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0; */
+        display: flex;
+        flex-wrap: wrap;
+        /* margin-top: calc(var(--bs-gutter-y)* -1);
+            margin-right: calc(var(--bs-gutter-x)* -.5);
+            margin-left: calc(var(--bs-gutter-x)* -.5); */
+        border: 0.1vw solid #ffffff;
+/*         width: 80vw; */
+    }
+</style>
+<div class="container">
+    <dl class="row">
+        <dd class = "col-sm-10" style="font-weight: bold;">
+            @Html.DisplayFor(model => model.TenQuyDinh)
+        </dd>
+        <dd class = "col-sm-10">
+            <div>
+                @Html.Raw(Model.NoiDungQuyDinh)
+            </div>
+        </dd>
+    </dl>
+</div>
+      
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

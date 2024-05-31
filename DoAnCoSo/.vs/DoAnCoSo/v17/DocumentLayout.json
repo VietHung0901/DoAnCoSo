@@ -1,26 +1,94 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\",
+  "WorkspaceRootPath": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|d:\\laptrinhweb\\doan-database\\doancoso\\doancoso\\doancoso\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|d:\\laptrinhweb\\doan-database\\doancoso\\doancoso\\doancoso\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|d:\\laptrinhweb\\doan-database\\doancoso\\doancoso\\doancoso\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|d:\\laptrinhweb\\doan-database\\doancoso\\doancoso\\doancoso\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\views\\home\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\views\\home\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|d:\\laptrinhweb\\doan-database\\doancoso\\doancoso\\doancoso\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\wwwroot\\ckeditor5\\ckeditor\\samples\\css\\samples.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\wwwroot\\ckeditor5\\ckeditor\\samples\\css\\samples.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\wwwroot\\ckeditor5\\ckeditor\\config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\wwwroot\\ckeditor5\\ckeditor\\config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\wwwroot\\ckeditor5\\ckeditor\\ckeditor.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\wwwroot\\ckeditor5\\ckeditor\\ckeditor.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\wwwroot\\ckeditor5\\ckeditor\\build-config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\wwwroot\\ckeditor5\\ckeditor\\build-config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\areas\\admin\\views\\noidungs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\views\\noidungs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\wwwroot\\ckeditor5\\ckfinder\\lang\\bg.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\wwwroot\\ckeditor5\\ckfinder\\lang\\bg.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\areas\\admin\\views\\phieudangkies\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\views\\phieudangkies\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\areas\\admin\\controllers\\phieudangkiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\controllers\\phieudangkiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\areas\\admin\\views\\phieudangkies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\views\\phieudangkies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\areas\\admin\\controllers\\phieuketquascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\controllers\\phieuketquascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\areas\\admin\\views\\phieudangkies\\viewchart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\views\\phieudangkies\\viewchart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\areas\\admin\\views\\phieudangkies\\danhsachuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\views\\phieudangkies\\danhsachuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|c:\\users\\dell\\desktop\\hung dell\\doancoso\\doancoso\\doancoso\\areas\\admin\\views\\cuocthis\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D67E4C4-B383-450A-B9BB-66DA3C162C6B}|DoAnCoSo\\DoAnCoSo.csproj|solutionrelative:doancoso\\areas\\admin\\views\\cuocthis\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,89 +97,275 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 613,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ApplicationUser.cs",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Models\\ApplicationUser.cs",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Models\\ApplicationUser.cs",
-              "ToolTip": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Models\\ApplicationUser.cs",
-              "RelativeToolTip": "DoAnCoSo\\Models\\ApplicationUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T14:46:49.231Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Models\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Models\\ApplicationDbContext.cs",
-              "ToolTip": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Models\\ApplicationDbContext.cs",
-              "RelativeToolTip": "DoAnCoSo\\Models\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBIAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T13:56:30.717Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Program.cs",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Program.cs",
-              "ToolTip": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Program.cs",
-              "RelativeToolTip": "DoAnCoSo\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABRAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T07:47:15.26Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ToolTip": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "RelativeToolTip": "DoAnCoSo\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAA0vRoAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-12T02:51:32.583Z",
+              "Title": "Layout.css",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\Layout.css",
+              "RelativeDocumentMoniker": "DoAnCoSo\\wwwroot\\css\\Layout.css",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\Layout.css",
+              "RelativeToolTip": "DoAnCoSo\\wwwroot\\css\\Layout.css",
+              "ViewState": "AQIAAHsAAAAAAAAAAAAAAIAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-31T09:45:49.584Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Register.cshtml.cs",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ToolTip": "D:\\LapTrinhWeb\\DoAn-Database\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeToolTip": "DoAnCoSo\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ViewState": "AQIAAHgAAAAAAAAAAADwv6kAAAAAAAAA",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "DoAnCoSo\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAEUAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-31T08:50:08.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "DoAnCoSo\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAACEDAAAAAAAAAAAYwDEDAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-30T19:34:10.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "DoAnCoSo\\Views\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-30T16:05:15.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "DoAnCoSo\\Views\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-30T16:05:12.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Views\\Home\\Edit.cshtml",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Views\\Home\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Views\\Home\\Edit.cshtml",
+              "RelativeToolTip": "DoAnCoSo\\Views\\Home\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-25T12:23:20.421Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DoAnCoSo\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwAsAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T02:05:52.611Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 1217,
-          "SelectedChildIndex": -1,
-          "Children": [
+              "WhenOpened": "2024-05-25T12:22:10.061Z"
+            },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 923,
-          "SelectedChildIndex": -1,
-          "Children": [
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Models\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "DoAnCoSo\\Models\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAUwA4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T12:03:43.557Z"
+            },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\appsettings.json",
+              "RelativeDocumentMoniker": "DoAnCoSo\\appsettings.json",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\appsettings.json",
+              "RelativeToolTip": "DoAnCoSo\\appsettings.json",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAkwAkAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-25T12:02:57.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "samples.css",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\samples\\css\\samples.css",
+              "RelativeDocumentMoniker": "DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\samples\\css\\samples.css",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\samples\\css\\samples.css",
+              "RelativeToolTip": "DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\samples\\css\\samples.css",
+              "ViewState": "AQIAANAEAAAAAAAAAAAAAOAEAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-24T17:21:33.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "config.js",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\config.js",
+              "RelativeDocumentMoniker": "DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\config.js",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\config.js",
+              "RelativeToolTip": "DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\config.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-24T17:19:34.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ckeditor.js",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\ckeditor.js",
+              "RelativeDocumentMoniker": "DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\ckeditor.js",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\ckeditor.js",
+              "RelativeToolTip": "DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\ckeditor.js",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAYwGwQAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-24T17:08:42.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "build-config.js",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\build-config.js",
+              "RelativeDocumentMoniker": "DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\build-config.js",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\build-config.js",
+              "RelativeToolTip": "DoAnCoSo\\wwwroot\\CKEditor5\\ckeditor\\build-config.js",
+              "ViewState": "AQIAABgAAAAAAAAAAIBJwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-24T17:08:15.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\NoiDungs\\Create.cshtml",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\NoiDungs\\Create.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\NoiDungs\\Create.cshtml",
+              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\NoiDungs\\Create.cshtml",
+              "ViewState": "AQIAAG8AAAAAAAAAAIBJwIIAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T16:52:49.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "bg.js",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\CKEditor5\\ckfinder\\lang\\bg.js",
+              "RelativeDocumentMoniker": "DoAnCoSo\\wwwroot\\CKEditor5\\ckfinder\\lang\\bg.js",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\CKEditor5\\ckfinder\\lang\\bg.js",
+              "RelativeToolTip": "DoAnCoSo\\wwwroot\\CKEditor5\\ckfinder\\lang\\bg.js",
+              "ViewState": "AQIAAC0AAAAAAAAAAIBJwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-24T16:49:41.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\Details.cshtml",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\Details.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\Details.cshtml",
+              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\Details.cshtml",
+              "ViewState": "AQIAADkAAAAAAAAAAIBJwEkAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T16:42:44.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\Index.cshtml",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\Index.cshtml",
+              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\Index.cshtml",
+              "ViewState": "AQIAABoBAAAAAAAAAADwvxMBAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T16:18:49.636Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PhieuDangKiesController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Controllers\\PhieuDangKiesController.cs",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Controllers\\PhieuDangKiesController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Controllers\\PhieuDangKiesController.cs",
+              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Controllers\\PhieuDangKiesController.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAwCcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T16:18:46.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "PhieuKetQuasController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Controllers\\PhieuKetQuasController.cs",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Controllers\\PhieuKetQuasController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Controllers\\PhieuKetQuasController.cs",
+              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Controllers\\PhieuKetQuasController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T16:18:45.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ViewChart.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\ViewChart.cshtml",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\ViewChart.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\ViewChart.cshtml",
+              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\ViewChart.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAIwFoAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T16:08:36.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DanhSachUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\DanhSachUser.cshtml",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\DanhSachUser.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\DanhSachUser.cshtml",
+              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\PhieuDangKies\\DanhSachUser.cshtml",
+              "ViewState": "AQIAAEUAAAAAAAAAAIBJwFUAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T16:08:06.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\CuocThis\\Create.cshtml",
+              "RelativeDocumentMoniker": "DoAnCoSo\\Areas\\Admin\\Views\\CuocThis\\Create.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Hung DELL\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\Areas\\Admin\\Views\\CuocThis\\Create.cshtml",
+              "RelativeToolTip": "DoAnCoSo\\Areas\\Admin\\Views\\CuocThis\\Create.cshtml",
+              "ViewState": "AQIAACoAAAAAAAAAAIBJwEYAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-24T16:00:04.326Z"
             }
           ]
         }
