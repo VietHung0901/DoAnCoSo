@@ -169,8 +169,10 @@
         </div>
 
         <div class="button-container">
+
             <button id="showQuyDinhBtn">Quy định</button>
             <button id="showNoiDungBtn">Nội dung</button>
+
             <button>
                 <a class="btn-dangky" asp-area="Admin" asp-controller="PhieuDangKies" asp-action="Index" asp-route-cuocThiId="@Model.Id">Phiếu đăng ký</a>
             </button>
@@ -184,9 +186,11 @@
 
                 <div class="quyDinhPages">
                     <div class="navigationBtn">
-                    <i class='fas fa-arrow-circle-left' id="prevBtnQuyDinh"></i>
-                    <i class='fas fa-arrow-circle-right' id="nextBtnQuyDinh"></i>
-                </div>
+                        @* button chuyen doi trang  *@
+                        <i class='fas fa-arrow-circle-left' id="prevBtnQuyDinh"></i>
+                        <i class='fas fa-arrow-circle-right' id="nextBtnQuyDinh"></i>
+                    
+                    </div>
                     @foreach (var qd in listQuyDinh)
                     {
                         var qd1 = context.tbQuyDinh.FirstOrDefault(p => p.Id == qd.QuyDinhId);
@@ -205,6 +209,7 @@
 
                 <div class="noiDungPages">
                     <div class="navigationBtn">
+                        @* button chuyen doi trang  *@
                         <i class='fas fa-arrow-circle-left' id="prevBtnNoiDung"></i>
                         <i class='fas fa-arrow-circle-right' id="nextBtnNoiDung"></i>
                     </div>
@@ -249,6 +254,8 @@
         }
     });
 
+
+    // JS chuyen trang 
     var currentPageIndexQuyDinh = 0;
     var currentPageIndexNoiDung = 0;
     var quyDinhPages = document.querySelectorAll("#quyDinhContainer .listQuyDinh");
@@ -268,15 +275,4 @@
         quyDinhPages[currentPageIndexQuyDinh].style.display = "block";
     });
 
-    document.getElementById("nextBtnNoiDung").addEventListener("click", function () {
-        noiDungPages[currentPageIndexNoiDung].style.display = "none";
-        currentPageIndexNoiDung = (currentPageIndexNoiDung + 1) % totalPagesNoiDung;
-        noiDungPages[currentPageIndexNoiDung].style.display = "block";
-    });
-
-    document.getElementById("prevBtnNoiDung").addEventListener("click", function () {
-        noiDungPages[currentPageIndexNoiDung].style.display = "none";
-        currentPageIndexNoiDung = (currentPageIndexNoiDung - 1 + totalPagesNoiDung) % totalPagesNoiDung;
-        noiDungPages[currentPageIndexNoiDung].style.display = "block";
-    });
 </script>

@@ -118,6 +118,34 @@
             text-decoration: none;
             color: #fff;
         }
+
+        .listQuyDinh, .listNoiDung {
+            width: 100%;
+            max-width: 95%; /* Giới hạn chiều rộng tối đa */
+            padding: 20px;
+            border: 0.1vw solid #000; /* Màu sắc đường viền */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
+            background-color: #fff; /* Màu nền */
+            margin-bottom: 20px; /* Khoảng cách phía dưới */
+            border-radius: 5px;
+        }
+
+        .navigationBtn {
+            display: flex;
+            justify-content: space-between; /* Căn giữa các nút */
+            margin-top: 20px; /* Khoảng cách với phần trước đó */
+        }
+
+            .navigationBtn i {
+                font-size: 30px;
+                color: #007bff; /* Màu của các nút */
+                cursor: pointer;
+                transition: color 0.3s ease; /* Hiệu ứng chuyển đổi màu khi di chuột qua */
+            }
+
+                .navigationBtn i:hover {
+                    color: #0056b3; /* Màu của các nút khi di chuột qua */
+                }
     </style>
 </head>
 <body>
@@ -159,30 +187,45 @@
         <div class="container-qdnd">
             <div id="quyDinhContainer" style="display: none;">
                 <h2>Danh sách Quy định</h2>
-                @foreach (var qd in listQuyDinh)
-                {
-                    var qd1 = context.tbQuyDinh.FirstOrDefault(p => p.Id == qd.QuyDinhId);
-                    <div class="listQuyDinh">
-                        <h3>@qd1.TenQuyDinh</h3>
-                        <div>
-                            @Html.Raw(qd1.NoiDungQuyDinh)
-                        </div>
+                <div class="quyDinhPages">
+                    <div class="navigationBtn">
+                        @* button chuyen doi trang  *@
+                        <i class='fas fa-arrow-circle-left' id="prevBtnQuyDinh"></i>
+                        <i class='fas fa-arrow-circle-right' id="nextBtnQuyDinh"></i>
+
                     </div>
-                }
+                    @foreach (var qd in listQuyDinh)
+                    {
+                        var qd1 = context.tbQuyDinh.FirstOrDefault(p => p.Id == qd.QuyDinhId);
+                        <div class="listQuyDinh" style="display: none;">
+                            <h3>@qd1.TenQuyDinh</h3>
+                            <div>
+                                @Html.Raw(qd1.NoiDungQuyDinh)
+                            </div>
+                        </div>
+                    }
+                </div>
             </div>
 
             <div id="noiDungContainer" style="display: none;">
                 <h2>Danh sách nội dung</h2>
-                @foreach (var nd in listNoiDung)
-                {
-                    var nd1 = context.tbNoiDung.FirstOrDefault(p => p.Id == nd.NoiDungId);
-                    <div class="listNoiDung">
-                        <h3>@nd1.TenNoiDung</h3>
-                        <div>
-                            @Html.Raw(nd.NoiDung)
-                        </div>
+                <div class="noiDungPages">
+                    <div class="navigationBtn">
+                        @* button chuyen doi trang  *@
+                        <i class='fas fa-arrow-circle-left' id="prevBtnNoiDung"></i>
+                        <i class='fas fa-arrow-circle-right' id="nextBtnNoiDung"></i>
                     </div>
-                }
+                    @foreach (var nd in listNoiDung)
+                    {
+                        var nd1 = context.tbNoiDung.FirstOrDefault(p => p.Id == nd.NoiDungId);
+                        <div class="listNoiDung" style="display: none;">
+                            <h3>@nd1.TenNoiDung</h3>
+                            <div>
+                                @Html.Raw(nd1.NoiDungThi)
+                            </div>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
     </main>
@@ -191,18 +234,47 @@
 <script>
     document.getElementById("showQuyDinhBtn").addEventListener("click", function () {
         var quyDinh = document.getElementById("quyDinhContainer");
-        if (quyDinh.style.display === "none")
+        var noiDung = document.getElementById("noiDungContainer");
+
+        if (quyDinh.style.display === "none") {
             quyDinh.style.display = "block";
-        else
+            noiDung.style.display = "none";
+        } else {
             quyDinh.style.display = "none";
+        }
     });
 
     document.getElementById("showNoiDungBtn").addEventListener("click", function () {
+        var quyDinh = document.getElementById("quyDinhContainer");
         var noiDung = document.getElementById("noiDungContainer");
-        if (noiDung.style.display === "none")
+
+        if (noiDung.style.display === "none") {
             noiDung.style.display = "block";
-        else
+            quyDinh.style.display = "none";
+        } else {
             noiDung.style.display = "none";
+        }
+    });
+
+
+    // JS chuyen trang
+    var currentPageIndexQuyDinh = 0;
+    var currentPageIndexNoiDung = 0;
+    var quyDinhPages = document.querySelectorAll("#quyDinhContainer .listQuyDinh");
+    var noiDungPages = document.querySelectorAll("#noiDungContainer .listNoiDung");
+    var totalPagesQuyDinh = quyDinhPages.length;
+    var totalPagesNoiDung = noiDungPages.length;
+
+    document.getElementById("nextBtnQuyDinh").addEventListener("click", function () {
+        quyDinhPages[currentPageIndexQuyDinh].style.display = "none";
+        currentPageIndexQuyDinh = (currentPageIndexQuyDinh + 1) % totalPagesQuyDinh;
+        quyDinhPages[currentPageIndexQuyDinh].style.display = "block";
+    });
+
+    document.getElementById("prevBtnQuyDinh").addEventListener("click", function () {
+        quyDinhPages[currentPageIndexQuyDinh].style.display = "none";
+        currentPageIndexQuyDinh = (currentPageIndexQuyDinh - 1 + totalPagesQuyDinh) % totalPagesQuyDinh;
+        quyDinhPages[currentPageIndexQuyDinh].style.display = "block";
     });
 </script>
 
