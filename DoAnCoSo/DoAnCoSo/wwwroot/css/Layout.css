@@ -85,6 +85,7 @@ body {
     color: #ffffff;  /*Màu trắng cho biểu tượng và nội dung*/ 
 }
 
+
     .container-menu-item a {
         display: flex;
         align-items: center;
@@ -113,17 +114,9 @@ body {
     padding-top: 77px;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f2f2f2;
-    padding: 10px;
-    text-align: center;
-    font-size: 14px;
-    color: #666666;
-}
+
+
+
 
 
 

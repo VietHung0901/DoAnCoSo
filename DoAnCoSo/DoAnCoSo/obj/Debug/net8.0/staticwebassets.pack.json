@@ -3949,6 +3949,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\css\\theme.css",
+      "PackagePath": "staticwebassets\\css\\theme.css"
+    },
+    {
       "Id": "E:\\DoAnCoSo\\DoAnCoSo\\DoAnCoSo\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
