@@ -67,13 +67,43 @@
     .section-content {
         margin-left: 20px;
     }
+
+    button {
+        background-color: #0056b3;
+        color: #fff;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-right: 5px; /* Giảm khoảng cách giữa các button */
+        margin-left: 0;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    a.btn-dangky {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+    }
 </style>
 <div class="container-deatils">
     <h1>Thông tin chi tiết phiếu đăng ký</h1>
     <div class="container-deatils-content">
         <div class="section">
             <div class="section-title">
-                <a asp-area="Admin" asp-controller="PhieuDangKies" asp-action="Index" asp-route-cuocThiId="@Model.CuocThiId">Tro Ve</a>
+                <button>
+                    <a class="btn-dangky" asp-area="Admin" asp-controller="PhieuDangKies" asp-action="Index" asp-route-cuocThiId="@Model.CuocThiId">Trở về</a>
+                </button>
+                <button>
+                    <a class="btn-dangky" asp-area="Admin" asp-controller="PhieuDangKies" asp-action="Edit" asp-route-Id="@Model.Id">Sửa thông tin phiếu</a>
+                </button>
+                
                 <h2>Thông tin cá nhân</h2>
             </div>
             <div class="section-content">
@@ -82,6 +112,7 @@
                 <p><strong>Số điện thoại:</strong> @Html.DisplayFor(model => model.SoDienThoai)</p>
                 <p><strong>Địa chỉ:</strong> @Html.DisplayFor(model => model.User.DiaChi)</p>
                 <p><strong>Trường:</strong> @LayTenTruong(Model.TruongId)</p>
+                <p><strong>Ngày đăng ký:</strong> @Html.DisplayFor(model => model.NgayDangKy)</p>
             </div>
         </div>
 

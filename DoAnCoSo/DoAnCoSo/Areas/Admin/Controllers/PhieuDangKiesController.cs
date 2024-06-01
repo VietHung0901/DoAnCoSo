@@ -63,12 +63,14 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var tbPhieuDangKy = await _context.tbPhieuDangKy.FindAsync(id);
+            var tbPhieuDangKy = await _context.tbPhieuDangKy
+                .Include(t => t.CuocThi)
+                .Include(t => t.User)
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (tbPhieuDangKy == null)
             {
                 return NotFound();
             }
-            ViewData["CuocThiId"] = new SelectList(_context.tbCuocThi, "Id", "Id", tbPhieuDangKy.CuocThiId);
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", tbPhieuDangKy.UserId);
             return View(tbPhieuDangKy);
         }
@@ -78,35 +80,30 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,NgayDangKy,CuocThiId,UserId")] tbPhieuDangKy tbPhieuDangKy)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,NgayDangKy,CuocThiId,UserId,Email,SoDienThoai,TruongId")] tbPhieuDangKy tbPhieuDangKy)
         {
             if (id != tbPhieuDangKy.Id)
             {
                 return NotFound();
             }
 
-            //Cần sửa điều kiện này-----------------------
-            if (KiemTraSoLuong(tbPhieuDangKy.CuocThiId))
+            try
             {
-                try
-                {
-                    _context.tbPhieuDangKy.Update(tbPhieuDangKy);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!tbPhieuDangKyExists(tbPhieuDangKy.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index), new { cuocThiId = tbPhieuDangKy.CuocThiId });
+                _context.tbPhieuDangKy.Update(tbPhieuDangKy);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Details), new { Id = tbPhieuDangKy.Id });
             }
-            ViewData["CuocThiId"] = new SelectList(_context.tbCuocThi, "Id", "Id", tbPhieuDangKy.CuocThiId);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!tbPhieuDangKyExists(tbPhieuDangKy.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", tbPhieuDangKy.UserId);
             return View(tbPhieuDangKy);
         }

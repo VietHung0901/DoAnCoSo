@@ -39,9 +39,30 @@
                     label: 'Số lượng thí sinh',
                     data: scoreCounts,
                     backgroundColor: [
-                        'red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown', 'grey', 'cyan'
+                        '#8BC34A', // Xanh lá
+                        '#FF9800', // Cam
+                        '#673AB7', // Tím
+                        '#E91E63', // Hồng
+                        '#4CAF50', // Xanh lục
+                        '#FFC107', // Vàng
+                        '#3F51B5', // Xanh dương
+                        '#9C27B0', // Tím đậm
+                        '#FF5722', // Đỏ
+                        '#2196F3'  // Xanh dương đậm
                     ],
-                    borderWidth: 1
+                    borderColor: [
+                        '#689F38', // Xanh lá đậm
+                        '#F57C00', // Cam đậm
+                        '#512DA8', // Tím đậm
+                        '#C2185B', // Hồng đậm
+                        '#388E3C', // Xanh lục đậm
+                        '#FFA000', // Vàng đậm
+                        '#303F9F', // Xanh dương đậm
+                        '#7B1FA2', // Tím đậm hơn
+                        '#E64A19', // Đỏ đậm
+                        '#1976D2'  // Xanh dương đậm hơn
+                    ],
+                    borderWidth: 2
                 }]
             },
             options: {
@@ -51,6 +72,7 @@
                     title: {
                         display: true,
                         text: 'Thống kê điểm thi',
+                        color: '#000000',
                         font: {
                             size: 24, // Increase size for better visibility
                             weight: 'bold' // Make the text bold
@@ -71,7 +93,7 @@
                     }
                 }
             },
-            plugins: [ChartDataLabels]
+            // plugins: [ChartDataLabels]
         });
 
     </script>

@@ -109,8 +109,6 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,TenTruong,LoaiTruongId")] tbTruong tbTruong)
         {
-                
-
             if (id != tbTruong.Id)
             {
                 return NotFound();
@@ -120,7 +118,9 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             {
                 TempData["ErrorMessage"] = "Vui lòng nhập đầy đủ thông tin.";
 
-                var tbLoaiTruongs = await _loaitruongRepository.GetAllAsync();
+                var tbLoaiTruongs = from c in _context.tbLoaiTruong
+                                   where c.TrangThai != 0
+                                   select c;
                 ViewBag.LoaiTruongName = new SelectList(tbLoaiTruongs, "Id", "TenLoaiTruong");
 
                 return View(tbTruong);
@@ -149,7 +149,9 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 return View(tbTruong);
             }
             //Chưa xử lý được việc xuất thông báo "Tên trường thuộc loại trường đã tồn tại"
-            var tbLoaiTruong = await _loaitruongRepository.GetAllAsync();
+            var tbLoaiTruong = from c in _context.tbLoaiTruong
+                                where c.TrangThai != 0
+                                select c;
             ViewBag.LoaiTruongName = new SelectList(tbLoaiTruong, "Id", "TenLoaiTruong");
 
             TempData["ErrorMessage"] = "Tên trùng vui lòng chọn tên khác.";

@@ -70,7 +70,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         {
             var tbMonThis = from c in _context.tbMonThi
                                where c.TrangThai != 0
-                               select c;
+                            select c;
             ViewBag.MonThiName = new SelectList(tbMonThis, "Id", "TenMonThi");
 
             // Kiểm tra nếu không nhập địa điểm thi hoặc không chọn ngày thi

@@ -197,7 +197,7 @@
                                         return _context.tbTruong.FirstOrDefault(p => p.Id == truongId).TenTruong.ToString();
                                     }
                                 }
-                                @foreach (var item in _context.tbTruong.Where(truong => truong.TrangThai == 1).ToList())
+                                @foreach (var item in _context.tbTruong.Where(truong => truong.TrangThai != 0).ToList())
                                 {
                                     <option value="@item.Id">@GetNameSchool(@item.Id)</option>
                                 }
