@@ -1,5 +1,13 @@
-﻿@model DoAnCoSo.Models.tbThongKe
-
+﻿@model List<int>
+@using DoAnCoSo.Models
+@{
+    ApplicationDbContext context = new ApplicationDbContext();
+    string GetTenLoaiTruong(int loaiTruongId)
+    {
+        var loaiTruong = context.tbLoaiTruong.FirstOrDefault(lt => lt.Id == loaiTruongId);
+        return loaiTruong?.TenLoaiTruong ?? string.Empty;
+    }
+}
 <style>
     .management-board {
         background-color: #f5f5f5;
@@ -70,6 +78,51 @@
         .card-image img {
             max-width: 90px;
         }
+
+    .TaoCuocThi {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1000px;
+        margin-bottom: 1rem;
+    }
+
+    .TaoCuocThi-title {
+        font-size: 30px;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .TaoCuocThi .add-button {
+        display: inline-block;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+        .TaoCuocThi .add-button:hover {
+            background-color: #0056b3;
+        }
+
+    #BieuDo{
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1000px;
+        max-height: 500px;
+        margin-bottom: 1rem;
+    }
 </style>
 
 <div class="management-board">
@@ -79,10 +132,10 @@
             <div class="card-content">
                 <div class="card-item">
                     <p class="card-title">Tổng thí sinh</p>
-                    <p class="card-value">@Model.SoLuongUser</p>
-                    @if (Model.SoLuongUserMoi > 0)
+                    <p class="card-value">@ViewBag.SoLuongUser</p>
+                    @if (ViewBag.SoLuongUserMoi > 0)
                     {
-                        <p class="new-members-notification">New: @Model.SoLuongUserMoi</p>
+                        <p class="new-members-notification">New: @ViewBag.SoLuongUserMoi</p>
                     }
                 </div>
                 <div class="card-image">
@@ -90,22 +143,22 @@
                 </div>
             </div>
         </a>
-        <div class="card">
+        <a href="@Url.Action("Index", "CuocThis", new { area = "Admin" })" class="card">
             <div class="card-content">
                 <div class="card-item">
                     <p class="card-title">Tổng cuộc thi</p>
-                    <p class="card-value">@Model.SoLuongCuocThi</p>
+                    <p class="card-value">@ViewBag.SoLuongCuocThi</p>
                 </div>
                 <div class="card-image">
                     <img src="~/images-Login/cuocthi.png" alt="Competition">
                 </div>
             </div>
-        </div>
+        </a>
         <div class="card">
             <div class="card-content">
                 <div class="card-item">
                     <p class="card-title">Tổng lượt đăng ký</p>
-                    <p class="card-value">@Model.SoLuongUserDK</p>
+                    <p class="card-value">@ViewBag.SoLuongUserDK</p>
                 </div>
                 <div class="card-image">
                     <img src="~/images-Login/ghidanh.png" alt="Enrollment">
@@ -113,5 +166,84 @@
             </div>
         </div>
     </div>
+
+    <div class="TaoCuocThi">
+        <p class="TaoCuocThi-title"><i class="fas fa-trophy"></i> Quá trình tạo cuộc thi</p>
+        <a class="add-button btn btn-primary" asp-area="Admin" asp-controller="CuocThis" asp-action="Create">Tạo cuộc thi</a>
+    </div>
+
+    <canvas id="BieuDo">
+        
+    </canvas>
 </div>
 
+@section scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+    <script>
+        // Lấy dữ liệu mã loại trường từ Model
+        var listLoaiTruong = @Html.Raw(Json.Serialize(Model));
+        // Lấy dữ liệu tên loại trường từ Model
+        var resultTen = @Html.Raw(Json.Serialize(ViewBag.listTenLoaiTruong));
+
+        //Đếm số lượng mã loai trường theo mã loại trường
+        var loaiTruongCounts = {};
+        for (var i = 0; i < listLoaiTruong.length; i++) {
+            var id = listLoaiTruong[i];
+            if (loaiTruongCounts[id]) {
+                loaiTruongCounts[id]++;
+            } else {
+                loaiTruongCounts[id] = 1;
+            }
+        }
+
+        // Chuyển đối tượng loaiTruongCounts thành mảng
+        var result = Object.values(loaiTruongCounts);
+
+        var ctx = document.getElementById('BieuDo').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: resultTen,
+                datasets: [{
+                    label: 'Số lượng',
+                    data: result,
+                    backgroundColor: [
+                        '#8BC34A', // Màu xanh lá
+                        '#FF9800', // Màu cam
+                        '#673AB7' // Màu tím
+                    ],
+                    borderColor: [
+                        '#689F38', // Màu xanh lá đậm hơn
+                        '#F57C00', // Màu cam đậm hơn
+                        '#512DA8' // Màu tím đậm hơn
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Biểu đồ số lượng các loại trường'
+                },
+                legend: {
+                    position: 'right',
+                    labels: {
+                        fontColor: '#333'
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    datalabels: {
+                        color: '#fff',
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+}

@@ -123,7 +123,7 @@ namespace DoAnCoSo.Areas.Identity.Pages.Account
                     {
                         // Người dùng có quyền admin
                         _logger.LogInformation("Admin user logged in.");
-                        return LocalRedirect("/Admin/CuocThis");
+                        return LocalRedirect("/Admin/Home");
                     }
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);

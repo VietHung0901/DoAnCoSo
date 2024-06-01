@@ -247,6 +247,9 @@ namespace DoAnCoSo.Areas.Admin.Controllers
                 .ToList();
 
             return View(diemCuaThiSinh);
+
+            // Trả về dữ liệu dưới dạng JSON
+            //return Json(diemCuaThiSinh);
         }
 
     }

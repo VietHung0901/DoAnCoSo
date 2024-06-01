@@ -20,7 +20,7 @@
             <i class="fas fa-list"></i>
         </div>
         <div class="header-logo">
-            <a asp-area="" asp-controller="CuocThis" asp-action="Index">
+            <a asp-area="" asp-controller="Home" asp-action="Index">
                 <img src="~/images/Logo.png" alt="Alternate Text" />
             </a>
         </div>
@@ -129,17 +129,24 @@
 
     <script>
         var footer = document.getElementById("footer");
-        var scrollPosition = window.scrollY || window.pageYOffset;
-        var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        footer.classList.add("hidden");
-        if (scrollPosition < scrollHeight) {
-            // chưa đến cuối trang ẩn footer
-            footer.classList.remove("hidden");
-        }
-        
+        var scrollPosition, scrollHeight;
+
+        window.addEventListener("load", function () {
+            scrollPosition = window.scrollY || window.pageYOffset;
+            scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+            if (scrollHeight <= 0) {
+                // Không đủ chiều dài để cuộn, hiện footer
+                footer.classList.add("hidden");
+            } else {
+                footer.classList.remove("hidden");
+            }
+        });
+
         window.addEventListener("scroll", function () {
-            var scrollPosition = window.scrollY || window.pageYOffset;
-            var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            scrollPosition = window.scrollY || window.pageYOffset;
+            scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
             if (scrollPosition >= scrollHeight) {
                 // Đã cuộn đến cuối trang, hiện footer
                 footer.classList.add("hidden");
@@ -147,7 +154,6 @@
                 // Đang cuộn, ẩn footer
                 footer.classList.remove("hidden");
             }
-
         });
 
 
@@ -172,4 +178,3 @@
     </script>
 </body>
 </html>
-

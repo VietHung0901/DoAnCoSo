@@ -118,15 +118,22 @@ namespace DoAnCoSo.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var thongKe = new tbThongKe
-            {
-                SoLuongUser = await _userManager.Users.CountAsync(),
-                SoLuongCuocThi = await _context.tbCuocThi.CountAsync(),
+            ViewBag.SoLuongUser = await _userManager.Users.CountAsync();
+            ViewBag.SoLuongUserMoi = await _userManager.Users.CountAsync(u => !u.HasBeenViewed);
 
-                SoLuongUserDK = await _context.tbPhieuDangKy.Select(p => p.UserId).Distinct().CountAsync(),
-                SoLuongUserMoi = await _userManager.Users.CountAsync(u => !u.HasBeenViewed)
-            };
-            return View(thongKe);
+            ViewBag.SoLuongCuocThi = await _context.tbCuocThi.CountAsync();
+            ViewBag.SoLuongUserDK = await _context.tbPhieuDangKy.Select(p => p.UserId).CountAsync();
+
+            var listCapHocUser = _context.Users
+                .Select(u => u.Truong.LoaiTruongId)
+                .Select(id => _context.tbLoaiTruong.FirstOrDefault(lt => lt.Id == id))
+                .Select(lt => lt.Id)
+                .Where(lt => lt != null)
+                .ToList();
+
+            var listCapHoc = _context.tbLoaiTruong.Select(tl => tl.TenLoaiTruong).ToList();
+            ViewBag.listTenLoaiTruong = listCapHoc;
+            return View(listCapHocUser);
         }
 
         public async Task<IActionResult> DanhSachUser(string sortOrder)
@@ -154,6 +161,19 @@ namespace DoAnCoSo.Areas.Admin.Controllers
             }
 
             return View(users.ToList());
+        }
+
+        [HttpGet]
+        public IActionResult GetListLoaiTruong()
+        {
+            var listCapHocUser = _context.Users
+                .Select(u => u.Truong.LoaiTruongId)
+                .Select(id => _context.tbLoaiTruong.FirstOrDefault(lt => lt.Id == id))
+                .Select(lt => lt.Id)
+                .Where(lt => lt != null)
+                .ToList();
+
+            return Json(listCapHocUser);
         }
 
         private bool TonTaisdt(string sdt, string userId)
